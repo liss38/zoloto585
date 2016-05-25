@@ -1,0 +1,308 @@
+/*
+	ЗНАЧЕНИЯ
+	ТОЧЕК
+	СЛОМА
+*/
+/* TABLET ALBUM */
+/* TABLET PORTRAIT */
+@tablet _p-max: (@tablet_a-min - 1));
+/* MOBILE ALBUM */
+/* MOBILE PORTRAIT */
+/*@mobile_p-min: px;*/
+/*
+	БИБЛИОТЕКА СНИППЕТОВ и МИКСИНОВ 
+	ДЛЯ РАБОТЫ СО ШРИФТАМИ НА САЙТЕ 585
+*/
+/*	=================================
+	=================================
+	=====                       =====
+	=====  ПОДКЛЮЧЕНИЕ ШРИФТОВ  =====
+	=====                       =====
+	=================================
+	=================================
+*/
+@font-face {
+  font-family: 'Circe-Regular';
+  src: url('../fonts/Circe-Regular.eot');
+  src: local('Circe-Regular'), url('../fonts/Circe-Regular.woff') format('woff'), url('../fonts/Circe-Regular.ttf') format('truetype'), url('../fonts/Circe-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circe-Light';
+  src: url('../fonts/Circe-Light.eot');
+  src: local('Circe-Regular'), url('../fonts/Circe-Light.woff') format('woff'), url('../fonts/Circe-Light.ttf') format('truetype'), url('../fonts/Circe-Light.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circe-Bold';
+  src: url('../fonts/Circe-Bold.eot');
+  src: local('Circe-Regular'), url('../fonts/Circe-Bold.woff') format('woff'), url('../fonts/Circe-Bold.ttf') format('truetype'), url('../fonts/Circe-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/*
+	"SECTIONS"
+*/
+.section {
+  width: 100%;
+  position: relative;
+}
+.section__inner {
+  width: 100%;
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+.section__inner:before,
+.section__inner:after {
+  content: " ";
+  display: table;
+}
+.section__inner:after {
+  clear: both;
+}
+/*@tablet Album*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .section__inner {
+    width: 750px;
+  }
+}
+/*@tablet Portrait*/
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .section__inner {
+    width: 620px;
+  }
+}
+/*@mobile Album*/
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .section__inner {
+    width: 460px;
+  }
+}
+/*@mobile Portrait*/
+@media screen and (max-width: 479px) {
+  .section__inner {
+    width: 300px;
+  }
+}
+/* END-of-"SECTIONS" */
+/*
+	"HORIZONTAL GRIDS"
+
+	25%
+	33.3%
+	50%
+	66.5%
+	75%
+	100%
+*/
+.section__column_25,
+.section__column_33,
+.section__column_50,
+.section__column_66,
+.section__column_75,
+.section__column_100 {
+  float: left;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.section__column_25 {
+  width: 25%;
+}
+.section__column_33 {
+  width: 33.3%;
+}
+.section__column_50 {
+  width: 50%;
+}
+.section__column_66 {
+  width: 66.6%;
+}
+.section__column_75 {
+  width: 75%;
+}
+.section__column_100 {
+  width: 100%;
+}
+/*
+	FORMS PATTERN
+*/
+/*
+	поле ввода типа 'input text'
+*/
+/*@field-ico*/
+.form__field {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 37px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  font-size: 0;
+  /*область с иконкой-метафорой поля*/
+  /* место куда вводится текст */
+}
+.form__field-ico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: inline-block;
+  width: 37px;
+  height: 100%;
+  border-right: 1px solid #e2e2e2;
+  background-image: url('../img/sprites/sprite__form-icos_37x35.png');
+  background-repeat: no-repeat;
+  background-color: #f1f1f1;
+}
+.form__field-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px 0 50px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  font: 14px/37px 'Circe-Regular';
+  color: #999;
+}
+/* активное состояние поля */
+.form__field:hover,
+.form__field:focus,
+.form__field_active,
+.form__field.active,
+.form__field_focus,
+.form__field.focus {
+  border: 1px solid #b32024;
+}
+.form__field:hover .form__field-ico,
+.form__field:focus .form__field-ico,
+.form__field_active .form__field-ico,
+.form__field.active .form__field-ico,
+.form__field_focus .form__field-ico,
+.form__field.focus .form__field-ico {
+  border-right: 1px solid #b32024;
+  -ms-background-position-x: -37px;
+  background-position-x: -37px;
+}
+/* прошедшее валидацию поле */
+.form__field_valid_true .form__field-ico,
+.form__field.valid_true .form__field-ico,
+.form__field.valid-true .form__field-ico {
+  -ms-background-position-y: -70px;
+  background-position-y: -70px;
+}
+/* непрошедшее валидацию поле */
+/* распределение иконок из спрайта(по вертикали) по селекторам */
+.field-icons-1 {
+  background-position: 0 0;
+}
+.field-icons-2 {
+  background-position: 0 -35px;
+}
+@media screen and (max-width: 767px) {
+  .form__field {
+    height: 50px;
+    /*область с иконкой-метафорой поля*/
+    /* место куда вводится текст */
+  }
+  .form__field-ico {
+    width: 50px;
+    background-image: url('../images/sprite__form-icos_50x48.png');
+  }
+  .form__field-input {
+    padding: 0 15px 0 65px;
+    font: 14px/50px 'Circe-Regular';
+  }
+  /* активное состояние поля */
+  .form__field:hover .form__field-ico,
+  .form__field:focus .form__field-ico,
+  .form__field_active .form__field-ico,
+  .form__field.active .form__field-ico,
+  .form__field_focus .form__field-ico,
+  .form__field.focus .form__field-ico {
+    -ms-background-position-x: -50px;
+    background-position-x: -50px;
+  }
+  /* распределение иконок из спрайта(по вертикали) по селекторам */
+  .field-icons-1 {
+    background-position: 0 0;
+  }
+  .field-icons-2 {
+    background-position: 0 -50px;
+  }
+}
+/*
+	кнопка отправки в форме типа 'input submit'
+*/
+.form__button {
+  width: 100%;
+  height: 37px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 3px;
+  background-color: #ed3030;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font: 14px/37px 'Circe-Regular';
+  color: #faf1f2;
+  /*safari, iOS*/
+  -webkit-appearance: none;
+}
+.form__button:hover {
+  background-color: #b32024;
+}
+@media screen and (max-width: 767px) {
+  .form__button {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+.s-top {
+  height: 45px;
+  background-color: #e61725;
+  border-bottom: 1px solid #eaeaea;
+}
+.s-logo {
+  height: 55px;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #cfcfcf;
+}
+@media screen and (max-width: 1024px) {
+  .s-logo {
+    /*background-color: #ff0000;*/
+  }
+  .s-top__inner {
+    background-color: #000;
+    height: 100%;
+  }
+}

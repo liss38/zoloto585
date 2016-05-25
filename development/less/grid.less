@@ -1,0 +1,97 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+/*
+	"SECTIONS"
+*/
+.section {
+	width: 100%;
+	position: relative;
+}
+.section__inner {
+	width: 100%;
+	max-width: 1000px;
+	min-width: 300px;
+	margin: 0 auto;
+	position: relative;
+}
+.section__inner:before,
+.section__inner:after {
+	content: " ";
+	display: table;
+}
+.section__inner:after {
+	clear: both;
+}
+
+/*@tablet Album*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.section__inner {
+		width: 750px;
+	}
+}
+/*@tablet Portrait*/
+@media screen and (min-width: 640px) and (max-width: 767px) {
+	.section__inner {
+		width: 620px;
+	}
+}
+/*@mobile Album*/
+@media screen and (min-width: 480px) and (max-width: 639px) {
+	.section__inner {
+		width: 460px;
+	}
+}
+/*@mobile Portrait*/
+@media screen and (max-width: 479px) {
+	.section__inner {
+		width: 300px;
+	}
+}
+/* END-of-"SECTIONS" */
+
+
+/*
+	"HORIZONTAL GRIDS"
+
+	25%
+	33.3%
+	50%
+	66.5%
+	75%
+	100%
+*/
+
+.section__column_25,
+.section__column_33,
+.section__column_50,
+.section__column_66,
+.section__column_75,
+.section__column_100 {
+	float: left;
+	display: block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.section__column_25 {
+	width: 25%;
+}
+.section__column_33 {
+	width: 33.3%;
+}
+.section__column_50 {
+	width: 50%;
+}
+.section__column_66 {
+	width: 66.6%;
+}
+.section__column_75 {
+	width: 75%;
+}
+.section__column_100 {
+	width: 100%;
+}
