@@ -39,11 +39,16 @@ gulp.task('lessmain', function () {
 		.pipe(gulp.dest(dev_css));
 });
 
-gulp.task('cssmain', ['lessmain'], function () {
+gulp.task('cssmain', function () {
 	return gulp.src(dev_css + 'main.css')
 		.pipe(cssmin())
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest(dev_css));
+});
+
+// Make "DEVELOPMENT"
+gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
+	return gulp.dest(dev_css);
 });
 
 

@@ -5,7 +5,6 @@
 */
 /* TABLET ALBUM */
 /* TABLET PORTRAIT */
-@tablet _p-max: (@tablet_a-min - 1));
 /* MOBILE ALBUM */
 /* MOBILE PORTRAIT */
 /*@mobile_p-min: px;*/
@@ -287,22 +286,13 @@ body {
     line-height: 50px;
   }
 }
-.s-top {
+.header-top {
   height: 45px;
   background-color: #e61725;
   border-bottom: 1px solid #eaeaea;
 }
-.s-logo {
+.header-middle {
   height: 55px;
   border-top: 1px solid #d3d3d3;
   border-bottom: 1px solid #cfcfcf;
-}
-@media screen and (max-width: 1024px) {
-  .s-logo {
-    /*background-color: #ff0000;*/
-  }
-  .s-top__inner {
-    background-color: #000;
-    height: 100%;
-  }
 }

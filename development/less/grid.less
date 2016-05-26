@@ -26,26 +26,27 @@ body {
 	clear: both;
 }
 
+
 /*@tablet Album*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {
 	.section__inner {
 		width: 750px;
 	}
 }
 /*@tablet Portrait*/
-@media screen and (min-width: 640px) and (max-width: 767px) {
+@media screen and (min-width: @tablet_p-min) and (max-width: @tablet_p-max) {
 	.section__inner {
 		width: 620px;
 	}
 }
 /*@mobile Album*/
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (min-width: @mobile_a-min) and (max-width: @mobile_a-max) {
 	.section__inner {
 		width: 460px;
 	}
 }
 /*@mobile Portrait*/
-@media screen and (max-width: 479px) {
+@media screen and (max-width: @mobile_p-max) {
 	.section__inner {
 		width: 300px;
 	}
