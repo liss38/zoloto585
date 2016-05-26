@@ -1,0 +1,145 @@
+/*
+	старый css-код, который нужно изменить в этом файле:
+	http://zoloto585.ru/bitrix/cache/css/s1/zoloto/template_8fc80a23a2db896d022edc78319c86b1/template_8fc80a23a2db896d022edc78319c86b1.css?1464120302404943
+*/
+
+.catalog-item { /* строка 11884 */
+	height: 340px;
+	max-width: 240px;
+	width: 240px;
+}
+.catalog-item-info { /* строка 11992 */
+	height: 66px;
+	background: #f5f5f5;
+}
+.catalog-item-pic { /* строка 11972 */
+	height: 200px;
+	border-bottom: 1px solid #ecebeb;
+}
+.catalog-item .price { /* строка 11923 */
+	top: 3px;
+}
+
+.catalog-item-info__old-price,
+.catalog-item-info__new-price,
+.catalog-item-info__bonus-price {/*12011*/
+	left: 153px;
+}
+.catalog-item-info__new-price {/*12023*/
+	color: #ed3030;
+	font-weight: bold;
+}
+/*******************************************************************************/
+/******************************************************************************/
+
+
+
+
+
+/* 
+	Новый css-код
+*/
+
+.catalog-item:hover {
+	border-color: #9f9f9f;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+
+.catalog-item-reserve {
+	position: relative;
+
+	display: block;
+	height: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	
+}
+
+/*Интеренет-цена*/
+.catalog-item-info__label {
+	position: absolute;
+	top: 33px;
+	left: 14px;
+
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 12px;
+	color: #666;
+}
+
+/*тень над кнопкой*/
+.catalog-item-reserve:after {
+	position: absolute;
+	top: 0;
+	z-index: 10;
+
+	display: block;
+	width: 100%;
+	height: 6px;
+
+	content: '';
+
+	background: transparent url("http://zoloto585.ru/bitrix/templates/zoloto/css/../images/cabinet/favorite_item__shadow.png") center top no-repeat;
+}
+
+.catalog-item__button {
+	display: block;
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 40px;
+}
+.catalog-item__button:after {
+	background-image: url('card_icons.png');
+	background-repeat: no-repeat;
+}
+
+.catalog-item__button_reserve {
+	background-color: #ed3030;
+	color: #fff;
+}
+.catalog-item__button_reserve:hover {
+	background-color: #b32024;
+}
+.catalog-item__button_reserve:before,
+.catalog-item__button_soon:before {
+	display: inline-block;
+	vertical-align: middle;
+	width: 22px;
+	height: 22px;
+	margin-right: 3px;
+
+	content: '';
+}
+.catalog-item__button_reserve:before { background: transparent url('card_icons.png') 0 -1px no-repeat; }
+.catalog-item__button_reserve:after {}
+
+.catalog-item__button_soon {
+	background-color: #f3f3f3;
+	color: #ed3030;
+}
+.catalog-item__button_soon:hover {
+	background-color: #ed3030;
+	color: #fff;
+}
+.catalog-item__button_soon:before { background: transparent url('card_icons.png') -22px -23px no-repeat; }
+.catalog-item__button_soon:hover:before { background-position: 0 -23px; }
+.catalog-item__button_soon:after {}
+
+
+/*
+	ВЫРАВНИВАНИЕ ПО ГОРИЗОНТАЛИ
+*/
+.section__h-grid_100 .catalog-item {
+	margin-left: 5px;
+	margin-right: 5px;
+}
