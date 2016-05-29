@@ -9,12 +9,15 @@ var gulp = require('gulp'),
 var dev_ = 'development/',
 	dev_less = dev_ + 'less/',
 	dev_lessmain = [
+		dev_less + '@path-local.less',
 		dev_less + '@breakpoints.less',
 		dev_less + '@fonts.less',
 		dev_less + 'fonts.less',
 		dev_less + 'grid.less',
 		dev_less + 'forms.less',
-		dev_less + 'header.less',
+		dev_less + 'header-top.less',
+		dev_less + 'header-middle.less',
+		dev_less + 'header-bottom.less',
 	],
 	dev_css = dev_ + 'css/';
 

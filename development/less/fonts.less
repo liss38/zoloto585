@@ -6,11 +6,7 @@
 	=================================
 	=================================
 */
-@global-fonts-path: 'http://zoloto585.ru/bitrix/templates/zoloto/css/fonts/';
-@local-fonts-path: '../fonts/';
-@default-fonts-path: @local-fonts-path;
-
-.set_font_face(@font-family, @font-file, @font-path: @default-fonts-path, @font-weight: normal, @font-style: normal) {
+.set_font_face(@font-family, @font-file, @font-path: @fonts-path, @font-weight: normal, @font-style: normal) {
 	@font-face {
 		font-family: @font-family;
 		src: url('@{font-path}@{font-file}.eot');
@@ -23,6 +19,26 @@
 	}
 }
 
-.set_font_face('Circe-Regular', 'Circe-Regular');
-.set_font_face('Circe-Light', 'Circe-Light');
-.set_font_face('Circe-Bold', 'Circe-Bold');
+/*
+	Circe
+*/
+/* Circe Regular */
+.set_font_face('Circe', 'Circe-Regular', @fonts-path, 400);
+
+/* Circe Light */
+.set_font_face('Circe', 'Circe-Light', @fonts-path, 300);
+
+/* Circe Bold */
+.set_font_face('Circe', 'Circe-Bold', @fonts-path, 700);
+
+
+
+/*
+	Helvetica Neue
+*/
+
+/*Light*/
+.set_font_face('Helvetica Neue', 'helveticaneuecyr-light', @fonts-path, 300);
+
+/*Bold*/
+.set_font_face('Helvetica Neue', 'helveticaneuecyr-bold', @fonts-path, 700);
