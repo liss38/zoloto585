@@ -91,8 +91,15 @@
 	width: 47px;
 
 	&:before {
-		-ms-background-position-y: ;
-		background-position-y: ;
+		-ms-background-position-y: 0;
+		background-position-y: 0;
+	}
+
+	&--active {
+		&:before {
+			-ms-background-position-x: -20px;
+			background-position-x: -20px;
+		}
 	}
 }
 
@@ -172,6 +179,11 @@
 	}
 }
 
+
+/* NO DESKTOP */
+@media screen and (max-width: @tablet_a-max) {
+
+}
 /*@tablet Album*/
 @media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {
 	.section__inner {

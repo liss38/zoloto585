@@ -18,6 +18,7 @@ var dev_ = 'development/',
 		dev_less + 'header-top.less',
 		dev_less + 'header-middle.less',
 		dev_less + 'header-bottom.less',
+		dev_less + 'header-nav.less',
 	],
 	dev_css = dev_ + 'css/';
 
