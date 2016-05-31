@@ -378,9 +378,12 @@ body {
 .top-sandwich,
 .top-geo,
 .top-phone,
+.top-favorites,
 .top-bonuses,
-.top-cart,
-.top-user {
+.top-user,
+.top-jewelry,
+.top-lombards,
+.top-address {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -398,9 +401,12 @@ body {
 .top-sandwich:before,
 .top-geo:before,
 .top-phone:before,
+.top-favorites:before,
 .top-bonuses:before,
-.top-cart:before,
-.top-user:before {
+.top-user:before,
+.top-jewelry:before,
+.top-lombards:before,
+.top-address:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -444,21 +450,21 @@ body {
   -ms-background-position-y: -42px;
   background-position-y: -42px;
 }
-.top-bonuses {
+.top-favorites {
   width: 50px;
   padding-left: 25px;
   text-align: center;
 }
-.top-bonuses:before {
+.top-favorites:before {
   margin-left: -20px;
   -ms-background-position-y: -60px;
   background-position-y: -60px;
 }
-.top-cart {
+.top-bonuses {
   width: 75px;
   padding-left: 25px;
 }
-.top-cart:before {
+.top-bonuses:before {
   left: 13px;
   -ms-background-position-y: -80px;
   background-position-y: -80px;
@@ -483,7 +489,31 @@ body {
   height: 20px;
   background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -120px no-repeat;
 }
-/* NO DESKTOP */
+.top-jewelry:before,
+.top-lombards:before,
+.top-address:before {
+  display: none;
+}
+/*
+	DESKTOP
+*/
+@media screen and (min-width: 1025px) {
+  .header-top__item--show-only-touchversion {
+    display: none;
+  }
+}
+/*
+	NO DESKTOP
+*/
+@media screen and (max-width: 1024px) {
+  .header-top__item--show-only-desktopversion {
+    display: none;
+  }
+  .top-geo,
+  .top-user {
+    font-size: 0;
+  }
+}
 /*@tablet Album*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .section__inner {
@@ -525,8 +555,8 @@ body {
   .top-sandwich,
   .top-geo,
   .top-phone,
+  .top-favorites,
   .top-bonuses,
-  .top-cart,
   .top-user {
     width: 47px;
     margin: 0;
@@ -536,8 +566,8 @@ body {
   .top-sandwich:before,
   .top-geo:before,
   .top-phone:before,
+  .top-favorites:before,
   .top-bonuses:before,
-  .top-cart:before,
   .top-user:before {
     top: 50%;
     left: 50%;
