@@ -216,9 +216,18 @@
 	NO DESKTOP
 */
 @media screen and (max-width: @tablet_a-max) {
-	.header-top__item--show-only-desktopversion {
-		display: none;
+	.header-top {
+		&__item--show-only-desktopversion {
+			display: none;
+		}
+
+		&--position_fixed {
+			position: fixed;
+			top: 0;
+			z-index: 9995;
+		}
 	}
+	
 
 	.top-geo,
 	.top-user {

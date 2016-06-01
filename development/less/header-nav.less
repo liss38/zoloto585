@@ -1,3 +1,8 @@
+.section--left_offset_for_nav {
+	padding-left: 300px;
+	overflow: hidden;
+}
+
 .top-nav {
 	display: none;
 
@@ -5,6 +10,17 @@
 
 	&--active {
 		display: block;
+	}
+
+	&__inner {
+		display: block;
+		height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 45px;
+		padding-bottom: 70px;
+		overflow: auto;
 	}
 
 	&__button {
@@ -16,6 +32,7 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		margin: 0 auto;
+		padding: 0 15px;
 
 		background-color: #ed3030;
 
@@ -27,7 +44,7 @@
 		&:after {
 			position: absolute;
 			top: 50%;
-			right: 0;
+			right: 15px;
 			margin-top: -10px;
 
 			content: '';
@@ -81,12 +98,28 @@
 			display: block;
 			height: 100%;
 			margin: 0 auto;
+			padding: 0 15px;
 
 			text-decoration: none;
 			.font-circerou_regular(11px, 45px, #fff);
 		}
 
 		&--active {}
+	}
+
+	&--position_fixed {
+		position: fixed;
+		/*top: 45px;*/
+		top: 0;
+		left: 0;
+		z-index: 9999;
+
+		height: 100%;
+		width: 300px;
+
+		.top-nav__button {
+			width: 100%;
+		}
 	}
 }
 

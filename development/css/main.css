@@ -103,8 +103,11 @@ body {
 	"SECTIONS"
 */
 .section {
-  width: 100%;
   position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .section__inner {
   width: 100%;
@@ -498,6 +501,9 @@ body {
 	DESKTOP
 */
 @media screen and (min-width: 1025px) {
+  .header-top__item:after {
+    display: none;
+  }
   .header-top__item--show-only-touchversion {
     display: none;
   }
@@ -508,6 +514,11 @@ body {
 @media screen and (max-width: 1024px) {
   .header-top__item--show-only-desktopversion {
     display: none;
+  }
+  .header-top--position_fixed {
+    position: fixed;
+    top: 0;
+    z-index: 9995;
   }
   .top-geo,
   .top-user {
@@ -648,6 +659,14 @@ body {
   -ms-background-position-y: -160px;
   background-position-y: -160px;
 }
+/*
+	NO DESKTOP
+*/
+@media screen and (max-width: 1024px) {
+  .header-middle {
+    margin-top: 45px;
+  }
+}
 /*@mobile Portrait*/
 @media screen and (max-width: 479px) {
   .header-middle__bar {
@@ -662,12 +681,26 @@ body {
   height: 300px;
   background: transparent url('../img/long_horiz_shadow.png') center -1px no-repeat;
 }
+.section--left_offset_for_nav {
+  padding-left: 300px;
+  overflow: hidden;
+}
 .top-nav {
   display: none;
   background-color: #ed3030;
 }
 .top-nav--active {
   display: block;
+}
+.top-nav__inner {
+  display: block;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 45px;
+  padding-bottom: 70px;
+  overflow: auto;
 }
 .top-nav__button {
   position: relative;
@@ -677,6 +710,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
+  padding: 0 15px;
   background-color: #ed3030;
   text-transform: uppercase;
   font: 400 11px/45px 'Circe Rounded';
@@ -686,7 +720,7 @@ body {
 .top-nav__button:after {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 15px;
   margin-top: -10px;
   content: '';
   display: block;
@@ -727,9 +761,22 @@ body {
   display: block;
   height: 100%;
   margin: 0 auto;
+  padding: 0 15px;
   text-decoration: none;
   font: 400 11px/45px 'Circe Rounded';
   color: #fff;
+}
+.top-nav--position_fixed {
+  position: fixed;
+  /*top: 45px;*/
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  height: 100%;
+  width: 300px;
+}
+.top-nav--position_fixed .top-nav__button {
+  width: 100%;
 }
 /* DESKTOP */
 @media screen and (min-width: 1025px) {
