@@ -681,28 +681,71 @@ body {
   height: 300px;
   background: transparent url('../img/long_horiz_shadow.png') center -1px no-repeat;
 }
-.section--left_offset_for_nav {
-  padding-left: 300px;
-  overflow: hidden;
-}
-.top-nav {
-  display: none;
-  background-color: #ed3030;
-}
-.top-nav--active {
-  display: block;
-}
-.top-nav__inner {
-  display: block;
+/* миксин для анимации */
+.left-ear {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9990;
+  opacity: 0;
+  width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: opacity 0.6s ease-in-out;
+  -o-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+}
+.left-ear__inner {
+  width: 300px;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: -300px;
   padding-top: 45px;
   padding-bottom: 70px;
   overflow: auto;
+  background-color: #ed3030;
+  -webkit-transition: margin-left 0.6s ease-in-out;
+  -o-transition: margin-left 0.6s ease-in-out;
+  transition: margin-left 0.6s ease-in-out;
 }
-.top-nav__button {
+.left-ear__inner--active {
+  margin-left: 0;
+}
+.left-ear--active {
+  opacity: 1;
+}
+/* DESKTOP */
+@media screen and (min-width: 1025px) {
+  .left-ear,
+  .right-ear {
+    display: none;
+  }
+}
+/* TOUCH */
+@media screen and (max-width: 1024px) {
+  .section--offset_for_left-ear {
+    padding-left: 300px;
+    overflow: hidden;
+  }
+  .section {
+    -webkit-transition: padding-left 0.6s ease-in-out;
+    -o-transition: padding-left 0.6s ease-in-out;
+    transition: padding-left 0.6s ease-in-out;
+  }
+  .header-top.section--offset_for_left-ear {
+    border-color: transparent;
+  }
+}
+.touch-nav {
+  display: block;
+  background-color: #ed3030;
+}
+.touch-nav__button {
   position: relative;
   display: block;
   height: 45px;
@@ -717,7 +760,7 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.top-nav__button:after {
+.touch-nav__button:after {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -728,13 +771,12 @@ body {
   height: 20px;
   background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -180px no-repeat;
 }
-.top-nav__button--active:after {
+.touch-nav__button--active:after {
   -ms-background-position-x: -20px;
   background-position-x: -20px;
 }
-.top-nav__list {
+.touch-nav__list {
   list-style: none;
-  /*display: none;*/
   display: block;
   height: 0;
   overflow: hidden;
@@ -744,11 +786,10 @@ body {
   border-top: 1px solid #da252c;
   border-bottom: 1px solid #fb3036;
 }
-.top-nav__list--active {
-  /*display: block;*/
+.touch-nav__list--active {
   height: auto;
 }
-.top-nav__item {
+.touch-nav__item {
   display: block;
   height: 45px;
   -webkit-box-sizing: border-box;
@@ -757,7 +798,7 @@ body {
   border-top: 1px solid #97292d;
   border-bottom: 1px solid #7a1e21;
 }
-.top-nav__item a {
+.touch-nav__item a {
   display: block;
   height: 100%;
   margin: 0 auto;
@@ -766,7 +807,7 @@ body {
   font: 400 11px/45px 'Circe Rounded';
   color: #fff;
 }
-.top-nav--position_fixed {
+.touch-nav--position_fixed {
   position: fixed;
   /*top: 45px;*/
   top: 0;
@@ -775,55 +816,57 @@ body {
   height: 100%;
   width: 300px;
 }
-.top-nav--position_fixed .top-nav__button {
+.touch-nav--position_fixed .touch-nav__button {
   width: 100%;
 }
 /* DESKTOP */
 @media screen and (min-width: 1025px) {
-  .top-nav {
+  .touch-nav {
     display: none;
   }
-  .top-nav--active {
+  .touch-nav--active {
     display: none;
   }
 }
 /*@tablet Album*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /*выравнивание "внутренностей" меню*/
-  .top-nav__button {
-    width: 750px;
-  }
-  .top-nav__item a {
-    width: 750px;
-  }
-}
 /*@tablet Portrait*/
-@media screen and (min-width: 640px) and (max-width: 767px) {
-  /*выравнивание "внутренностей" меню*/
-  .top-nav__button {
-    width: 620px;
-  }
-  .top-nav__item a {
-    width: 620px;
-  }
-}
 /*@mobile Album*/
-@media screen and (min-width: 480px) and (max-width: 639px) {
-  /*выравнивание "внутренностей" меню*/
-  .top-nav__button {
-    width: 460px;
-  }
-  .top-nav__item a {
-    width: 460px;
-  }
-}
 /*@mobile Portrait*/
-@media screen and (max-width: 479px) {
-  /*выравнивание "внутренностей" меню*/
-  .top-nav__button {
-    width: 300px;
-  }
-  .top-nav__item a {
-    width: 300px;
-  }
+.index-slider {
+  height: 449px;
+}
+.index-slider__inner {
+  height: 449px;
+  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
+}
+.jewelry-selection {
+  height: 206px;
+}
+.jewelry-selection__inner {
+  height: 206px;
+  background: transparent url('../img/stub/index_stub__460px__jewelry-selection.jpg') center 0 no-repeat;
+}
+.showcase {
+  height: 947px;
+}
+.showcase__inner {
+  height: 947px;
+  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
+}
+.index-info {
+  height: 546px;
+}
+.index-info__inner {
+  height: 546px;
+  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
+}
+.footer-all {
+  height: 311px;
+}
+.footer-all__inner {
+  height: 311px;
+  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
+}
+.header-bottom {
+  height: 10px;
 }

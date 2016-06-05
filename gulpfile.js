@@ -18,7 +18,14 @@ var dev_ = 'development/',
 		dev_less + 'header-top.less',
 		dev_less + 'header-middle.less',
 		dev_less + 'header-bottom.less',
-		dev_less + 'header-nav.less',
+		// dev_less + 'header-nav.less',
+
+		// для touchversion сайта
+		dev_less + 'touchversion__ears.less',
+		dev_less + 'touchversion__nav.less',
+
+		// stub
+		dev_less + 'stub__index-sections.less',
 	],
 	dev_css = dev_ + 'css/';
 
@@ -52,7 +59,8 @@ gulp.task('cssmain', function () {
 
 // Make "DEVELOPMENT"
 gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
-	return gulp.dest(dev_css);
+	// return gulp.dest(dev_css);
+	console.log('dev-OK');
 });
 
 

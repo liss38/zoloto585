@@ -1,22 +1,9 @@
-.top-nav {
-	display: none;
+.touch-nav {
+	display: block;
 
 	background-color: #ed3030;
 
-	&--active {
-		display: block;
-	}
-
-	&__inner {
-		display: block;
-		height: 100%;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		padding-top: 45px;
-		padding-bottom: 70px;
-		overflow: auto;
-	}
+	&__inner {}
 
 	&__button {
 		position: relative;
@@ -62,7 +49,6 @@
 	&__list {
 		list-style: none;
 
-		/*display: none;*/
 		display: block;
 		height: 0;
 		overflow: hidden;
@@ -74,7 +60,6 @@
 		border-bottom: 1px solid #fb3036;
 
 		&--active {
-			/*display: block;*/
 			height: auto;
 		}
 	}
@@ -112,7 +97,7 @@
 		height: 100%;
 		width: 300px;
 
-		.top-nav__button {
+		.touch-nav__button {
 			width: 100%;
 		}
 	}
@@ -120,7 +105,7 @@
 
 /* DESKTOP */
 @media screen and (min-width: @desktop-min) {
-	.top-nav {
+	.touch-nav {
 		display: none;
 
 		&--active {
@@ -129,59 +114,10 @@
 	}
 }
 /*@tablet Album*/
-@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {
-
-	/*выравнивание "внутренностей" меню*/
-	@inner-width: 750px;
-	.top-nav {
-		&__button {
-			width: @inner-width;
-		}
-
-		&__item a {
-			width: @inner-width;
-		}
-	}
-}
+@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {}
 /*@tablet Portrait*/
-@media screen and (min-width: @tablet_p-min) and (max-width: @tablet_p-max) {
-	/*выравнивание "внутренностей" меню*/
-		@inner-width: 620px;
-		.top-nav {
-			&__button {
-				width: @inner-width;
-			}
-
-			&__item a {
-				width: @inner-width;
-			}
-		}
-}
+@media screen and (min-width: @tablet_p-min) and (max-width: @tablet_p-max) {}
 /*@mobile Album*/
-@media screen and (min-width: @mobile_a-min) and (max-width: @mobile_a-max) {
-	/*выравнивание "внутренностей" меню*/
-		@inner-width: 460px;
-		.top-nav {
-			&__button {
-				width: @inner-width;
-			}
-
-			&__item a {
-				width: @inner-width;
-			}
-		}
-}
+@media screen and (min-width: @mobile_a-min) and (max-width: @mobile_a-max) {}
 /*@mobile Portrait*/
-@media screen and (max-width: @mobile_p-max) {
-	/*выравнивание "внутренностей" меню*/
-		@inner-width: 300px;
-		.top-nav {
-			&__button {
-				width: @inner-width;
-			}
-
-			&__item a {
-				width: @inner-width;
-			}
-		}
-}
+@media screen and (max-width: @mobile_p-max) {}
