@@ -11,11 +11,13 @@
 .left-ear {
 	position: fixed;
 	top: 0;
-	right: 0;
+	left: 0;
 	z-index: 9990;
+	margin-left: -100%;
 
 	opacity: 0;
 	width: 100%;
+	/*width: 0;*/
 	height: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -47,6 +49,7 @@
 
 	&--active {
 		opacity: 1;
+		margin-left: 0;
 	}
 }
 

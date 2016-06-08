@@ -6,19 +6,18 @@
 	<link rel="stylesheet" href="css/main.min.css">
 	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 </head>
-<!-- <body style="background: transparent url('img/stub/index_stub__460px.jpg') center 0 no-repeat; height: 2600px;"> -->
 <body>
 	<header>
 		<!-- "HEADER-TOP" -->
 		<div class="section header-top header-top--position_fixed">
 			<div class="section__inner header-top__inner">
-				<div class="header-top__item  header-top__item--show-only-desktopversion">
+				<div class="header-top__item  header-top__item--show-only-desktopversion  header-top-jewelry">
 					<a href="#" class="top-jewelry">Ювелирная сеть</a>
 				</div>
-				<div class="header-top__item  header-top__item--show-only-desktopversion">
+				<div class="header-top__item  header-top__item--show-only-desktopversion  header-top-lombards">
 					<a href="#" class="top-lombards">Ломбарды</a>
 				</div>
-				<div class="header-top__item  header-top__item--show-only-desktopversion">
+				<div class="header-top__item  header-top__item--show-only-desktopversion  header-top-address">
 					<a href="#" class="top-address">Адреса магазинов</a>
 				</div>
 				<div class="header-top__item  header-top__item--show-only-touchversion">
@@ -33,14 +32,14 @@
 				<div class="header-top__item  header-top__item--show-only-desktopversion">
 					
 				</div>
-				<div class="header-top__item">
+				<div class="header-top__item  header-top__item--unlogged">
 					<div class="top-favorites">145</div>
 				</div>
-				<div class="header-top__item">
+				<div class="header-top__item  header-top__item--unlogged">
 					<div class="top-bonuses">55055 р</div>
 				</div>
-				<div class="header-top__item">
-					<div class="top-user">Мой профиль</div>
+				<div class="header-top__item header-top-user">
+					<div class="top-user  top-user--unlogged">Мой профиль</div>
 				</div>
 			</div>
 		</div>
@@ -143,8 +142,8 @@
 			<div class="section__inner header-middle__inner">
 				<a href="#" class="header-middle__logo"><img src="img/top_logo.png"></a>
 				<div class="header-middle__bar">
-					<a href="#" class="header-middle__button  header-middle__button--promo">Акции</a>
-					<a href="#" class="header-middle__button  header-middle__button--sale">Суперцена</a>
+					<a href="/action/" class="header-middle__button  header-middle__button--promo">Акции</a>
+					<a href="/catalog/skidka_70/" class="header-middle__button  header-middle__button--sale">Суперцена</a>
 				</div>
 			</div>
 		</div>
@@ -208,5 +207,41 @@
 	<!-- JS -->
 	<script src="http://zoloto585.ru/bitrix/templates/zoloto/js/jquery-1.11.1.min.js"></script>
 	<script src="js/touchversion__nav.js"></script>
+	<script>
+		// Эмуляция авторизации
+		$(document).ready(function () {
+			$('body').addClass('the_user_is_not_logged_in');
+
+			function loggedIn() {
+				// флаг авторизованности(для тестирования фронтенда)
+				$('body').removeClass('the_user_is_not_logged_in');
+				$('body').addClass('the_user_is_logged_in');
+
+				$('.header-top__item--unlogged').removeClass('header-top__item--unlogged').addClass('header-top__item--logged');
+
+				$('.top-user').removeClass('top-user--unlogged');
+			}
+
+			function loggedOut() {
+				// флаг авторизованности(для тестирования фронтенда)
+				$('body').removeClass('the_user_is_logged_in');
+				$('body').addClass('the_user_is_not_logged_in');
+
+				$('.header-top__item--logged').removeClass('header-top__item--logged').addClass('header-top__item--unlogged');
+
+				$('.top-user').addClass('top-user--unlogged');
+			}
+
+			$(document).on('click', function (elem) {
+				var wanted = elem.target,
+					$wanted = $(wanted);
+
+				if($wanted.hasClass('top-user')) {
+					if($('body').hasClass('the_user_is_not_logged_in')) loggedIn();
+					else if($('body').hasClass('the_user_is_logged_in')) loggedOut();
+				}
+			});
+		});
+	</script>
 </body>
 </html>
