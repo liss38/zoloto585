@@ -50,6 +50,10 @@
 	text-transform: uppercase;
 	.font-circe_regular(10px, 33px, #666);
 
+	&:hover {
+		background-color: #f6f6f6;
+	}
+
 	&:before {
 		position: absolute;
 		top: 50%;
@@ -63,22 +67,31 @@
 
 		background: transparent url(@img-sprite-header_20x20) 0 -140px no-repeat;
 	}
-}
 
-.header-middle__button--sale {
-	&:before {
-		margin-top: -11px;
+	&--sale {
+		border-right: 1px solid rgba(207,207,207,.5);
 
-		-ms-background-position-y: -140px;
-		background-position-y: -140px;
+		&:before {
+			margin-top: -11px;
+
+			-ms-background-position-y: -140px;
+			background-position-y: -140px;
+		}
 	}
-}
-.header-middle__button--promo {
-	border-right: 1px solid rgba(207,207,207,.5);
 
-	&:before {
-		-ms-background-position-y: -160px;
-		background-position-y: -160px;
+	&--promo {
+		border-right: 1px solid rgba(207,207,207,.5);
+
+		&:before {
+			-ms-background-position-y: -160px;
+			background-position-y: -160px;
+		}
+	}
+
+	&--bonuses {
+		&:before {
+			background-position: -20px -80px;
+		}
 	}
 }
 

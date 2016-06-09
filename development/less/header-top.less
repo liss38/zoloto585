@@ -14,10 +14,7 @@
 	&__item {
 		position: relative;
 
-		/*display: inline-block;
-		vertical-align: top;*/
 		display: table-cell;
-		height: 100%;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -46,7 +43,6 @@
 		}
 
 		&--phone {
-			/*width: 450px;*/
 			text-align: center;
 		}
 	}
@@ -117,6 +113,10 @@
 		-ms-background-position-y: -20px;
 		background-position-y: -20px;
 	}
+
+	& span {
+		border-bottom: 1px dotted #b36b6b;
+	}
 }
 
 .top-phone {
@@ -141,7 +141,7 @@
 	text-align: center;
 
 	&:before {
-		margin-left: -20px;
+		margin-left: -22px;
 
 		-ms-background-position-y: -60px;
 		background-position-y: -60px;
@@ -181,12 +181,12 @@
 		display: block;
 		width: 20px;
 		height: 20px;
-		background: transparent url(@img-sprite-header_20x20) 0 -120px no-repeat;
+		background: transparent url(@img-sprite-header_20x20) -20px -120px no-repeat;
 	}
 
-	&--unlogged {
+	&--logged {
 		&:after {
-			background-position: -20px -120px;
+			background-position: 0 -120px;
 		}
 	}
 }
@@ -236,31 +236,63 @@
 @media screen and (min-width: @desktop-min) {
 	.header-top {
 		height: 32px;
+
+		&__item {
+			text-align: center;
+
+			&:after {
+				height: 31px;
+			}
+		}
 	}
+
+	.header-top-sandwich,
+	.header-top-bonuses { display: none; }
+
+	.header-top-jewelry {
+		&:after {
+			display: none;
+		}
+	}
+
+	.header-top-jewelry,
+	.header-top-lombards,
+	.header-top-address,
+	.header-top-user {
+		&:hover {
+			background-color: #cb2430;
+		}
+	}
+
 	.header-top-jewelry {
 		width: 150px;
 	}
 	.header-top-lombards {
 		width: 100px;
 	}
+	.header-top-geo,
 	.header-top-address {
 		width: 125px;
 	}
 	.header-top-user {
 		width: 150px;
 	}
-
-
-	.header-top__item {
-		text-align: center;
-
-		&:after {
-			/*display: none;*/
-			height: 31px;
-		}
+	.header-top-favorites {
+		width: 50px;
 	}
-	.header-top__item--show-only-touchversion {
-		display: none;
+
+
+	.top-jewelry,
+	.top-lombards,
+	.top-address,
+	.top-geo,
+	.top-user {
+		width: 100%;
+		font-size: 10px;
+
+		&:hover {
+			background-color: #cb2430;
+		}
 	}
 
 	.top-jewelry,
@@ -270,10 +302,7 @@
 	.top-phone,
 	.top-favorites,
 	.top-bonuses,
-	.top-user,
-	.top-jewelry,
-	.top-lombards,
-	.top-address {
+	.top-user {
 		height: 31px;
 		line-height: 32px;
 	}
@@ -286,6 +315,7 @@
 
 	.top-phone {
 		margin: 0;
+		font-size: 14px;
 	}
 
 	.top-user {
@@ -324,13 +354,24 @@
 			&:after {
 				height: 44px;
 			}
-
-			&--show-only-desktopversion {
-				display: none;
-			}
 		}
 	}
+
+	.header-top-jewelry,
+	.header-top-lombards,
+	.header-top-address { display: none; }
+
+	.header-top-geo,
+	.header-top-sandwich { width: 50px; }
 	
+
+	.top-geo,
+	.top-phone,
+	.top-favorites,
+	.top-bonuses,
+	.top-user, {
+		height: 44px;
+	}
 
 	.top-geo,
 	.top-user {
