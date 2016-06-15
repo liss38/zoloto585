@@ -344,7 +344,8 @@ body {
 }
 .header-top {
   height: 45px;
-  background-color: #e61725;
+  /*background-color: #e61725;*/
+  background-color: #ed3030;
   border-bottom: 1px solid #eaeaea;
   font-size: 0;
 }
@@ -811,9 +812,193 @@ body {
     margin: 10px auto;
   }
 }
+/* миксин для анимации */
 .header-bottom {
-  height: 300px;
+  height: 1000px;
   background: transparent url('../img/long_horiz_shadow.png') center -1px no-repeat;
+}
+/* TOUCH */
+@media screen and (max-width: 1024px) {
+  .header-bottom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9990;
+    margin-left: -100%;
+    opacity: 0;
+    width: 100%;
+    /*width: 0;*/
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-transition: opacity 0.6s ease-in-out;
+    -o-transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
+  }
+  .header-bottom__inner {
+    width: 300px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -300px;
+    padding-top: 45px;
+    padding-bottom: 70px;
+    overflow: auto;
+    background-color: #ed3030;
+    -webkit-transition: margin-left 0.6s ease-in-out;
+    -o-transition: margin-left 0.6s ease-in-out;
+    transition: margin-left 0.6s ease-in-out;
+  }
+  .header-bottom__inner--active {
+    margin-left: 0;
+  }
+  .header-bottom--active {
+    opacity: 1;
+    margin-left: 0;
+  }
+  .section--offset-left {
+    padding-left: 300px;
+    overflow: hidden;
+  }
+  .section {
+    -webkit-transition: padding-left 0.6s ease-in-out;
+    -o-transition: padding-left 0.6s ease-in-out;
+    transition: padding-left 0.6s ease-in-out;
+  }
+  .header-top.section--offset-left {
+    border-color: transparent;
+  }
+}
+/* нулевой уровень вложенности элементов каталога */
+/* первый уровень вложенности элементов каталога */
+/* второй уровень вложенности элементов каталога */
+/* DESKTOP */
+@media screen and (min-width: 1025px) {
+  /* нулевой уровень вложенности элементов каталога */
+  /* первый уровень вложенности элементов каталога */
+  /* второй уровень вложенности элементов каталога */
+}
+/* TOUCH */
+@media screen and (max-width: 1024px) {
+  .main-nav__link,
+  .main-nav-level-1__link {
+    display: none;
+  }
+  .main-nav__list,
+  .main-nav-level-1__list,
+  .main-nav-level-2__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+  .main-nav-level-1__header {
+    position: relative;
+    display: block;
+    height: 45px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #ed3030;
+    text-transform: uppercase;
+    font: 400 11px/45px 'Circe Rounded';
+    color: #fff;
+    cursor: pointer;
+  }
+  .main-nav-level-1__header:after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -10px;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -180px no-repeat;
+  }
+  .main-nav-level-1__header--active:after {
+    -ms-background-position-x: -20px;
+    background-position-x: -20px;
+  }
+  .main-nav-level-1__list {
+    list-style: none;
+    /*display: none;*/
+    display: block;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #8a2226;
+    border-top: 1px solid #da252c;
+    border-bottom: 1px solid #fb3036;
+  }
+  .main-nav-level-1__list--active {
+    /*display: block;*/
+    height: auto;
+  }
+  .main-nav-level-1__link--all-items {
+    display: block;
+    height: 45px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 15px;
+    overflow: hidden;
+    background-color: #8a2226;
+    border-top: 1px solid #97292d;
+    border-bottom: 1px solid #7a1e21;
+    text-decoration: none;
+    font: 400 11px/45px 'Circe Rounded';
+    color: #fff;
+  }
+  .main-nav-level-2 {
+    border-top: 1px solid #97292d;
+    border-bottom: 1px solid #7a1e21;
+  }
+  .main-nav-level-2__header {
+    display: block;
+    height: 45px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-decoration: none;
+    font: 400 11px/45px 'Circe Rounded';
+    color: #fff;
+    cursor: pointer;
+  }
+  .main-nav-level-2__list {
+    /*height: 0;*/
+    display: none;
+    background-color: #eee;
+  }
+  .main-nav-level-2__list--active {
+    /*height: auto;*/
+    display: block;
+  }
+  .main-nav-level-2__item {
+    display: block;
+    height: 45px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  .main-nav-level-2__link {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-decoration: none;
+    font: 400 11px/45px 'Circe Rounded';
+    color: #333;
+  }
 }
 /* миксин для анимации */
 .left-ear {
@@ -1004,6 +1189,6 @@ body {
   height: 311px;
   background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
 }
-.header-bottom {
-  height: 10px;
-}
+/* .header-bottom {
+	height: 10px;
+} */

@@ -1,6 +1,81 @@
+/* миксин для анимации */
+.ear_transition(@property: all, @time: 0.6s, @function: ease-in-out) {
+	-webkit-transition: @property @time @function;
+	-o-transition: @property @time @function;
+	transition: @property @time @function;
+}
+
+
+
+
 .header-bottom {
-	height: 300px;
+	height: 1000px;
 	background: transparent url(@img-long-shadow) center -1px no-repeat ;
 }
 
 @media screen and (max-width: @tablet_a-max) {}
+
+
+
+/* TOUCH */
+@media screen and (max-width: @tablet_a-max) {
+	.header-bottom {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9990;
+		margin-left: -100%;
+
+		opacity: 0;
+		width: 100%;
+		/*width: 0;*/
+		height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		background-color: rgba(255, 255, 255, .7);
+
+		.ear_transition(opacity);
+
+
+		&__inner {
+			width: 300px;
+			height: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-left: -300px;
+			padding-top: 45px;
+			padding-bottom: 70px;
+			overflow: auto;
+
+			background-color: #ed3030;
+
+			.ear_transition(margin-left);
+
+			&--active {
+				margin-left: 0;
+			}
+		}
+
+
+		&--active {
+			opacity: 1;
+			margin-left: 0;
+		}
+	}
+
+
+	.section--offset-left {
+		padding-left: 300px;
+		overflow: hidden;
+	}
+	.section {
+		.ear_transition(padding-left);
+	}
+
+	.header-top.section--offset-left {
+		border-color: transparent;
+	}
+}
