@@ -17,13 +17,13 @@ $(document).ready(function() {
 			$wanted = $(wanted);
 
 
-		if($wanted.hasClass('top-sandwich')) {
+		if($wanted.hasClass('top-sandwich__button')) {
 
 			// закрываем меню
-			if($wanted.hasClass('top-sandwich--active')) { 
+			if($wanted.hasClass('top-sandwich__button--active')) { 
 				$('.section').removeClass('section--offset-left');
 
-				$wanted.removeClass('top-sandwich--active');
+				$wanted.removeClass('top-sandwich__button--active');
 				$('.header-bottom').removeClass('header-bottom--active');
 				$('.header-bottom__inner').removeClass('header-bottom__inner--active');
 
@@ -35,7 +35,7 @@ $(document).ready(function() {
 				$('.section').addClass('section--offset-left');
 				$('.header-bottom').removeClass('section--offset-left');
 
-				$wanted.addClass('top-sandwich--active');
+				$wanted.addClass('top-sandwich__button--active');
 				$('.header-bottom').addClass('header-bottom--active');
 				$('.header-bottom__inner').addClass('header-bottom__inner--active');
 			}
@@ -47,7 +47,7 @@ $(document).ready(function() {
 			$wanted.removeClass('header-bottom--active');
 			$('.header-bottom__inner').removeClass('header-bottom__inner--active');
 			$('.section').removeClass('section--offset-left');
-			$('.top-sandwich').removeClass('top-sandwich--active');
+			$('.top-sandwich__button').removeClass('top-sandwich__button--active');
 
 			resetMainNav();
 		}
