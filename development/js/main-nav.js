@@ -4,7 +4,7 @@
 $(document).ready(function() {
 
 	$(document).on('click', function (el) {
-		// функция сбрасывает меню до дефолтного состояния
+		// функция сбрасывает меню до дефолтного состояния(все вкладки становятся закрытыми)
 		function resetMainNav() {
 			$('.main-nav-level-1__header').removeClass('main-nav-level-1__header--active');
 			$('.main-nav-level-1__list').removeClass('main-nav-level-1__list--active');
@@ -17,6 +17,7 @@ $(document).ready(function() {
 			$wanted = $(wanted);
 
 
+		// 
 		if($wanted.hasClass('top-sandwich__button')) {
 
 			// закрываем меню
@@ -41,6 +42,17 @@ $(document).ready(function() {
 			}
 		}
 
+		// закрытие по клику на надпись в кнопке
+		if($wanted.hasClass('top-sandwich__button-text')) {
+			$('.section').removeClass('section--offset-left');
+
+			$('.top-sandwich__button').removeClass('top-sandwich__button--active');
+			$('.header-bottom').removeClass('header-bottom--active');
+			$('.header-bottom__inner').removeClass('header-bottom__inner--active');
+
+			resetMainNav();
+		}
+
 		// закрытие панели(которая слева) 
 		// по нажатию по пустой области(эскейпер)
 		if($wanted.hasClass('header-bottom')) {
@@ -51,8 +63,6 @@ $(document).ready(function() {
 
 			resetMainNav();
 		}
-
-
 
 
 
