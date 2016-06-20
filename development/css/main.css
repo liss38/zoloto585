@@ -924,7 +924,7 @@ body {
   left: 27px;
   width: 50%;
 }
-.top-user__button--logged:after {
+.top-user__button--login:after {
   background-position: 0 -120px;
 }
 /*
@@ -1070,11 +1070,28 @@ body {
   background-position: -20px -80px;
 }
 /*
-	NO DESKTOP
+	DESKTOP
+*/
+/* @media screen and (min-width: @desktop-min) {
+	.header-middle {
+
+		&__button {
+			&--bonuses {
+				display: block;
+			}
+		}
+	}
+}
+ */
+/*
+	TOUCH
 */
 @media screen and (max-width: 1024px) {
   .header-middle {
     margin-top: 45px;
+  }
+  .header-middle__button--bonuses {
+    display: none;
   }
 }
 /*@mobile Portrait*/
@@ -1220,9 +1237,7 @@ body {
     border-bottom: 1px solid #fb3535;
   }
   .main-nav-level-1__list--active {
-    /*display: block;*/
     height: auto;
-    /*width: 280px;*/
   }
   .main-nav-level-1__item {
     border-bottom: 1px solid #8f2d2a;
@@ -1241,20 +1256,18 @@ body {
     font: 400 10px/45px 'Circe Rounded';
     color: #fff;
   }
-  .main-nav-level-2 {
-    /* border-bottom: 1px solid #8f2d2a;
-		border-top: 1px solid #d0433f; */
-  }
   .main-nav-level-2__header {
     display: block;
-    height: 45px;
+    /*height: 45px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0 10px 0 20px;
+    /*padding: 0 10px 0 20px;*/
+    padding: 19px 10px 15px 20px;
     text-decoration: none;
     text-transform: uppercase;
-    font: 400 10px/45px 'Circe Rounded';
+    /*.font-circerou_regular(10px, 45px, #fff);*/
+    font: 400 10px/11px 'Circe Rounded';
     color: #fff;
     cursor: pointer;
   }
@@ -1274,7 +1287,7 @@ body {
   }
   .main-nav-level-2__item {
     display: block;
-    height: 45px;
+    /*height: 45px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1291,11 +1304,12 @@ body {
   }
   .main-nav-level-2__link {
     display: block;
-    height: 100%;
+    /*height: 100%;*/
     margin: 0 auto;
-    padding: 0 10px 0 20px;
+    padding: 19px 10px 15px 20px;
     text-decoration: none;
-    font: 400 11px/45px 'Circe Rounded';
+    /*.font-circerou_regular(11px, 45px, #fff);*/
+    font: 400 11px/11px 'Circe Rounded';
     color: #fff;
   }
 }

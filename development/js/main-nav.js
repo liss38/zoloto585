@@ -12,12 +12,20 @@ $(document).ready(function() {
 			$('.main-nav-level-2__list').removeClass('main-nav-level-2__list--active');
 		}
 
+		// настройка для вкладок открытых по умолчанию для первого открытия меню
+		function defaultMainNav() {
+			$('.main-nav-level-1__header').first().addClass('main-nav-level-1__header--active');
+			$('.main-nav-level-1__list').first().addClass('main-nav-level-1__list--active');
+			$('.main-nav-level-2__header').first().addClass('main-nav-level-2__header--active');
+			$('.main-nav-level-2__list').first().addClass('main-nav-level-2__list--active');
+		}
+
 
 		var wanted = el.target,
 			$wanted = $(wanted);
 
 
-		// 
+		// клик по "сэндвичу"
 		if($wanted.hasClass('top-sandwich__button')) {
 
 			// закрываем меню
@@ -39,6 +47,8 @@ $(document).ready(function() {
 				$wanted.addClass('top-sandwich__button--active');
 				$('.header-bottom').addClass('header-bottom--active');
 				$('.header-bottom__inner').addClass('header-bottom__inner--active');
+
+				defaultMainNav();
 			}
 		}
 
