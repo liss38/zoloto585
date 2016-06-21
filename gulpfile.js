@@ -24,12 +24,14 @@ var dev_ = 'development/',
 		dev_less + 'main-nav.less',
 		// dev_less + 'header-nav.less',
 
-		// для touchversion сайта
-		dev_less + 'touchversion__ears.less',
-		dev_less + 'touchversion__nav.less',
-
 		// stub
 		dev_less + 'stub__index-sections.less',
+
+
+	],
+	dev_lesspcard = [
+		dev_less + '@fonts.less',
+		dev_less + 'pcard/pcard-motivate.less',
 	],
 	dev_css = dev_ + 'css/';
 
@@ -66,6 +68,17 @@ gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
 	// return gulp.dest(dev_css);
 	console.log('dev-OK');
 });
+
+
+// Make "PCARD"
+gulp.task('make-pcard', function () {
+	return gulp.src(dev_lesspcard)
+		.pipe(concat('pcard.less'))
+		.pipe(less())
+		.pipe(rename('pcard-motivate.css'))
+		.pipe(gulp.dest(dev_css));
+});
+
 
 
 // ZIP
