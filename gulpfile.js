@@ -9,19 +9,22 @@ var gulp = require('gulp'),
 var dev_ = 'development/',
 	dev_less = dev_ + 'less/',
 	dev_lessmain = [
-		dev_less + '@path-local.less',
+		/*dev_less + '@path-local.less',
 		dev_less + '@breakpoints.less',
 		dev_less + '@fonts.less',
 		dev_less + 'fonts.less',
 		dev_less + 'grid.less',
-		dev_less + 'forms.less',
-		// dev_less + 'header-top.less',
-		dev_less + 'header-top/_import.less',
+		dev_less + 'forms.less',*/
 
-		// dev_less + 'header-middle.less',
-		dev_less + 'header-middle/header-middle.less',
-		dev_less + 'header-bottom.less',
-		dev_less + 'main-nav.less',
+		dev_less + 'global/_import.less',
+		
+		dev_less + 'header-top/_header-top.less',
+
+		dev_less + 'header-middle/_header-middle.less', /* сделать _import.less */
+
+		dev_less + 'header-bottom/_header-bottom.less',
+		// dev_less + 'header-bottom.less',
+		// dev_less + 'main-nav.less',
 		// dev_less + 'header-nav.less',
 
 		// stub
@@ -31,7 +34,7 @@ var dev_ = 'development/',
 	],
 	dev_lesspcard = [
 		dev_less + '@fonts.less',
-		dev_less + 'pcard/pcard-motivate.less',
+		dev_less + 'product-card/pcard-motivate.less',
 	],
 	dev_css = dev_ + 'css/';
 
@@ -56,12 +59,29 @@ gulp.task('lessmain', function () {
 		.pipe(gulp.dest(dev_css));
 });
 
+
+
+// test
+gulp.task('header-top', function () {
+	return gulp.src(['development/less/@path-local.less', 'development/less/@breakpoints.less','development/less/@fonts.less', 'development/less/header-top/_header-top.less'])
+		.pipe(concat('new-header-top.less'))
+		.pipe(less())
+		.pipe(gulp.dest('development/less'));
+});
+
+
 gulp.task('cssmain', function () {
 	return gulp.src(dev_css + 'main.css')
 		.pipe(cssmin())
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest(dev_css));
 });
+
+
+
+
+
+
 
 // Make "DEVELOPMENT"
 gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {

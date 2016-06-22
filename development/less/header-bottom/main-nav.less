@@ -1,0 +1,64 @@
+/* нулевой уровень вложенности элементов каталога */
+.main-nav {
+
+	&__header {}
+
+	&__list {}
+
+	&__item {}
+
+	&__link {}
+}
+
+
+
+
+
+
+/* DESKTOP */
+@media screen and (min-width: @desktop-min) {
+	/* нулевой уровень вложенности элементов каталога */
+	.main-nav {
+		display: none;
+
+		&__header {}
+
+		&__list {}
+
+		&__item {}
+
+		&__link {}
+	}
+}
+
+
+
+
+
+/* TOUCH */
+@media screen and (max-width: @tablet_a-max) {
+
+	.main-nav {
+
+		&__header {
+			position: fixed;
+			top: 0;
+		}
+
+
+		&__list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+
+
+		&__item {}
+
+
+		&__link {
+			display: none;
+		}
+	}
+}

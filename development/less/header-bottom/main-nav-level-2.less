@@ -1,0 +1,106 @@
+/* второй уровень вложенности элементов каталога */
+.main-nav-level-2 {
+
+	&__header {}
+
+	&__list {}
+
+	&__item {}
+
+	&__link {}
+}
+
+
+
+
+
+
+/* DESKTOP */
+@media screen and (min-width: @desktop-min) {
+
+	/* второй уровень вложенности элементов каталога */
+	.main-nav-level-2 {
+
+		&__header {}
+
+		&__list {}
+
+		&__item {}
+
+		&__link {}
+	}
+}
+
+
+
+
+
+/* TOUCH */
+@media screen and (max-width: @tablet_a-max) {
+
+	.main-nav-level-2 {
+
+		&__header {
+			display: block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 19px 10px 15px 20px;
+
+			text-decoration: none;
+			text-transform: uppercase;
+			.font-circerou_regular(10px, 11px, #fff);
+
+			cursor: pointer;
+
+			&--active {
+				border-bottom: 1px solid #d0433f;
+			}
+		}
+
+		&__list {
+			list-style: none;
+
+			display: none;
+			margin: 0;
+			padding: 0;
+
+			background-color: #c53e3a;
+			border-top: 1px solid #8f2d2a;
+
+
+			&--active {
+				display: block;
+			}
+		}
+
+		&__item {
+			display: block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			border-top: 1px solid #d0433f;
+			border-bottom: 1px solid #b33b37;
+
+			&--first-item,
+			&:first-child {
+				border-top: 1px solid #af3733;
+			}
+
+			&--last-item,
+			&:last-child {
+				border-bottom: 1px solid #af3733;
+			}
+		}
+
+		&__link {
+			display: block;
+			margin: 0 auto;
+			padding: 19px 10px 15px 20px;
+
+			text-decoration: none;
+			.font-circerou_regular(11px, 11px, #fff);
+		}
+	}
+}
