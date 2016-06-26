@@ -6,76 +6,48 @@ var gulp = require('gulp'),
 	zip = require('gulp-zip');
 
 
-var dev_ = 'development/',
-	dev_less = dev_ + 'less/',
-	dev_lessmain = [
-		/*dev_less + '@path-local.less',
-		dev_less + '@breakpoints.less',
-		dev_less + '@fonts.less',
-		dev_less + 'fonts.less',
-		dev_less + 'grid.less',
-		dev_less + 'forms.less',*/
-
-		dev_less + 'global/_import.less',
-		
-		dev_less + 'header-top/_header-top.less',
-
-		dev_less + 'header-middle/_header-middle.less', /* сделать _import.less */
-
-		dev_less + 'header-bottom/_header-bottom.less',
-		// dev_less + 'header-bottom.less',
-		// dev_less + 'main-nav.less',
-		// dev_less + 'header-nav.less',
-
-		// stub
-		dev_less + 'stub__index-sections.less',
-
-
-	],
-	dev_lesspcard = [
-		dev_less + '@fonts.less',
-		dev_less + 'product-card/pcard-motivate.less',
-	],
-	dev_css = dev_ + 'css/';
-
-
-var prod_ = 'production/';
-
-
-/*gulp.task('cssmain', function () {
-	return gulp.src(dev_lessmain)
-		.pipe(concat('all.less'))
-		.pipe(less())
-		.pipe(cssmin())
-		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest(dev_css));
-});*/
-
-gulp.task('lessmain', function () {
+/*gulp.task('lessmain', function () {
 	return gulp.src(dev_lessmain)
 		.pipe(concat('main.less'))
 		.pipe(less())
 		.pipe(rename('main.css'))
 		.pipe(gulp.dest(dev_css));
-});
+});*/
 
 
 
-// test
-gulp.task('header-top', function () {
-	return gulp.src(['development/less/@path-local.less', 'development/less/@breakpoints.less','development/less/@fonts.less', 'development/less/header-top/_header-top.less'])
-		.pipe(concat('new-header-top.less'))
+// main.css
+gulp.task('make-main-css', function () {
+	return gulp.src('development/less/_main.less')
+		// .pipe(concat('main.less'))
 		.pipe(less())
 		.pipe(gulp.dest('development/less'));
 });
 
 
-gulp.task('cssmain', function () {
+
+
+
+// pcard-description.css
+gulp.task('make-pcard-css', function () {
+	return gulp.src('development/less/_pcard--unstable.less')
+		.pipe(less())
+		.pipe(rename('pcard_description.css'))
+		.pipe(gulp.dest('development/css'));
+});
+
+
+
+
+
+
+
+/*gulp.task('cssmain', function () {
 	return gulp.src(dev_css + 'main.css')
 		.pipe(cssmin())
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest(dev_css));
-});
+});*/
 
 
 
@@ -84,20 +56,20 @@ gulp.task('cssmain', function () {
 
 
 // Make "DEVELOPMENT"
-gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
+/*gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
 	// return gulp.dest(dev_css);
 	console.log('dev-OK');
-});
+});*/
 
 
 // Make "PCARD"
-gulp.task('make-pcard', function () {
+/*gulp.task('make-pcard', function () {
 	return gulp.src(dev_lesspcard)
 		.pipe(concat('pcard.less'))
 		.pipe(less())
 		.pipe(rename('pcard-motivate.css'))
 		.pipe(gulp.dest(dev_css));
-});
+});*/
 
 
 
