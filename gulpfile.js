@@ -38,39 +38,12 @@ gulp.task('make-pcard-css', function () {
 
 
 
-
-
-
-
-/*gulp.task('cssmain', function () {
-	return gulp.src(dev_css + 'main.css')
-		.pipe(cssmin())
-		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest(dev_css));
-});*/
-
-
-
-
-
-
-
-// Make "DEVELOPMENT"
-/*gulp.task('make-dev', ['lessmain', 'cssmain'],  function () {
-	// return gulp.dest(dev_css);
-	console.log('dev-OK');
-});*/
-
-
-// Make "PCARD"
-/*gulp.task('make-pcard', function () {
-	return gulp.src(dev_lesspcard)
-		.pipe(concat('pcard.less'))
-		.pipe(less())
-		.pipe(rename('pcard-motivate.css'))
-		.pipe(gulp.dest(dev_css));
-});*/
-
+// CSS NAMESPACE
+gulp.task('namespace', function () {
+	return gulp.src('development/less/**/.NAMESPACE')
+		.pipe(concat('all.NAMESPACE'))
+		.pipe(gulp.dest('about'));
+});
 
 
 // ZIP
