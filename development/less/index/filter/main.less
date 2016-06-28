@@ -1,0 +1,35 @@
+.index-filter {
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #cccbca;
+	box-shadow: 0 1px 0 0 #efefef;
+
+	&__inner {
+
+	}
+
+
+	&__tab {
+		border-bottom: 1px solid #cccbca;
+		box-shadow: 0 1px 0 0 #efefef;
+	}
+}
+
+/*
+	DESKTOP
+*/
+@media screen and (min-width: @desktop-min) {
+	.index-filter {
+		display: none;
+	}
+}
+/*
+	TOUCH
+*/
+@media screen and (max-width: @tablet_a-max) {
+	.index-filter {
+
+		&__inner {
+			width: 100%;
+		}
+	}
+}

@@ -19,13 +19,19 @@ var gulp = require('gulp'),
 // main.css
 gulp.task('make-main-css', function () {
 	return gulp.src('development/less/_main.less')
-		// .pipe(concat('main.less'))
 		.pipe(less())
-		.pipe(gulp.dest('development/less'));
+		.pipe(rename('main.css'))
+		.pipe(gulp.dest('development/css'));
 });
 
 
-
+// index.css
+gulp.task('make-index-css', function () {
+	return gulp.src('development/less/_index.less')
+		.pipe(less())
+		.pipe(rename('index.css'))
+		.pipe(gulp.dest('development/css'));
+});
 
 
 // pcard-description.css
@@ -38,12 +44,26 @@ gulp.task('make-pcard-css', function () {
 
 
 
+// make-dev
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
+	return gulp.src('development/css/main.css')
+		.pipe(cssmin())
+		.pipe(rename('main.min.css'))
+		.pipe(gulp.dest('development/css'));
+});
+
+
+
+
 // CSS NAMESPACE
 gulp.task('namespace', function () {
 	return gulp.src('development/less/**/.NAMESPACE')
 		.pipe(concat('all.NAMESPACE'))
 		.pipe(gulp.dest('about'));
 });
+
+
+
 
 
 // ZIP

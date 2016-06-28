@@ -21,9 +21,6 @@
 @field-ico-width: 37px;
 /*@field-ico*/
 
-@field-icons-url: '../img/sprites/sprite__form-icos_37x35.png';
-
-
 
 .form__field {
 	position: relative;
@@ -45,19 +42,7 @@
 
 	/*область с иконкой-метафорой поля*/
 	&-ico {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 2;
-
-		display: inline-block;
-		width: @field-ico-width;
-		height: 100%;
-
-		border-right: @field-border;
-		background-image: url(@field-icons-url);
-		background-repeat: no-repeat;
-		background-color: #f1f1f1;
+		
 	}
 	
 	/* место куда вводится текст */
@@ -83,14 +68,88 @@
 		font: @field-text-font;
 		color: @field-text-color;
 	}
+
+	/* select */
+	&-select {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		/*padding: @field-inner-padding;*/
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		border: 0;
+		outline: none;
+
+		text-transform: uppercase;
+		font: @field-text-font;
+		color: @field-text-color;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		background: transparent;
+	}
+}
+
+.form {
+
+	&__field {}
+
+
+	&__field-ico {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		display: inline-block;
+		width: @field-ico-width;
+		height: 100%;
+
+		border-right: @field-border;
+		background-image: url(@img-sprite-form_37x35);
+		background-repeat: no-repeat;
+		background-color: #f1f1f1;
+
+		&--select-arrow {
+			border: 0;
+			background-color: transparent;
+			left: auto;
+			right: 0;
+		}
+	}
+
+
+	&__field-select {}
+	/*&__field- {}*/
+	/*&__field- {}*/
+	/*&__field- {}*/
+}
+
+.select-arrow {
+
 }
 
 /* активное состояние поля */
 .form__field:hover,
 .form__field:focus,
+
+.form__field--active,
+.form__field--focus,
+
 .form__field_active,
-.form__field.active,
 .form__field_focus,
+
+.form__field.active,
 .form__field.focus {
 	border: @field_active-border;
 
@@ -98,10 +157,15 @@
 		border-right: @field_active-border;
 		-ms-background-position-x: -37px;
 		background-position-x: -37px;
+
+		&--select-arrow {
+			border: 0;
+		}
 	}
 }
 
 /* прошедшее валидацию поле */
+.form__field--valid_true,
 .form__field_valid_true,
 .form__field.valid_true,
 .form__field.valid-true {
@@ -112,20 +176,22 @@
 }
 
 /* непрошедшее валидацию поле */
+.form__field--valid_false,
 .form__field_valid_false,
 .form__field.valid_false,
 .form__field.valid-false {}
 
 /* распределение иконок из спрайта(по вертикали) по селекторам */
-.field-icons-1 { background-position: 0 0; }
-.field-icons-2 { background-position: 0 -35px; }
+.field-icons-1 { background-position: 0 0; }/* человек, юзер */
+.field-icons-2 { background-position: 0 -35px; } /* конверт */
+.field-icons-4 { background-position: 0 -105px; } /* стрелка для селеста */
 
 @media screen and (max-width: 767px) {
 	@field-height: 50px;
 	@field-inner-padding: 0 15px 0 65px;
 	@field-text-font: 14px/@field-height 'Circe-Regular';
 	@field-ico-width: 50px;
-	@field-icons-url: '../images/sprite__form-icos_50x48.png';
+	/*@field-icons-url: '../images/sprite__form-icos_50x48.png';*/
 
 	.form__field {
 		height: @field-height;
@@ -133,7 +199,7 @@
 		/*область с иконкой-метафорой поля*/
 		&-ico {
 			width: @field-ico-width;
-			background-image: url(@field-icons-url);
+			background-image: url(@img-sprite-form_50x48);
 		}
 		/* место куда вводится текст */
 		&-input {
@@ -156,8 +222,9 @@
 	}
 
 	/* распределение иконок из спрайта(по вертикали) по селекторам */
-	.field-icons-1 { background-position: 0 0; }
-	.field-icons-2 { background-position: 0 -50px; }
+	.field-icons-1 { background-position: 0 0; } /* человек, юзер */
+	.field-icons-2 { background-position: 0 -50px; } /* конверт */
+	.field-icons-4 { background-position: 0 -150px; } /* стрелка для селеста */
 }
 
 
@@ -168,6 +235,7 @@
 */
 @button-text-font: 14px/@field-height 'Circe-Regular';
 @button-text-color: #faf1f2;
+.button,
 .form__button {
 	width: 100%;
 	height: 37px;
@@ -190,6 +258,7 @@
 	/*safari, iOS*/
 	-webkit-appearance: none;
 }
+.button:hover,
 .form__button:hover {
 	background-color: #b32024;
 }

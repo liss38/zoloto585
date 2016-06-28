@@ -1,11 +1,4 @@
 /*
-	images
-*/
-/*
-	fonts
-*/
-/*@global-fonts-path: 'http://zoloto585.ru/bitrix/templates/zoloto/css/fonts/';*/
-/*
 	ЗНАЧЕНИЯ
 	ТОЧЕК
 	СЛОМА
@@ -29,6 +22,13 @@
 /*
 	Helvetica Neue
 */
+/*
+	images
+*/
+/*
+	fonts
+*/
+/*@global-fonts-path: 'http://zoloto585.ru/bitrix/templates/zoloto/css/fonts/';*/
 /*	=================================
 	=================================
 	=====                       =====
@@ -212,19 +212,7 @@ body {
   font-size: 0;
   /*область с иконкой-метафорой поля*/
   /* место куда вводится текст */
-}
-.form__field-ico {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  display: inline-block;
-  width: 37px;
-  height: 100%;
-  border-right: 1px solid #e2e2e2;
-  background-image: url('../img/sprites/sprite__form-icos_37x35.png');
-  background-repeat: no-repeat;
-  background-color: #f1f1f1;
+  /* select */
 }
 .form__field-input {
   position: absolute;
@@ -245,26 +233,88 @@ body {
   font: 14px/37px 'Circe-Regular';
   color: #999;
 }
+.form__field-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  /*padding: @field-inner-padding;*/
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  font: 14px/37px 'Circe-Regular';
+  color: #999;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+.form {
+  /*&__field- {}*/
+  /*&__field- {}*/
+  /*&__field- {}*/
+}
+.form__field-ico {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: inline-block;
+  width: 37px;
+  height: 100%;
+  border-right: 1px solid #e2e2e2;
+  background-image: url('../img/sprites/sprite__form-icos_37x35.png');
+  background-repeat: no-repeat;
+  background-color: #f1f1f1;
+}
+.form__field-ico--select-arrow {
+  border: 0;
+  background-color: transparent;
+  left: auto;
+  right: 0;
+}
 /* активное состояние поля */
 .form__field:hover,
 .form__field:focus,
+.form__field--active,
+.form__field--focus,
 .form__field_active,
-.form__field.active,
 .form__field_focus,
+.form__field.active,
 .form__field.focus {
   border: 1px solid #b32024;
 }
 .form__field:hover .form__field-ico,
 .form__field:focus .form__field-ico,
+.form__field--active .form__field-ico,
+.form__field--focus .form__field-ico,
 .form__field_active .form__field-ico,
-.form__field.active .form__field-ico,
 .form__field_focus .form__field-ico,
+.form__field.active .form__field-ico,
 .form__field.focus .form__field-ico {
   border-right: 1px solid #b32024;
   -ms-background-position-x: -37px;
   background-position-x: -37px;
 }
+.form__field:hover .form__field-ico--select-arrow,
+.form__field:focus .form__field-ico--select-arrow,
+.form__field--active .form__field-ico--select-arrow,
+.form__field--focus .form__field-ico--select-arrow,
+.form__field_active .form__field-ico--select-arrow,
+.form__field_focus .form__field-ico--select-arrow,
+.form__field.active .form__field-ico--select-arrow,
+.form__field.focus .form__field-ico--select-arrow {
+  border: 0;
+}
 /* прошедшее валидацию поле */
+.form__field--valid_true .form__field-ico,
 .form__field_valid_true .form__field-ico,
 .form__field.valid_true .form__field-ico,
 .form__field.valid-true .form__field-ico {
@@ -276,10 +326,17 @@ body {
 .field-icons-1 {
   background-position: 0 0;
 }
+/* человек, юзер */
 .field-icons-2 {
   background-position: 0 -35px;
 }
+/* конверт */
+.field-icons-4 {
+  background-position: 0 -105px;
+}
+/* стрелка для селеста */
 @media screen and (max-width: 767px) {
+  /*@field-icons-url: '../images/sprite__form-icos_50x48.png';*/
   .form__field {
     height: 50px;
     /*область с иконкой-метафорой поля*/
@@ -287,7 +344,7 @@ body {
   }
   .form__field-ico {
     width: 50px;
-    background-image: url('../images/sprite__form-icos_50x48.png');
+    background-image: url('../img/sprites/sprite__form-icos_50x48.png');
   }
   .form__field-input {
     padding: 0 15px 0 65px;
@@ -307,13 +364,20 @@ body {
   .field-icons-1 {
     background-position: 0 0;
   }
+  /* человек, юзер */
   .field-icons-2 {
     background-position: 0 -50px;
   }
+  /* конверт */
+  .field-icons-4 {
+    background-position: 0 -150px;
+  }
+  /* стрелка для селеста */
 }
 /*
 	кнопка отправки в форме типа 'input submit'
 */
+.button,
 .form__button {
   width: 100%;
   height: 37px;
@@ -333,6 +397,7 @@ body {
   /*safari, iOS*/
   -webkit-appearance: none;
 }
+.button:hover,
 .form__button:hover {
   background-color: #b32024;
 }
@@ -342,6 +407,7 @@ body {
     line-height: 50px;
   }
 }
+/* HEADER-TOP  @IMPORT */
 /*"header-top"*/
 .header-top {
   height: 45px;
@@ -372,9 +438,6 @@ body {
 }
 .header-top__item:last-child:after {
   border: 0;
-}
-.header-top__item--phone {
-  text-align: center;
 }
 /*
 	DESKTOP
@@ -630,6 +693,10 @@ body {
 @media screen and (min-width: 1025px) {
   .top-geo {
     width: 125px;
+    max-width: 215px;
+    /*от переполнения контентом*/
+    overflow: hidden;
+    /*от переполнения контентом*/
   }
   .top-geo__button {
     height: 31px;
@@ -993,6 +1060,7 @@ body {
 
 
 */
+/* HEADER-MIDDLE  @IMPORT */
 .header-middle {
   height: 55px;
   border-top: 1px solid #d3d3d3;
@@ -1104,6 +1172,7 @@ body {
     margin: 10px auto;
   }
 }
+/* HEADER-BOTTOM  @IMPORT */
 /* миксин для анимации */
 .header-bottom {
   /*height: 1000px;*/
@@ -1165,35 +1234,36 @@ body {
   }
 }
 /* нулевой уровень вложенности элементов каталога */
-/* первый уровень вложенности элементов каталога */
-/* второй уровень вложенности элементов каталога */
 /* DESKTOP */
 @media screen and (min-width: 1025px) {
   /* нулевой уровень вложенности элементов каталога */
   .main-nav {
     display: none;
   }
-  /* первый уровень вложенности элементов каталога */
-  /* второй уровень вложенности элементов каталога */
 }
 /* TOUCH */
 @media screen and (max-width: 1024px) {
-  .main-nav__link,
-  .main-nav-level-1__link {
-    display: none;
+  .main-nav__header {
+    position: fixed;
+    top: 0;
   }
-  .main-nav__list,
-  .main-nav-level-1__list,
-  .main-nav-level-2__list {
+  .main-nav__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: block;
   }
-  .main-nav__header {
-    position: fixed;
-    top: 0;
+  .main-nav__link {
+    display: none;
   }
+}
+/* первый уровень вложенности элементов каталога */
+/* DESKTOP */
+@media screen and (min-width: 1025px) {
+  /* первый уровень вложенности элементов каталога */
+}
+/* TOUCH */
+@media screen and (max-width: 1024px) {
   .main-nav-level-1__header {
     position: relative;
     display: block;
@@ -1226,7 +1296,6 @@ body {
   }
   .main-nav-level-1__list {
     list-style: none;
-    /*display: none;*/
     display: block;
     height: 0;
     overflow: hidden;
@@ -1243,6 +1312,9 @@ body {
     border-bottom: 1px solid #8f2d2a;
     border-top: 1px solid #d0433f;
   }
+  .main-nav-level-1__link {
+    display: none;
+  }
   .main-nav-level-1__link--all-items {
     display: block;
     height: 45px;
@@ -1256,17 +1328,22 @@ body {
     font: 400 10px/45px 'Circe Rounded';
     color: #fff;
   }
+}
+/* второй уровень вложенности элементов каталога */
+/* DESKTOP */
+@media screen and (min-width: 1025px) {
+  /* второй уровень вложенности элементов каталога */
+}
+/* TOUCH */
+@media screen and (max-width: 1024px) {
   .main-nav-level-2__header {
     display: block;
-    /*height: 45px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*padding: 0 10px 0 20px;*/
     padding: 19px 10px 15px 20px;
     text-decoration: none;
     text-transform: uppercase;
-    /*.font-circerou_regular(10px, 45px, #fff);*/
     font: 400 10px/11px 'Circe Rounded';
     color: #fff;
     cursor: pointer;
@@ -1275,19 +1352,18 @@ body {
     border-bottom: 1px solid #d0433f;
   }
   .main-nav-level-2__list {
-    /*height: 0;*/
+    list-style: none;
     display: none;
+    margin: 0;
+    padding: 0;
     background-color: #c53e3a;
     border-top: 1px solid #8f2d2a;
-    /*border-bottom: 1px solid #8f2d2a;*/
   }
   .main-nav-level-2__list--active {
-    /*height: auto;*/
     display: block;
   }
   .main-nav-level-2__item {
     display: block;
-    /*height: 45px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1304,204 +1380,10 @@ body {
   }
   .main-nav-level-2__link {
     display: block;
-    /*height: 100%;*/
     margin: 0 auto;
     padding: 19px 10px 15px 20px;
     text-decoration: none;
-    /*.font-circerou_regular(11px, 45px, #fff);*/
     font: 400 11px/11px 'Circe Rounded';
     color: #fff;
   }
 }
-/* миксин для анимации */
-.left-ear {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9990;
-  margin-left: -100%;
-  opacity: 0;
-  width: 100%;
-  /*width: 0;*/
-  height: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: opacity 0.6s ease-in-out;
-  -o-transition: opacity 0.6s ease-in-out;
-  transition: opacity 0.6s ease-in-out;
-}
-.left-ear__inner {
-  width: 300px;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-left: -300px;
-  padding-top: 45px;
-  padding-bottom: 70px;
-  overflow: auto;
-  background-color: #ed3030;
-  -webkit-transition: margin-left 0.6s ease-in-out;
-  -o-transition: margin-left 0.6s ease-in-out;
-  transition: margin-left 0.6s ease-in-out;
-}
-.left-ear__inner--active {
-  margin-left: 0;
-}
-.left-ear--active {
-  opacity: 1;
-  margin-left: 0;
-}
-/* DESKTOP */
-@media screen and (min-width: 1025px) {
-  .left-ear,
-  .right-ear {
-    display: none;
-  }
-}
-/* TOUCH */
-@media screen and (max-width: 1024px) {
-  .section--offset_for_left-ear {
-    padding-left: 300px;
-    overflow: hidden;
-  }
-  .section {
-    -webkit-transition: padding-left 0.6s ease-in-out;
-    -o-transition: padding-left 0.6s ease-in-out;
-    transition: padding-left 0.6s ease-in-out;
-  }
-  .header-top.section--offset_for_left-ear {
-    border-color: transparent;
-  }
-}
-.touch-nav {
-  display: block;
-  background-color: #ed3030;
-}
-.touch-nav__button {
-  position: relative;
-  display: block;
-  height: 45px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 15px;
-  background-color: #ed3030;
-  text-transform: uppercase;
-  font: 400 11px/45px 'Circe Rounded';
-  color: #fff;
-  cursor: pointer;
-}
-.touch-nav__button:after {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  margin-top: -10px;
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -180px no-repeat;
-}
-.touch-nav__button--active:after {
-  -ms-background-position-x: -20px;
-  background-position-x: -20px;
-}
-.touch-nav__list {
-  list-style: none;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  background-color: #8a2226;
-  border-top: 1px solid #da252c;
-  border-bottom: 1px solid #fb3036;
-}
-.touch-nav__list--active {
-  height: auto;
-}
-.touch-nav__item {
-  display: block;
-  height: 45px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-top: 1px solid #97292d;
-  border-bottom: 1px solid #7a1e21;
-}
-.touch-nav__item a {
-  display: block;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-  text-decoration: none;
-  font: 400 11px/45px 'Circe Rounded';
-  color: #fff;
-}
-.touch-nav--position_fixed {
-  position: fixed;
-  /*top: 45px;*/
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  height: 100%;
-  width: 300px;
-}
-.touch-nav--position_fixed .touch-nav__button {
-  width: 100%;
-}
-/* DESKTOP */
-@media screen and (min-width: 1025px) {
-  .touch-nav {
-    display: none;
-  }
-  .touch-nav--active {
-    display: none;
-  }
-}
-/*@tablet Album*/
-/*@tablet Portrait*/
-/*@mobile Album*/
-/*@mobile Portrait*/
-.index-slider {
-  height: 449px;
-}
-.index-slider__inner {
-  height: 449px;
-  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
-}
-.jewelry-selection {
-  height: 206px;
-}
-.jewelry-selection__inner {
-  height: 206px;
-  background: transparent url('../img/stub/index_stub__460px__jewelry-selection.jpg') center 0 no-repeat;
-}
-.showcase {
-  height: 947px;
-}
-.showcase__inner {
-  height: 947px;
-  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
-}
-.index-info {
-  height: 546px;
-}
-.index-info__inner {
-  height: 546px;
-  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
-}
-.footer-all {
-  height: 311px;
-}
-.footer-all__inner {
-  height: 311px;
-  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
-}
-/* .header-bottom {
-	height: 10px;
-} */
