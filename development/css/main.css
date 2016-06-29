@@ -275,10 +275,15 @@ body {
   background-color: #f1f1f1;
 }
 .form__field-ico--select-arrow {
-  border: 0;
-  background-color: transparent;
   left: auto;
   right: 0;
+  z-index: 0;
+  border: 0;
+  background-color: transparent;
+}
+.form__field-select {
+  font: 400 10px/32px 'Circe';
+  color: #666;
 }
 /* активное состояние поля */
 .form__field:hover,
@@ -369,10 +374,19 @@ body {
     background-position: 0 -50px;
   }
   /* конверт */
+}
+@media screen and (max-width: 1024px) {
   .field-icons-4 {
-    background-position: 0 -150px;
+    background-position: 10px -154px;
   }
-  /* стрелка для селеста */
+  /* стрелка для селекта */
+}
+/*@mobile Portrait*/
+@media screen and (max-width: 479px) {
+  .field-icons-4 {
+    background-position: 0 -146px;
+  }
+  /* стрелка для селекта */
 }
 /*
 	кнопка отправки в форме типа 'input submit'
@@ -392,10 +406,12 @@ body {
   outline: none;
   cursor: pointer;
   text-transform: uppercase;
-  font: 14px/37px 'Circe-Regular';
-  color: #faf1f2;
+  font: 400 14px/40px 'Circe';
+  color: #fff;
   /*safari, iOS*/
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .button:hover,
 .form__button:hover {

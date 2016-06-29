@@ -121,15 +121,19 @@
 		background-color: #f1f1f1;
 
 		&--select-arrow {
-			border: 0;
-			background-color: transparent;
 			left: auto;
 			right: 0;
+			z-index: 0;
+
+			border: 0;
+			background-color: transparent;
 		}
 	}
 
 
-	&__field-select {}
+	&__field-select {
+		.font-circe_regular(10px, 32px, #666);
+	}
 	/*&__field- {}*/
 	/*&__field- {}*/
 	/*&__field- {}*/
@@ -224,9 +228,16 @@
 	/* распределение иконок из спрайта(по вертикали) по селекторам */
 	.field-icons-1 { background-position: 0 0; } /* человек, юзер */
 	.field-icons-2 { background-position: 0 -50px; } /* конверт */
-	.field-icons-4 { background-position: 0 -150px; } /* стрелка для селеста */
 }
 
+@media screen and (max-width: @tablet_a-max) {
+	.field-icons-4 { background-position: 10px -154px; } /* стрелка для селекта */
+}
+
+/*@mobile Portrait*/
+@media screen and (max-width: @mobile_p-max) {
+	.field-icons-4 { background-position: 0 -146px; } /* стрелка для селекта */
+}
 
 
 
@@ -252,11 +263,12 @@
 	cursor: pointer;
 
 	text-transform: uppercase;
-	font: @button-text-font;
-	color: @button-text-color;
+	.font-circe_regular(14px, 40px, #fff);
 
 	/*safari, iOS*/
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 .button:hover,
 .form__button:hover {

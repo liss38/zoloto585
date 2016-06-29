@@ -1,6 +1,7 @@
 .filter-mini {
 	font-size: 0;
 
+
 	.form__field {
 		display: inline-block;
 		height: 30px;
@@ -9,10 +10,18 @@
 		margin-right: 25px;
 	}
 
+
+	.form__field-select {
+		padding-left: 15px;
+		padding-right: 30px;
+	}
+
+
 	.form__button {
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 	}
+
 
 	&__row {
 		display: inline-block;
@@ -25,7 +34,7 @@
 		text-align: right;
 
 
-		&--right {
+		&--even {
 			text-align: left;
 		}
 
@@ -37,6 +46,36 @@
 
 			/*height: 37px;*/
 			width: 100%;
+		}
+	}
+}
+
+/*@mobile Portrait*/
+@media screen and (max-width: @mobile_p-max) {
+	.filter-mini {
+
+
+		.form__field {
+			width: 275px;
+			height: 48px;
+			margin: 0 auto;
+		}
+
+
+		.form__field-select {
+			.font-circe_light(14px, 48px, #666);
+		}
+
+
+		&__row {
+			display: block;
+			width: 100%;
+			text-align: center;
+
+
+			&--even {
+				text-align: center;
+			}
 		}
 	}
 }
