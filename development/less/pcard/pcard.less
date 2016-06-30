@@ -7,9 +7,6 @@
 	=============================
 */
 
-@import 'humdrum';
-
-/*@img-url: '/html/zoloto585__pcard/images/';*/
 @img-url: '../images/';
 
 
@@ -80,14 +77,6 @@
 .db-square(@size) { display: block; width: @size; height: @size; }/* элементы у которых высота = ширине */
 .dib-square(@size) { display: inline-block; width: @size; height: @size; }/* элементы у которых высота = ширине */
 
-
-
-/* шрифты */
-.f-clight(@fsize, @lheight, @color) { font: @fsize/@lheight 'Circe-Light'; color: @color; }
-.f-cregular(@fsize, @lheight, @color) { font: @fsize/@lheight 'Circe-Regular'; color: @color; }
-.f-cbold(@fsize, @lheight, @color) { font: @fsize/@lheight 'Circe-Bold'; color: @color; }
-
-
 /*	=============================
 	=============================
 	=====                   =====
@@ -133,7 +122,7 @@ html, body { margin: 0; padding: 0; }
 	padding: 0;
 	background: @color-red;
 	border-bottom: 1px solid #fa4141;
-	.f-cregular(13px, 45px, #fff);
+	.font-circe_regular(13px, 45px, #fff);
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -173,17 +162,17 @@ html, body { margin: 0; padding: 0; }
 
 .breadcrumbs {
 	&__item {
-		.f-cregular(10px, 12px, #666);
+		.font-circe_regular(10px, 12px, #666);
 		text-transform: uppercase;
 		font-style: italic;
 
 		&:hover {}
 		&.active {
-			.f-cregular(10px, 12px, #999);
+			.font-circe_regular(10px, 12px, #999);
 			text-decoration: none;
 		}
 	}
-	&__separator { .f-cregular(10px, 12px, #666); }
+	&__separator { .font-circe_regular(10px, 12px, #666); }
 }
 /***************************************************/
 
@@ -200,7 +189,7 @@ html, body { margin: 0; padding: 0; }
 	}
 }
 .pcard__title {
-	.f-cregular(20px, 30px, #303030);
+	.font-circe_regular(20px, 30px, #303030);
 }
 @media screen and (max-width: 1024px) {
 	.pcard-main {
@@ -210,7 +199,7 @@ html, body { margin: 0; padding: 0; }
 	.pcard__title {
 		margin: 0;
 		padding: 25px;
-		.f-cregular(14px, 16px, #303030);
+		.font-circe_regular(14px, 16px, #303030);
 		.-t-cnu-(#333);
 	}
 }
@@ -442,14 +431,14 @@ html, body { margin: 0; padding: 0; }
 	&__text,
 	&__link {
 		.-box-(inline-block, 50%, 100%);
-		.f-clight(11px, 32px, #666);
+		.font-circe_light(11px, 32px, #666);
 		.-t-lnu-(#666);
 	}
 	
 	&__text {
 		padding-left: 20px;
 		border-right: 1px solid #eef0f0;
-		&_bold { .f-cbold(11px, 32px, #666); }
+		&_bold { .font-circe_bold(11px, 32px, #666); }
 	}
 	&__link {
 		padding-left: 30px;
@@ -469,12 +458,12 @@ html, body { margin: 0; padding: 0; }
 	.a-pos_tl(24px, 22px);
 }
 .pcard-store__price-old {
-	.f-clight(13px, 13px, #7b7b7b);
+	.font-circe_light(13px, 13px, #7b7b7b);
 	text-transform: uppercase;
 	text-decoration: line-through;
 }
 .pcard-store__price-current {
-	.f-clight(18px, 25px, #303030);
+	.font-circe_light(18px, 25px, #303030);
 	text-transform: uppercase;
 }
 
@@ -484,11 +473,11 @@ html, body { margin: 0; padding: 0; }
 	.a-pos_tl(26px, 158px);
 }
 .pcard-store__card-text {
-	.f-clight(12px, 16px, #7b7b7b);
+	.font-circe_light(12px, 16px, #7b7b7b);
 	text-transform: uppercase;
 }
 .pcard-store__card-price {
-	.f-cbold(18px, 16px, #ff1037);
+	.font-circe_bold(18px, 16px, #ff1037);
 }
 
 .pcard-store__bonuses {
@@ -502,12 +491,12 @@ html, body { margin: 0; padding: 0; }
 .pcard-store__bonuses-count {
 	width: 70px;
 	.set_pcard_sprite(29px, -187px);
-	.f-clight(18px, 18px, #303030);
+	.font-circe_light(18px, 18px, #303030);
 	text-transform: uppercase;
 	.a-pos_tl(6px, 7px);
 }
 .pcard-store__bonuses-text {
-	.f-clight(11px, 11px, #303030);
+	.font-circe_light(11px, 11px, #303030);
 	text-transform: uppercase;
 	.a-pos_tl(27px, 7px);
 }
@@ -525,7 +514,7 @@ html, body { margin: 0; padding: 0; }
 	background: #f8f8f8;
 	border: 1px solid #eaeaea;
 
-	.f-clight(10px, 12px, #666);
+	.font-circe_light(10px, 12px, #666);
 	.-t-cnu-(#666);
 	.-posa-tl-(-1px, -1px, 10);
 }
@@ -540,7 +529,7 @@ html, body { margin: 0; padding: 0; }
 }
 .pcard-store-fitting-select { display: block; }
 .pcard-store-fitting-select__label {
-	.f-clight(12px, 34px, @color-red);
+	.font-circe_light(12px, 34px, @color-red);
 	text-transform: uppercase;
 	.pos-abs_tl(12px, 22px);
 }
@@ -551,7 +540,7 @@ html, body { margin: 0; padding: 0; }
 	padding: 0 8px;
 	.-bxszbb-;
 	.pos-abs_tl(13px, 203px);
-	.f-clight(18px, 28px, #b9b6b8);
+	.font-circe_light(18px, 28px, #b9b6b8);
 
 	.-box-border-(#e3e3e3, 2px);
 
@@ -565,7 +554,7 @@ html, body { margin: 0; padding: 0; }
 
 .pcard-store-fitting__popup-but {/* кнопка для попАпа "Как узнать свой размер" */
 	.set_pcard_sprite(108px, -411px);
-	.f-clight(11px, 16px, #999);
+	.font-circe_light(11px, 16px, #999);
 	.pos-abs_tr(21px, 20px);
 	padding-right: 25px;
 	text-transform: uppercase;
@@ -593,7 +582,7 @@ html, body { margin: 0; padding: 0; }
 	vertical-align: top;
 	padding-left: 15px;
 	.set_pcard_sprite(-8px + @bg-pos-x, @bg-pos-y);
-	.f-clight(11px, 20px, @fcolor);
+	.font-circe_light(11px, 20px, @fcolor);
 	text-transform: uppercase;
 }
 .pcard-store-panel__button-dflt(@y) { .pcard-store-panel__button(0px, @y, #b9b6b8); }
@@ -626,7 +615,7 @@ html, body { margin: 0; padding: 0; }
 	.-box-(block, 100%, 37px);
 	background: #ed3030 url('@{img-url}pcard_store_shadow.png') center top no-repeat;
 	.-brad-ad-(4px);
-	.f-clight(12px, 37px, #fff);
+	.font-circe_light(12px, 37px, #fff);
 	.-t-cnu-(#fff);
 }
 .pcard-store__reserve-button:hover { background-color: #b32023; }
@@ -637,7 +626,7 @@ html, body { margin: 0; padding: 0; }
 	.-box-(block, 100%, 57px);
 	background: #f8f8f8 url('@{img-url}pcard_store_shadow.png') center -1px no-repeat;
 	.-brad-ad-(4px);
-	.f-clight(12px, 57px, #fff);
+	.font-circe_light(12px, 57px, #fff);
 	.-t-cnu-(#333);
 	border-top: 1px solid #d3d3d3;
 	vertical-align: middle;
@@ -675,7 +664,7 @@ html, body { margin: 0; padding: 0; }
 .pcard-properties__header {
 	padding: 17px 5px 7px 25px;
 	.box-b();
-	.f-cregular(12px, 17px, #303030);
+	.font-circe_regular(12px, 17px, #303030);
 	margin: 0;
 	text-transform: uppercase;
 	background: #f9f9f9;
@@ -683,7 +672,7 @@ html, body { margin: 0; padding: 0; }
 }
 .pcard-properties__item {
 	border-bottom: 1px solid #ececec;
-	.f-clight(14px, 17px, #333);
+	.font-circe_light(14px, 17px, #333);
 	.box-b();
 	margin: 0;
 }
@@ -706,7 +695,7 @@ html, body { margin: 0; padding: 0; }
 		width: auto;
 		padding: 0;
 		display: inline-block;
-		.f-clight(12px, 40px, #666);
+		.font-circe_light(12px, 40px, #666);
 		text-transform: uppercase;
 	}
 	&-name:after {
@@ -717,7 +706,7 @@ html, body { margin: 0; padding: 0; }
 		padding: 0;
 		margin: 0;
 		display: inline-block;
-		.f-clight(12px, 40px, #666);
+		.font-circe_light(12px, 40px, #666);
 		text-transform: uppercase;
 	}
 }
@@ -730,7 +719,7 @@ html, body { margin: 0; padding: 0; }
 	display: none;
 	&__header {}
 	&__text {
-		.f-clight(14px, 18px, #999);
+		.font-circe_light(14px, 18px, #999);
 		text-align: justify;
 		padding: 35px 150px;
 		margin: 45px 0 0 0;
@@ -740,7 +729,7 @@ html, body { margin: 0; padding: 0; }
 		&__label {
 			display: inline-block;
 			padding-right: 25px;
-			.f-clight(14px, 50px, #999);
+			.font-circe_light(14px, 50px, #999);
 			text-transform: uppercase;
 		}
 		&__menu {
@@ -756,12 +745,12 @@ html, body { margin: 0; padding: 0; }
 		&__label {
 			display: inline-block;
 			padding-right: 25px;
-			.f-clight(14px, 50px, #ec2f2f);
+			.font-circe_light(14px, 50px, #ec2f2f);
 			text-transform: uppercase;
 		}
 		&__value {
 			display: inline-block;
-			.f-clight(24px, 50px, #ec2f2f);
+			.font-circe_light(24px, 50px, #ec2f2f);
 		}
 	}
 }
@@ -778,7 +767,7 @@ html, body { margin: 0; padding: 0; }
 	-webkit-background-size: 800px 604px;
 	background-size: 800px 604px;
 	&__text {
-		.f-cregular(14px, 16px, #666);
+		.font-circe_regular(14px, 16px, #666);
 		text-align: center;
 		padding: 35px 0;
 		margin: 15px 0 0 0;
@@ -843,7 +832,7 @@ html, body { margin: 0; padding: 0; }
 			border-radius: 2px;
 			outline: none;
 
-			.f-cregular(11px, 16px, #999);
+			.font-circe_regular(11px, 16px, #999);
 			text-transform: uppercase;
 
 			&:hover,
@@ -856,7 +845,7 @@ html, body { margin: 0; padding: 0; }
 			.-box-border-(#e7e7e7, 2px);
 
 			.pos-abs_tl(210px, 0px);
-			.f-cregular(11px, 16px, #999);
+			.font-circe_regular(11px, 16px, #999);
 			text-transform: uppercase;
 			outline: none;
 			resize: none;
@@ -868,7 +857,7 @@ html, body { margin: 0; padding: 0; }
 			height: 30px;
 			outline: none;
 			.pos-abs_center_hor(200px, 315px);
-			.f-cregular(11px, 30px, #fbf4f4);
+			.font-circe_regular(11px, 30px, #fbf4f4);
 			background-color: @color-red;
 			box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
 			border: 0;
@@ -897,7 +886,7 @@ html, body { margin: 0; padding: 0; }
 	width: 90px;
 
 	text-transform: uppercase;
-	.f-clight(12px, 30px, #333);
+	.font-circe_light(12px, 30px, #333);
 }
 .pcard-socials__link {
 	.dib-square(24px);
@@ -963,7 +952,7 @@ html, body { margin: 0; padding: 0; }
 	text-transform: uppercase;
 	cursor: pointer;
 
-	.f-cregular(16px, 62px, #666);
+	.font-circe_regular(16px, 62px, #666);
 	.-solid-b-(#efefef);
 	.set_pcard_sprite(265px, -315px);
 	.-bgcol-(#f4f4f4);
@@ -1008,21 +997,21 @@ html, body { margin: 0; padding: 0; }
 			.-bgsz-(400px, 20px);
 
 			&-select{
-				&__label { .-pos-tl-(24px, 25px); .f-cregular(16px, 34px, #ed3030); }
+				&__label { .-pos-tl-(24px, 25px); .font-circe_regular(16px, 34px, #ed3030); }
 				&__menu_default {
 					.-pos-tl-(12px, 180px);
 					outline: none;
 					cursor: pointer;
 					.-box-border-(#e2e1e2, 2px);
 					.-block-(120px, 50px, 0 20px);
-					.f-clight(18px, 40px, #666);
+					.font-circe_light(18px, 40px, #666);
 				}
 			}
 		}
 
 		&__reserve-button {
 			height: 60px;
-			.f-cregular(16px, 60px, #fff);
+			.font-circe_regular(16px, 60px, #fff);
 		}
 	}
 
@@ -1046,7 +1035,7 @@ html, body { margin: 0; padding: 0; }
 			&-value {
 				.-dtc-;
 				.-solid-b-(#ececec);
-				.f-clight(14px, 17px, #333);
+				.font-circe_light(14px, 17px, #333);
 				.-ttn-;
 				padding: 17px 5px 7px 25px;
 			}
@@ -1069,7 +1058,7 @@ html, body { margin: 0; padding: 0; }
 			.-tab-header-();
 		}
 		&__text {
-			.f-clight(12px, 20px, #999);
+			.font-circe_light(12px, 20px, #999);
 			.-pm-(0 25px, 25px 0 0 0);
 			text-indent: 35px;
 		}
@@ -1083,7 +1072,7 @@ html, body { margin: 0; padding: 0; }
 			}
 			&__menu {
 				.-iblock-(140px, 50px, 0 25px);
-				.f-clight(24px, 50px, #666);
+				.font-circe_light(24px, 50px, #666);
 				cursor: pointer;
 				outline: none;
 			}
@@ -1131,7 +1120,7 @@ html, body { margin: 0; padding: 0; }
 			}
 			&__field {
 				padding-left: 65px;
-				.f-clight(14px, 40px, #999);
+				.font-circe_light(14px, 40px, #999);
 			}
 			
 			&__ico-1 {
@@ -1149,7 +1138,7 @@ html, body { margin: 0; padding: 0; }
 			&__message {
 				top: 264px;
 				height: 120px;
-				.f-clight(14px, 20px, #999);
+				.font-circe_light(14px, 20px, #999);
 			}
 			&__button {
 				.-block-(100%, 60px, 0, 0);
@@ -1157,7 +1146,7 @@ html, body { margin: 0; padding: 0; }
 				.-bxshadn-;
 				.-brad-bc-(0);
 				.-brad-ad-(4px);
-				.f-cregular(16px, 60px, #fff);
+				.font-circe_regular(16px, 60px, #fff);
 			}
 		}
 	}
@@ -1366,11 +1355,11 @@ html, body { margin: 0; padding: 0; }
 			&-count {
 				width: 100%;
 				.-tl-();
-				.f-clight(11px, 16px, #666);
+				.font-circe_light(11px, 16px, #666);
 				.-bgpos-(138px, -189px);
 			}
 			&-text {
-				.f-clight(11px, 16px, #666);
+				.font-circe_light(11px, 16px, #666);
 				.-tl-(0, 33px);
 			}
 		}

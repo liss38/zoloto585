@@ -1,3 +1,146 @@
+/************************************************
+******* ГРУППЫ СВОЙСТВ **************************
+*************************************************/
+/*display*/
+.-dn- {
+  display: none;
+}
+.-db- {
+  display: block;
+}
+.-dib- {
+  display: inline-block;
+}
+.-di- {
+  display: inline;
+}
+.-dt- {
+  display: table;
+}
+.-dtc- {
+  display: table-cell;
+}
+.-dtr- {
+  display: table-row;
+}
+/*----------end;display---------------------------------*/
+/*box-sizing*/
+.-bxszbb- {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.-bxszcb- {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.-bxszpb- {
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+/*----------end;box-sizing---------------------------------*/
+/*position*/
+/*----------end;position---------------------------------*/
+/*text*/
+.-tal- {
+  text-align: left;
+}
+.-tac- {
+  text-align: center;
+}
+.-tar- {
+  text-align: right;
+}
+.-taj- {
+  text-align: justify;
+}
+.-tdn- {
+  text-decoration: none;
+}
+.-tdu- {
+  text-decoration: underline;
+}
+.-tdl- {
+  text-decoration: line-through;
+}
+.-tdo- {
+  text-decoration: overline;
+}
+.-ttu- {
+  text-transform: uppercase;
+}
+.-ttl- {
+  text-transform: lowercase;
+}
+.-ttc- {
+  text-transform: capitalize;
+}
+.-ttn- {
+  text-transform: none;
+}
+.-toc- {
+  -ms-text-overflow: clip;
+  text-overflow: clip;
+}
+.-toe- {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/*------------------end;text---------------------------------*/
+/*border*/
+/*-----------------------------------end;border---------------------------------*/
+/*border-radius*/
+/*----------end;border-radius---------------------------------*/
+/*background*/
+/*background: [background-attachment || background-color || background-image || background-position || background-repeat] | inherit;*/
+.-cover- {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.-contain- {
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+/*----------end;background---------------------------------*/
+/*box-shadow*/
+.-bxshadn- {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*----------end;box-shadow---------------------------------*/
+/*********************************************
+********* UI-элементы и модификации***********
+*********************************************/
+/* Box */
+/*.-box-bg-() {}*/
+/*.-button-text-() {}*/
+/*.-button-ico-(image, hor, vert) {}*/
+/*.-button-sqr-() {}*/
+/*.-before-(){}
+.-before-ico-(){}*/
+/*.button-block-(@db: db, @w, @h, @bxsz) {
+	.block-@{db}-(@w, @h);
+	.-bxsz@{bxsz}-();
+}
+.button-text-(@font, @text) {}
+.button-decor-(@bg, @shadow, @border, @brad) {}*/
+/*.block(@w: auto, @h: auto, @pad: 0, @marg: 0, @ovh: visible) {
+	display: block || inline-block;
+	width: @w; px % auto
+	height: @h; px % auto
+	padding: @pad;
+	margin: @marg;
+	-webkit-box-sizing: border-box || content-box || padding-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: @ovh;
+}*/
+/*------------------------------------------------*/
+/*
+	HUMDRUM
+*/
 /*
 	ЗНАЧЕНИЯ
 	ТОЧЕК
@@ -43,24 +186,24 @@
 /* Circe Regular */
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe-Regular.eot');
-  src: local('Circe-Regular'), url('../fonts/Circe-Regular.woff') format('woff'), url('../fonts/Circe-Regular.ttf') format('truetype'), url('../fonts/Circe-Regular.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/Circe-Regular.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/Circe-Regular.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/Circe-Regular.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/Circe-Regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
 /* Circe Light */
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe-Light.eot');
-  src: local('Circe-Regular'), url('../fonts/Circe-Light.woff') format('woff'), url('../fonts/Circe-Light.ttf') format('truetype'), url('../fonts/Circe-Light.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/Circe-Light.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/Circe-Light.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/Circe-Light.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/Circe-Light.svg') format('svg');
   font-weight: 300;
   font-style: normal;
 }
 /* Circe Bold */
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe-Bold.eot');
-  src: local('Circe-Regular'), url('../fonts/Circe-Bold.woff') format('woff'), url('../fonts/Circe-Bold.ttf') format('truetype'), url('../fonts/Circe-Bold.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/Circe-Bold.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/Circe-Bold.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/Circe-Bold.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/Circe-Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
@@ -70,8 +213,8 @@
 /* Circe Rounded Regular */
 @font-face {
   font-family: 'Circe Rounded';
-  src: url('../fonts/CirceRounded Regular.eot');
-  src: local('Circe-Regular'), url('../fonts/CirceRounded Regular.woff') format('woff'), url('../fonts/CirceRounded Regular.ttf') format('truetype'), url('../fonts/CirceRounded Regular.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/CirceRounded Regular.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/CirceRounded Regular.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/CirceRounded Regular.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/CirceRounded Regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
@@ -81,16 +224,16 @@
 /*Light*/
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('../fonts/helveticaneuecyr-light.eot');
-  src: local('Circe-Regular'), url('../fonts/helveticaneuecyr-light.woff') format('woff'), url('../fonts/helveticaneuecyr-light.ttf') format('truetype'), url('../fonts/helveticaneuecyr-light.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-light.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-light.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-light.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-light.svg') format('svg');
   font-weight: 300;
   font-style: normal;
 }
 /*Bold*/
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('../fonts/helveticaneuecyr-bold.eot');
-  src: local('Circe-Regular'), url('../fonts/helveticaneuecyr-bold.woff') format('woff'), url('../fonts/helveticaneuecyr-bold.ttf') format('truetype'), url('../fonts/helveticaneuecyr-bold.svg') format('svg');
+  src: url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-bold.eot');
+  src: local('Circe-Regular'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-bold.woff') format('woff'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-bold.ttf') format('truetype'), url('/bitrix/templates/zoloto/css/fonts/helveticaneuecyr-bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
@@ -270,7 +413,7 @@ body {
   width: 37px;
   height: 100%;
   border-right: 1px solid #e2e2e2;
-  background-image: url('../img/sprites/sprite__form-icos_37x35.png');
+  background-image: url('/bitrix/templates/zoloto/images/sprite__form-icos_37x35.png');
   background-repeat: no-repeat;
   background-color: #f1f1f1;
 }
@@ -349,7 +492,7 @@ body {
   }
   .form__field-ico {
     width: 50px;
-    background-image: url('../img/sprites/sprite__form-icos_50x48.png');
+    background-image: url('/bitrix/templates/zoloto/images/sprite__form-icos_50x48.png');
   }
   .form__field-input {
     padding: 0 15px 0 65px;
@@ -539,7 +682,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 0 no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 0 no-repeat;
 }
 .top-sandwich__button--active {
   position: fixed;
@@ -701,7 +844,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -20px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -20px no-repeat;
 }
 /*
 	DESKTOP
@@ -787,7 +930,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -42px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -42px no-repeat;
 }
 /*
 	TOUCH
@@ -853,7 +996,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -60px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -60px no-repeat;
 }
 /*
 	DESKTOP
@@ -929,7 +1072,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -80px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -80px no-repeat;
 }
 /*
 	DESKTOP
@@ -997,7 +1140,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -100px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -100px no-repeat;
 }
 .top-user__button:after {
   right: 5px;
@@ -1133,7 +1276,7 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -140px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -140px no-repeat;
 }
 .header-middle__button--sale {
   border-right: 1px solid rgba(207, 207, 207, 0.5);
@@ -1192,7 +1335,7 @@ body {
 /* миксин для анимации */
 .header-bottom {
   /*height: 1000px;*/
-  background: transparent url('../img/long_horiz_shadow.png') center -1px no-repeat;
+  background: transparent url('/bitrix/templates/zoloto/images/long_horiz_shadow.png') center -1px no-repeat;
 }
 /* TOUCH */
 @media screen and (max-width: 1024px) {
@@ -1304,7 +1447,7 @@ body {
     display: block;
     width: 20px;
     height: 20px;
-    background: transparent url('../img/sprites/sprite__header-icons_20x20.png') 0 -180px no-repeat;
+    background: transparent url('/bitrix/templates/zoloto/images/sprite__header-icons_20x20.png') 0 -180px no-repeat;
   }
   .main-nav-level-1__header--active:after {
     -ms-background-position-x: -20px;

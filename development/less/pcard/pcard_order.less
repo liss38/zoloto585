@@ -6,8 +6,7 @@
 	=====================================
 	=====================================
 */
-@import 'humdrum';
-@import 'fonts@import';
+/*@import 'fonts@import';*/
 
 /*@img-url: '/html/zoloto585__pcard/images/';*/
 @img-url: '../images/';
@@ -117,7 +116,7 @@
 		background: @color-red;
 		border-top: 1px solid #f08b8b;
 		border-bottom: 1px solid #fa4141;
-		.f-cregular(13px, 38px, #fff);
+		.font-circe_regular(13px, 38px, #fff);
 		text-align: center;
 		text-transform: uppercase;
 		position: relative;
@@ -136,7 +135,7 @@
 		background: #f4f4f4;
 		border-top: 1px solid #fff;
 		border-bottom: 1px solid #ebebeb; 
-		.f-cregular(10px, 36px, @color-red);
+		.font-circe_regular(10px, 36px, @color-red);
 
 		.pcard-order__colon { display: inline; }
 		.pcard-order-step__state {
@@ -189,7 +188,7 @@
 	&__map {
 		display: inline-block;
 		width: 152px;
-		.f-cregular(10px, 36px, #666);
+		.font-circe_regular(10px, 36px, #666);
 		text-transform: uppercase;
 		text-align: center;
 		cursor: pointer;
@@ -227,7 +226,7 @@
 	&__label {
 		.pos-abs_tl(20px, 125px);
 		text-transform: uppercase;
-		.f-clight(14px, 28px, #b9b6b8);
+		.font-circe_light(14px, 28px, #b9b6b8);
 
 		&:after {
 			content: '';
@@ -247,7 +246,7 @@
 
 		.-box-border-(#e8e8e8, 2px);
 
-		.f-clight(10px, 28px, #b9b6b8);
+		.font-circe_light(10px, 28px, #b9b6b8);
 		text-transform: uppercase;
 		outline: none;
 
@@ -270,7 +269,7 @@
 		.-block-(154px, 28px, 0 17px 0 35px);
 		.-posa-tl-(20px, 287px);
 		.-box-border-(#e8e8e8, 2px);
-		.f-clight(10px, 28px, #b9b6b8);
+		.font-circe_light(10px, 28px, #b9b6b8);
 		text-transform: uppercase;
 		outline: none;
 		cursor: pointer;
@@ -280,12 +279,12 @@
 	}
 	&__result-text {
 		.pos-abs_tl(21px, 463px);
-		.f-clight(11px, 28px, #b9b6b8);
+		.font-circe_light(11px, 28px, #b9b6b8);
 		text-transform: uppercase;
 	}
 	&__result-value {
 		.pos-abs_tl(21px, 522px);
-		.f-cregular(11px, 28px, #666);
+		.font-circe_regular(11px, 28px, #666);
 		text-transform: uppercase;
 	}
 }
@@ -311,7 +310,7 @@
 		padding: 7px 0 7px 42px;
 		margin: 0;
 		list-style: none;
-		.f-clight(12px, 16px, #333);
+		.font-circe_light(12px, 16px, #333);
 		cursor: pointer;
 		text-transform: uppercase;
 		.set-order-sprite(20px, -162px);
@@ -332,7 +331,7 @@
 		.-dn-;
 		.pos-abs_tl(20px, 125px);
 		text-transform: uppercase;
-		.f-clight(14px, 28px, #b9b6b8);
+		.font-circe_light(14px, 28px, #b9b6b8);
 
 		&:after {
 			content: '';
@@ -362,7 +361,7 @@
 		background-color: #f4f4f4;
 	}
 	&__address {
-		.f-clight(10px, 21px, #333);
+		.font-circe_light(10px, 21px, #333);
 		.set-order-sprite(0px, -358px);
 		.pos-abs_tl(8px, 30px);
 		padding-left: 15px;
@@ -377,18 +376,18 @@
 	}
 	&__content {}
 	&__when {
-		.f-clight(9px, 10px, #666);
+		.font-circe_light(9px, 10px, #666);
 		.pos-abs_tl(48px, 40px);
 		text-transform: uppercase;
 		&_strike {
-			.f-clight(9px, 10px, #666);
+			.font-circe_light(9px, 10px, #666);
 			.pos-abs_tl(59px, 40px);
 			text-decoration: underline;
 			text-transform: uppercase;
 		}
 	}
 	&__time {
-		.f-clight(10px, 17px, #666);
+		.font-circe_light(10px, 17px, #666);
 		.pos-abs_tr(46px, 47px);
 		.set-order-sprite(0px, -648px);
 		padding-left: 19px;
@@ -403,7 +402,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		.pos-abs_center_hor(208px, 84px);
-		.f-cregular(14px, 38px, #fff);
+		.font-circe_regular(14px, 38px, #fff);
 		&:hover { background-color: @color-dark_red; }
 	}
 }
@@ -424,7 +423,7 @@
 	/*height: 80px;*/
 	&__label {
 		.pos-abs_tl(0px, 0px);
-		.f-cregular(11px, 20px, #666);
+		.font-circe_regular(11px, 20px, #666);
 		text-transform: uppercase;
 	}
 	&__label:before {
@@ -440,7 +439,7 @@
 		.-block-(300px, 50px, 15px 20px 15px 65px);
 		.-box-border-(#e6e6e6, 2px);
 
-		.f-clight(14px, 20px, #bebebe);
+		.font-circe_light(14px, 20px, #bebebe);
 		text-transform: uppercase;
 		outline: none;
 
@@ -454,7 +453,7 @@
 		overflow: hidden;
 		text-align: center;
 		text-transform: uppercase;
-		.f-cregular(14px, 50px, #fff);
+		.font-circe_regular(14px, 50px, #fff);
 		border: 0;
 		border-radius: 2px;
 		background: @color-red;
@@ -488,12 +487,12 @@
 .pcard-order-form__notice {
 	width: 300px;
 	.pos-abs_tl(157px, 103px);
-	.f-cregular(10px, 12px, #999);
+	.font-circe_regular(10px, 12px, #999);
 }
 .pcard-order-form__message {
 	display: none;
 	text-align: center;
-	.f-cregular(14px, 26px, #333);
+	.font-circe_regular(14px, 26px, #333);
 	background-color: #fff;
 	height: 106px;
 	.pos-abs_center_hor(540px, 83px);
@@ -542,14 +541,14 @@
 	}
 
 	&__thank {
-		.f-cregular(30px, 50px, @color-red);
+		.font-circe_regular(30px, 50px, @color-red);
 		.-t-cnu-(@color-red);
 		margin-top: 250px;
 	}
 }
 
 .step-4__content {
-	.f-clight(@step-4-fsz, @step-4-lh, #333);
+	.font-circe_light(@step-4-fsz, @step-4-lh, #333);
 	text-align: center;
 }
 .step-4-text-1,
@@ -558,7 +557,7 @@
 .step-4-text-4,
 .step-4-text-5 { padding: @step-4-text-padding; }
 
-.step-4-text-1 { margin-top: @step-4-text-1-top; .f-clight(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
+.step-4-text-1 { margin-top: @step-4-text-1-top; .font-circe_light(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
 .step-4-text-2 { margin-top: @step-4-text-2-top; }
 .step-4-text-3 { margin-top: @step-4-text-3-top; }
 .step-4-text-4 { margin-top: @step-4-text-4-top; }
@@ -566,7 +565,7 @@
 
 .step-4__item-info,
 .step-4__store-info,
-.step-4__sms { .f-cbold(@step-4-fsz, @step-4-lh, #333); }
+.step-4__sms { .font-circe_bold(@step-4-fsz, @step-4-lh, #333); }
 
 .step-4__item-info {}
 .step-4__store-info {}
@@ -593,7 +592,7 @@
 			&__item {
 				.-block-(150px, auto, 7px 0 7px 30px, 0);
 				list-style: none;
-				.f-clight(11px, 14px, #333);
+				.font-circe_light(11px, 14px, #333);
 				cursor: pointer;
 				text-transform: uppercase;
 				.set-order-sprite(9px, -162px);
@@ -686,14 +685,14 @@
 		}
 
 		&__thank {
-			.f-cregular(30px, 50px, @color-red);
+			.font-circe_regular(30px, 50px, @color-red);
 			.-t-cnu-(@color-red);
 			margin-top: 250px;
 		}
 	}
 
 	.step-4__content {
-		.f-clight(@step-4-fsz, @step-4-lh, #333);
+		.font-circe_light(@step-4-fsz, @step-4-lh, #333);
 		text-align: center;
 	}
 	.step-4-text-1,
@@ -702,7 +701,7 @@
 	.step-4-text-4,
 	.step-4-text-5 { padding: @step-4-text-padding; }
 
-	.step-4-text-1 { margin-top: @step-4-text-1-top; .f-clight(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
+	.step-4-text-1 { margin-top: @step-4-text-1-top; .font-circe_light(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
 	.step-4-text-2 { margin-top: @step-4-text-2-top; }
 	.step-4-text-3 { margin-top: @step-4-text-3-top; }
 	.step-4-text-4 { margin-top: @step-4-text-4-top; }
@@ -710,7 +709,7 @@
 
 	.step-4__item-info,
 	.step-4__store-info,
-	.step-4__sms { .f-cbold(@step-4-fsz, @step-4-lh, #333); }
+	.step-4__sms { .font-circe_bold(@step-4-fsz, @step-4-lh, #333); }
 
 	.step-4__item-info {}
 	.step-4__store-info {}
@@ -791,7 +790,7 @@
 				.-block-(100%, 50px, 0 17px 0 30px);
 				.-posa-tl-(36px, 0);
 				.-box-border-(#e8e8e8, 2px);
-				.f-clight(10px, 28px, #b9b6b8);
+				.font-circe_light(10px, 28px, #b9b6b8);
 				text-transform: uppercase;
 				outline: none;
 				cursor: pointer;
@@ -890,14 +889,14 @@
 		}
 
 		&__thank {
-			.f-cregular(30px, 50px, @color-red);
+			.font-circe_regular(30px, 50px, @color-red);
 			.-t-cnu-(@color-red);
 			margin-top: 250px;
 		}
 	}
 
 	.step-4__content {
-		.f-clight(@step-4-fsz, @step-4-lh, #333);
+		.font-circe_light(@step-4-fsz, @step-4-lh, #333);
 		text-align: center;
 	}
 	.step-4-text-1,
@@ -906,7 +905,7 @@
 	.step-4-text-4,
 	.step-4-text-5 { padding: @step-4-text-padding; }
 
-	.step-4-text-1 { margin-top: @step-4-text-1-top; .f-clight(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
+	.step-4-text-1 { margin-top: @step-4-text-1-top; .font-circe_light(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
 	.step-4-text-2 { margin-top: @step-4-text-2-top; }
 	.step-4-text-3 { margin-top: @step-4-text-3-top; }
 	.step-4-text-4 { margin-top: @step-4-text-4-top; }
@@ -914,7 +913,7 @@
 
 	.step-4__item-info,
 	.step-4__store-info,
-	.step-4__sms { .f-cbold(@step-4-fsz, @step-4-lh, #333); }
+	.step-4__sms { .font-circe_bold(@step-4-fsz, @step-4-lh, #333); }
 
 	.step-4__item-info {}
 	.step-4__store-info {}
@@ -995,11 +994,11 @@
 
 		&__when {
 			top: 5px;
-			.f-clight(12px, 12px, #666);
+			.font-circe_light(12px, 12px, #666);
 			&_strike {
 				top: 5px;
 				left: 115px;
-				.f-clight(12px, 12px, #666);
+				.font-circe_light(12px, 12px, #666);
 			}
 		}
 
@@ -1049,14 +1048,14 @@
 		}
 
 		&__thank {
-			.f-cregular(30px, 50px, @color-red);
+			.font-circe_regular(30px, 50px, @color-red);
 			.-t-cnu-(@color-red);
 			margin-top: 250px;
 		}
 	}
 
 	.step-4__content {
-		.f-clight(@step-4-fsz, @step-4-lh, #333);
+		.font-circe_light(@step-4-fsz, @step-4-lh, #333);
 		text-align: center;
 	}
 	.step-4-text-1,
@@ -1065,7 +1064,7 @@
 	.step-4-text-4,
 	.step-4-text-5 { padding: @step-4-text-padding; }
 
-	.step-4-text-1 { margin-top: @step-4-text-1-top; .f-clight(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
+	.step-4-text-1 { margin-top: @step-4-text-1-top; .font-circe_light(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
 	.step-4-text-2 { margin-top: @step-4-text-2-top; }
 	.step-4-text-3 { margin-top: @step-4-text-3-top; }
 	.step-4-text-4 { margin-top: @step-4-text-4-top; }
@@ -1073,7 +1072,7 @@
 
 	.step-4__item-info,
 	.step-4__store-info,
-	.step-4__sms { .f-cbold(@step-4-fsz, @step-4-lh, #333); }
+	.step-4__sms { .font-circe_bold(@step-4-fsz, @step-4-lh, #333); }
 
 	.step-4__item-info {}
 	.step-4__store-info {}
@@ -1153,9 +1152,9 @@
 		margin-top: 0;
 
 		&__when {
-			.f-clight(11px, 11px, #333);
+			.font-circe_light(11px, 11px, #333);
 			&_strike {
-				.f-clight(11px, 11px, #333);
+				.font-circe_light(11px, 11px, #333);
 			}
 		}
 
@@ -1196,14 +1195,14 @@
 		}
 
 		&__thank {
-			.f-cregular(30px, 50px, @color-red);
+			.font-circe_regular(30px, 50px, @color-red);
 			.-t-cnu-(@color-red);
 			margin-top: 250px;
 		}
 	}
 
 	.step-4__content {
-		.f-clight(@step-4-fsz, @step-4-lh, #333);
+		.font-circe_light(@step-4-fsz, @step-4-lh, #333);
 		text-align: center;
 	}
 	.step-4-text-1,
@@ -1212,7 +1211,7 @@
 	.step-4-text-4,
 	.step-4-text-5 { padding: @step-4-text-padding; }
 
-	.step-4-text-1 { margin-top: @step-4-text-1-top; .f-clight(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
+	.step-4-text-1 { margin-top: @step-4-text-1-top; .font-circe_light(@step-4-fsz, @step-4-lh, #ed3030); text-transform: uppercase; }
 	.step-4-text-2 { margin-top: @step-4-text-2-top; }
 	.step-4-text-3 { margin-top: @step-4-text-3-top; }
 	.step-4-text-4 { margin-top: @step-4-text-4-top; }
@@ -1220,7 +1219,7 @@
 
 	.step-4__item-info,
 	.step-4__store-info,
-	.step-4__sms { .f-cbold(@step-4-fsz, @step-4-lh, #333); }
+	.step-4__sms { .font-circe_bold(@step-4-fsz, @step-4-lh, #333); }
 
 	.step-4__item-info {}
 	.step-4__store-info {}

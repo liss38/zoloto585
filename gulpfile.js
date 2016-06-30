@@ -16,9 +16,14 @@ var gulp = require('gulp'),
 
 
 
+
+
+var dev_or_prod = '_2prod'; // '_2dev' либо '_2prod', переключатель между версией на продакшн('prod') и версией на тест/показ('dev')
+
 // main.css
 gulp.task('make-main-css', function () {
-	return gulp.src('development/less/_main.less')
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_main.less'])
+		.pipe(concat('main.temp.less'))
 		.pipe(less())
 		.pipe(rename('main.css'))
 		.pipe(gulp.dest('development/css'));
@@ -27,7 +32,7 @@ gulp.task('make-main-css', function () {
 
 // index.css
 gulp.task('make-index-css', function () {
-	return gulp.src('development/less/_index.less')
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_index.less'])
 		.pipe(less())
 		.pipe(rename('index.css'))
 		.pipe(gulp.dest('development/css'));
@@ -36,7 +41,7 @@ gulp.task('make-index-css', function () {
 
 // pcard-description.css
 gulp.task('make-pcard-css', function () {
-	return gulp.src('development/less/_pcard--unstable.less')
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_pcard--unstable.less'])
 		.pipe(less())
 		.pipe(rename('pcard_description.css'))
 		.pipe(gulp.dest('development/css'));
@@ -51,6 +56,18 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], fun
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest('development/css'));
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
