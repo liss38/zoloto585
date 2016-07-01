@@ -510,7 +510,7 @@ $(document).ready(function() {
 					shopTime:    placemarkData[i]['shopTime'],
 				},
 				{
-					iconImageHref: 'images/pcard_order_sprite.png', // картинка иконки
+					iconImageHref: 'img/sprites/pcard_order_sprite.png', // картинка иконки
 					iconImageSize: [27, 35], // размеры картинки
 					// активная точка(с галочкой)
 					iconImageClipRect: [[0, 502], [27, 538]], //координаты картинки в спрайте "активная"

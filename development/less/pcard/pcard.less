@@ -14,11 +14,11 @@
 @color-dark_red: #b32023;
 
 
-.set_pcard_sprite(@hor, @ver) { background: url('@{img-url}pcard_icos_sprite.png') @hor @ver no-repeat; }
-.set_pcard_sprite_mob(@hor: 0, @ver: 0) { background: url('@{img-url}pcard_icos_sprite__mob.png') @hor @ver no-repeat; }
+.set_pcard_sprite(@hor, @ver) { background: url(@img-sprite-pcard) @hor @ver no-repeat; }
+.set_pcard_sprite_mob(@hor: 0, @ver: 0) { background: url(@img-sprite-pcard_mob) @hor @ver no-repeat; }
 
 .set_pcard_socials(@hor, @ver) {
-	background: url('@{img-url}product-soc.png') @hor @ver no-repeat;
+	background: url(@img-sprite-socials-1) @hor @ver no-repeat;
 	-webkit-background-size: 148px 48px;
 	background-size: 148px 48px;
 }
@@ -194,7 +194,7 @@ html, body { margin: 0; padding: 0; }
 @media screen and (max-width: 1024px) {
 	.pcard-main {
 		.-solid-t-(#d8d8d8);
-		background: url('@{img-url}/pcard_store_shadow.png') center top no-repeat;
+		background: url(@img-thingies-shadow-2) center top no-repeat;
 	}
 	.pcard__title {
 		margin: 0;
@@ -524,7 +524,7 @@ html, body { margin: 0; padding: 0; }
 /* блок с определением своего размера для изделия */
 .pcard-store-fitting {
 	height: 54px;
-	background: url('@{img-url}pcard_store_shadow.png') center top no-repeat;
+	background: url(@img-thingies-shadow-2) center top no-repeat;
 	position: relative;
 }
 .pcard-store-fitting-select { display: block; }
@@ -613,7 +613,7 @@ html, body { margin: 0; padding: 0; }
 
 .pcard-store__reserve-button {
 	.-box-(block, 100%, 37px);
-	background: #ed3030 url('@{img-url}pcard_store_shadow.png') center top no-repeat;
+	background: #ed3030 url(@img-thingies-shadow-2) center top no-repeat;
 	.-brad-ad-(4px);
 	.font-circe_light(12px, 37px, #fff);
 	.-t-cnu-(#fff);
@@ -624,7 +624,7 @@ html, body { margin: 0; padding: 0; }
 /* Скоро в наличии */
 .pcard-store__soon-button {
 	.-box-(block, 100%, 57px);
-	background: #f8f8f8 url('@{img-url}pcard_store_shadow.png') center -1px no-repeat;
+	background: #f8f8f8 url(@img-thingies-shadow-2) center -1px no-repeat;
 	.-brad-ad-(4px);
 	.font-circe_light(12px, 57px, #fff);
 	.-t-cnu-(#333);
@@ -761,7 +761,7 @@ html, body { margin: 0; padding: 0; }
 /*******************PCARD-MAIN:Gift**********************/
 .pcard-gift {
 	display: none;
-	background-image: url('@{img-url}pcard_ribbons_2.jpg');
+	background-image: url(@img-pattern-ribbons-2);
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	-webkit-background-size: 800px 604px;
@@ -917,7 +917,7 @@ html, body { margin: 0; padding: 0; }
 		height: 5px;
 		.pos-abs_center_hor(100%,-4px);
 
-		background: url('@{img-url}pcard_video_section_shadow.png') center top no-repeat;
+		background: url(@img-thingies-shadow-3) center top no-repeat;
 	}
 	&__inner {}
 	&__frame {

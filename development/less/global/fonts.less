@@ -6,18 +6,6 @@
 	=================================
 	=================================
 */
-.set_font_face(@font-family, @font-file, @font-path: @fonts-path, @font-weight: normal, @font-style: normal) {
-	@font-face {
-		font-family: @font-family;
-		src: url('@{font-path}@{font-file}.eot');
-		src: local('Circe-Regular'),
-			 url('@{font-path}@{font-file}.woff') format('woff'),
-			 url('@{font-path}@{font-file}.ttf') format('truetype'),
-			 url('@{font-path}@{font-file}.svg') format('svg');
-		font-weight: @font-weight;
-		font-style: @font-style;
-	}
-}
 
 /*
 	Circe

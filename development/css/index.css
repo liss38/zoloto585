@@ -1,14 +1,164 @@
 /*
-	ЗНАЧЕНИЯ
-	ТОЧЕК
-	СЛОМА
+	======
+	IMAGES
+	======
 */
-/* DESKTOP */
-/* TABLET ALBUM */
-/* TABLET PORTRAIT */
-/* MOBILE ALBUM */
-/* MOBILE PORTRAIT */
-/*@mobile_p-min: px;*/
+/*
+	=====
+	FONTS
+	=====
+*/
+/*
+	===
+	SVG
+	===
+*/
+/************************************************
+******* ГРУППЫ СВОЙСТВ **************************
+*************************************************/
+/*display*/
+.-dn- {
+  display: none;
+}
+.-db- {
+  display: block;
+}
+.-dib- {
+  display: inline-block;
+}
+.-di- {
+  display: inline;
+}
+.-dt- {
+  display: table;
+}
+.-dtc- {
+  display: table-cell;
+}
+.-dtr- {
+  display: table-row;
+}
+/*----------end;display---------------------------------*/
+/*box-sizing*/
+.-bxszbb- {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.-bxszcb- {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.-bxszpb- {
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+/*----------end;box-sizing---------------------------------*/
+/*position*/
+/*----------end;position---------------------------------*/
+/*text*/
+.-tal- {
+  text-align: left;
+}
+.-tac- {
+  text-align: center;
+}
+.-tar- {
+  text-align: right;
+}
+.-taj- {
+  text-align: justify;
+}
+.-tdn- {
+  text-decoration: none;
+}
+.-tdu- {
+  text-decoration: underline;
+}
+.-tdl- {
+  text-decoration: line-through;
+}
+.-tdo- {
+  text-decoration: overline;
+}
+.-ttu- {
+  text-transform: uppercase;
+}
+.-ttl- {
+  text-transform: lowercase;
+}
+.-ttc- {
+  text-transform: capitalize;
+}
+.-ttn- {
+  text-transform: none;
+}
+.-toc- {
+  -ms-text-overflow: clip;
+  text-overflow: clip;
+}
+.-toe- {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/*------------------end;text---------------------------------*/
+/*border*/
+/*-----------------------------------end;border---------------------------------*/
+/*border-radius*/
+/*----------end;border-radius---------------------------------*/
+/*background*/
+/*background: [background-attachment || background-color || background-image || background-position || background-repeat] | inherit;*/
+.-cover- {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.-contain- {
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+/*----------end;background---------------------------------*/
+/*box-shadow*/
+.-bxshadn- {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*----------end;box-shadow---------------------------------*/
+/*********************************************
+********* UI-элементы и модификации***********
+*********************************************/
+/* Box */
+/*.-box-bg-() {}*/
+/*.-button-text-() {}*/
+/*.-button-ico-(image, hor, vert) {}*/
+/*.-button-sqr-() {}*/
+/*.-before-(){}
+.-before-ico-(){}*/
+/*.button-block-(@db: db, @w, @h, @bxsz) {
+	.block-@{db}-(@w, @h);
+	.-bxsz@{bxsz}-();
+}
+.button-text-(@font, @text) {}
+.button-decor-(@bg, @shadow, @border, @brad) {}*/
+/*.block(@w: auto, @h: auto, @pad: 0, @marg: 0, @ovh: visible) {
+	display: block || inline-block;
+	width: @w; px % auto
+	height: @h; px % auto
+	padding: @pad;
+	margin: @marg;
+	-webkit-box-sizing: border-box || content-box || padding-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: @ovh;
+}*/
+/*------------------------------------------------*/
+/*
+	HUMDRUM
+*/
+/*
+	миксин для определения нестандартного шрифта для @font-face
+*/
 /*
 	БИБЛИОТЕКА СНИППЕТОВ и МИКСИНОВ 
 	ДЛЯ РАБОТЫ СО ШРИФТАМИ НА САЙТЕ 585
@@ -23,12 +173,49 @@
 	Helvetica Neue
 */
 /*
-	images
+	SPRITES
+	*******
+	спрайты, много маленьких изображений склеенных в одну картинку
 */
 /*
-	fonts
+	PATTERNS
+	********
+	паттерны узоров/текстур, фоновые картинки не имеющие ярко выраженный смысл композиции
 */
-/*@global-fonts-path: 'http://zoloto585.ru/bitrix/templates/zoloto/css/fonts/';*/
+/*@img-pattern-...*/
+/*
+	PRINTS
+	******
+	принты, большие фоны, иллюстрации, фотофоны, выражена композиция картинки
+*/
+/* @img-prints-middle-1: '@{img-prints}/'; */
+/*@img-prints-large-1: '@{img-prints}/';*/
+/*
+	THINGIES
+	********
+	тени, рюшечки, вензеля и т.п.
+*/
+/*
+	STUB
+	****
+	картинки для заглушки, в "прод" не идут
+*/
+/*
+	======
+	COLORS
+	======
+*/
+/*
+	ЗНАЧЕНИЯ
+	ТОЧЕК
+	СЛОМА
+*/
+/* DESKTOP */
+/* TABLET ALBUM */
+/* TABLET PORTRAIT */
+/* MOBILE ALBUM */
+/* MOBILE PORTRAIT */
+/*@mobile_p-min: px;*/
 .index-slider {
   height: 449px;
 }
