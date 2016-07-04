@@ -13,6 +13,37 @@
 	SVG
 	===
 */
+.index-slider {
+  height: 449px;
+}
+.index-slider__inner {
+  height: 449px;
+  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
+}
+.showcase {
+  height: 947px;
+}
+.showcase__inner {
+  height: 947px;
+  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
+}
+.index-info {
+  height: 546px;
+}
+.index-info__inner {
+  height: 546px;
+  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
+}
+.footer-all {
+  height: 311px;
+}
+.footer-all__inner {
+  height: 311px;
+  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
+}
+/* .header-bottom {
+	height: 10px;
+} */
 /************************************************
 ******* ГРУППЫ СВОЙСТВ **************************
 *************************************************/
@@ -40,21 +71,6 @@
 }
 /*----------end;display---------------------------------*/
 /*box-sizing*/
-.-bxszbb- {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.-bxszcb- {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-.-bxszpb- {
-  -webkit-box-sizing: padding-box;
-  -moz-box-sizing: padding-box;
-  box-sizing: padding-box;
-}
 /*----------end;box-sizing---------------------------------*/
 /*position*/
 /*----------end;position---------------------------------*/
@@ -130,32 +146,6 @@
 *********************************************/
 /* Box */
 /*.-box-bg-() {}*/
-/*.-button-text-() {}*/
-/*.-button-ico-(image, hor, vert) {}*/
-/*.-button-sqr-() {}*/
-/*.-before-(){}
-.-before-ico-(){}*/
-/*.button-block-(@db: db, @w, @h, @bxsz) {
-	.block-@{db}-(@w, @h);
-	.-bxsz@{bxsz}-();
-}
-.button-text-(@font, @text) {}
-.button-decor-(@bg, @shadow, @border, @brad) {}*/
-/*.block(@w: auto, @h: auto, @pad: 0, @marg: 0, @ovh: visible) {
-	display: block || inline-block;
-	width: @w; px % auto
-	height: @h; px % auto
-	padding: @pad;
-	margin: @marg;
-	-webkit-box-sizing: border-box || content-box || padding-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	overflow: @ovh;
-}*/
-/*------------------------------------------------*/
-/*
-	HUMDRUM
-*/
 /*
 	миксин для определения нестандартного шрифта для @font-face
 */

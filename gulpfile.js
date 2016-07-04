@@ -65,6 +65,18 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], fun
 
 
 
+// msalnikov.min.css
+// var dev_or_prod = '_2prod';
+gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
+	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
+		.pipe(concat('msalnikov.css'))
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest('production/zoloto/css'));
+});
+
+
+
 
 
 

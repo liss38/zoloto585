@@ -33,9 +33,9 @@
 
 /*box-sizing*/
 .-bxsz-(@bxsz: content-box) { -webkit-box-sizing: @bxsz; -moz-box-sizing: @bxsz; box-sizing: @bxsz; }
-.-bxszbb- { .-bxsz-(border-box); }
-.-bxszcb- { .-bxsz-(content-box); }
-.-bxszpb- { .-bxsz-(padding-box); }
+.-bxszbb-() { .-bxsz-(border-box); }
+.-bxszcb-() { .-bxsz-(content-box); }
+.-bxszpb-() { .-bxsz-(padding-box); }
 /*----------end;box-sizing---------------------------------*/
 
 
@@ -276,40 +276,3 @@
 	
 
 }
-/*.-button-text-() {}*/
-/*.-button-ico-(image, hor, vert) {}*/
-/*.-button-sqr-() {}*/
-
-
-
-/*.-before-(){}
-.-before-ico-(){}*/
-
-
-
-
-
-
-
-/*.button-block-(@db: db, @w, @h, @bxsz) {
-	.block-@{db}-(@w, @h);
-	.-bxsz@{bxsz}-();
-}
-.button-text-(@font, @text) {}
-.button-decor-(@bg, @shadow, @border, @brad) {}*/
-/*.block(@w: auto, @h: auto, @pad: 0, @marg: 0, @ovh: visible) {
-	display: block || inline-block;
-	width: @w; px % auto
-	height: @h; px % auto
-	padding: @pad;
-	margin: @marg;
-	-webkit-box-sizing: border-box || content-box || padding-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	overflow: @ovh;
-}*/
-/*------------------------------------------------*/
-
-/*
-	HUMDRUM
-*/
