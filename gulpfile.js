@@ -3,7 +3,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	cssmin = require('gulp-cssmin'),
 	rename = require('gulp-rename'),
-	zip = require('gulp-zip');
+	zip = require('gulp-zip'),
+	fileinclude = ('gulp-file-include');
 
 
 /*gulp.task('lessmain', function () {
