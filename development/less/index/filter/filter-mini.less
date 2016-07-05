@@ -42,10 +42,7 @@
 
 
 
-/*
-	DESKTOP
-*/
-@media screen and (min-width: @desktop-min) {
+@media @desktop {
 	.filter-mini {
 		position: relative;
 
@@ -102,10 +99,9 @@
 		line-height: 32px;
 	}
 }
-/*
-	TOUCH
-*/
-@media screen and (max-width: @tablet_a-max) {
+
+
+@media @touch {
 	.filter-mini {
 		height: 0;
 		/*max-height: 0px;*/
@@ -131,7 +127,8 @@
 }
 
 /*@tablet Album*/
-@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {
+/*@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {*/
+@media @tablet-album {
 	.filter-mini-option .field-icons-4 {
 		background-position: 4px -108px;
 	}
@@ -141,8 +138,7 @@
 	}
 }
 
-/*@mobile Album*/
-@media screen and (min-width: @mobile_a-min) and (max-width: @mobile_a-max) {
+@media @mobile-album {
 	/* .filter-mini-option .field-icons-4 {
 		background-position: 4px -108px;
 	} */
@@ -152,8 +148,7 @@
 	}
 }
 
-/*@mobile Portrait*/
-@media screen and (max-width: @mobile_p-max) {
+@media @mobile-portrait {
 	.filter-mini {
 
 		.form__field {

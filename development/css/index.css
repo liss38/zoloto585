@@ -206,6 +206,11 @@
 /* MOBILE ALBUM */
 /* MOBILE PORTRAIT */
 /*@mobile_p-min: px;*/
+/*
+	ПРАВИЛА
+	ДЛЯ
+	@MEDIA-ВЫРАЖЕНИЙ
+*/
 .index-filter {
   border-top: 1px solid #efefef;
   border-bottom: 1px solid #cccbca;
@@ -300,9 +305,6 @@
   height: 30px;
   width: 150px;
 }
-/*
-	DESKTOP
-*/
 @media screen and (min-width: 1025px) {
   .filter-mini {
     position: relative;
@@ -347,9 +349,6 @@
     line-height: 32px;
   }
 }
-/*
-	TOUCH
-*/
 @media screen and (max-width: 1024px) {
   .filter-mini {
     height: 0;
@@ -373,6 +372,7 @@
   }
 }
 /*@tablet Album*/
+/*@media screen and (min-width: @tablet_a-min) and (max-width: @tablet_a-max) {*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .filter-mini-option .field-icons-4 {
     background-position: 4px -108px;
@@ -382,7 +382,6 @@
     background-position-x: -33px;
   }
 }
-/*@mobile Album*/
 @media screen and (min-width: 480px) and (max-width: 639px) {
   /* .filter-mini-option .field-icons-4 {
 		background-position: 4px -108px;
@@ -392,7 +391,6 @@
     background-position-x: -40px;
   }
 }
-/*@mobile Portrait*/
 @media screen and (max-width: 479px) {
   .filter-mini .form__field {
     width: 275px;
