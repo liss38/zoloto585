@@ -67,7 +67,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], fun
 
 
 // msalnikov.min.css
-// var dev_or_prod = '_2prod';
+var dev_or_prod = '_2prod';
 gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(concat('msalnikov.css'))
@@ -82,6 +82,12 @@ gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'
 
 
 
+// html include
+gulp.task('fileinclude', function () {
+	
+});
+
+
 
 
 
@@ -93,6 +99,7 @@ gulp.task('namespace', function () {
 		.pipe(concat('all.NAMESPACE'))
 		.pipe(gulp.dest('about'));
 });
+
 
 
 
