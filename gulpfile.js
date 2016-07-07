@@ -3,8 +3,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	cssmin = require('gulp-cssmin'),
 	rename = require('gulp-rename'),
-	zip = require('gulp-zip'),
-	fileinclude = ('gulp-file-include');
+	zip = require('gulp-zip');
+	fileinclude = require('gulp-file-include');
 
 
 /*gulp.task('lessmain', function () {
@@ -51,9 +51,19 @@ gulp.task('make-pcard-css', function () {
 });
 
 
+// catalog.css
+gulp.task('make-catalog-css', function () {
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/catalog.less'])
+		.pipe(concat('catalog.temp.less'))
+		.pipe(less())
+		.pipe(rename('catalog.css'))
+		.pipe(gulp.dest('development/css'));
+});
+
+
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -67,7 +77,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css'], fun
 
 
 // msalnikov.min.css
-var dev_or_prod = '_2prod';
+// var dev_or_prod = '_2prod';
 gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(concat('msalnikov.css'))
@@ -83,8 +93,16 @@ gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'
 
 
 // html include
-gulp.task('fileinclude', function () {
-	
+gulp.task('html-include-catalog', function () {
+	return gulp.src('development/htmls/catalog.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'catalog'
+		}))
+		.pipe(gulp.dest('development'));
 });
 
 

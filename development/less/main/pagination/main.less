@@ -1,0 +1,116 @@
+.content_pagination {
+	padding: 30px 0;
+	box-shadow: 0 2px 1.58px 0.42px rgba(0, 0, 0, 0.15);
+}
+.pagination_list > li {
+    background-color: #ffffff;
+    border: 1px solid #f4f4f4;
+    color: #424242;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+    text-decoration: none;
+}
+.pagination_list > li a {
+	width: 30px;
+    height: 28px;
+    display: block;
+    position: relative;
+}
+.pagination_list > li.active {
+	position: relative;
+	cursor: default;
+}
+.pagination_list > li.active:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	left: -1px;
+	top: -1px;
+	border: 2px solid red;
+	width: 32px;
+    height: 30px;
+    z-index:1;
+}
+.pagination_list > li.active a:after {
+	border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    bottom: -4px;
+    content: "";
+    height: 0;
+    left: 10px;
+    position: absolute;
+    width: 0;
+    z-index: 11;
+}
+.pagination_list > li.active:before  {
+	position: absolute;
+	content: '';
+	bottom: -6px;
+	left: 10px;
+	width: 0; 
+  	height: 0; 
+  	border-left: 5px solid transparent;
+  	border-right: 5px solid transparent;
+    border-top: 5px solid #f3483e;
+}
+.pagination_list > li:last-child  {
+	border-radius: 0 3px 3px 0;
+	background: #fafafa;
+}
+.pagination_list > li:first-child  {
+	border-radius: 3px 0 0 3px;
+	background: #fafafa;
+}
+.pagination_list > li:first-child  span,
+.pagination_list > li:last-child  span {
+	width: 9px;
+    height: 14px; 
+    position: relative;
+    top: 6px;
+    left: 10px;
+    display:block;
+    background-image: url(../images/filter_option__checkbox.png);
+    background-repeat: no-repeat;
+}
+.pagination_list > li:first-child  span {
+    background-position: -16px -32px; 
+}
+.pagination_list > li:last-child  span { 
+    background-position: -25px -32px;
+    left: 11px;
+}
+.content_pagination .pagination_list {
+	margin: 0 auto;
+	display: block;
+} 
+fieldset.select_type_numbers,
+fieldset.select_type_content{
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-align: left;
+	position: absolute;
+	top:0;
+}
+.content_pagination .wrp {
+	position: relative;
+}
+.content_pagination nav {
+	display: inline-block;
+}
+.content_pagination{
+	text-align: center;
+}
+.select_type_content {
+	right:0;
+}
+.select_type_numbers {
+	left:0;
+}

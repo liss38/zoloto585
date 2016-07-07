@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/catalog.min.css">
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+</head>
+<body>
+	@@include('blocks/header.html')
+
+
+	<main>
+		@@include('blocks/catalog/filter/main.html')
+		@@include('blocks/pagination/main.html')
+	</main>
+
+	<footer>
+		<!-- "FOOTER-ALL" -->
+		<div class="section footer-all">
+			<div class="section__inner footer-all__inner">
+				
+			</div>
+		</div>
+		<!-- END-of-"FOOTER-ALL" -->
+	</footer>
+
+	<!-- JS -->
+	<script src="http://zoloto585.ru/bitrix/templates/zoloto/js/jquery-1.11.1.min.js"></script>
+	<!-- <script src="js/touchversion__nav.js"></script> -->
+	<script src="js/main-nav.js"></script>
+	<script src="js/index-filter.js"></script>
+</body>
+</html>
