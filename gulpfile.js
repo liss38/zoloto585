@@ -23,7 +23,7 @@ var dev_or_prod = '_2dev'; // '_2dev' либо '_2prod', переключате�
 
 // main.css
 gulp.task('make-main-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less'])
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less', 'development/less/_external.less'])
 		.pipe(concat('main.temp.less'))
 		.pipe(less())
 		.pipe(rename('main.css'))
