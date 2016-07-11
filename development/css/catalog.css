@@ -276,9 +276,6 @@
   color: #797979;
   white-space: normal;
 }
-.level2 .filter-section__block {
-  padding: 8px 6px 8px 7px;
-}
 .filter-section__block:last-child {
   border-right: none;
 }
@@ -644,12 +641,6 @@
   border: 1px solid #b01f22;
   cursor: pointer;
 }
-.level1 .filter-section__block {
-  height: 247px;
-}
-.level2 .filter-section__block {
-  height: 115px;
-}
 .filter-section__selection {
   padding: 20px 0 0;
 }
@@ -706,15 +697,6 @@
 .filter-group__options .scroll-pane {
   overflow: auto;
   width: 100%;
-}
-.level1 .scroll-pane {
-  height: 180px;
-}
-.level2 .scroll-pane {
-  height: 65px;
-}
-.level1 .filter-group__scroll_settings {
-  overflow: hidden;
 }
 .filter-group__scroll_settings .filter-option__checkbox + span::before {
   display: none;
@@ -777,4 +759,41 @@
 .filter-group__options .jspVerticalBar,
 .filter-group__options .jspHorizontalBar {
   background: none;
+}
+.filter {
+  background-color: #f5f5f5;
+}
+.filter-section {
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.filter-section__inner {
+  height: 100%;
+}
+.filter-section-1 {
+  height: 247px;
+}
+.filter-section-1 .scroll-pane {
+  height: 180px;
+}
+.filter-section-1 .filter-group__scroll_settings {
+  overflow: hidden;
+}
+.filter-section-2 {
+  /*height: px;*/
+}
+.filter-section-3 {
+  /*height: px;*/
+}
+.filter-section-4 {
+  /*height: px;*/
+}
+.level2 .filter-section__block {
+  padding: 8px 6px 8px 7px;
+}
+.level2 .filter-section__block {
+  height: 115px;
+}
+.level2 .scroll-pane {
+  height: 65px;
 }

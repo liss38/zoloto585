@@ -91,9 +91,24 @@ gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'
 
 
 
+/*
+	HTML INCLUDE
+*/
 
-// html include
-gulp.task('html-include-catalog', function () {
+// html include catalog-filter
+gulp.task('html-include-catalog-filter', function () {
+	return gulp.src('development/htmls/blocks/catalog/filter/main.inc.html')
+		.pipe(fileinclude({
+			prefix: '@@'
+		}))
+		.pipe(rename({
+			basename: 'filter'
+		}))
+		.pipe(gulp.dest('development/htmls/blocks/catalog'));
+});
+
+// catalo page
+gulp.task('make-catalog-page', ['html-include-catalog-filter'], function () {
 	return gulp.src('development/htmls/catalog.tmpl.html')
 		.pipe(fileinclude({
 			prefix: '@@',
@@ -104,6 +119,8 @@ gulp.task('html-include-catalog', function () {
 		}))
 		.pipe(gulp.dest('development'));
 });
+
+
 
 
 
