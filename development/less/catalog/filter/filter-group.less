@@ -1,0 +1,129 @@
+/*
+	@mix less
+*/
+.column-count(@count: auto) {
+	-webkit-column-count: @count;
+	   -moz-column-count: @count;
+	        column-count: @count;
+}
+.column-gap(@gap: normal) {
+	-webkit-column-gap: @gap;
+	   -moz-column-gap: @gap;
+	        column-gap: @gap;
+}
+/*
+	@mix less
+*/
+
+
+
+
+.filter-group {
+	font-size: 10px;
+	text-transform: uppercase;
+	margin: 0 0 10px;
+	padding: 0;
+	border: none;
+	clear: both;
+}
+.filter-group__header {
+	font-family: 'Circle';
+	color: #f3483e;
+	margin-bottom: 3px;
+}
+.filter-group_content_2column {
+	.column-count(2);
+	.column-gap(9px);
+	vertical-align: top;
+}
+.filter-group_content_3column {
+	.column-count(3);
+	.column-gap(0);
+}
+.product_diamondquantity-width .filter-group_content_2column {
+	.column-gap(0);
+}
+.filter-group__options_colorinsert .filter-option__checkbox:checked + span:before,
+.filter-group__options_colorinsert .filter-option:hover .filter-option__checkbox + span:before  {
+	border: 1px solid #ed3030;
+}
+.filter-group__options_price_line label{
+	display: inline-block;
+	font-size: 11px;
+}
+.filter-group__options_price_line label:first-child {
+	margin-right:30px;
+}
+.filter-group__options_sizes .filter-option,
+.filter-group__options_colorinsert .filter-option  {
+	display: inline-block;
+	float: left;
+	margin: 0 6px 1px 0; 
+	padding-bottom: 0;
+}
+ 
+.filter-group__options_colorinsert .filter-option__checkbox + span:before {
+	background-image: none;
+	border-radius: 3px;
+	border: 1px solid #e8e8e8;
+}
+.filter-section__selection .filter-group__header {
+    float: left;
+}
+.filter-section__selection .filter-group .filter-group__header {
+	margin-right: 9px;
+	margin-top: 3px;
+}
+.filter-section__selection .filter-group__options span {
+	display: inline-block;
+	padding: 0 20px 0 10px;
+	line-height: 20px;
+	background: #ffffff;
+	border: 1px solid #e8e8e8;
+	border-radius: 3px;
+	position: relative;
+	white-space: nowrap;
+	margin: 0 5px 10px 0;
+}
+.filter-section__selection .filter-group__options span:after {
+	position: absolute;
+	content: '';
+	width: 9px;
+	height: 9px;
+	right: 6px;
+	top: 5px;
+	background-image: url(../images/filter_option__checkbox.png);
+    background-repeat: no-repeat;
+    background-position: -34px -36px;
+}
+.filter-section__selection .filter-group__options span:hover:after {
+	background-position: -34px -25px;
+}
+.filter-section__selection .filter-group__options span:hover {
+	border: 1px solid #ed3939;
+	cursor: pointer;
+}
+.filter-group__change_parametr_link {
+	float: right;
+	text-decoration: underline;
+	font-style: normal;
+	font-size: 10px;
+	margin-top: 3px;
+}
+.filter-group__change_parametr_link:hover {
+	color: #ed3030;
+	cursor: pointer;
+}
+.filter-group__options .scroll-pane {
+	overflow: auto;
+	width: 100%;
+}
+
+
+
+.filter-group__scroll_settings  .filter-option__checkbox + span::before {
+	display: none;
+}
+.filter-group__scroll_settings  .filter-option__checkbox + span {
+	padding: 0;
+}

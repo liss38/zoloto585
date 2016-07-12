@@ -11,22 +11,77 @@
 
 	&__inner {
 		height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		font-size: 0;
 	}
 
 
 	&__block {
-		float: left;
-		min-height: 1px;
-		padding: 15px 6px 19px 7px;
+		display: inline-block;
+		vertical-align: top;
+		height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 15px;
+		/*padding: 15px 6px 19px 7px;*/
 
 		border-right: 1px solid #ededed;
 		border-left: 1px solid #fbfbfb;
+
+
+		&:first-child {
+			border-left: none;
+		}
+
+
+		&:last-child {
+			border-right: none;
+		}
 	}
 }
+
 
 .filter-section-1 {
 	height: 247px;
 
+	.filter-section__block {
+
+	}
+}
+.filter-section-2 {}
+.filter-section-3 {}
+.filter-section-4 {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-section-1 {
 	.scroll-pane {
 		height: 180px;
 	}

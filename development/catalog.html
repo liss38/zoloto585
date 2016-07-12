@@ -636,7 +636,7 @@
 	<div class="section  filter-section  filter-section-1">
 		<div class="section__inner  filter-section__inner">
 			<div class="filter-section__block product_type-width">
-				<fieldset class="filter-group">
+				<!-- <fieldset class="filter-group  filter-group-by-product-type">
 					<legend class="filter-group__header">ТИП ИЗДЕЛИЯ</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox scroll-pane">
@@ -652,11 +652,26 @@
 							</div>
 						</div>
 					</div>
+				</fieldset> -->
+
+
+<fieldset class="filter-group  filter-group-by-product-type">
+					<legend class="filter-group__header">ТИП ИЗДЕЛИЯ</legend>
+					<div class="filter-group__options  js-filter-group-scroll-pane">
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">БРОШЬ</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">БУЛАВКА</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">ЗАГРЕБУШКА</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">ЗАКОЛКА ДЛЯ ГАЛСТУКА</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">ЗАПОНКА</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">ИКОНА</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">КОЛЬЕ</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">КОЛЬЦО</span></label>
+					</div>
 				</fieldset>
 			</div>
 
 			<div class="filter-section__block product_metal-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-metal-type">
 					<legend class="filter-group__header">металл:</legend>
 					<div class="filter-group__options filter-group_content_2column">
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">без&nbsp;металла</span></label>
@@ -665,7 +680,7 @@
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">золото</span></label>
 					</div>
 				</fieldset>
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-metal-alloy">
 					<legend class="filter-group__header">проба:</legend>
 					<div class="filter-group__options filter-group_content_3column">
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">375</span></label>
@@ -675,7 +690,7 @@
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">875</span></label>
 					</div>
 				</fieldset>
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-metal-color">
 					<legend class="filter-group__header">цвет металла:</legend>
 					<div class="filter-group__options filter-options_color">
 						<label class="filter-option filter-option_color_white"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
@@ -689,7 +704,7 @@
 			</div>
 
 			<div class="filter-section__block product_insert-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-gemstone">
 					<legend class="filter-group__header">вставка:</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox scroll-pane">
@@ -733,7 +748,7 @@
 			</div>
 
 			<div class="filter-section__block product_diamondquantity-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-gemstone-quantity">
 					<legend class="filter-group__header">кол-во камней:</legend>
 					<div class="filter-group__options filter-group_content_2column">
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">1</span></label>
@@ -742,7 +757,7 @@
 						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">от 10</span></label>	
 					</div>
 				</fieldset>
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-gemstone-color">
 					<legend class="filter-group__header">цвет вставки:</legend>
 					<div class="filter-group__options filter-group__options_colorinsert">
 						<label class="filter-option filter-option_colorinsert_white"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
@@ -764,7 +779,7 @@
 						
 					</div>
 				</fieldset>
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-gemstone-weight">
 					<legend class="filter-group__header">вес со вставками:</legend>
 					<div class="filter-group__options">
 						<label class="filter-option filter-option_content_textfield_light"><span class="filter-option__title">от</span><input type="text" class="filter-option__textfield filter-option__textfield_small"/><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield filter-option__textfield_small"/></label>	
@@ -773,7 +788,7 @@
 			</div>
 
 			<div class="filter-section__block product_typedesign-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-styling">
 					<legend class="filter-group__header">дизайн:</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox scroll-pane">
@@ -815,7 +830,7 @@
 				</fieldset>
 			</div>
 			<div class="filter-section__block product_collection-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-collection">
 					<legend class="filter-group__header">коллекция:</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox scroll-pane">
@@ -836,7 +851,7 @@
 		<div class="section__inner  filter-section__inner">
 			<div class="filter-section__block product_sizes-width">
 				<a href="#" title="" class="filter-link_find_size">как узнать размер</a>
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-size">
 	 				<legend class="filter-group__header">размеры:</legend>
 					<div class="filter-group__options filter-group__options_sizes  scroll-pane">
 						<div class="filter-group__scroll_settings">
@@ -876,7 +891,7 @@
 			</div>
 
 			<div class="filter-section__block product_price-width">
-				<fieldset class="filter-group filter-option_content_textfield">
+				<fieldset class="filter-group  filter-group-by-price    filter-option_content_textfield">
 					<div class="filter-group__options">
 						<label class="filter-option filter-option_content_textfield_light"><span class="filter-option__title">цена от </span><input type="text" class="filter-option__textfield filter-option__textfield_big"/><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield filter-option__textfield_big"/></label>	
 					</div>
@@ -888,7 +903,7 @@
 			</div>
 
 			<div class="filter-section__block product_typedesign-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-style">
 					<legend class="filter-group__header">стиль:</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox  scroll-pane">
@@ -904,7 +919,7 @@
 			</div>
 
 			<div class="filter-section__block product_collection-width">
-				<fieldset class="filter-group">
+				<fieldset class="filter-group  filter-group-by-lock">
 					<legend class="filter-group__header">замок:</legend>
 					<div class="filter-group__options">
 						<div class="filter-group__options_scrollbox  scroll-pane">
@@ -1007,6 +1022,10 @@
 	<script src="http://zoloto585.ru/bitrix/templates/zoloto/js/jquery-1.11.1.min.js"></script>
 	<!-- <script src="js/touchversion__nav.js"></script> -->
 	<script src="js/main-nav.js"></script>
-	<script src="js/index-filter.js"></script>
+
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script src="js/jquery.easydropdown.js"></script>
+	<script type="text/javascript" src="js/catalog_filter_script.js"></script>
 </body>
 </html>
