@@ -1,27 +1,131 @@
+/*
+	подгонка ширин для выравнивания 
+	столбцов таким образом, что 
+	вертикальные полоски сходились стык в стык
+*/
+	@column-width-1: 171px;
+	@column-width-2: 196px;
+	@column-width-3: 183px;
+	@column-width-4: 139px;
+	@column-width-5: 167px;
+	@column-width-6: 127px;
+	@column-width-7: @column-width-1 + @column-width-2 + 2px;
+	@column-width-8: @column-width-3 + @column-width-4 + 2px;
+	@column-width-9:  @column-width-5;
+	@column-width-10:  @column-width-6;
+
+/*
+	-------------
+*/
+
 .filter-group-by-product-type {
-	width: 170px;
+	width: @column-width-1;
 	height: 213px;
+
+
+	.filter-group__options {
+		height: 195px;
+	}
 }
 
-.filter-group-by-metal-color {}
-.filter-group-by-metal-alloy {}
-.filter-group-by-metal-type {}
-
-.filter-group-by-gemstone {}
-
-.filter-group-by-gemstone-quantity {}
-.filter-group-by-gemstone-color {}
-.filter-group-by-gemstone-weight {}
 
 
-.filter-group-by-styling {}
 
-.filter-group-by-collection {}
 
-.filter-group-by-price {}
 
-.filter-group-by-style {}
+.filter-group-by-metal-type {
+	width: @column-width-2;
 
-.filter-group-by-size {}
+	.filter-option {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+.filter-group-by-metal-alloy {
+	width: @column-width-2;
 
-.filter-group-by-lock {}
+	.filter-option {
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 20px;
+	}
+}
+.filter-group-by-metal-color {
+	width: @column-width-2;
+}
+
+
+
+.filter-group-by-gemstone {
+	width: @column-width-3;
+
+
+	.filter-group__options {
+		height: 195px;
+	}
+}
+
+
+
+.filter-group-by-gemstone-quantity {
+	width: @column-width-4;
+}
+.filter-group-by-gemstone-color {
+	width: @column-width-4;
+}
+.filter-group-by-gemstone-weight {
+	width: @column-width-4;
+}
+
+
+.filter-group-by-styling {
+	width: @column-width-5;
+
+
+	.filter-group__options {
+		height: 195px;
+	}
+}
+
+.filter-group-by-collection {
+	width: @column-width-6;
+
+	.filter-group__options {
+		height: 195px;
+	}
+}
+
+.filter-group-by-price {
+	width: @column-width-8;
+}
+
+.filter-group-by-style {
+	width: @column-width-9;
+
+	.filter-group__options {
+		height: 70px;
+	}
+}
+
+.filter-group-by-size {
+	width: @column-width-7;
+
+
+	.filter-group__header {
+		padding-bottom: 3px;
+	}
+
+
+	.filter-group__options {
+		height: 70px;
+	}
+}
+
+.filter-group-by-lock {
+	width: @column-width-10;
+
+
+	.filter-group__options {
+		height: 70px;
+	}
+}

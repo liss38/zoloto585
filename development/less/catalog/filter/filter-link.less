@@ -1,0 +1,39 @@
+.filter-link {
+	position: absolute;
+	top: 15px;
+	right: 0;
+
+	display: inline-block;
+	margin-right: 10px;
+
+	border-bottom: 1px dotted;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	.font-circe_light(10px, 10px, #a9a9a9);
+
+
+	&:after {
+		position: absolute;
+		left: -16px;
+		top: -3px;
+
+		content: '';
+
+		display: block;
+		width: 13px;
+		height: 12px;
+
+		background: url(@img-sprite-catalog-filter) -34px -12px no-repeat;
+	}
+
+
+	&:hover {
+		color: #ed3030;
+	}
+
+
+	&:hover:after {
+		background-position: -34px 0;
+	}
+}

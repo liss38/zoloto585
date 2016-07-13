@@ -2,39 +2,90 @@
 	<div class="section  filter-section  filter-section-1">
 		<div class="section__inner  filter-section__inner">
 			<div class="filter-section__block product_type-width">
-				@@include('filter-01.html')
+				@@include('filter-01.html', {
+					"group"        : "filter-group  filter-group-by-product-type",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 
-			<div class="filter-section__block product_metal-width">
-				@@include('filter-02.html')
-				@@include('filter-03.html')
+			<div class="filter-section__block">
+				@@include('filter-02.html', {
+					"group"        : "filter-group  filter-group-by-metal-type",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
+
+				@@include('filter-03.html', {
+					"group"        : "filter-group  filter-group-by-metal-alloy",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
+
 				@@include('filter-04.html')
 			</div>
 
-			<div class="filter-section__block product_insert-width">
-				@@include('filter-05.html')
+			<div class="filter-section__block">
+				@@include('filter-05.html', {
+					"group"        : "filter-group  filter-group-by-gemstone",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 
-			<div class="filter-section__block product_diamondquantity-width">
+			<div class="filter-section__block">
 				@@include('filter-06.html')
 				@@include('filter-07.html')
 				@@include('filter-08.html')
 			</div>
 
-			<div class="filter-section__block product_typedesign-width">
-				@@include('filter-09.html')
+			<div class="filter-section__block">
+				@@include('filter-09.html', {
+					"group"        : "filter-group  filter-group-by-styling",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
-			<div class="filter-section__block product_collection-width">
-				@@include('filter-10.html')
+			<div class="filter-section__block">
+				@@include('filter-10.html', {
+					"group"        : "filter-group  filter-group-by-collection",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 		</div>
 	</div>
 
-	<div class="section  filter-section  filter-section-2 level2">
+	<div class="section  filter-section  filter-section-2">
 		<div class="section__inner  filter-section__inner">
-			<div class="filter-section__block product_sizes-width">
-				<a href="#" title="" class="filter-link_find_size">как узнать размер</a>
-				@@include('filter-11.html')
+			<div class="filter-section__block">
+				<a href="#" title="" class="filter-link">как узнать размер</a>
+				@@include('filter-11.html', {
+					"group"        : "filter-group  filter-group-by-size",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option  filter-option--button",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--button"
+				})
 			</div>
 
 			<div class="filter-section__block product_price-width">
@@ -42,11 +93,25 @@
 			</div>
 
 			<div class="filter-section__block product_typedesign-width">
-				@@include('filter-13.html')
+				@@include('filter-13.html', {
+					"group"        : "filter-group  filter-group-by-style",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 
 			<div class="filter-section__block product_collection-width">
-				@@include('filter-14.html')
+				@@include('filter-14.html', {
+					"group"        : "filter-group  filter-group-by-lock",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options  js-filter-group-scroll-pane",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 			
 		</div>
