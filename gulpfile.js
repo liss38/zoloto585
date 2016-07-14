@@ -91,8 +91,66 @@ gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'
 
 
 
+
+
+
+
+
 /*
-	HTML INCLUDE
+	HTML INCLUDE 4 
+	"HEADER"
+*/
+// html include header-top
+gulp.task('html-include-header-top', function () {
+	return gulp.src('development/htmls/blocks/header/top/_main.inc.html')
+		.pipe(fileinclude({
+			prefix: '@@'
+		}))
+		.pipe(rename({
+			basename: 'top'
+		}))
+		.pipe(gulp.dest('development/htmls/blocks/header'));
+});
+
+// html include header-middle
+gulp.task('html-include-header-middle', function () {
+	return gulp.src('development/htmls/blocks/header/middle/_main.inc.html')
+		.pipe(fileinclude({
+			prefix: '@@'
+		}))
+		.pipe(rename({
+			basename: 'middle'
+		}))
+		.pipe(gulp.dest('development/htmls/blocks/header'));
+});
+
+// html include header-bottom
+gulp.task('html-include-header-bottom', function () {
+	return gulp.src('development/htmls/blocks/header/bottom/_main.inc.html')
+		.pipe(fileinclude({
+			prefix: '@@'
+		}))
+		.pipe(rename({
+			basename: 'bottom'
+		}))
+		.pipe(gulp.dest('development/htmls/blocks/header'));
+});
+
+// make header block
+gulp.task('make-header-block', ['html-include-header-top', 'html-include-header-middle', 'html-include-header-bottom'], function () {
+	return gulp.src(['development/htmls/blocks/header/top.html', 'development/htmls/blocks/header/middle.html', 'development/htmls/blocks/header/bottom.html'])
+		.pipe(concat('header.html'))
+		.pipe(gulp.dest('development/htmls/blocks'));
+});
+
+
+
+
+
+
+/*
+	HTML INCLUDE 4 
+	"CATALOG PAGE"
 */
 
 // html include catalog-filter
@@ -107,7 +165,7 @@ gulp.task('html-include-catalog-filter', function () {
 		.pipe(gulp.dest('development/htmls/blocks/catalog'));
 });
 
-// catalo page
+// cataloп page
 gulp.task('make-catalog-page', ['html-include-catalog-filter'], function () {
 	return gulp.src('development/htmls/catalog.tmpl.html')
 		.pipe(fileinclude({
@@ -119,6 +177,56 @@ gulp.task('make-catalog-page', ['html-include-catalog-filter'], function () {
 		}))
 		.pipe(gulp.dest('development'));
 });
+
+// cataloп page FULL
+gulp.task('make-catalog-page-full', ['make-header-block', 'html-include-catalog-filter'], function () {
+	return gulp.src('development/htmls/catalog.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'catalog'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+
+
+
+
+
+/*
+	HTML INCLUDE 4 
+	"INDEX PAGE"
+*/
+// index page
+gulp.task('make-index-page', function () {
+	return gulp.src('development/htmls/index.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'index'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+// index page FULL
+gulp.task('make-index-page-full', ['make-header-block'], function () {
+	return gulp.src('development/htmls/index.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'index'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+
 
 
 
