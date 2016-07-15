@@ -1,0 +1,162 @@
+
+<!-- saved from url=(0067)http://content.adriver.ru/banners/0002186/0002186173/0/ch2.html?0&0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
+<body>
+<script type="text/javascript">
+function gC(a){var b=document.cookie.match("(^|;) ?"+a+"=([^;]*)(;|$)");return b?unescape(b[2]):null}
+function sC(a,b,c){var d,e=a+"="+b+"; ";c&&(d=new Date,d.setTime(d.getTime()+c),e+="expires="+d.toGMTString()+"; "),document.cookie=e+"path=/; domain=.adriver.ru"}
+if (document.cookie.indexOf('ar_ch') == -1){
+	sC('ar_ch', 1, 1000*60*60*24*7);
+	!function(a){
+		var b=document.location.search.substr(1).split("&"),
+		c=b.length;
+		if(!c)return!1;
+		for(var d=0;c>d;d++)window[a[d]]=unescape(b[d]);
+	}(["cookieaction","cookiestate"]);
+
+	var ar_co = (function () {
+	this._class = function() {
+	var self = this;
+
+	this._ec = {};
+
+	this.get = function(name, cb, dont_reset){
+		this._ar_co(name, cb, undefined, undefined, dont_reset);
+	}
+	this.set = function(name, value){
+		this._ar_co(name, function() { }, value);
+	}
+
+	this._ar_co = function(name, cb, value, i, dont_reset){
+		if (typeof document.body == 'undefined'){
+			setTimeout(self._ar_co, 200, name, cb, value, i, dont_reset);
+			return;
+		}
+		
+		if (typeof i == 'undefined')
+			i = 0;
+
+		if (i == 0){
+			self.ar_ds(name, value);
+			self._ec.localData = self.ar_ls(name, value);
+			self._ec.sessionData = self.ar_ss(name, value);
+		}
+
+		if (typeof value == 'undefined'){
+			if (((window.openDatabase && typeof self._ec.dbData == 'undefined') || (document.createElement('canvas').getContext)) && (i++ < 10)){
+				setTimeout(self._ar_co, 200, name, cb, value, i, dont_reset);
+			}else{
+				var tmpec = self._ec;
+				self._ec = {};
+				
+				var candidates = new Array();
+				var bestnum = 0;
+				var candidate;
+				for (var item in tmpec){
+					if (typeof tmpec[item] != 'undefined')
+						candidates[tmpec[item]] = typeof candidates[tmpec[item]] == 'undefined' ? 1 : candidates[tmpec[item]] + 1;
+				}
+				
+				for (var item in candidates){
+					if (candidates[item] > bestnum){
+						bestnum = candidates[item];
+						candidate = item;
+					}
+				}
+				
+				if (typeof dont_reset == "undefined" || dont_reset != 1){
+					self.set(name, candidate);}
+				if (typeof cb == 'function') 
+					cb(candidate, tmpec);
+			}
+		}
+	}
+
+	this.createDiv = function(id){
+		var el = document.getElementById(id);
+		if (!el){
+			el = document.createElement("div");
+			el.setAttribute('id', id);
+			document.body.appendChild(el);
+		}
+		return el;
+	}
+
+	this.ar_ls = function(name, value){
+		if (window.localStorage){
+			if (typeof(value) != "undefined")
+				localStorage.setItem(name, value);
+			else
+				return localStorage.getItem(name);
+		}
+	}
+
+	this.ar_ds = function(name, value){
+		if (window.openDatabase){		
+			var database = window.openDatabase("sqlite_ar", "", "ar", 1024 * 1024);
+			if (typeof(value) != "undefined")
+				database.transaction(function(tx)
+				{
+					tx.executeSql("CREATE TABLE IF NOT EXISTS cache(" +
+						"id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+						"name TEXT NOT NULL, " +
+						"value TEXT NOT NULL, " +
+						"UNIQUE (name)" + 
+					")", [], function (tx, rs) { }, function (tx, err) { });
+
+					tx.executeSql("INSERT OR REPLACE INTO cache(name, value) VALUES(?, ?)", [name, value],
+						function (tx, rs) { }, function (tx, err) { })
+				});
+			else{
+				database.transaction(function(tx)
+				{
+					tx.executeSql("SELECT value FROM cache WHERE name=?", [name],
+					function(tx, result1) {
+						if (result1.rows.length >= 1)
+							self._ec.dbData = result1.rows.item(0)['value'];
+						else
+							self._ec.dbData = '';
+					}, function (tx, err) { })
+				});
+			}
+		}
+	}
+
+	this.ar_ss = function(name, value){
+		try{
+			if (window.sessionStorage){
+				if (typeof(value) != "undefined")
+					sessionStorage.setItem(name, value);
+				else
+					return sessionStorage.getItem(name);
+			}
+		} catch(e) { }
+	}
+	};
+	return _class;
+	})();
+
+	var ar_p = new ar_co();
+	var val = gC('cid'), sg = 'get';
+	if(!val){val = 1;}
+	function cA(o) {var s='';for(var x in o) {if(o[x]!=null && o[x]!='null'){s+=o[x]}}return s;}
+
+	function getC(dont){
+		ar_p.get("ar_cid2", function(best, all) {
+		var check = 0;
+		var ar_pix = "//ad.adriver.ru/cgi-bin/rle.cgi?sid=1&ad=571009&bt=21&pid=2348100&bid=4474815&bn=4474815&custom=10="+val+";11="+all['localData']+";12="+all['sessionData']+";13="+all['dbData']+";14="+sg+";15="+check+"&rnd=43219070";
+		if(document.createElement&&document.body){
+			var i=document.createElement('img');
+			i.style.position='absolute';i.style.width=i.style.height='0px';
+			i.src=ar_pix;
+			document.body.insertBefore(i,document.body.firstChild);
+		}else{new Image().src = ar_pix}
+		}, dont);
+	}
+
+	getC(1);
+}
+</script>
+
+
+</body></html>

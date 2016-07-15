@@ -1,0 +1,439 @@
+var WisePopsStorage = function () {
+};
+WisePopsStorage.prototype = {
+    dataStoredCookieName: 'wisepops',
+    noDisplayPopinCookieName: 'SPECIFIC_COOKIE_NAME_IN_WICH_WE_STORE_THAT_USER_DONT_WANT_TO_SEE_POPIN_ANYMORE',
+    /**
+     * storedData is a Javascript object retrieved from a cookie
+     * !!!!!!!!!! DEV test DATA !!!!!!!
+     * it stores all data for each popins and global informations.
+     * @param Object
+     **/
+    storedData: {
+        "version": 2,
+        "ucrn": null,
+        "req_count": null,
+        "last_req_date": null,
+        "popins": {
+
+        }
+    },
+
+    lastRequestInterval:null,
+    /**
+     * return a string matched by cname parameter from cookie
+     * @param string cname (Cookie name)
+     * @return string
+     **/
+    getCookie: function (cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    },
+    /**
+     * Returns the number of minutes elapsed from the last global request
+     * @return number
+     **/
+    getLastRequestInterval: function () {
+        if (this.lastRequestInterval) {
+            return this.lastRequestInterval;
+        }
+        if (this.storedData.last_req_date) {
+            var lastReqDate = new Date(this.storedData.last_req_date);
+            var currentDate = new Date();
+            var diff = Math.abs(currentDate.getTime() - lastReqDate.getTime());
+            return Math.floor(diff / 1000 / 60);
+        } else {
+            return 0;
+        }
+
+    },
+
+    /**
+     * Returns true or false wether the visitor is a new visitor or not.
+     * (if pageViewCount > 1)
+     * @return boolean
+     **/
+    isNewVisitor: function () {
+        if (this.storedData.req_count < 1) {
+            return true
+        } else {
+            return false
+        }
+        ;
+    },
+
+    /**
+     * Returns the count of page view from the stored data object.
+     * @return integer
+     **/
+    getPageViewCount: function () {
+        if (this.storedData.req_count) {
+            return this.storedData.req_count;
+        } else {
+            return "0";
+        }
+    },
+
+    /**
+     * Increment the page view count in the storedData object
+     * then save the data object in the cookie to avoid data loss.
+     **/
+    incrementPageViewCount: function () {
+        this.storedData.req_count++;
+        this._save();
+    },
+
+    /**
+     * Returns true or false wether the do_not_display option is turned on or off
+     * @return boolean
+     **/
+    getDoNotDisplay: function () {
+
+    },
+
+    /**
+     * Indicates that any popins should be displayed for this visitor
+     **/
+    setDoNotDisplay: function () {
+        this._save();
+    },
+
+    /**
+     * Indicates that a popin id has been displayed
+     * @param string popin (Popin Id)
+     * @return booelean
+     **/
+    setDisplayed: function (popin) {
+        var date = new Date();
+        date.toJSON();
+        if (this.getPopin(popin)) {
+            this.getPopin(popin).display_count++;
+            this.getPopin(popin).display_date = date;
+
+
+        } else {
+            this.storedData.popins[popin] = {
+                "display_count": 1,
+                "display_date": date
+            };
+
+        }
+        this._save();
+
+        return true;
+    },
+    getDisplayCount: function (popin) {
+        if (this.getPopin(popin)) {
+            if (this.getPopin(popin).display_count) {
+
+                return this.getPopin(popin).display_count;
+
+            } else {
+
+                return 0;
+            }
+        }
+    },
+
+    /**
+     * Indicates that a popin id just has a convertion action
+     * Then we ask the object to save the modified object inside the cookie
+     * to avoid data loss.
+     * @param string popin (Popin id)
+     * @return boolean
+     **/
+    setConverted: function (popin) {
+        if (this.getPopin(popin)) {
+            var date = new Date();
+            date.toJSON();
+            this.getPopin(popin).converted = date;
+            this._save();
+
+            return true;
+
+        } else {
+
+            return false;
+        }
+    },
+
+    /**
+     * Returns the number of minutes elapsed from the last display of the popin
+     * @param string popin (Popin id)
+     * @return integer
+     **/
+    getLastDisplayedInterval: function (popin) {
+        if (this.getPopin(popin)) {
+            var diff = Math.abs(new Date(this.getPopin(popin).display_date) - new Date());
+            var minutes = Math.floor((diff / 1000) / 60);
+
+            return minutes;
+
+        } else {
+
+            return 0;
+        }
+    },
+
+    /**
+     * Verifies for a Popin id if it has already been converted
+     * @return boolean
+     **/
+    isConverted: function (popin) {
+        if (this.getPopin(popin)) {
+            if (this.getPopin(popin).converted) {
+
+                return true;
+
+            } else {
+
+                return false;
+            }
+        }
+    },
+
+    /**
+     * Returns an array of popin ids contained in the storage.
+     * @return array
+     **/
+    getPopinIds: function () {
+        var popinIds = [];
+        for (var popin in this.storedData.popins) {
+            popinIds.push(popin);
+
+        }
+        return popinIds;
+    },
+
+    /**
+     * Returns data contained in the storage object for a popin id
+     * @param integer
+     * @return object
+     **/
+    getPopin: function (popin) {
+        if (this.storedData.popins[popin]) {
+            return this.storedData.popins[popin];
+        }
+    },
+
+    /**
+     * generate a random ucrn between 0 and 99
+     * return integer newly generated ucrn
+     **/
+    generateUcrn: function () {
+        return this.storedData.ucrn = Math.floor(Math.random() * 100);
+    },
+
+    /**
+     * Returns the UCRN from the stored data object.
+     * @return integer
+     **/
+    getUcrn: function () {
+        if (this.storedData.ucrn) {
+            return this.storedData.ucrn;
+        }
+        return false;
+    },
+
+    getCookiePage: function (cookieName) {
+        var cookies = document.cookie;
+        var offset = cookies.indexOf(" " + cookieName + "=");
+        if (offset == -1) {
+            offset = cookies.indexOf(cookieName + "=");
+        }
+        if (offset == -1) {
+            cookies = null;
+        } else {
+            offset = cookies.indexOf("=", offset) + 1;
+            var c_end = cookies.indexOf(";", offset);
+            if (c_end == -1) {
+                c_end = cookies.length;
+            }
+            cookies = unescape(cookies.substring(offset, c_end));
+        }
+        return cookies;
+    },
+
+    /**
+     * This method should be call before
+     * using any methods of this object
+     * it is used to retrieve the JSON string
+     * from the cookie and parse it as a JSON Object
+     * and store it in storedData
+     **/
+    _init: function () {
+
+        var cookie = this.getCookie(this.dataStoredCookieName);
+
+        if (cookie) {
+            this.storedData = JSON.parse(cookie);
+            if(this.storedData.version === 1){
+                this._migrateV1toV2();
+                this.generateUcrn();
+            }
+
+        }else{
+            this.generateUcrn();
+            if (this.getCookiePage('wisepop_count_request')) {
+                this._migrateV0toV2();
+            }
+        }
+
+        var date = new Date();
+        this.lastRequestInterval      = this.getLastRequestInterval();
+        this.storedData.last_req_date = date.toJSON();
+
+        this._save();
+
+    },
+
+    /**
+     * Method used to save data inside the cookie
+     * It should store the JSON Object to a JSON string
+     * @return boolean (true or false wether we were able to save the JSON Object
+     * to the cookie)
+     **/
+    _save: function () {
+        var jsonSotedData = JSON.stringify(this.storedData);
+        document.cookie = this.dataStoredCookieName + "=" + jsonSotedData + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
+
+    },
+
+    _migrateV1toV2: function(){
+
+        this.storedData.version = 2;
+    },
+
+    _migrateV0toV2: function(){
+        if(this.getCookie('wisepop_last_request')){
+            document.cookie = 'wisepops_last_request' + "=" + escape('') + "; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        }
+        if(this.getCookie('wisepop_count_request')){
+            this.storedData.req_count = this.getCookie('wisepop_count_request');
+            this.storedData.req_count++;
+            document.cookie = 'wisepops_count_request' + "=" + escape('') + "; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        }
+
+    }
+
+
+};
+
+    var wiseStorage = new WisePopsStorage();
+
+    wiseStorage._init();
+
+    wiseStorage.incrementPageViewCount();
+
+    function WisepopsSetCookiePage(cookieName, value, isSessionOnly) {
+        if (typeof isSessionOnly !== 'undefined' && isSessionOnly === true) {
+            var expirationDate = ''
+        } else {
+            var expirationDate = 'expires=Fri, 31 Dec 9999 23:59:59 GMT;';
+        }
+        document.cookie = cookieName + "=" + escape(value) + "; path=/; " + expirationDate;
+    }
+
+    function WisepopsGetCookiePage(cookieName) {
+        var cookies = document.cookie;
+        var offset = cookies.indexOf(" " + cookieName + "=");
+        if (offset == -1) {
+            offset = cookies.indexOf(cookieName + "=");
+        }
+        if (offset == -1) {
+            cookies = null;
+        } else {
+            offset = cookies.indexOf("=", offset) + 1;
+            var c_end = cookies.indexOf(";", offset);
+            if (c_end == -1) {
+                c_end = cookies.length;
+            }
+            cookies = unescape(cookies.substring(offset, c_end));
+        }
+        return cookies;
+    }
+
+    function WisepopsAddToCookiePage(cookieName, value, isSessionOnly) {
+        if (typeof isSessionOnly !== 'undefined' && isSessionOnly === true) {
+            if (navigator.userAgent.toLowerCase().indexOf('chrome') != -1) {
+            //replace session by a 2 hours expiration
+            //to avoid issues with Chrome options continue where I left off and keep running background apps
+            var d = new Date();
+            d.setTime(d.getTime() + (2 * 60 * 60 * 1000));
+
+            var expirationDate = 'expires=' + d.toUTCString();
+            } else {
+            var expirationDate = '';
+            }
+        } else {
+            var expirationDate = 'expires=Fri, 31 Dec 9999 23:59:59 GMT;';
+        }
+        var cookie = WisepopsGetCookiePage(cookieName);
+        var cookieValue = [];
+        if (cookie) {
+            if (cookie != '') {
+                cookieValue = JSON.parse(cookie);
+                cookieValue.push(value);
+            } else {
+                cookieValue.push(value);
+            }
+        } else {
+            cookieValue.push(value);
+        }
+        cookieValue = JSON.stringify(cookieValue);
+        document.cookie = cookieName + "=" + cookieValue + "; path=/; " + expirationDate;
+    }
+
+    function WisepopsGetPopin() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//popup.wisepops.com/my-wisepop?uid=23785&ucrn='+wiseStorage.getUcrn()+'&cnt_req='+wiseStorage.getPageViewCount()+'&ref='+encodeURIComponent(document.referrer)+'&url='+encodeURIComponent(document.location);
+
+        // last req date
+        if (wiseStorage.getLastRequestInterval()) {
+            s.src += '&last_req_int=' + wiseStorage.getLastRequestInterval();
+        }
+
+        // displayed popins
+        if (wiseStorage.getPopinIds()) {
+            var popinIds = wiseStorage.getPopinIds();
+            var popinId;
+            for (var i = 0; i < popinIds.length; i++) {
+                popinId = popinIds[i];
+                s.src += '&d[' + popinId + ']=' + wiseStorage.getLastDisplayedInterval(popinId);
+                if (wiseStorage.isConverted(popinId)) {
+                    s.src += '&c[' + popinId + ']=1';
+                }
+                s.src += '&dc[' + popinId + ']=' + wiseStorage.getDisplayCount(popinId);
+            }
+        }
+        //popins displayed during session
+        var popinsInSessionCookie = WisepopsGetCookiePage('wisepop_session');
+        if (popinsInSessionCookie) {
+            var popinsInSessionCookieData = JSON.parse(popinsInSessionCookie);
+            for (var i = 0; i < popinsInSessionCookieData.length; i++) {
+                s.src += '&ds[' + popinsInSessionCookieData[i]+ ']=1';
+            }
+        }
+        var s2 = document.getElementsByTagName('script')[0];
+        s2.parentNode.insertBefore(s, s2);
+    }
+
+    (function () {
+        if (navigator != undefined && navigator.cookieEnabled != true) {
+            return false;
+        }
+
+        if (WisepopsGetCookiePage('wisepops_noshow')) {
+            return false;
+        }
+
+        WisepopsGetPopin();
+    })();
