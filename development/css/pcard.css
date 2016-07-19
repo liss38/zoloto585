@@ -13,37 +13,6 @@
 	SVG
 	===
 */
-.index-slider {
-  height: 449px;
-}
-.index-slider__inner {
-  height: 449px;
-  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
-}
-.showcase {
-  height: 947px;
-}
-.showcase__inner {
-  height: 947px;
-  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
-}
-.index-info {
-  height: 546px;
-}
-.index-info__inner {
-  height: 546px;
-  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
-}
-.footer-all {
-  height: 311px;
-}
-.footer-all__inner {
-  height: 311px;
-  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
-}
-/* .header-bottom {
-	height: 10px;
-} */
 /************************************************
 ******* ГРУППЫ СВОЙСТВ **************************
 *************************************************/
@@ -267,7 +236,7 @@
 }
 .pcard-store__card {
   padding-left: 50px;
-  background: url('../img/sprites/pcard_icos_sprite.png') 0px -90px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 0px -90px no-repeat;
   position: absolute;
   top: 26px;
   left: 158px;
@@ -308,7 +277,7 @@
   display: block;
   width: 11px;
   height: 14px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -10px -188px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -10px -188px no-repeat;
 }
 .pcard-store__bonuses-text {
   font: 300 11px/11px 'Circe';
@@ -325,7 +294,7 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -6px -409px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -6px -409px no-repeat;
   font-size: 0;
   cursor: pointer;
 }
@@ -338,7 +307,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #ed3030 url('../img/thingies/shadow-2.png') center top no-repeat;
+  background: #ed3030 url('/bitrix/templates/zoloto/images/thingies/shadow-2.png') center top no-repeat;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   font: 300 12px/37px 'Circe';
@@ -360,7 +329,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #f8f8f8 url('../img/thingies/shadow-2.png') center -1px no-repeat;
+  background: #f8f8f8 url('/bitrix/templates/zoloto/images/thingies/shadow-2.png') center -1px no-repeat;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   font: 300 12px/57px 'Circe';
@@ -377,7 +346,7 @@
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url('../img/sprites/pcard_icos_sprite.png') 0px -217px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 0px -217px no-repeat;
   vertical-align: middle;
 }
 @media screen and (max-width: 1024px) {
@@ -564,7 +533,7 @@ body {
   position: absolute;
   top: 0px;
   right: 0px;
-  background: url('../img/sprites/pcard_icos_sprite.png') 6px -467px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 6px -467px no-repeat;
   cursor: pointer;
 }
 .popup__overlay {
@@ -617,7 +586,7 @@ body {
 @media screen and (max-width: 1024px) {
   .pcard-main {
     border-top: 1px solid #d8d8d8;
-    background: url('../img/thingies/shadow-2.png') center top no-repeat;
+    background: url('/bitrix/templates/zoloto/images/thingies/shadow-2.png') center top no-repeat;
   }
   .pcard__title {
     margin: 0;
@@ -971,7 +940,7 @@ body {
 }
 .pcard-store-info__link {
   padding-left: 30px;
-  background: url('../img/sprites/pcard_icos_sprite.png') 4px -403px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 4px -403px no-repeat;
   border-left: 1px solid #eef0f0;
 }
 .pcard-store-info__link:hover {
@@ -1006,7 +975,7 @@ body {
 /* блок с определением своего размера для изделия */
 .pcard-store-fitting {
   height: 54px;
-  background: url('../img/thingies/shadow-2.png') center top no-repeat;
+  background: url('/bitrix/templates/zoloto/images/thingies/shadow-2.png') center top no-repeat;
   position: relative;
 }
 .pcard-store-fitting-select {
@@ -1044,7 +1013,7 @@ body {
 }
 .pcard-store-fitting__popup-but {
   /* кнопка для попАпа "Как узнать свой размер" */
-  background: url('../img/sprites/pcard_icos_sprite.png') 108px -411px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 108px -411px no-repeat;
   font: 300 11px/16px 'Circe';
   color: #999;
   position: absolute;
@@ -1077,7 +1046,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -543px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -543px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #b9b6b8;
   text-transform: uppercase;
@@ -1087,7 +1056,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -592px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -592px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #b9b6b8;
   text-transform: uppercase;
@@ -1097,7 +1066,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -648px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -648px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #b9b6b8;
   text-transform: uppercase;
@@ -1106,7 +1075,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -543px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -543px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1115,7 +1084,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -592px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -592px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1124,7 +1093,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -648px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -648px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1133,7 +1102,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -517px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -517px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1142,7 +1111,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -569px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -569px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1151,7 +1120,7 @@ body {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
-  background: url('../img/sprites/pcard_icos_sprite.png') -8px -621px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -8px -621px no-repeat;
   font: 300 11px/20px 'Circe';
   color: #ed3030;
   text-transform: uppercase;
@@ -1292,7 +1261,7 @@ body {
 /*******************PCARD-MAIN:Gift**********************/
 .pcard-gift {
   display: none;
-  background-image: url('../img/thingies/ribbon-2.jpg');
+  background-image: url('/bitrix/templates/zoloto/images/thingies/ribbon-2.jpg');
   background-position: center bottom;
   background-repeat: no-repeat;
   -webkit-background-size: 800px 604px;
@@ -1350,7 +1319,7 @@ body {
   right: 0px;
 }
 .pcard-gift-form__ico-1:after {
-  background: url('../img/sprites/pcard_icos_sprite.png') -2px -1px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -2px -1px no-repeat;
   background-color: #f4f4f4;
 }
 .pcard-gift-form__ico-2 {
@@ -1359,7 +1328,7 @@ body {
   right: 0px;
 }
 .pcard-gift-form__ico-2:after {
-  background: url('../img/sprites/pcard_icos_sprite.png') -2px -63px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -2px -63px no-repeat;
   background-color: #f4f4f4;
 }
 .pcard-gift-form__ico-3 {
@@ -1368,7 +1337,7 @@ body {
   right: 0px;
 }
 .pcard-gift-form__ico-3:after {
-  background: url('../img/sprites/pcard_icos_sprite.png') -2px -1px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -2px -1px no-repeat;
   background-color: #f4f4f4;
 }
 .pcard-gift-form__ico-4 {
@@ -1377,7 +1346,7 @@ body {
   right: 0px;
 }
 .pcard-gift-form__ico-4:after {
-  background: url('../img/sprites/pcard_icos_sprite.png') -2px -32px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') -2px -32px no-repeat;
   background-color: #f4f4f4;
 }
 .pcard-gift-form__field {
@@ -1464,52 +1433,52 @@ body {
   margin: 0 1px;
 }
 .pcard-socials__vk {
-  background: url('../img/sprites/product-soc.png') 0px 0px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') 0px 0px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__fb {
-  background: url('../img/sprites/product-soc.png') -31px 0px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -31px 0px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__tw {
-  background: url('../img/sprites/product-soc.png') -62px 0px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -62px 0px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__od {
-  background: url('../img/sprites/product-soc.png') -93px 0px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -93px 0px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__mail {
-  background: url('../img/sprites/product-soc.png') -124px 0px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -124px 0px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__vk:hover {
-  background: url('../img/sprites/product-soc.png') 0px -24px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') 0px -24px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__fb:hover {
-  background: url('../img/sprites/product-soc.png') -31px -24px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -31px -24px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__tw:hover {
-  background: url('../img/sprites/product-soc.png') -62px -24px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -62px -24px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__od:hover {
-  background: url('../img/sprites/product-soc.png') -93px -24px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -93px -24px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
 .pcard-socials__mail:hover {
-  background: url('../img/sprites/product-soc.png') -124px -24px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/product-soc.png') -124px -24px no-repeat;
   -webkit-background-size: 148px 48px;
   background-size: 148px 48px;
 }
@@ -1529,7 +1498,7 @@ body {
   top: -4px;
   left: 50%;
   margin-left: -50%;
-  background: url('../img/thingies/shadow-3.png') center top no-repeat;
+  background: url('/bitrix/templates/zoloto/images/thingies/shadow-3.png') center top no-repeat;
 }
 .pcard-video__frame {
   height: 565px;
@@ -1634,7 +1603,7 @@ body {
     font: 400 16px/62px 'Circe';
     color: #666;
     border-bottom: 1px solid #efefef;
-    background: url('../img/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
     background-color: #f4f4f4;
   }
   .pcard-properties__id,
@@ -1678,7 +1647,7 @@ body {
     font: 400 16px/62px 'Circe';
     color: #666;
     border-bottom: 1px solid #efefef;
-    background: url('../img/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
     background-color: #f4f4f4;
   }
   .pcard-fitting__text {
@@ -1740,7 +1709,7 @@ body {
     font: 400 16px/62px 'Circe';
     color: #666;
     border-bottom: 1px solid #efefef;
-    background: url('../img/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
     background-color: #f4f4f4;
   }
   .pcard-gift__text,
@@ -1762,7 +1731,7 @@ body {
   .pcard-gift-form__label:after {
     width: 49px;
     height: 48px;
-    background: url('../img/sprites/pcard_icos_sprite__mob.png') 0 0 no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite__mob.png') 0 0 no-repeat;
     background-color: #f4f4f4;
   }
   .pcard-gift-form__field {
@@ -2018,7 +1987,7 @@ body {
     font: 400 16px/62px 'Circe';
     color: #666;
     border-bottom: 1px solid #efefef;
-    background: url('../img/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_icos_sprite.png') 265px -315px no-repeat;
     background-color: #f4f4f4;
   }
   .pcard-gift-form {
@@ -2082,7 +2051,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  background: url('../img/sprites/pcard_order_sprite.png') 4px -681px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 4px -681px no-repeat;
   cursor: pointer;
 }
 .pcard-order__return:after {
@@ -2103,7 +2072,7 @@ body {
   position: absolute;
   top: 0px;
   right: 0px;
-  background: url('../img/sprites/pcard_order_sprite.png') 10px -590px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -590px no-repeat;
   z-index: 12;
   cursor: pointer;
 }
@@ -2157,7 +2126,7 @@ body {
   position: absolute;
   top: -1px;
   left: -14px;
-  background: url('../img/sprites/pcard_order_sprite.png') 0px -20px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -20px no-repeat;
 }
 .pcard-order__step_done .pcard-order__content {
   display: none;
@@ -2182,7 +2151,7 @@ body {
 .pcard-order-scheme {
   display: none;
   height: 36px;
-  background: #f4f4f4 url('../img/thingies/shadow-4.png') center bottom no-repeat;
+  background: #f4f4f4 url('/bitrix/templates/zoloto/images/thingies/shadow-4.png') center bottom no-repeat;
   text-align: center;
   font-size: 0;
 }
@@ -2212,7 +2181,7 @@ body {
 }
 .pcard-order-scheme__metro.active,
 .pcard-order-scheme__map.active {
-  background: url('../img/sprites/pcard_order_sprite.png') center -260px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') center -260px no-repeat;
   color: #ed3030;
 }
 .pcard-order-scheme__map:after {
@@ -2251,7 +2220,7 @@ body {
   z-index: 5;
   top: 1px;
   right: -103px;
-  background: url('../img/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
   background-color: #f4f4f4;
   border-right: 1px solid #e8e8e8;
   border-bottom-left-radius: 2px;
@@ -2286,7 +2255,7 @@ body {
   top: 25px;
   left: 420px;
   z-index: 3;
-  background: url('../img/sprites/pcard_order_sprite.png') 4px -424px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 4px -424px no-repeat;
   display: block;
   width: 18px;
   height: 18px;
@@ -2363,11 +2332,11 @@ body {
   color: #333;
   cursor: pointer;
   text-transform: uppercase;
-  background: url('../img/sprites/pcard_order_sprite.png') 20px -162px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 20px -162px no-repeat;
 }
 .pcard-order-shops__item.active,
 .pcard-order-shops__item:hover {
-  background: url('../img/sprites/pcard_order_sprite.png') 20px -55px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 20px -55px no-repeat;
 }
 .pcard-order-shops__map {
   float: right;
@@ -2401,7 +2370,7 @@ body {
   z-index: 5;
   top: 1px;
   right: -103px;
-  background: url('../img/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
   background-color: #f4f4f4;
   border-right: 1px solid #e8e8e8;
   border-bottom-left-radius: 2px;
@@ -2432,7 +2401,7 @@ body {
 .pcard-map-shop__address {
   font: 300 10px/21px 'Circe';
   color: #333;
-  background: url('../img/sprites/pcard_order_sprite.png') 0px -358px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -358px no-repeat;
   position: absolute;
   top: 8px;
   left: 30px;
@@ -2446,7 +2415,7 @@ body {
   position: absolute;
   top: 0px;
   right: 0px;
-  background: url('../img/sprites/pcard_order_sprite.png') 10px -417px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -417px no-repeat;
   font-size: 0px;
   cursor: pointer;
 }
@@ -2473,7 +2442,7 @@ body {
   position: absolute;
   top: 46px;
   right: 47px;
-  background: url('../img/sprites/pcard_order_sprite.png') 0px -648px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -648px no-repeat;
   padding-left: 19px;
 }
 .pcard-map-shop__button {
@@ -2499,7 +2468,7 @@ body {
 /* ШАГ3 */
 .pcard-order__step-3 .pcard-order__content {
   height: 515px;
-  background: url('../img/thingies/ribbon-1.jpg') center bottom no-repeat;
+  background: url('/bitrix/templates/zoloto/images/thingies/ribbon-1.jpg') center bottom no-repeat;
   border-top: 1px solid #e4e4e4;
 }
 .pcard-order-form {
@@ -2588,20 +2557,20 @@ body {
   z-index: 10;
   top: 0;
   right: 0;
-  background: url('../img/sprites/pcard_order_sprite.png') 10px -590px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -590px no-repeat;
   cursor: pointer;
 }
 .pcard-order-form-message__close-but:hover {
   background-position-x: -28px;
 }
 .pcard-order__user-phone .pcard-order-form__label:before {
-  background: url('../img/sprites/pcard_order_sprite.png') 9px -721px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 9px -721px no-repeat;
 }
 .pcard-order__sms-code {
   top: 214px;
 }
 .pcard-order__sms-code .pcard-order-form__label:before {
-  background: url('../img/sprites/pcard_order_sprite.png') 9px -777px no-repeat;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 9px -777px no-repeat;
 }
 .pcard-order-form__notice {
   width: 300px;
@@ -2732,11 +2701,11 @@ body {
     color: #333;
     cursor: pointer;
     text-transform: uppercase;
-    background: url('../img/sprites/pcard_order_sprite.png') 9px -162px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 9px -162px no-repeat;
   }
   .pcard-order-shops__item.active,
   .pcard-order-shops__item:hover {
-    background: url('../img/sprites/pcard_order_sprite.png') 9px -55px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 9px -55px no-repeat;
   }
   .pcard-order-shops__map {
     width: 410px;
@@ -2896,7 +2865,7 @@ body {
     height: 48px;
     top: 26px;
     left: 1px;
-    background: url('../img/sprites/pcard_order_sprite.png') 11px -344px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 11px -344px no-repeat;
     background-color: inherit;
     border: 0;
   }
@@ -2933,7 +2902,7 @@ body {
     height: 48px;
     top: 25px;
     left: 1px;
-    background: url('../img/sprites/pcard_order_sprite.png') 10px -52px no-repeat;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -52px no-repeat;
     background-color: inherit;
     border: 0;
   }
@@ -3396,7 +3365,7 @@ body {
 }
 .pcard-description {
   padding-bottom: 25px;
-  background: #f8f8f8 url('../img/thingies/shadow-3.png') center -2px no-repeat;
+  background: #f8f8f8 url('/bitrix/templates/zoloto/images/thingies/shadow-3.png') center -2px no-repeat;
   border-top: 1px solid #f0f0f0;
 }
 .pcard-description__header {
@@ -3441,7 +3410,7 @@ body {
   display: block;
   width: 250px;
   height: 350px;
-  background: #fff url('../img/prints/pcard_motivate__bg.jpg') center center no-repeat;
+  background: #fff url('/bitrix/templates/zoloto/images/prints/pcard_motivate__bg.jpg') center center no-repeat;
   border: 1px solid #ddd;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   opacity: .90;
