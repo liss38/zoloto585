@@ -61,9 +61,20 @@ gulp.task('make-catalog-css', function () {
 });
 
 
+// костыль для продакшн наложения с новой вёрсткой
+gulp.task('make-mycrutch-css', function () {
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/mycrutch.less'])
+		.pipe(concat('mycrutch.temp.less'))
+		.pipe(less())
+		.pipe(rename('mycrutch.css'))
+		.pipe(gulp.dest('development/css'));
+});
+
+
+
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -75,10 +86,9 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 
 
 
-
 // msalnikov.min.css
 // var dev_or_prod = '_2prod';
-gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css'], function () {
+gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(concat('msalnikov.css'))
 		.pipe(cssmin())
@@ -225,6 +235,23 @@ gulp.task('make-index-page-full', ['make-header-block'], function () {
 		}))
 		.pipe(gulp.dest('development'));
 });
+
+
+
+
+
+
+
+
+/*
+	JS
+*/
+gulp.task('make-msalnikov-js', function () {
+	return gulp.src(['development/js/global.forms.js', 'development/js/header.geo-form.js', 'development/js/header.main-nav.js', 'development/js/index.filter.js'])
+		.pipe(concat('msalnikov.js'))
+		.pipe(gulp.dest('development/js'));
+});
+
 
 
 

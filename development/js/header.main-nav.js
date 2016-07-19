@@ -1,7 +1,7 @@
 /*
 	Обработчик основной навигации
 */
-$(document).ready(function() {
+;$(document).ready(function() {
 
 	$(document).on('click', function (el) {
 		// функция сбрасывает меню до дефолтного состояния(все вкладки становятся закрытыми)

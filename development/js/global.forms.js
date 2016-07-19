@@ -1,7 +1,7 @@
 // ==============
 // == forms.js ==
 // ==============
-$(function () {
+;$(function () {
 	$('.form').on('focusin', function (event) {
 		var $_this = $(event.target);
 		if($_this.hasClass('form__field-input')) $_this.parent().addClass('focus');
