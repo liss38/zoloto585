@@ -87,7 +87,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 
 
 // msalnikov.min.css
-// var dev_or_prod = '_2prod';
+var dev_or_prod = '_2prod';
 gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(concat('msalnikov.css'))
@@ -210,6 +210,20 @@ gulp.task('make-catalog-page-full', ['make-header-block', 'html-include-catalog-
 	HTML INCLUDE 4 
 	"INDEX PAGE"
 */
+// index-filter
+gulp.task('make-index-filter', function () {
+	return gulp.src('development/htmls/blocks/index/filter/_main.inc.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'filter'
+		}))
+		.pipe(gulp.dest('development/htmls/blocks/index'));
+});
+
+
 // index page
 gulp.task('make-index-page', function () {
 	return gulp.src('development/htmls/index.tmpl.html')
@@ -224,7 +238,7 @@ gulp.task('make-index-page', function () {
 });
 
 // index page FULL
-gulp.task('make-index-page-full', ['make-header-block'], function () {
+gulp.task('make-index-page-full', ['make-header-block', 'make-index-filter'], function () {
 	return gulp.src('development/htmls/index.tmpl.html')
 		.pipe(fileinclude({
 			prefix: '@@',
