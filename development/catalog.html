@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index</title>
+	<title>Catalog</title>
 	<link rel="stylesheet" href="css/main.min.css">
 	<link rel="stylesheet" href="css/catalog.min.css">
 	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 </head>
 <body>
 	<header>
-		<!-- "HEADER-TOP" -->
+		
+<!-- "HEADER-TOP" -->
 <div class="section header-top header-top--position_fixed">
 			<div class="section__inner header-top__inner">
 				<div class="header-top__item  top-sandwich">
@@ -24,6 +25,34 @@
 				</div>
 				<div class="header-top__item  top-geo">
 					<a id="choose-city" class="top-geo__button"><span>Москва</span></a>
+					<div class="top-geo-modal">
+	<div class="top-geo-modal__inner">
+		<div class="top-geo-modal__close">X</div>
+		<form class="form  top-geo-form">
+			<div class="top-geo-form__header">
+				ВЫБЕРИТЕ СВОЙ ГОРОД ИЗ СПИСКА
+			</div>
+			<div class="form__field  top-geo-form__option">
+				<span class="form__field-ico  form__field-ico--select-arrow  field-icons-4"></span>
+				<select class="form__field-select">
+					<option value="1">Санкт-Петербург</option>
+					<option value="2">Москва</option>
+					<option value="3">Петергоф</option>
+					<option value="4">Псков</option>
+					<option value="5">Тверь</option>
+					<option value="6">Астана</option>
+					<option value="7">Казань</option>
+					<option value="8">Луга</option>
+					<option value="9">Новгород</option>
+					<option value="10">Владимир</option>
+					<option value="11">Ульяновск</option>
+					<option value="12">Пушкин</option>
+				</select>
+			</div>
+			<input class="form__button  top-geo-form__button" type="submit" value="Выбрать">
+		</form>
+	</div>
+</div>
 				</div>
 				<div class="header-top__item  top-phone">
 					<a href="tel: +78005551585" class="top-phone__button">8 800 555 1 585</a>
@@ -34,7 +63,6 @@
 				<div class="header-top__item  top-bonuses">
 					<a href="#" class="top-bonuses__button">Бонус</a>
 				</div>
-
 				<div class="header-top__item  top-user">
 					<a href="/registraciya_karty/" class="top-user__button">Мой профиль</a>
 				</div>
@@ -42,8 +70,7 @@
 		</div>
 		<!-- END-of-"HEADER-TOP" -->
 
-
-		<!-- "HEADER-MIDDLE" -->
+<!-- "HEADER-MIDDLE" -->
 		<div class="section header-middle">
 			<div class="section__inner header-middle__inner">
 				<a href="#" class="header-middle__logo"><img src="img/top_logo.png"></a>
@@ -55,7 +82,6 @@
 			</div>
 		</div>
 		<!-- END-of-"HEADER-MIDDLE" -->
-
 
 		<!-- "HEADER-BOTTOM" -->
 		<div class="section header-bottom">
@@ -632,7 +658,7 @@
 	</header>
 
 	<main>
-		<form action="" method="post" class="filter">
+		<form action="" method="post" class="filter  filter--closed">
 	<div class="section  filter-section  filter-section-1">
 		<div class="section__inner  filter-section__inner">
 			<div class="filter-section__block product_type-width">
@@ -674,13 +700,13 @@
 
 				<fieldset class="filter-group  filter-group-by-metal-color">
 					<legend class="filter-group__header">цвет металла:</legend>
-					<div class="filter-group__options filter-options_color">
-						<label class="filter-option filter-option_color_white"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_color_gold"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_color_red"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label><br/>
-						<label class="filter-option filter-option_color_2tone"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_color_3tone"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_color_black"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
+					<div class="filter-group__options">
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-1">белый</span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-2">золотой</span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-3">красный</span></label><br/>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-4">2х цветный</span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-5">3х цветный</span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--metal-6">черный</span></label>
 					</div>
 				</fieldset>
 			</div>
@@ -728,39 +754,39 @@
 			<div class="filter-section__block">
 				<fieldset class="filter-group  filter-group-by-gemstone-quantity">
 					<legend class="filter-group__header">кол-во камней:</legend>
-					<div class="filter-group__options filter-group_content_2column">
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">1</span></label>
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">2-10</span></label>
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">обсыпка</span></label>
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">от 10</span></label>	
+					<div class="filter-group__options">
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">1</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">обсыпка</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">2-10</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">от 10</span></label>
 					</div>
 				</fieldset>
 				<fieldset class="filter-group  filter-group-by-gemstone-color">
 					<legend class="filter-group__header">цвет вставки:</legend>
-					<div class="filter-group__options filter-group__options_colorinsert">
-						<label class="filter-option filter-option_colorinsert_white"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_pink"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_purple"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_green"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_orange"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_coral"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_aquamarine"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_blue"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_yellow"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_lpurple"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						
-						<label class="filter-option filter-option_colorinsert_burgundy"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_white-black"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_darkburgundy"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_black"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
-						<label class="filter-option filter-option_colorinsert_multicolor"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title"></span></label>
+					<div class="filter-group__options">
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-1"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-2"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-3"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-4"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-5"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-6"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-7"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-8"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-9"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-10"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-11"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-double"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-13"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-14"></span></label>
+						<label class="filter-option  filter-option--button"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--button  filter-option__title--gemstone-triple"></span></label>
 						
 					</div>
 				</fieldset>
 				<fieldset class="filter-group  filter-group-by-gemstone-weight">
 					<legend class="filter-group__header">вес со вставками:</legend>
 					<div class="filter-group__options">
-						<label class="filter-option filter-option_content_textfield_light"><span class="filter-option__title">от</span><input type="text" class="filter-option__textfield filter-option__textfield_small"/><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield filter-option__textfield_small"/></label>	
+						<label class="filter-option"><span class="filter-option__title">от</span><input type="text" class="filter-option__textfield" placeholder="0.25"></label>
+						<label class="filter-option"><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield" placeholder="0.95"></label>
 					</div>
 				</fieldset>
 			</div>
@@ -803,6 +829,7 @@
 					</div>
 				</fieldset>
 			</div>
+s
 			<div class="filter-section__block">
 				<fieldset class="filter-group  filter-group-by-collection">
 					<legend class="filter-group__header">коллекция:</legend>
@@ -861,13 +888,12 @@
 			</div>
 
 			<div class="filter-section__block product_price-width">
-				<fieldset class="filter-group  filter-group-by-price    filter-option_content_textfield">
+				<fieldset class="filter-group  filter-group-by-price">
 					<div class="filter-group__options">
-						<label class="filter-option filter-option_content_textfield_light"><span class="filter-option__title">цена от </span><input type="text" class="filter-option__textfield filter-option__textfield_big"/><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield filter-option__textfield_big"/></label>	
-					</div>
-					<div class="filter-group__options filter-group__options_price_line">
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">sale</span></label>
-						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title">доступно к бронированию</span></label>	
+						<label class="filter-option"><span class="filter-option__title">цена от </span><input type="text" class="filter-option__textfield"></label>
+						<label class="filter-option"><span class="filter-option__title">до</span><input type="text" class="filter-option__textfield"/></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">sale</span></label>
+						<label class="filter-option"><input type="checkbox" class="filter-option__checkbox"><span class="filter-option__title  filter-option__title--checkbox">доступно к бронированию</span></label>
 					</div>
 				</fieldset>
 			</div>
@@ -907,34 +933,31 @@
 
 	<div class="section  filter-section  filter-section-3">
 		<div class="section__inner  filter-section__inner">
-			<div class="filter-section__block filter-section__block_btns">
-				<input type="submit" value="Сбросить параметры >" class="filter-btn filter-btn_no_color"/>
-				<input type="submit" value="Подобрать >" class="filter-btn filter-btn_red_color" />
-			</div>
+			<input type="submit" value="Сбросить параметры >"  id="catalog-filter-reset-button"  class="ui-button  filter-reset"/>
+				<input type="submit" value="Подобрать >"  id="catalog-filter-submit-button"  class="ui-button  filter-submit" />
 		</div>
 	</div>
 
 	<div class="section  filter-section  filter-section-4">
 		<div class="section__inner  filter-section__inner">
-			<div class="filter-section__block filter-section__selection">
-				<fieldset class="filter-group">
-					<legend class="filter-group__header">выбранные  параметры поиска:</legend>
+			<fieldset class="filter-group  filter-tags">
+					<legend class="filter-group__header  filter-tags__header">выбранные  параметры поиска:</legend>
 					<div class="filter-group__options"> 
-						<span>кольцо</span>
-						<span>золото</span>
-						<span>бриллиант</span>
-						<span>2-10 камней</span>
-						<span>обсыпка</span>
-						<span>белый</span>
-						<span>геометрия</span>
-						<span>размер 16,5</span>
-						<span>размер 16,5</span>
-						<span>цена от 10000 до 199000</span>
-						<span>sale</span>
-						<span>доступно к бронированию</span><a href="#" title=""  class="filter-group__change_parametr_link">изменить параметры поиска</a>
+						<span class="filter-tags__tab">кольцо</span>
+						<span class="filter-tags__tab">золото</span>
+						<span class="filter-tags__tab">бриллиант</span>
+						<span class="filter-tags__tab">2-10 камней</span>
+						<span class="filter-tags__tab">обсыпка</span>
+						<span class="filter-tags__tab">белый</span>
+						<span class="filter-tags__tab">геометрия</span>
+						<span class="filter-tags__tab">размер 16,5</span>
+						<span class="filter-tags__tab">размер 16,5</span>
+						<span class="filter-tags__tab">цена от 10000 до 199000</span>
+						<span class="filter-tags__tab">sale</span>
+						<span class="filter-tags__tab">доступно к бронированию</span>
+						<button id="catalog-filter-change-button" class="filter-tags__button">изменить параметры поиска</button>
 					</div>
 				</fieldset>
-			</div>
 		</div>
 	</div>
 </form>
@@ -982,12 +1005,11 @@
 
 	<!-- JS -->
 	<script src="http://zoloto585.ru/bitrix/templates/zoloto/js/jquery-1.11.1.min.js"></script>
-	<!-- <script src="js/touchversion__nav.js"></script> -->
-	<script src="js/main-nav.js"></script>
-
-	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
 	<script src="js/jquery.easydropdown.js"></script>
-	<script type="text/javascript" src="js/catalog_filter_script.js"></script>
+	<script src="js/jquery.jscrollpane.min.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+
+	<script src="js/catalog_filter_script.js"></script>
+	<script src="js/msalnikov.js"></script>
 </body>
 </html>

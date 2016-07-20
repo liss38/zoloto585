@@ -52,6 +52,34 @@
 }
 .filter-group-by-metal-color {
 	width: @column-width-2;
+
+
+	.filter-option {
+		width: 29px;
+		height: 13px;
+
+		background-color: #eee;
+
+
+		&__title {
+			width: 29px;
+			height: 14px;
+
+			font-size: 0;
+
+
+			&--button {
+				background: transparent url(@img-sprite-catalog-filter-colors) 0 0 no-repeat;
+			}
+
+			&--metal-1 { background-position: 0px 0px; }
+			&--metal-2 { background-position: -29.5px 0px; }
+			&--metal-3 { background-position: -59px 0px; }
+			&--metal-4 { background-position: 0px -13px; }
+			&--metal-5 { background-position: -29.5px -13px; }
+			&--metal-6 { background-position: -59px -13px; }
+		}
+	}
 }
 
 
@@ -69,12 +97,84 @@
 
 .filter-group-by-gemstone-quantity {
 	width: @column-width-4;
+
+
+	.filter-option {
+		display: inline-block;
+		vertical-align: top;
+		min-width: 40%;
+		padding-right: 2px;
+	}
 }
 .filter-group-by-gemstone-color {
 	width: @column-width-4;
+
+
+	.filter-option {
+		width: 16px;
+		height: 16px;
+
+
+		&__title {
+			width: 16px;
+			height: 16px;
+
+			&--gemstone-1 { background-color: #fafafa; }
+			&--gemstone-2 { background-color: #f384c4; }
+			&--gemstone-3 { background-color: #a34d9d; }
+			&--gemstone-4 { background-color: #96eb97; }
+			&--gemstone-5 { background-color: #faa474; }
+			&--gemstone-6 { background-color: #fd6760; }
+			&--gemstone-7 { background-color: #8fd1f2; }
+			&--gemstone-8 { background-color: #5f75eb; }
+			&--gemstone-9 { background-color: #f4ee8f; }
+			&--gemstone-10 { background-color: #b556ce; }
+			&--gemstone-11 { background-color: #af807f; }
+			&--gemstone-double { background: url(@img-sprite-catalog-filter) -18px -17px no-repeat; }
+			&--gemstone-13 { background-color: #7c4240; }
+			&--gemstone-14 { background-color: #454444; }
+			&--gemstone-triple { background: url(@img-sprite-catalog-filter) -18px -1px no-repeat; }
+		}
+	}
 }
 .filter-group-by-gemstone-weight {
 	width: @column-width-4;
+
+
+	.filter-group__header {
+		line-height: 12px;
+	}
+	.filter-group__options {
+		padding-top: 0;
+	}
+
+
+	.filter-option {
+		display: inline-block;
+		vertical-align: top;
+		width: 61px;
+		.boxing(border-box);
+		padding-right:0;
+
+		&__title {
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 2px;
+
+			font-size: 11px;
+			line-height: 25px;
+			color: #a9a9a9;
+		}
+
+
+		&__textfield {
+			display: inline-block;
+			vertical-align: top;
+			width: 38px;
+			height: 26px;
+			margin-right: 0;
+		}
+	}
 }
 
 
@@ -97,6 +197,49 @@
 
 .filter-group-by-price {
 	width: @column-width-8;
+
+
+	.filter-group__options {
+		padding-top: 32px;
+		padding-left: 20px;
+	}
+
+
+	.filter-option {
+		display: inline-block;
+		vertical-align: top;
+		.boxing(border-box);
+		padding-right:0;
+
+		&__title {
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 2px;
+
+			font-size: 11px;
+			line-height: 25px;
+			color: #a9a9a9;
+
+
+			&--checkbox {
+				padding-left: 20px;
+				padding-right: 27px;
+
+				line-height: 15px;
+				color: #797979;
+			}
+		}
+
+
+		&__textfield {
+			display: inline-block;
+			vertical-align: top;
+			width: 96px;
+			height: 26px;
+			margin-right: 0;
+			margin-bottom: 5px;
+		}
+	}
 }
 
 .filter-group-by-style {

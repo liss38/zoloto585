@@ -1,4 +1,4 @@
-<form action="" method="post" class="filter">
+<form action="" method="post" class="filter  filter--closed">
 	<div class="section  filter-section  filter-section-1">
 		<div class="section__inner  filter-section__inner">
 			<div class="filter-section__block product_type-width">
@@ -31,7 +31,21 @@
 					"option-title" : "filter-option__title  filter-option__title--checkbox"
 				})
 
-				@@include('filter-04.html')
+				@@include('filter-04.html', {
+					"group"        : "filter-group  filter-group-by-metal-color",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option  filter-option--button",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--button",
+
+					"option-title-mod-1" : "filter-option__title--metal-1",
+					"option-title-mod-2" : "filter-option__title--metal-2",
+					"option-title-mod-3" : "filter-option__title--metal-3",
+					"option-title-mod-4" : "filter-option__title--metal-4",
+					"option-title-mod-5" : "filter-option__title--metal-5",
+					"option-title-mod-6" : "filter-option__title--metal-6"
+				})
 			</div>
 
 			<div class="filter-section__block">
@@ -46,9 +60,46 @@
 			</div>
 
 			<div class="filter-section__block">
-				@@include('filter-06.html')
-				@@include('filter-07.html')
-				@@include('filter-08.html')
+				@@include('filter-06.html', {
+					"group"        : "filter-group  filter-group-by-gemstone-quantity",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--checkbox"
+				})
+				@@include('filter-07.html', {
+					"group"        : "filter-group  filter-group-by-gemstone-color",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option  filter-option--button",
+					"option-type"  : "filter-option__checkbox",
+					"option-title" : "filter-option__title  filter-option__title--button",
+
+					"option-title-mod-1"  : "filter-option__title--gemstone-1",
+					"option-title-mod-2"  : "filter-option__title--gemstone-2",
+					"option-title-mod-3"  : "filter-option__title--gemstone-3",
+					"option-title-mod-4"  : "filter-option__title--gemstone-4",
+					"option-title-mod-5"  : "filter-option__title--gemstone-5",
+					"option-title-mod-6"  : "filter-option__title--gemstone-6",
+					"option-title-mod-7"  : "filter-option__title--gemstone-7",
+					"option-title-mod-8"  : "filter-option__title--gemstone-8",
+					"option-title-mod-9"  : "filter-option__title--gemstone-9",
+					"option-title-mod-10" : "filter-option__title--gemstone-10",
+					"option-title-mod-11" : "filter-option__title--gemstone-11",
+					"option-title-mod-12" : "filter-option__title--gemstone-double",
+					"option-title-mod-13" : "filter-option__title--gemstone-13",
+					"option-title-mod-14" : "filter-option__title--gemstone-14",
+					"option-title-mod-15" : "filter-option__title--gemstone-triple"
+				})
+				@@include('filter-08.html', {
+					"group"        : "filter-group  filter-group-by-gemstone-weight",
+					"title"        : "filter-group__header",
+					"list"         : "filter-group__options",
+					"option"       : "filter-option",
+					"option-type"  : "filter-option__textfield",
+					"option-title" : "filter-option__title"
+				})
 			</div>
 
 			<div class="filter-section__block">
@@ -61,6 +112,7 @@
 					"option-title" : "filter-option__title  filter-option__title--checkbox"
 				})
 			</div>
+s
 			<div class="filter-section__block">
 				@@include('filter-10.html', {
 					"group"        : "filter-group  filter-group-by-collection",
@@ -89,7 +141,16 @@
 			</div>
 
 			<div class="filter-section__block product_price-width">
-				@@include('filter-12.html')
+				@@include('filter-12.html', {
+					"group"          : "filter-group  filter-group-by-price",
+					"title"          : "filter-group__header",
+					"list"           : "filter-group__options",
+					"option"         : "filter-option",
+					"option-type-1"  : "filter-option__textfield",
+					"option-type-2"  : "filter-option__checkbox",
+					"option-title-1" : "filter-option__title",
+					"option-title-2" : "filter-option__title  filter-option__title--checkbox"
+				})
 			</div>
 
 			<div class="filter-section__block product_typedesign-width">
@@ -119,17 +180,19 @@
 
 	<div class="section  filter-section  filter-section-3">
 		<div class="section__inner  filter-section__inner">
-			<div class="filter-section__block filter-section__block_btns">
-				@@include('filter-buttons.html')
-			</div>
+			@@include('filter-buttons.html')
 		</div>
 	</div>
 
 	<div class="section  filter-section  filter-section-4">
 		<div class="section__inner  filter-section__inner">
-			<div class="filter-section__block filter-section__selection">
-				@@include('filter-tags.html')
-			</div>
+			@@include('filter-tags.html', {
+					"group"  : "filter-group  filter-tags",
+					"title"  : "filter-group__header  filter-tags__header",
+					"list"   : "filter-group__options",
+					"tag"    : "filter-tags__tab",
+					"button" : "filter-tags__button"
+				})
 		</div>
 	</div>
 </form>

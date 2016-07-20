@@ -261,7 +261,7 @@ gulp.task('make-index-page-full', ['make-header-block', 'make-index-filter'], fu
 	JS
 */
 gulp.task('make-msalnikov-js', function () {
-	return gulp.src(['development/js/global.forms.js', 'development/js/header.geo-form.js', 'development/js/header.main-nav.js', 'development/js/index.filter.js'])
+	return gulp.src(['development/js/global.forms.js', 'development/js/header.geo-form.js', 'development/js/header.main-nav.js', 'development/js/index.filter.js', 'development/js/catalog.filter.js'])
 		.pipe(concat('msalnikov.js'))
 		.pipe(gulp.dest('development/js'));
 });

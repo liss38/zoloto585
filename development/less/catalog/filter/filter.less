@@ -1,5 +1,10 @@
 .filter {
 	background-color: #f5f5f5;
+
+
+	.filter-tags__button {
+		display: none;
+	}
 }
 
 .filter-section {
@@ -57,7 +62,22 @@
 }
 .filter-section-3 {
 	height: 67px;
+	text-align: center;
 }
 .filter-section-4 {
 	/*height: px;*/
+}
+
+.filter--closed {
+
+	.filter-section-1,
+	.filter-section-2,
+	.filter-section-3 {
+		display: none;
+	}
+
+
+	.filter-tags__button {
+		display: inline-block;
+	}
 }
