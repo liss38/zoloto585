@@ -19,7 +19,8 @@ var gulp = require('gulp'),
 
 
 
-var dev_or_prod = '_2dev'; // '_2dev' либо '_2prod', переключатель между версией на продакшн('prod') и версией на тест/показ('dev')
+// var dev_or_prod = '_2dev'; // префикс для dev-версии
+var dev_or_prod = '_2prod'; // префикс для prod-версии
 
 // main.css
 gulp.task('make-main-css', function () {
@@ -86,8 +87,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 
 
 
-// msalnikov.min.css
-var dev_or_prod = '_2prod';
+// msalnikov.min.css для ПРОДА
 gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(concat('msalnikov.css'))
