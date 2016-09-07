@@ -22,13 +22,16 @@ var gulp = require('gulp'),
 // var dev_or_prod = '_2dev'; // префикс для dev-версии
 var dev_or_prod = '_2prod'; // префикс для prod-версии
 
+if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
+else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
+
 // main.css
 gulp.task('make-main-css', function () {
 	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less', 'development/less/_external.less'])
 		.pipe(concat('main.temp.less'))
 		.pipe(less())
 		.pipe(rename('main.css'))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
@@ -38,7 +41,7 @@ gulp.task('make-index-css', function () {
 		.pipe(concat('index.temp.less'))
 		.pipe(less())
 		.pipe(rename('index.css'))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
@@ -48,7 +51,7 @@ gulp.task('make-pcard-css', function () {
 		.pipe(concat('pcard.temp.less'))
 		.pipe(less())
 		.pipe(rename('pcard.css'))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
@@ -58,7 +61,7 @@ gulp.task('make-catalog-css', function () {
 		.pipe(concat('catalog.temp.less'))
 		.pipe(less())
 		.pipe(rename('catalog.css'))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
@@ -68,7 +71,7 @@ gulp.task('make-mycrutch-css', function () {
 		.pipe(concat('mycrutch.temp.less'))
 		.pipe(less())
 		.pipe(rename('mycrutch.css'))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
@@ -79,21 +82,31 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('development/css'));
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 
 
 
+/*
+	2PROD
+*/
+// make-prod
+gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
+	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest(gulpDestFolder));
+});
 
 
 // msalnikov.min.css для ПРОДА
-gulp.task('make-msalnikov', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
-	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
-		.pipe(concat('msalnikov.css'))
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('production/zoloto/css'));
+gulp.task('make-msalnikov', function () {
+	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/mycrutch.min.css'])
+		.pipe(concat('msalnikov.min.css'))
+		// .pipe(cssmin())
+		// .pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest(gulpDestFolder));
 });
 
 

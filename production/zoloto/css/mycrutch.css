@@ -13,37 +13,6 @@
 	SVG
 	===
 */
-.index-slider {
-  height: 449px;
-}
-.index-slider__inner {
-  height: 449px;
-  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
-}
-.showcase {
-  height: 947px;
-}
-.showcase__inner {
-  height: 947px;
-  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
-}
-.index-info {
-  height: 546px;
-}
-.index-info__inner {
-  height: 546px;
-  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
-}
-.footer-all {
-  height: 311px;
-}
-.footer-all__inner {
-  height: 311px;
-  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
-}
-/* .header-bottom {
-	height: 10px;
-} */
 /************************************************
 ******* ГРУППЫ СВОЙСТВ **************************
 *************************************************/
@@ -217,11 +186,19 @@
 	ДЛЯ
 	@MEDIA-ВЫРАЖЕНИЙ
 */
-/*@import "catalog/filter/filter.less";*/
-/*@import "catalog/filter/filter-group.less";*/
-/*@import "catalog/filter/filter-group-by.less";*/
-/*@import "catalog/filter/filter-option.less";*/
-/*@import "catalog/filter/filter-link.less";*/
-/*@import "catalog/filter/filter-buttons.less";*/
-/*@import "catalog/filter/filter-tags.less";*/
-/*@import "catalog/filter/filter-js-scrollpane.less";*/
+/*
+	задача была связана с вёрсткой нового каталога для тачверсии
+	скрытие предыдущей навигации на тачверсии
+
+	этот костыль скрывет
+	скрывает некотрые элементы шапки и те элементы, котрых не должно быть видно на тач-версии(< 1024)
+*/
+/* TOUCH */
+@media screen and (max-width: 1024px) {
+  .h-touch-hidden {
+    display: none;
+  }
+  .nav-wrap {
+    display: none;
+  }
+}
