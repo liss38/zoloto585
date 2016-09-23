@@ -19,8 +19,8 @@ var gulp = require('gulp'),
 
 
 
-// var dev_or_prod = '_2dev'; // префикс для dev-версии
-var dev_or_prod = '_2prod'; // префикс для prod-версии
+var dev_or_prod = '_2dev'; // префикс для dev-версии
+// var dev_or_prod = '_2prod'; // префикс для prod-версии
 
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';

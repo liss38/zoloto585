@@ -608,22 +608,6 @@ body {
 .pcard-fotorama {
   position: relative;
 }
-/* кружок со скидкой */
-.label_discount {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1;
-  display: block;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  background-color: rgba(237, 48, 48, 0.7);
-  border-radius: 50%;
-  text-align: center;
-  font: 14px/50px 'Circe-Regular';
-  color: #fff;
-}
 .pcard-fotorama__canvas {
   display: block;
   width: 487px;
@@ -825,10 +809,6 @@ body {
   .fotorama__html .zoom {
     height: 100%;
   }
-  .label_discount {
-    top: 5px;
-    left: 5px;
-  }
 }
 /*@tablet Album*/
 /*@tablet Portrait*/
@@ -836,20 +816,12 @@ body {
   .fotorama__html {
     width: 518px;
   }
-  .label_discount {
-    top: 5px;
-    left: 5px;
-  }
 }
 /*@tablet Portrait*/
 /*@tablet Album*/
 @media screen and (min-width: 480px) and (max-width: 639px) {
   .fotorama__html {
     width: 358px;
-  }
-  .label_discount {
-    top: 5px;
-    left: 5px;
   }
 }
 /*@tablet Album*/
@@ -897,10 +869,6 @@ body {
   .fotorama__nav {
     display: none;
   }
-  .label_discount {
-    top: 5px;
-    left: 5px;
-  }
 }
 /*@mobile Portrait*/
 /*=END-of-FOTORAMA=*/
@@ -912,7 +880,8 @@ body {
 .pcard-store-info {
   height: 32px;
   background: #f8f8f8;
-  border: 1px solid #edefef;
+  border-bottom: 1px solid #edefef;
+  overflow: hidden;
 }
 .pcard-store-info__text,
 .pcard-store-info__link {
@@ -937,6 +906,13 @@ body {
 .pcard-store-info__text_bold {
   font: 700 11px/32px 'Circe';
   color: #666;
+}
+.pcard-store-info__text--full-line {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  border: 0;
+  font-size: 12px;
 }
 .pcard-store-info__link {
   padding-left: 30px;

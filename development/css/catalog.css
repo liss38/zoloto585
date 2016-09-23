@@ -225,3 +225,7 @@
 /*@import "catalog/filter/filter-buttons.less";*/
 /*@import "catalog/filter/filter-tags.less";*/
 /*@import "catalog/filter/filter-js-scrollpane.less";*/
+/* catalog-item */
+.catalog-item-pic {
+  position: relative;
+}

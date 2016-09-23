@@ -1,0 +1,58 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu,.sf-menu *{margin:0;padding:0;list-style:none none;}
+.sf-menu li{position:relative;}
+.sf-menu ul{position:absolute;display:none;top:100%;left:0;z-index:102;}
+.sf-menu > li{float:left;margin-right:2px;}
+.sf-menu > li:last-child{margin-right:0px;}
+.sf-menu li:hover > ul,.sf-menu li.sfHover > ul{display:block;}
+.sf-menu a{display:block;position:relative;}
+
+.sf-menu ul{min-width:150px;*width:150px;margin-top:2px;}
+.sf-menu li a{font:13px 'Futura Book';text-transform:uppercase;padding:15px 1.35em;text-decoration:none;zoom:1;color:#fff;}
+.sf-menu li.parent a{padding:10px 20px 8px 8px;text-decoration:none;zoom: 1;color:#fff;}
+
+.sf-menu > li.last{margin-right:0;background:#f7a722; width: 103px}
+.sf-menu li.last > ul{left:-33px;}
+
+.sf-menu li.parent ul li a{font:11px/11px Verdana;text-transform:none;padding:5px 1.35em;}
+.sf-menu li.parent ul li a:hover{text-decoration:underline;}
+
+.sf-menu li{background:#797a7a;white-space:nowrap;*white-space:normal;-webkit-transition:background .2s;transition:background .2s;}
+.sf-menu ul li{background:#e3e3e3;}
+.sf-menu ul li:first-of-type{padding-top:10px;}
+.sf-menu ul li:last-of-type{padding-bottom:10px;}
+.sf-menu li:hover,.sf-menu li.sfHover{background:#e3e3e3;-webkit-transition:none;transition:none;}
+.sf-menu li:hover a,.sf-menu li.sfHover a{color:#000;}
+
+.sf-menu li.last:hover,.sf-menu li.last.sfHover,.sf-menu li.last ul li{background:#f7a722;}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+	padding-right: 2.5em;
+	*padding-right: 2.5em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+.sf-arrows .sf-with-ul:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: .4em;
+	margin-top: -3px;
+	height: 0;
+	width: 0;
+	border: 4px solid transparent;
+	border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-top-color: rgba(255,255,255,1);
+}
+.sf-arrows > li > .sf-with-ul:focus:after,.sf-arrows > li:hover > .sf-with-ul:after,.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: #000; /* IE8 fallback colour */
+}
+.sf-arrows ul .sf-with-ul:after {
+	margin-top: -5px;
+	margin-right: -3px;
+	border-color: transparent;
+	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(255,255,255,1);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: white;
+}

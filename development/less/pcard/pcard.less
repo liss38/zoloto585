@@ -212,26 +212,6 @@ html, body { margin: 0; padding: 0; }
 */
 .pcard-fotorama { position: relative; }
 
-/* кружок со скидкой */
-.label_discount { 
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	z-index: 1;
-
-	display: block;
-	width: 50px;
-	height: 50px;
-	padding: 0;
-
-	background-color: rgba(237, 48, 48, .7);
-	border-radius: 50%;
-
-	text-align: center;
-	font: 14px/50px 'Circe-Regular';
-	color: #fff;
-}
-
 .pcard-fotorama__canvas { .-block-(487px, 620px); }
 .pcard-fotorama__thumbs {
 	margin-top: 7px;
@@ -357,7 +337,6 @@ html, body { margin: 0; padding: 0; }
 		&__html { width: 648px; }
 		&__html .zoom { height: 100%; }
 	}
-	.label_discount { top: 5px; left: 5px; }
 }/*@tablet Album*/
 
 /*@tablet Portrait*/
@@ -367,7 +346,6 @@ html, body { margin: 0; padding: 0; }
 			width: 518px;
 		}
 	}
-	.label_discount { top: 5px; left:5px; }
 }/*@tablet Portrait*/
 
 /*@tablet Album*/
@@ -377,7 +355,6 @@ html, body { margin: 0; padding: 0; }
 			width: 358px;
 		}
 	}
-	.label_discount { top: 5px; left: 5px; }
 }/*@tablet Album*/
 
 /*@mobile Portrait*/
@@ -401,7 +378,6 @@ html, body { margin: 0; padding: 0; }
 		/*&__nav-wrap { .-posa-bl-(-130px, 0px); }*/
 		/*&__thumb-border { .-solid-(#f2f4f4); }*/
 	}
-	.label_discount { top: 5px; left: 5px; }
 }/*@mobile Portrait*/
 /*=END-of-FOTORAMA=*/
 
@@ -418,19 +394,38 @@ html, body { margin: 0; padding: 0; }
 .pcard-store-info {
 	height: 32px;
 	background: #f8f8f8;
-	border: 1px solid #edefef;
+	border-bottom: 1px solid #edefef;
+	overflow: hidden;
+
+
 	&__text,
 	&__link {
 		.-box-(inline-block, 50%, 100%);
 		.font-circe_light(11px, 32px, #666);
 		.-t-lnu-(#666);
 	}
-	
+
+
 	&__text {
 		padding-left: 20px;
 		border-right: 1px solid #eef0f0;
-		&_bold { .font-circe_bold(11px, 32px, #666); }
+
+
+		&_bold {
+			.font-circe_bold(11px, 32px, #666);
+		}
+
+
+		&--full-line {
+			width: 100%;
+			padding: 0;
+			text-align: center;
+			border: 0;
+			font-size: 12px;
+		}
 	}
+
+
 	&__link {
 		padding-left: 30px;
 		.set_pcard_sprite(4px, -403px);

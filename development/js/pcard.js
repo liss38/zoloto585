@@ -682,12 +682,12 @@ $(document).ready(function() {
 		if(toBreak) { // для меньших(к мобильнику)
 			$pcardStore.append($pcardOrder.detach());
 			orderInterface.popUpOff();
-			$pcardOrder.css({'height' : '550px'});
+			// $pcardOrder.css({'height' : '550px'});
 		}
 		else { // для больших(к десктопу)
 			$pcardStore.find($pcardOrder) ? $('.pcard-main').after($pcardOrder.detach()) : '';
 			orderInterface.popUpOn();
-			$pcardOrder.css({'height' : '630px'});
+			// $pcardOrder.css({'height' : '630px'});
 		}
 
 
@@ -703,36 +703,54 @@ $(document).ready(function() {
 
 			pcardMapDefaultCity();
 			$pcardOrder.show();
+
+			// сброс значений смс кода и номера телефона
 			$('#pcard-order-user-phone').val('');
 			$('#pcard-order-sms-code').val('');
+
 			if(!isShow($pcardOrderStep_1)) $pcardOrderStep_1.show();
 
-			// 1шаг 'ЗАВЕРШЁН'
-			orderInterface.stepComplete($pcardOrderStep_1);
+			// активируем 1-й шаг
+			orderInterface.stepActivate($pcardOrderStep_1);
 			orderInterface.state = 'init';
 
-			// дефолтный город в выпадающем списке
-			orderInfo.setDefault();
-			orderInterface.selectCity(orderInfo.cityId);
-			
 			// делаем заголовок 1шага информативным
 			$pcardOrderStepState_1.text(' ' + orderInfo.item + ', '+ orderInfo.size + ' размер');
 
 
 			// 2 шаг 'НАЧАТ'
-			$pcardOrderCloseButton.show();
+			/*$pcardOrderCloseButton.show();
 			if(!isShow($pcardOrderStep_2)) $pcardOrderStep_2.show();
 			orderInterface.stepActivate($pcardOrderStep_2);
 			$pcardOrderStepTitle_2.text('2 шаг: Выберите магазин');
 			orderInterface.setShopCount(orderInfo.cityId); // количество магазинов в этом городе
 
 			orderInterface.stepHide($('.pcard-order__step-3'));
-
+*/
 			// 
 			// console.log(orderInterface.state);
 		}
 
 		else if(state === 'getshop') {
+			// скрываем предыдущий шаг
+			completePcardOrderStep($pcardOrderStep_1);
+
+			// дефолтный город в выпадающем списке
+			orderInfo.setDefault();
+			orderInterface.selectCity(orderInfo.cityId);
+
+			$pcardOrderCloseButton.show();
+			
+			if(!isShow($pcardOrderStep_2)) $pcardOrderStep_2.show();
+			
+			orderInterface.stepActivate($pcardOrderStep_2);
+			
+			$pcardOrderStepTitle_2.text('2 шаг: Выберите магазин');
+			
+			orderInterface.setShopCount(orderInfo.cityId); // количество магазинов в этом городе
+
+			orderInterface.stepHide($('.pcard-order__step-3'));
+
 			orderInterface.state = 'getshop';
 			orderInterface.selectCity(+$('.pcard-order-city__select').find('option:selected').attr('data-pcard-order-city-id'));
 			orderInterface.setShopCount(+$('.pcard-order-city__select').find('option:selected').attr('data-pcard-order-city-id'));
@@ -819,7 +837,7 @@ $(document).ready(function() {
 		// зависимости ширины экрана
 		if(toBreak) { // для меньших(к мобильнику)
 			orderInterface.state !== 'cancel' ? $pcardOrderReserveButton.hide() : $pcardOrderReserveButton.show();
-			(orderInterface.state === 'init' || orderInterface.state === 'getshop' || orderInterface.state === 'setshop') ? $pcardOrder.css({'height' : '440px'}) : '';
+			// (orderInterface.state === 'init' || orderInterface.state === 'getshop' || orderInterface.state === 'setshop') ? $pcardOrder.css({'height' : '440px'}) : '';
 			orderInterface.setShopModal();
 			
 			if(orderInterface.state !== 'cancel') {
@@ -836,7 +854,9 @@ $(document).ready(function() {
 
 	// обработка событий связанных с интерфейсом
 	$(document).on('click', function (event) {
+		// order-button-to-getshop
 		if($(event.target).hasClass('pcard-store__reserve-button')) makeOrderInterface('init');
+		else if($(event.target).hasClass('order-button-to-getshop')) makeOrderInterface('getshop');
 		else if($(event.target).hasClass('pcard-order__close-but')) makeOrderInterface('cancel');
 		else if($(event.target).hasClass('pcard-popup__overlay')) makeOrderInterface('cancel');
 		else if($(event.target).hasClass('pcard-map-shop__close-but')) makeOrderInterface('getshop');
@@ -851,7 +871,7 @@ $(document).ready(function() {
 		else if($(event.target).hasClass('pcard-order-form-message__close-but')) makeOrderInterface('smsstart');
 		else if($(event.target).hasClass('pcard-order-form__field')) console.log('continue');
 
-		console.log('doc on click');
+		// console.log('doc on click');
 	});
 
 	$(document).on('change', function (event) {

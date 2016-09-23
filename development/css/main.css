@@ -217,6 +217,11 @@
 	ДЛЯ
 	@MEDIA-ВЫРАЖЕНИЙ
 */
+/*
+	FONTS,
+	GRID,
+	TYPICAL UI ELEMENTS
+*/
 /*	=================================
 	=================================
 	=====                       =====
@@ -420,6 +425,9 @@ body {
   text-transform: uppercase;
   font: 14px/37px 'Circe-Regular';
   color: #999;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .form__field-select {
   position: absolute;
@@ -444,6 +452,7 @@ body {
   appearance: none;
   background: transparent;
 }
+/* второй вариант */
 .form {
   /*&__field- {}*/
   /*&__field- {}*/
@@ -580,7 +589,6 @@ body {
 	кнопка отправки в форме типа 'input submit'
 */
 .button,
-.b-button,
 .form__button {
   width: 100%;
   height: 37px;
@@ -603,7 +611,6 @@ body {
   appearance: none;
 }
 .button:hover,
-.b-button:hover,
 .form__button:hover {
   background-color: #b32024;
 }
@@ -612,6 +619,91 @@ body {
     height: 50px;
     line-height: 50px;
   }
+}
+/*
+	КАСТОМИЗАЦИЯ ДЛЯ <input type="text">
+*/
+.form-textline {
+  position: relative;
+  display: block;
+  height: 35px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+}
+.form-textline__default {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-transform: uppercase;
+  font: 400 14px 'Circe';
+  color: #999;
+  outline: none;
+  border: 0;
+}
+.promo-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-size: 0;
+}
+.promo-label--shock-price {
+  background: url('../img/sprites/sprite__promo-labels.png') center center no-repeat;
+}
+.promo-label--discount {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(237, 48, 48, 0.7);
+  text-align: center;
+  font: 400 14px/40px 'Circe';
+  color: #fff;
+}
+.b-button {
+  width: 100%;
+  height: 37px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 3px;
+  background-color: #ed3030;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  font: 400 14px/40px 'Circe';
+  color: #fff;
+  /*safari, iOS*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.b-button:hover {
+  background-color: #b32024;
 }
 /* HEADER-TOP  @IMPORT */
 /*"header-top"*/
