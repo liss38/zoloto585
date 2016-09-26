@@ -57,9 +57,14 @@
 			.-brad-ab-(2px);
 		}
 	}
-	&__select { .-dn-; }
-}
+	&__select {
+		display: none;
 
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+}
 
 @media @tablet-portrait {
 	@width-inner: 300px;
@@ -72,6 +77,7 @@
 		&__list {
 			width: 168px;
 		}
+
 
 		&__item {
 			.-block-(150px, auto, 7px 0 7px 30px, 0);
@@ -86,78 +92,114 @@
 			}
 		}
 
+
 		&__map {
 			width: 410px;
 		}
 	}
 }
 
-@media screen and (max-width:639px) {
+
+@media @mobile {
 	.pcard-order-shops {
-		.-posr-;
+		position: relative;
+
+		width: 100%;
+		height: 238px; /*!! прийти к height: auto; */
 		margin: 0 auto;
 
-		&__list { .-dn-; }
-		&__map {
-			/*.-dn-;*/
-			.-wh-(100%, auto);
+
+		&__list {
+			display: none;
 		}
+
+
+		&__map {
+			position: relative;
+			top: 100px;
+			left: 0;
+			margin-left: 0;
+
+			width: 100%;
+			height: auto;
+		}
+
+
 		&__label {
-			.-db-;
-			.-tl-(10px, 0);
+			top: 10px;
+
+			display: block;
+
 			font-size: 12px;
 
 			&:after {
+				top: 25px;
+				left: 1px;
+
 				height: 48px;
-				.-tl-(25px, 1px);
+
 				.set-order-sprite(10px, -52px);
 				background-color: inherit;
 				border: 0;
 			}
 		}
+
+
 		&__select {
-			.-block-(100%, 50px, 0 17px 0 30px);
-			.-posa-tl-(36px, 0);
-			.-box-border-(#e8e8e8, 2px);
-			.font-circe_light(10px, 28px, #b9b6b8);
+			position: absolute;
+			top: 36px;
+
+			display: block;
+			height: 50px;
+			padding: 0 17px 0 30px;
+
+			border: 1px solid #e8e8e8;
+			border-radius: 2px;
+
 			text-transform: uppercase;
+			.font-circe_light(14px, 28px, #b9b6b8);
+			color: #333;
+
 			outline: none;
 			cursor: pointer;
 
-			padding-left: 30px;
-			font-size: 14px;
-			color: #333;
-
 			&:hover,
-			&:focus { .-solid-(#c93232); }
+			&:focus {
+				border: 1px solid #c93232;
+			}
+		}
+	}
+}
+@media @mobile-album {
+	.pcard-order-shops {
+
+
+		&__label {
+			left: 29px;
+		}
+
+
+		&__select {
+			left: 29px;
+
+			width: 400px;
 		}
 	}
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
-	@width-inner: 400px;
-	@inner-margin: 25px;
-
-	.pcard-order-shops {
-		width: @width-inner;
-	}
-	.pcard-order-shops__map {
-		width: @width-inner;
-		.-posa-ch-(@width-inner);
-		top: 100px;
-	}
-}
-
 @media @mobile-portrait {
-	@width-inner: 280px;
-	@inner-margin: 20px;
-
 	.pcard-order-shops {
-		width: @width-inner;
-	}
-	.pcard-order-shops__map {
-		width: @width-inner;
-		.-posa-ch-(@width-inner);
-		top: 100px;
+
+
+		&__label {
+			left: 14px;
+		}
+
+
+		&__select {
+			left: 14px;
+
+			width: 280px;
+		}
 	}
 }

@@ -807,7 +807,7 @@ $(document).ready(function() {
 			$pcardOrderStep_2.hide();
 			$pcardOrderStep_3.hide();
 			activatePcardOrderStep($pcardOrderStep_4);
-			if(toBreak) $pcardOrder.css({'height' : '750px'});
+			// if(toBreak) $pcardOrder.css({'height' : '750px'});
 
 			// тестовая заглушка, которая отображает на экране информацию о заказе
 			// $pcardOrderStep_4.find('table').remove();

@@ -1,0 +1,66 @@
+.pcard-order-promo-forms {
+
+
+	.form-label {
+		display: block;
+
+		text-transform: uppercase;
+		font: 300 14px/25px Circe;
+		color: #666;
+	}
+
+
+	.form-textline {
+		height: 33px;
+	}
+}
+
+
+.pcard-promo-code-form {
+	width: 210px;
+}
+
+.pcard-bonus-card-form {
+	width: 210px;
+}
+
+
+@media @desktop {
+	.pcard-order-promo-forms {
+		width: 520px;
+		height: 55px;
+		margin-left: auto;
+		margin-right: auto;
+
+
+		.pcard-bonus-card-form {
+			float: left;
+		}
+
+
+		.pcard-promo-code-form {
+			float: right;
+		}
+	}
+}
+
+
+@media @mobile {
+	.pcard-order-promo-forms {
+
+
+		.form-textline {
+			width: 284px;
+			height: 48px;
+		}
+	}
+
+
+	.pcard-bonus-card-form,
+	.pcard-promo-code-form {
+		width: 286px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
