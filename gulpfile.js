@@ -7,20 +7,12 @@ var gulp = require('gulp'),
 	fileinclude = require('gulp-file-include');
 
 
-/*gulp.task('lessmain', function () {
-	return gulp.src(dev_lessmain)
-		.pipe(concat('main.less'))
-		.pipe(less())
-		.pipe(rename('main.css'))
-		.pipe(gulp.dest(dev_css));
-});*/
 
 
 
 
-
-var dev_or_prod = '_2dev'; // префикс для dev-версии
-// var dev_or_prod = '_2prod'; // префикс для prod-версии
+// var dev_or_prod = '_2dev'; // префикс для dev-версии
+var dev_or_prod = '_2prod'; // префикс для prod-версии
 
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
@@ -65,6 +57,16 @@ gulp.task('make-catalog-css', function () {
 });
 
 
+// after_all.css
+gulp.task('make-after-all-css', function () {
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/after_all.less'])
+		.pipe(concat('after_all.temp.less'))
+		.pipe(less())
+		.pipe(rename('after_all.css'))
+		.pipe(gulp.dest(gulpDestFolder));
+});
+
+
 // костыль для продакшн наложения с новой вёрсткой
 gulp.task('make-mycrutch-css', function () {
 	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/mycrutch.less'])
@@ -78,7 +80,7 @@ gulp.task('make-mycrutch-css', function () {
 
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-mycrutch-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-after-all-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -92,7 +94,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 	2PROD
 */
 // make-prod
-gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-mycrutch-css'], function () {
+gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-after-all-css', 'make-mycrutch-css'], function () {
 	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -101,7 +103,7 @@ gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css
 
 
 // msalnikov.min.css для ПРОДА
-gulp.task('make-msalnikov', function () {
+gulp.task('make-msalnikov-css', function () {
 	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/mycrutch.min.css'])
 		.pipe(concat('msalnikov.min.css'))
 		// .pipe(cssmin())

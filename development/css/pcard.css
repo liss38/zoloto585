@@ -2882,7 +2882,7 @@ pcard-order__content
   display: block;
   text-transform: uppercase;
   text-align: center;
-  font: 400 20px/32px 'Circe';
+  font: 400 26px/36px 'Circe';
   color: #333;
 }
 .pcard-order-promo cite {
@@ -2894,6 +2894,25 @@ pcard-order__content
 @media screen and (min-width: 1025px) {
   .pcard-order-promo {
     height: 588px;
+    padding-top: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .pcard-order-promo cite {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo {
+    height: 588px;
+    padding-top: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   .pcard-order-promo cite {
     position: absolute;
@@ -2926,42 +2945,122 @@ pcard-order__content
   color: #666;
 }
 .pcard-order-promo-forms .form-textline {
-  height: 33px;
+  height: 35px;
+}
+.pcard-order-promo-forms .form-textline__default {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.pcard-order-promo-forms .form-textline__icon {
+  width: 35px;
 }
 .pcard-promo-code-form {
+  position: relative;
   width: 210px;
 }
 .pcard-bonus-card-form {
+  position: relative;
   width: 210px;
+}
+.pcard-order-promo-submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35px;
+  height: 35px;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 1px solid #b32024;
+  line-height: 35px;
+  font-size: 11px;
+}
+.pcard-order-promo-warning {
+  position: absolute;
+  display: none;
+  /* пока скрыто */
 }
 @media screen and (min-width: 1025px) {
   .pcard-order-promo-forms {
     width: 520px;
-    height: 55px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
   }
   .pcard-order-promo-forms .pcard-bonus-card-form {
-    float: left;
+    float: right;
   }
   .pcard-order-promo-forms .pcard-promo-code-form {
+    float: left;
+  }
+  .pcard-order-promo-forms .form-label {
+    font-weight: 400px;
+    font-size: 11px;
+    line-height: 28px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo-forms {
+    width: 480px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pcard-order-promo-forms .pcard-bonus-card-form {
     float: right;
+  }
+  .pcard-order-promo-forms .pcard-promo-code-form {
+    float: left;
+  }
+  .pcard-order-promo-forms .form-label {
+    font-weight: 400px;
+    font-size: 11px;
+    line-height: 28px;
   }
 }
 @media screen and (max-width: 639px) {
   .pcard-order-promo-forms .form-textline {
-    width: 284px;
-    height: 48px;
+    width: 100%;
+    height: 50px;
+  }
+  .pcard-order-promo-forms .form-textline__default {
+    padding-left: 65px;
+    padding-right: 60px;
+  }
+  .pcard-order-promo-forms .form-textline__icon {
+    width: 55px;
   }
   .pcard-bonus-card-form,
   .pcard-promo-code-form {
-    width: 286px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
   }
+  .pcard-order-promo-submit {
+    height: 50px;
+    width: 55px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-bonus-card-form,
+  .pcard-promo-code-form {
+    width: 400px;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-bonus-card-form,
+  .pcard-promo-code-form {
+    width: 286px;
+    margin-top: 20px;
+  }
 }
 .pcard-order-promo-total {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   text-transform: uppercase;
   font: 400 12px 'Circe';
 }
@@ -3016,12 +3115,40 @@ pcard-order__content
 }
 @media screen and (min-width: 1025px) {
   .pcard-order-promo-total {
+    margin-top: 45px;
     margin-left: 130px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo-total {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 20px;
+    text-align: center;
   }
 }
 @media screen and (max-width: 639px) {
   .pcard-order-promo-total {
-    border: 1px solid #e3e3e3;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .pcard-order-promo-total__before {
+    display: none;
+  }
+  .pcard-order-promo-total__after {
+    float: right;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-order-promo-total {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-order-promo-total {
+    width: 286px;
   }
 }
 .order-button-to-getshop {
@@ -3029,6 +3156,16 @@ pcard-order__content
   width: 208px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 1025px) {
+  .order-button-to-getshop {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .order-button-to-getshop {
+    margin-top: 58px;
+  }
 }
 @media screen and (max-width: 639px) {
   .order-button-to-getshop {

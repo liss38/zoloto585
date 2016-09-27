@@ -1,0 +1,310 @@
+===========
+= JS List =
+===========
+
+
+-1-
+/bitrix/templates/zoloto/js/jquery-1.11.1.min.js
+
+jQuery
+jQuery JavaScript Library v1.11.1
+http://code.jquery.com/jquery/
+http://code.jquery.com/jquery-1.11.1.js
+
+js-библиотека, фокусирующаяся на взаимодействии JavaScript, HTML и CSS.
+
+используется на стороне браузера в качестве главного модуля, 
+является ядром js-зависимостей
+
+
+
+
+
+-2-
+/bitrix/templates/zoloto/js/owl-carousel/owl.carousel.js
+
+OwlCarousel
+jQuery OwlCarousel v1.3.3
+http://www.owlgraphic.com/owlcarousel/
+
+jQuery-плагин для создания адаптивной карусели
+
+используется на главной странице,
++ акционные страницы
+
+
+
+
+
+
+-3-
+/bitrix/templates/zoloto/js/jqueryui/select.js
+
+fancySelect
+https://github.com/paulstraw/FancySelect
+http://code.octopuscreative.com/fancyselect/
+
+jQuery-плагин для стилизации селектов
+
+
+
+
+
+-4-
+/bitrix/templates/zoloto/js/jqueryui/jquery-ui.js
+
+jQuery UI
+jQuery UI - v1.11.2 - 2015-01-04
+http://jqueryui.com
+http://jquery.page2page.ru/index.php5/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_jqueryui
+
+jQuery UI — это библиотека на основе jQuery, содержащая внутри плагины/модули для создания стилизации/анимации/взаимодействия 
+с нестнадратными элементами интерфейса, которых нет по умолчанию.
+
+Дополнительное расширение библиотеки jQuery,
+является ядром зависимостей
+
+
+
+
+-5-
+/bitrix/templates/zoloto/js/jqueryui/jquery.ui.touch-punch.min.js
+
+Touch Punch
+jQuery UI Touch Punch 0.2.3
+http://touchpunch.furf.com/
+https://github.com/furf/jquery-ui-touch-punch
+
+Touch Punch - плагин для управления touch-событиями,
+использует некоторый функционал jQuery UI для обработки touch-событий,
+работает со всеми базовыми jQuery UI-виджетами и взаимодействиями
+
+Зависимости:
+	jquery.ui.widget.js
+	jquery.ui.mouse.js
+
+
+
+
+
+-6-
+http://zoloto585.ru/bitrix/templates/zoloto/js/jqueryui/jquery.ui.datepicker-ru.js
+
+datepicker-ru
+Written by Andrew Stromnov (stromnov@gmail.com)
+
+Раширение для локализации datepicker.js(из jQuery UI) на русский язык
+
+
+
+
+
+-7-
+/bitrix/templates/zoloto/js/touchswipe/jquery.touchSwipe.min.js
+
+TouchSwipe
+https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+http://labs.rampinteractive.co.uk/touchSwipe/demos/index.html
+
+jQuery-плагин для реализации интерфейса с сенсорным и жестовым управлением
+
+
+
+
+
+-8-
+/bitrix/templates/zoloto/js/fotorama/zoom/jquery.zoom.js
+
+jQuery Zoom
+Zoom 1.7.13
+license: MIT
+http://www.jacklmoore.com/zoom/
+https://github.com/jackmoore/zoom
+
+jQuery Zoom - плагин для увеличения изображения при наведении на него курсора, эффект лупы.
+
+На сайте используется в странице товара(карточка товара), в блоке галерея, наведение набольшую картинкку, 
+например здесь http://zoloto585.ru/catalog/yuvelirnye_izdeliya/kolca/1461323/
+
+
+
+
+
+-9-
+/bitrix/templates/zoloto/js/fotorama/fotorama.js
+
+Fotorama
+Fotorama 4.6.3
+http://fotorama.io/
+https://github.com/artpolikarpov/fotorama/
+
+Fotorama - слайдер для создания галерей
+
+На сайте используется в странице товара(карточка товара), блок галереи
+например здесь http://zoloto585.ru/catalog/yuvelirnye_izdeliya/kolca/1461323/
+
+
+
+
+-10-
+/bitrix/templates/zoloto/js/perfectscroll/jquery.mousewheel.js
+
+jquery.mousewheel
+Version: 3.1.9
+Requires: jQuery 1.2.2+
+http://brandon.aaron.sh
+
+query.mousewheel - это jQuery-плагин, который позволяет совершать какие-то действия при вращении колесика мыши
+
+
+
+
+
+-11-
+/bitrix/templates/zoloto/js/perfectscroll/perfect-scrollbar.js
+
+Perfect Scrollbar
+http://noraesae.github.io/perfect-scrollbar/
+https://github.com/noraesae/perfect-scrollbar
+
+Perfect Scrollbar – это jQuery-плагин для создания стилизованных скроллбаров
+
+
+
+
+
+-12-
+/bitrix/templates/zoloto/js/magnificpopup/jquery.magnific-popup.js
+
+Magnific Popup
+Magnific Popup - v1.0.0 - 2015-01-03
+http://dimsemenov.com/plugins/magnific-popup/
+
+Magnific Popup - jQuery-плагин для попап окошек и лайт бокс галерей
+
+
+
+
+
+
+-13-
+/bitrix/templates/zoloto/js/jquery.countdown/jquery.plugin.js
+
+http://ejohn.org/blog/simple-javascript-inheritance/
+скрипт Джона Резига, полиморфизм(?)
+
+
+
+
+-14-
+/bitrix/templates/zoloto/js/jquery.countdown/jquery.countdown.js
+
+Countdown
+Countdown for jQuery v2.0.2
+
+http://keith-wood.name/countdown.html
+
+Countdown - jQuery-лпагин для таймера обратного отсчета(акциионные страницы и лэндинг)
+
+
+
+
+-15-
+/bitrix/templates/zoloto/js/jquery.countdown/jquery.countdown-ru.js
+
+http://keith-wood.name/countdown.html
+
+Локализация для плагина Countdown
+
+
+
+
+-16-
+/bitrix/templates/zoloto/js/jquery.inputmask.js
+
+Input Mask
+Input Mask plugin for jquery
+Version: 1.2.4
+http://github.com/RobinHerbots/jquery.inputmask
+http://robinherbots.github.io/jquery.inputmask/index.html
+
+Input Mask - jQuery-плагин для создания масок ввода. Маски ввода используются, 
+чтобы ограничить набор или/и формат символом, вводимых пользователем в текстовое 
+поле, например, если необходимо ввести дату или номер телефона в определенном формате.
+
+
+
+
+-17-
+/bitrix/templates/zoloto/js/jquery.validate.min.js
+
+jQuery Validation Plugin - v1.12.0 - 4/1/2014
+http://jqueryvalidation.org
+https://interestingwebdesign.wordpress.com/2012/02/27/%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD-%D0%B4%D0%BB%D1%8F-%D0%B2%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D0%B8-jquery-validation/
+http://webcareer.ru/jquery-cookies-rabota-s-kukami-na-jquery.html
+
+jQuery Validation Plugin - это плагин, с помощью которого можно легко проверять на корректность вводимые пользователем данные.
+
+
+
+
+
+
+-18-
+/bitrix/templates/zoloto/js/jquery.cookie.js
+
+jQuery Cookie
+jQuery Cookie Plugin v1.4.1
+https://github.com/carhartl/jquery-cookie
+http://jquery.page2page.ru/index.php5/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_cookie
+
+jQuery Cookie - это jQuery-плагин для удобной работы с cookies'ами
+
+
+
+
+-19-
+/bitrix/templates/zoloto/js/jquery.jscrollpane.min.js
+
+jScrollPane
+jScrollPane - v2.0.22 - 2015-04-25
+http://jscrollpane.kelvinluck.com/
+https://toster.ru/q/11552
+
+
+jScrollPane - плагин для стилизации полосы прокрутки
+
+
+
+
+-20-
+/bitrix/templates/zoloto/js/formstyler/jquery.formstyler.min.js
+
+Form Styler
+jQuery Form Styler v1.7.2
+https://github.com/Dimox/jQueryFormStyler
+http://dimox.github.io/jQueryFormStyler/demo/
+http://dimox.name/jquery-form-styler
+http://www.jsdelivr.com/projects/jquery.formstyler
+
+Form Styler - плагин для стилизации селектов, чекбоксов, радиокнопок, файловых и числовых полей
+
+
+
+
+-21-
+/bitrix/templates/zoloto/js/fancySelect.js
+
+этот ксрипт уже есть, дублирование
+
+
+
+
+
+
+
+
+
+/bitrix/templates/zoloto/js/new.js
+
+/bitrix/templates/zoloto/js/main.js

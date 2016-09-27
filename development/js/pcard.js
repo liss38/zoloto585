@@ -727,8 +727,81 @@ $(document).ready(function() {
 
 			orderInterface.stepHide($('.pcard-order__step-3'));
 */
-			// 
-			// console.log(orderInterface.state);
+			
+
+			// проверка с формы бонусной карты
+			$('#pcard-bonus-card-form').on('submit', function (event) {
+				var $this = $(this),
+					$submitButton = $this.find('.pcard-order-promo-submit'),
+					$warningMessage = $this.find('.pcard-order-promo-warning'),
+					$textField = $this.find('.form-textline'),
+
+					bonusCard = $this.find('.form-textline__default').val(),
+					bonusCardValid = false;
+
+				event.preventDefault();
+
+				// console.log(bonusCard);
+
+				// 
+
+				if(bonusCard != false) bonusCardValid = true;
+
+				if(bonusCardValid) {
+					$warningMessage.removeClass('pcard-order-promo-warning--invalid');
+					$submitButton.removeClass('pcard-order-promo-submit--invalid');
+					$textField.removeClass('form-textline--invalid');
+
+					$warningMessage.addClass('pcard-order-promo-warning--valid');
+					$submitButton.addClass('pcard-order-promo-submit--valid');
+					$textField.addClass('form-textline--valid');
+				}
+				else {
+					$warningMessage.removeClass('pcard-order-promo-warning--valid');
+					$submitButton.removeClass('pcard-order-promo-submit--valid');
+					$textField.removeClass('form-textline--valid');
+
+					$warningMessage.addClass('pcard-order-promo-warning--invalid');
+					$submitButton.addClass('pcard-order-promo-submit--invalid');
+					$textField.addClass('form-textline--invalid');
+				}
+			});
+
+			// проверка с формы промокода
+			$('#pcard-promo-code-form').on('submit', function (event) {
+				var $this = $(this),
+					$submitButton = $this.find('.pcard-order-promo-submit'),
+					$warningMessage = $this.find('.pcard-order-promo-warning'),
+					$textField = $this.find('.form-textline'),
+
+					promoCode = $this.find('.form-textline__default').val(),
+					promoCodeValid = false;
+
+				event.preventDefault();
+
+				// console.log(promoCode);
+
+				if(promoCode != false) promoCodeValid = true;
+
+				if(promoCodeValid) {
+					$warningMessage.removeClass('pcard-order-promo-warning--invalid');
+					$submitButton.removeClass('pcard-order-promo-submit--invalid');
+					$textField.removeClass('form-textline--invalid');
+
+					$warningMessage.addClass('pcard-order-promo-warning--valid');
+					$submitButton.addClass('pcard-order-promo-submit--valid');
+					$textField.addClass('form-textline--valid');
+				}
+				else {
+					$warningMessage.removeClass('pcard-order-promo-warning--valid');
+					$submitButton.removeClass('pcard-order-promo-submit--valid');
+					$textField.removeClass('form-textline--valid');
+
+					$warningMessage.addClass('pcard-order-promo-warning--invalid');
+					$submitButton.addClass('pcard-order-promo-submit--invalid');
+					$textField.addClass('form-textline--invalid');
+				}
+			});
 		}
 
 		else if(state === 'getshop') {

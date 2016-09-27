@@ -1,4 +1,8 @@
 .pcard-order-promo-total {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
 	text-transform: uppercase;
 	font: 400 12px 'Circe';
 
@@ -79,7 +83,28 @@
 
 @media @desktop {
 	.pcard-order-promo-total {
+		margin-top: 45px;
 		margin-left: 130px;
+
+
+		&__text {}
+
+
+		&__before {}
+
+
+		&__after {}
+	}
+}
+
+
+@media @tablet {
+	.pcard-order-promo-total {
+		width: 100%;
+		margin-top: 60px;
+		padding: 0 20px;
+
+		text-align: center;
 
 
 		&__text {}
@@ -95,7 +120,48 @@
 
 @media @mobile {
 	.pcard-order-promo-total {
-		border: 1px solid #e3e3e3;
+		margin-top: 45px;
+		margin-left: auto;
+		margin-right: auto;
+
+		border-bottom: 1px solid #e3e3e3;
+
+
+		&__text {}
+
+
+		&__before {
+			display: none;
+		}
+
+
+		&__after {
+			float: right;
+		}
+	}
+}
+
+
+
+@media @mobile-album {
+	.pcard-order-promo-total {
+		width: 400px;
+
+
+		&__text {}
+
+
+		&__before {}
+
+
+		&__after {}
+	}
+}
+
+
+@media @mobile-portrait {
+	.pcard-order-promo-total {
+		width: 286px;
 
 
 		&__text {}

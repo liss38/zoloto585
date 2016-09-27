@@ -11,6 +11,14 @@
 		var $_this = $(event.target);
 		if($_this.hasClass('form__field-input')) $_this.parent().removeClass('focus');
 	});
+
+	$('.form-textline').on('focusin', function (event) {
+		$(this).addClass('form-textline--active');
+	});
+
+	$('.form-textline').on('focusout', function (event) {
+		$(this).removeClass('form-textline--active');
+	});
 });
 // 
 // 

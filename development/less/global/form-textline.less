@@ -7,9 +7,9 @@
 	display: block;
 	height: 35px;
 
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 
 	border: 1px solid #e2e2e2;
 	border-radius: 3px;
@@ -41,6 +41,27 @@
 
 
 	&__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
 
+		display: block;
+		height: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		border-right: 1px solid #e2e2e2;
+		background-color: #eee;
+	}
+}
+
+
+.form-textline--active {
+	border-color: #b32024;
+
+
+	.form-textline__icon {
+		border-color: #b32024;
 	}
 }

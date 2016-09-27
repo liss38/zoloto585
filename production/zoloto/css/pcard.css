@@ -1980,6 +1980,7 @@ body {
   }
 }
 /*****************************************/
+/* pcard-order  main */
 /*	=====================================
 	=====================================
 	=====                           =====
@@ -2003,24 +2004,6 @@ body {
 	=====================================
 */
 /* Общие */
-.pcard-order {
-  width: 730px;
-  height: 630px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -315px;
-  margin-left: -365px;
-  z-index: 9999;
-  display: none;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #8c8c8c;
-  border-radius: 5px;
-}
 .pcard-order__return {
   display: block;
   width: 40px;
@@ -2170,204 +2153,6 @@ body {
 }
 .pcard-order-scheme__metro:after {
   right: 0;
-}
-.pcard-order-city {
-  height: 70px;
-  position: relative;
-}
-.pcard-order-city__label {
-  position: absolute;
-  top: 20px;
-  left: 125px;
-  text-transform: uppercase;
-  font: 300 14px/28px 'Circe';
-  color: #b9b6b8;
-}
-.pcard-order-city__label:after {
-  content: '';
-  display: block;
-  width: 27px;
-  height: 26px;
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 5;
-  top: 1px;
-  right: -103px;
-  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
-  background-color: #f4f4f4;
-  border-right: 1px solid #e8e8e8;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.pcard-order-city__search {
-  display: block;
-  width: 154px;
-  height: 28px;
-  padding: 0 17px 0 35px;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  top: 20px;
-  left: 287px;
-  border: 1px solid #e8e8e8;
-  border-radius: 2px;
-  font: 300 10px/28px 'Circe';
-  color: #b9b6b8;
-  text-transform: uppercase;
-  outline: none;
-}
-.pcard-order-city__search:hover,
-.pcard-order-city__search:focus {
-  border: 1px solid #c93232;
-}
-.pcard-order-city__reset {
-  font-size: 0;
-  position: absolute;
-  top: 25px;
-  left: 420px;
-  z-index: 3;
-  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 4px -424px no-repeat;
-  display: block;
-  width: 18px;
-  height: 18px;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  outline: none;
-}
-.pcard-order-city__select {
-  display: block;
-  width: 154px;
-  height: 28px;
-  padding: 0 17px 0 35px;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: auto;
-  top: 20px;
-  left: 287px;
-  border: 1px solid #e8e8e8;
-  border-radius: 2px;
-  font: 300 10px/28px 'Circe';
-  color: #b9b6b8;
-  text-transform: uppercase;
-  outline: none;
-  cursor: pointer;
-}
-.pcard-order-city__select:hover,
-.pcard-order-city__select:focus {
-  border: 1px solid #c93232;
-}
-.pcard-order-city__result-text {
-  position: absolute;
-  top: 21px;
-  left: 463px;
-  font: 300 11px/28px 'Circe';
-  color: #b9b6b8;
-  text-transform: uppercase;
-}
-.pcard-order-city__result-value {
-  position: absolute;
-  top: 21px;
-  left: 522px;
-  font: 400 11px/28px 'Circe';
-  color: #666;
-  text-transform: uppercase;
-}
-.pcard-map-shop {
-  display: block;
-  width: 270px;
-  height: 140px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -70px;
-  margin-left: -135px;
-  z-index: 100;
-  background-color: #fff;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.pcard-map-shop__header {
-  height: 33px;
-  background-color: #f4f4f4;
-}
-.pcard-map-shop__address {
-  font: 300 10px/21px 'Circe';
-  color: #333;
-  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -358px no-repeat;
-  position: absolute;
-  top: 8px;
-  left: 30px;
-  padding-left: 15px;
-  text-transform: uppercase;
-}
-.pcard-map-shop__close-but {
-  display: block;
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -417px no-repeat;
-  font-size: 0px;
-  cursor: pointer;
-}
-.pcard-map-shop__when {
-  font: 300 9px/10px 'Circe';
-  color: #666;
-  position: absolute;
-  top: 48px;
-  left: 40px;
-  text-transform: uppercase;
-}
-.pcard-map-shop__when_strike {
-  font: 300 9px/10px 'Circe';
-  color: #666;
-  position: absolute;
-  top: 59px;
-  left: 40px;
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-.pcard-map-shop__time {
-  font: 300 10px/17px 'Circe';
-  color: #666;
-  position: absolute;
-  top: 46px;
-  right: 47px;
-  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -648px no-repeat;
-  padding-left: 19px;
-}
-.pcard-map-shop__button {
-  display: block;
-  height: 38px;
-  background-color: #ed3030;
-  border-radius: 3px;
-  border: 1px solid #d9d9d9;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  width: 208px;
-  position: absolute;
-  top: 84px;
-  left: 50%;
-  margin-left: -104px;
-  font: 400 14px/38px 'Circe';
-  color: #fff;
-}
-.pcard-map-shop__button:hover {
-  background-color: #b32023;
 }
 /* ШАГ3 */
 .pcard-order__step-3 .pcard-order__content {
@@ -2579,27 +2364,6 @@ body {
   margin-top: 30px;
 }
 @media screen and (min-width: 640px) and (max-width: 767px) {
-  .pcard-order {
-    width: 580px;
-    height: 630px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -315px;
-    margin-left: -290px;
-  }
-  .pcard-order-city__label {
-    left: 80px;
-  }
-  .pcard-order-city__select {
-    left: 242px;
-  }
-  .pcard-order-city__result-text {
-    left: 418px;
-  }
-  .pcard-order-city__result-value {
-    left: 477px;
-  }
   .pcard-order-form {
     width: 300px;
     position: absolute;
@@ -2721,42 +2485,6 @@ body {
     top: 548px;
     right: -5px;
   }
-  .pcard-order {
-    position: static;
-    width: 100%;
-    height: 440px;
-    margin-top: 0;
-    margin-left: 0;
-    border-radius: 0;
-    border: 0;
-  }
-  .pcard-order-city {
-    height: 85px;
-    margin: 20px auto 10px;
-  }
-  .pcard-order-city__label {
-    top: 10px;
-    left: 0;
-    font-size: 12px;
-  }
-  .pcard-order-city__label:after {
-    height: 48px;
-    top: 26px;
-    left: 1px;
-    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 11px -344px no-repeat;
-    background-color: inherit;
-    border: 0;
-  }
-  .pcard-order-city__select {
-    width: 100%;
-    height: 50px;
-    top: 35px;
-    left: 0;
-    padding-left: 30px;
-    font-size: 14px;
-    line-height: 50px;
-    color: #333;
-  }
   .pcard-order-form__notice {
     top: 110px;
     left: 10px;
@@ -2789,35 +2517,6 @@ body {
   .pcard-order__step-4 {
     width: 100%;
     height: 100%;
-  }
-  .pcard-map-shop {
-    position: static;
-  }
-  .pcard-map-shop__header {
-    display: none;
-  }
-  .pcard-map-shop__content {
-    font-size: 11px;
-  }
-  .pcard-map-shop__when {
-    top: 0;
-    left: 0;
-  }
-  .pcard-map-shop__when_strike {
-    top: 0;
-    left: 105px;
-  }
-  .pcard-map-shop__time {
-    top: 0;
-    right: 0;
-  }
-  .pcard-map-shop__button {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-left: 0;
-    height: 60px;
-    font-size: 16px;
-    line-height: 60px;
   }
   .pcard-map-container {
     display: none;
@@ -2912,9 +2611,6 @@ body {
     width: 400px;
     left: 25px;
   }
-  .pcard-order-city {
-    width: 400px;
-  }
   .pcard-order__step-4 {
     position: static;
     /*width: @width-inner;*/
@@ -2936,36 +2632,6 @@ body {
     position: absolute;
     top: 2px;
     left: -18px;
-  }
-  .pcard-map-shop {
-    width: 400px;
-    position: absolute;
-    z-index: auto;
-    left: 50%;
-    margin-left: -200px;
-    top: 0;
-    margin-top: 0;
-  }
-  .pcard-map-shop__when {
-    top: 5px;
-    font: 300 12px/12px 'Circe';
-    color: #666;
-  }
-  .pcard-map-shop__when_strike {
-    top: 5px;
-    left: 115px;
-    font: 300 12px/12px 'Circe';
-    color: #666;
-  }
-  .pcard-map-shop__time {
-    top: 5px;
-    font-size: 11px;
-  }
-  .pcard-map-shop__button {
-    display: block;
-    width: 450px;
-    top: 77px;
-    left: -25px;
   }
   .pcard-order__step-3 .pcard-order__content {
     background: none;
@@ -3044,17 +2710,12 @@ body {
     left: 50%;
     margin-left: -140px;
   }
-  .pcard-order-city {
-    width: 280px;
-  }
   .pcard-order-form__field {
     width: 280px;
     padding-right: 15px;
   }
   .pcard-order__step-4 {
     position: static;
-    /*width: @width-inner;*/
-    /*height: auto;*/
   }
   .pcard-order__return {
     width: 17px;
@@ -3074,29 +2735,6 @@ body {
     position: absolute;
     top: 2px;
     left: -18px;
-  }
-  .pcard-map-shop {
-    width: 280px;
-    position: absolute;
-    z-index: auto;
-    left: 50%;
-    margin-left: -140px;
-    top: 0;
-    margin-top: 0;
-  }
-  .pcard-map-shop__when {
-    font: 300 11px/11px 'Circe';
-    color: #333;
-  }
-  .pcard-map-shop__when_strike {
-    font: 300 11px/11px 'Circe';
-    color: #333;
-  }
-  .pcard-map-shop__button {
-    display: block;
-    width: 320px;
-    top: 77px;
-    left: -20px;
   }
   /* ШАГ 4 */
   /*@step-4-*/
@@ -3162,6 +2800,524 @@ body {
   .step-4-img img {
     width: 390px;
     height: 190px;
+  }
+}
+/*
+pcard-order
+pcard-order__step
+pcard-order__header
+pcard-order__content
+*/
+.pcard-order__step_hidden {
+  display: none;
+}
+.pcard-order {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -315px;
+  margin-left: -365px;
+  z-index: 9999;
+  display: none;
+  width: 730px;
+  height: 630px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+}
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .pcard-order {
+    width: 580px;
+    margin-left: -290px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .pcard-order {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-left: 0;
+    border-radius: 0;
+    border: 0;
+  }
+}
+/* pcard-order-step-1 */
+.pcard-order-promo b {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  font: 400 26px/36px 'Circe';
+  color: #333;
+}
+.pcard-order-promo cite {
+  display: block;
+  text-transform: uppercase;
+  font: 400 10px/12px 'Circe';
+  color: #999;
+}
+@media screen and (min-width: 1025px) {
+  .pcard-order-promo {
+    height: 588px;
+    padding-top: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .pcard-order-promo cite {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo {
+    height: 588px;
+    padding-top: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .pcard-order-promo cite {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 639px) {
+  .pcard-order-promo {
+    /*height: 490px;*/
+    padding-bottom: 80px;
+  }
+  .pcard-order-promo b {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .pcard-order-promo cite {
+    width: 265px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.pcard-order-promo-forms .form-label {
+  display: block;
+  text-transform: uppercase;
+  font: 300 14px/25px Circe;
+  color: #666;
+}
+.pcard-order-promo-forms .form-textline {
+  height: 35px;
+}
+.pcard-order-promo-forms .form-textline__default {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.pcard-order-promo-forms .form-textline__icon {
+  width: 35px;
+}
+.pcard-promo-code-form {
+  position: relative;
+  width: 210px;
+}
+.pcard-bonus-card-form {
+  position: relative;
+  width: 210px;
+}
+.pcard-order-promo-submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35px;
+  height: 35px;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 1px solid #b32024;
+  line-height: 35px;
+  font-size: 11px;
+}
+.pcard-order-promo-warning {
+  position: absolute;
+  display: none;
+  /* пока скрыто */
+}
+@media screen and (min-width: 1025px) {
+  .pcard-order-promo-forms {
+    width: 520px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pcard-order-promo-forms .pcard-bonus-card-form {
+    float: right;
+  }
+  .pcard-order-promo-forms .pcard-promo-code-form {
+    float: left;
+  }
+  .pcard-order-promo-forms .form-label {
+    font-weight: 400px;
+    font-size: 11px;
+    line-height: 28px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo-forms {
+    width: 480px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pcard-order-promo-forms .pcard-bonus-card-form {
+    float: right;
+  }
+  .pcard-order-promo-forms .pcard-promo-code-form {
+    float: left;
+  }
+  .pcard-order-promo-forms .form-label {
+    font-weight: 400px;
+    font-size: 11px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .pcard-order-promo-forms .form-textline {
+    width: 100%;
+    height: 50px;
+  }
+  .pcard-order-promo-forms .form-textline__default {
+    padding-left: 65px;
+    padding-right: 60px;
+  }
+  .pcard-order-promo-forms .form-textline__icon {
+    width: 55px;
+  }
+  .pcard-bonus-card-form,
+  .pcard-promo-code-form {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pcard-order-promo-submit {
+    height: 50px;
+    width: 55px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-bonus-card-form,
+  .pcard-promo-code-form {
+    width: 400px;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-bonus-card-form,
+  .pcard-promo-code-form {
+    width: 286px;
+    margin-top: 20px;
+  }
+}
+.pcard-order-promo-total {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font: 400 12px 'Circe';
+}
+.pcard-order-promo-total__text {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #666;
+}
+.pcard-order-promo-total__before {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 10px;
+  color: #999;
+}
+.pcard-order-promo-total__before b {
+  position: relative;
+  display: inline;
+  padding-right: 6px;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 22px;
+  color: inherit;
+}
+.pcard-order-promo-total__before b:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+.pcard-order-promo-total__before span {
+  font-size: 12px;
+}
+.pcard-order-promo-total__after {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-left: 10px;
+}
+.pcard-order-promo-total__after b {
+  display: inline;
+  padding-right: 6px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 22px;
+  color: #333;
+}
+.pcard-order-promo-total__after span {
+  font-size: 12px;
+}
+@media screen and (min-width: 1025px) {
+  .pcard-order-promo-total {
+    margin-top: 45px;
+    margin-left: 130px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pcard-order-promo-total {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 639px) {
+  .pcard-order-promo-total {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .pcard-order-promo-total__before {
+    display: none;
+  }
+  .pcard-order-promo-total__after {
+    float: right;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-order-promo-total {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-order-promo-total {
+    width: 286px;
+  }
+}
+.order-button-to-getshop {
+  height: 38px;
+  width: 208px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1025px) {
+  .order-button-to-getshop {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .order-button-to-getshop {
+    margin-top: 58px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .order-button-to-getshop {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    border-radius: 0;
+    line-height: 60px;
+  }
+}
+/* pcard-order-step-2 */
+/*
+	содердимое
+	второго
+	шага
+*/
+.pcard-order-city {
+  height: 70px;
+  position: relative;
+}
+.pcard-order-city__label {
+  position: absolute;
+  top: 20px;
+  left: 125px;
+  text-transform: uppercase;
+  font: 300 14px/28px 'Circe';
+  color: #b9b6b8;
+}
+.pcard-order-city__label:after {
+  content: '';
+  display: block;
+  width: 27px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 5;
+  top: 1px;
+  right: -103px;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 7px -354px no-repeat;
+  background-color: #f4f4f4;
+  border-right: 1px solid #e8e8e8;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.pcard-order-city__search {
+  display: block;
+  width: 154px;
+  height: 28px;
+  padding: 0 17px 0 35px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  left: 287px;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  font: 300 10px/28px 'Circe';
+  color: #b9b6b8;
+  text-transform: uppercase;
+  outline: none;
+}
+.pcard-order-city__search:hover,
+.pcard-order-city__search:focus {
+  border: 1px solid #c93232;
+}
+.pcard-order-city__reset {
+  font-size: 0;
+  position: absolute;
+  top: 25px;
+  left: 420px;
+  z-index: 3;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 4px -424px no-repeat;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.pcard-order-city__select {
+  display: block;
+  width: 154px;
+  height: 28px;
+  padding: 0 17px 0 35px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: auto;
+  top: 20px;
+  left: 287px;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  font: 300 10px/28px 'Circe';
+  color: #b9b6b8;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.pcard-order-city__select:hover,
+.pcard-order-city__select:focus {
+  border: 1px solid #c93232;
+}
+.pcard-order-city__result-text {
+  position: absolute;
+  top: 21px;
+  left: 463px;
+  font: 300 11px/28px 'Circe';
+  color: #b9b6b8;
+  text-transform: uppercase;
+}
+.pcard-order-city__result-value {
+  position: absolute;
+  top: 21px;
+  left: 522px;
+  font: 400 11px/28px 'Circe';
+  color: #666;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .pcard-order-city__label {
+    left: 80px;
+  }
+  .pcard-order-city__select {
+    left: 242px;
+  }
+  .pcard-order-city__result-text {
+    left: 418px;
+  }
+  .pcard-order-city__result-value {
+    left: 477px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .pcard-order-city {
+    height: 85px;
+    margin: 20px auto 10px;
+  }
+  .pcard-order-city__label {
+    top: 10px;
+    left: 0;
+    font-size: 12px;
+  }
+  .pcard-order-city__label:after {
+    height: 48px;
+    top: 26px;
+    left: 1px;
+    background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 11px -344px no-repeat;
+    background-color: inherit;
+    border: 0;
+  }
+  .pcard-order-city__select {
+    width: 100%;
+    height: 50px;
+    top: 35px;
+    left: 0;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #333;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-order-city {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-order-city {
+    width: 280px;
   }
 }
 .pcard-order-shops {
@@ -3237,6 +3393,9 @@ body {
 }
 .pcard-order-shops__select {
   display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 @media screen and (min-width: 640px) and (max-width: 767px) {
   .pcard-order-shops {
@@ -3272,54 +3431,49 @@ body {
 @media screen and (max-width: 639px) {
   .pcard-order-shops {
     position: relative;
-    z-index: auto;
+    width: 100%;
+    height: 238px;
+    /*!! прийти к height: auto; */
     margin: 0 auto;
   }
   .pcard-order-shops__list {
     display: none;
   }
   .pcard-order-shops__map {
-    /*.-dn-;*/
+    position: relative;
+    top: 100px;
+    left: 0;
+    margin-left: 0;
     width: 100%;
     height: auto;
   }
   .pcard-order-shops__label {
-    display: block;
     top: 10px;
-    left: 0;
+    display: block;
     font-size: 12px;
   }
   .pcard-order-shops__label:after {
-    height: 48px;
     top: 25px;
     left: 1px;
+    height: 48px;
     background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -52px no-repeat;
     background-color: inherit;
     border: 0;
   }
   .pcard-order-shops__select {
+    position: absolute;
+    top: 36px;
     display: block;
-    width: 100%;
     height: 50px;
     padding: 0 17px 0 30px;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: absolute;
-    z-index: auto;
-    top: 36px;
-    left: 0;
     border: 1px solid #e8e8e8;
     border-radius: 2px;
-    font: 300 10px/28px 'Circe';
-    color: #b9b6b8;
     text-transform: uppercase;
+    font: 300 14px/28px 'Circe';
+    color: #b9b6b8;
+    color: #333;
     outline: none;
     cursor: pointer;
-    padding-left: 30px;
-    font-size: 14px;
-    color: #333;
   }
   .pcard-order-shops__select:hover,
   .pcard-order-shops__select:focus {
@@ -3327,29 +3481,171 @@ body {
   }
 }
 @media screen and (min-width: 480px) and (max-width: 639px) {
-  .pcard-order-shops {
-    width: 400px;
+  .pcard-order-shops__label {
+    left: 29px;
   }
-  .pcard-order-shops__map {
+  .pcard-order-shops__select {
+    left: 29px;
     width: 400px;
-    position: absolute;
-    z-index: auto;
-    left: 50%;
-    margin-left: -200px;
-    top: 100px;
   }
 }
 @media screen and (max-width: 479px) {
-  .pcard-order-shops {
+  .pcard-order-shops__label {
+    left: 14px;
+  }
+  .pcard-order-shops__select {
+    left: 14px;
     width: 280px;
   }
-  .pcard-order-shops__map {
-    width: 280px;
-    position: absolute;
-    z-index: auto;
-    left: 50%;
-    margin-left: -140px;
-    top: 100px;
+}
+/* pcard-order-shop */
+/* pcard-map-shop */
+.pcard-map-shop {
+  display: block;
+  width: 270px;
+  height: 140px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -135px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.pcard-map-shop__header {
+  height: 33px;
+  background-color: #f4f4f4;
+}
+.pcard-map-shop__address {
+  font: 300 10px/21px 'Circe';
+  color: #333;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -358px no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 30px;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+.pcard-map-shop__close-but {
+  display: block;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 10px -417px no-repeat;
+  font-size: 0px;
+  cursor: pointer;
+}
+.pcard-map-shop__when {
+  font: 300 9px/10px 'Circe';
+  color: #666;
+  position: absolute;
+  top: 48px;
+  left: 40px;
+  text-transform: uppercase;
+}
+.pcard-map-shop__when_strike {
+  font: 300 9px/10px 'Circe';
+  color: #666;
+  position: absolute;
+  top: 59px;
+  left: 40px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.pcard-map-shop__time {
+  font: 300 10px/17px 'Circe';
+  color: #666;
+  position: absolute;
+  top: 46px;
+  right: 47px;
+  background: url('/bitrix/templates/zoloto/images/sprites/pcard_order_sprite.png') 0px -648px no-repeat;
+  padding-left: 19px;
+}
+.pcard-map-shop__button {
+  display: block;
+  height: 38px;
+  background-color: #ed3030;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  width: 208px;
+  position: absolute;
+  top: 84px;
+  left: 50%;
+  margin-left: -104px;
+  font: 400 14px/38px 'Circe';
+  color: #fff;
+}
+.pcard-map-shop__button:hover {
+  background-color: #b32023;
+}
+@media screen and (max-width: 639px) {
+  .pcard-map-shop {
+    position: static;
+    width: 100%;
+    margin-left: 0;
+  }
+  .pcard-map-shop__header {
+    display: none;
+  }
+  .pcard-map-shop__content {
+    font-size: 11px;
+  }
+  .pcard-map-shop__button {
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-left: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 16px;
+    line-height: 60px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .pcard-map-shop__when {
+    top: 5px;
+    left: 29px;
+    font: 300 12px/12px 'Circe';
+    color: #666;
+  }
+  .pcard-map-shop__when_strike {
+    top: 5px;
+    left: 144px;
+    font: 300 12px/12px 'Circe';
+    color: #666;
+  }
+  .pcard-map-shop__time {
+    top: 5px;
+    right: 29px;
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pcard-map-shop__when {
+    top: 0;
+    left: 14px;
+    font: 300 11px/11px 'Circe';
+    color: #333;
+  }
+  .pcard-map-shop__when_strike {
+    top: 0;
+    left: 118px;
+    font: 300 11px/11px 'Circe';
+    color: #333;
+  }
+  .pcard-map-shop__time {
+    top: 0;
+    right: 14px;
   }
 }
 .pcard-description {

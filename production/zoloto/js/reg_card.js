@@ -4,7 +4,6 @@
 
 
 var check1 = false;
-var check2 = false;
 var check3 = false;
 var check4 = false;
 var check5 = false;
@@ -14,6 +13,7 @@ var check8 = false;
 var check9 = true;
 var check12 = false;
 var check13 = false;
+var check14 = false;
 
 
 $(function () {
@@ -71,10 +71,10 @@ $(function () {
             sex: 'required',
 			ns: 'required',
 			nmag: 'required',
+            sl: 'required',
             dd: {
                 customDate: true
-            },
-            city_id: 'required',
+            },            
             phone: {
                 required: true
             },
@@ -87,14 +87,14 @@ $(function () {
             return false;
         },
         submitHandler: function (form) {
-            if (check1 == true && check2 == true && check3 == true && check6 == true && check4 == true && check5 == true && check7 == true && check9 == true && check12 == true && check13 == true) {
+            if (check1 == true && check3 == true && check6 == true && check4 == true && check5 == true && check7 == true && check9 == true && check12 == true && check13 == true && check14 == true) {
                 var data = $(form).serialize();
                 $.post('sms.php?get_sms=1&' + $('#reg_card').serialize(), data, function (json) {
-                    console.log(111111);
+                    
                     if (json.success) {
 
                         // $('#Confirm_hashkey').val(json.hashkey);
-                        console.log(1);
+                    
                         $form.slideUp();
 						$('.checksotr').slideUp();
                         $formConfirm.slideDown(400, function () {
@@ -125,15 +125,6 @@ $(function () {
         }
     });
 
-
-// блокирование отправки если choiceSelect==0
-    $('#city').click(function () {
-        if (choiceSelect == 0) {
-            alert("Выбор не сделан!");
-        }
-
-
-    });
     $formConfirm.validate({
         errorElement: 'p',
         rules: {
@@ -141,26 +132,44 @@ $(function () {
         },
         submitHandler: function (form) {
             dataLayer.push({"event": "reg_bonus_success"});
-            console.log($('#reg_card').serialize());
+            
             var data = $(form).serialize();
             $('#reg_confirm input[type="submit"]').fadeOut();
 
-            $.post('sms.php?check_sms=1&code=' + $('#Confirm_promokey').val(), data, function (json) {
-                console.log(json);
+            $.post('sms.php?check_sms=1&code=' + $('#Confirm_promokey').val(), data, function (json) {                
+               
                 if (json.success) {
                     $.post('sent_to_db.php?' + $('#reg_card').serialize() + '&active=yes', data, function (ans) {
-                        //numbk = ans;
+                        try {
+                            var oResp = $.parseJSON(ans);
+                            if (oResp.result == 'success') {
+                                $formConfirm.html($('<h3></h3>', {
+                                    text: 'Благодарим Вас за регистрацию в Бонусной программе лояльности.',
+                                    'class': 'text-success'
+                                }));
+                                //dataLayer.push({"event":"reg_bonus_success"});
 
+                                $("#coc").attr("disabled", "disabled");
+                                setTimeout('$("#coc").removeAttr("disabled");', 7000);
+                            } else {
+                                var errorMsg = "При регистрации карты произошла ошибка. ";
+                                if (oResp.details) {
+                                    errorMsg += oResp.details.RMessage;                                    
+                                }
+                                $formConfirm.html($('<h3></h3>', {
+                                    text: errorMsg,
+                                    'class': 'text-error'
+                                }));
+                            }
+                        } catch (e) {
+                            $formConfirm.html($('<h3></h3>', {
+                                text: 'При регистрации карты произошла ошибка.',
+                                'class': 'text-error'
+                            }));
+                        }
+ 
                     });
-
-                    $formConfirm.html($('<h3></h3>', {
-                        text: 'Благодарим Вас за регистрацию в Бонусной программе лояльности.',
-                        'class': 'text-success'
-                    }));
-                    //dataLayer.push({"event":"reg_bonus_success"});
-
-                    $("#coc").attr("disabled", "disabled");
-                    setTimeout('$("#coc").removeAttr("disabled");', 7000);
+                    
                 } else {
                     $('input[name="promokey"]').addClass('error');
                     $('#reg_confirm input[type="submit"]').fadeIn();
@@ -193,16 +202,19 @@ $(function () {
         }
     });
 
+// ecom-1143, 
+// на лпаншетах не получалось
+// вбить телефонный номер
+// из-за форматирования
 
-// ecom-1143, не работало на планшетах
-if(screen.width>500)
-// if(screen.width > 1024)
+/*if(screen.width>500)
 {
     $('#phone').inputmask("+7(999)999-99-99");
 }
 else{
-	// $('#phone').inputmask("+7(999)999-99-99");
-}
+    $('#phone').inputmask("+7(999)999-99-99");
+}*/
+
 });
 
 
@@ -1628,7 +1640,10 @@ $("ul.checksotr li").height(maxHeight);
 	}
 	else
 	{
-		$('.num_sotr_div').slideUp(300);
+		check13 = true;
+        check12 = true;
+
+        $('.num_sotr_div').slideUp(300);
 		$('.num_mag_div').slideUp(300);
 		}
 
@@ -1637,41 +1652,41 @@ $("ul.checksotr li").height(maxHeight);
 
     $('#cardnumber').focusout(function () {
         var card_num = $(this).val();
-        console.log(1);
+        
 
     });
 
-    $('.options li').on("click touchstart", function () {
-        if ($(this).parent().siblings().attr('id') == 'region_id') {
-            $.ajax(
-                {
-                    url: "/registraciya_karty/get_region_cities.php",
-                    dataType: "text",
-                    data: {'region_id': $(this).data('raw-value'), 'type': 'option'},
-                    type: "post",
-                    success: function (ans) {
-                        $('#city').html(ans);
-                        $('#city').trigger('update.fs');
-                    }
-                });
-        }
-    });
-	$("#region_id").fancySelect().on('change.fs', function () {
-    	$.ajax(
-	        {
-	            url: "/registraciya_karty/get_region_cities.php",
-	            dataType: "text",
-	            data: {'region_id': this.value, 'type': 'option'},
-	            type: "post",
-	            success: function (ans) {
-	                $('#city').html(ans);
-	                $('#city').trigger('update.fs');
-	                console.log(ans);
-	            }
-	        });
-	});
+ //    $('.options li').on("click touchstart", function () {
+ //        if ($(this).parent().siblings().attr('id') == 'region_id') {
+ //            $.ajax(
+ //                {
+ //                    url: "/registraciya_karty/get_region_cities.php",
+ //                    dataType: "text",
+ //                    data: {'region_id': $(this).data('raw-value'), 'type': 'option'},
+ //                    type: "post",
+ //                    success: function (ans) {
+ //                        $('#city').html(ans);
+ //                        $('#city').trigger('update.fs');
+ //                    }
+ //                });
+ //        }
+ //    });
+	// $("#region_id").fancySelect().on('change.fs', function () {
+ //    	$.ajax(
+	//         {
+	//             url: "/registraciya_karty/get_region_cities.php",
+	//             dataType: "text",
+	//             data: {'region_id': this.value, 'type': 'option'},
+	//             type: "post",
+	//             success: function (ans) {
+	//                 $('#city').html(ans);
+	//                 $('#city').trigger('update.fs');
+	//                 console.log(ans);
+	//             }
+	//         });
+	// });
     $("#surname").keyup(function () {
-        console.log(1);
+        
         if ($(this).val().indexOf('-') == -1) {
             this.value = this.value.replace(/[^а-яё-]/i, "");
             length = $(this).val().length;
@@ -1735,6 +1750,36 @@ $("ul.checksotr li").height(maxHeight);
             check7 = false;
         }
     });
+     $('#city').blur(function () {
+        if ($(this).val() != '') {
+            if ($(this).val().length >= 2) {
+                if (isKyr($(this).val())) {
+                    $(this).parent().find('span').text('');
+                    $(this).css('border-color', 'green');
+                    $(this).css('color', 'green');
+                    check14 = true;
+                } else {
+                    $(this).css('border-color', 'red');
+                    $(this).css('color', 'red');
+                    $(this).parent().find('span').text('Поле Город не должно содержать латинские символы');
+                    $('.submit').addClass('pointer');
+                    check14 = false;
+                }
+            } else {
+                $(this).css('border-color', 'red');
+                $(this).css('color', 'red');
+                $(this).parent().find('span').text('Поле Город должно быть длиннее');
+                $('.submit').addClass('pointer');
+                check14 = false;
+            }
+        } else {
+            $(this).css('border-color', 'red');
+            $(this).css('color', 'red');
+            $(this).parent().find('span').text('Поле Город не должно быть пустым');
+            $('.submit').addClass('pointer');
+            check14 = false;
+        }
+    });
     $('#name').blur(function () {
         if ($(this).val() != '') {
             if ($(this).val().length >= 2) {
@@ -1766,16 +1811,25 @@ $("ul.checksotr li").height(maxHeight);
         }
     });
 
+
     // ecom-1143, не работало на планшетах
-    $('#no-phone').change(function () {
-        console.log($(this).val());
-        var phone = $(this).val().length;
-        if (phone < 11) {
+    // отключено навязчивое форматирование
+    // ввода телефона по маске
+   $('#phone').change(function () {
+        // console.log($(this).val());
+        var phone = $(this).val().length,
+            phoneRegPattern = /^((8|\+7)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$/;
+
+        // if($(this).val().match(phoneRegPattern) === null) console.log('f');
+        // console.log(phone);
+        if ((phone < 11) || ($(this).val().match(phoneRegPattern) === null)) {
             $(this).css('border-color', 'red');
-            $(this).parent().find('span').text('');
+            $(this).parent().find('span').text('+79999999999');
             check4 = false;
         } else {
             check4 = true;
+            $(this).css('border-color', '#888');
+            $(this).parent().find('span').text('');
         }
     });
 
@@ -1784,7 +1838,7 @@ $("ul.checksotr li").height(maxHeight);
         this.value = this.value.replace(/[^0-9]/i, "");
     });
 	$('#num_s').change(function () {
-        console.log($(this).val());
+        
         var num_s = $(this).val().length;
         if (num_s < 4) {
             $(this).css('border-color', 'red');
@@ -1804,7 +1858,7 @@ $("ul.checksotr li").height(maxHeight);
         this.value = this.value.replace(/[^0-9]/i, "");
     });
 	$('#nmag').change(function () {
-        console.log($(this).val());
+        
         var nmag = $(this).val().length;
         if (nmag < 4) {
             $(this).css('border-color', 'red');
@@ -1820,7 +1874,7 @@ $("ul.checksotr li").height(maxHeight);
 	{ check13 = true;}
 
     $('#patronymic').blur(function () {
-        console.log(isKyr($(this).val()));
+        
         if ($(this).val() != '') {
             if ($(this).val().length >= 2) {
                 if (isKyr($(this).val())) {
@@ -1856,7 +1910,7 @@ $("ul.checksotr li").height(maxHeight);
         var first_date = new Date(1914, 1, 1);
         var last_date = new Date(2003, 1, 1);
         var date = $(this).val().split('/');
-        console.log(date[2] + "|" + date[1] + "|" + date[0]);
+        
         var new_date = new Date(date[2], date[1], date[0]);
         if ($(this).val() != '') {
             if (new_date >= first_date && new_date <= last_date) {
@@ -1881,8 +1935,10 @@ $("ul.checksotr li").height(maxHeight);
             if ($('#doc_whom').val() != '' && $('#doc_seria').val() != '' && $('#doc_number').val() != '' && $('#doc_date').val() != '') {
                 var first_date = new Date(1964, 1, 1);
                 var last_date = new Date(2016, 04, 01);
+                
+                
                 var date = $('#doc_date').val().split('/');
-                console.log(date[2] + "|" + date[1] + "|" + date[0]);
+                
                 var new_date = new Date(date[2], date[1], date[0]);
                 if (new_date >= first_date && new_date <= last_date) {
                     check9 = true;
@@ -1899,19 +1955,19 @@ $("ul.checksotr li").height(maxHeight);
         }
         //$('#city').selectbox('detach').selectbox('attach');
         //console.log($('#city').find('option:selected').val() + "qweee");
-        if ($('#city').find('option:selected').val() != 0) {
-            $('#city').parent().find('span.error').text('');
-            $('#city').css('border-color', 'green');
-            $('#city').css('color', 'green');
-            check2 = true;
+        // if ($('#city').val().length != 0) {
+        //     $('#city').parent().find('span.error').text('');
+        //     $('#city').css('border-color', 'green');
+        //     $('#city').css('color', 'green');
+        //     check2 = true;
 
-        } else {
-            $('#city').css('border-color', 'red');
-            $('#city').css('color', 'red');
-            $('#city').parent().find('span.error').text('Поле Область проживания не должно быть пустым');
+        // } else {
+        //     $('#city').css('border-color', 'red');
+        //     $('#city').css('color', 'red');
+        //     $('#city').parent().find('span.error').text('Поле город проживания не должно быть пустым');
 
-            check2 = false;
-        }
+        //     check2 = false;
+        // }
 
         if ($('#gender').find('option:selected').val() != 0) {
             $('#gender').parent().find('span.error').text('');

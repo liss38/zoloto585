@@ -10,6 +10,7 @@
 
 		<link href="css/main.min.css" type="text/css" rel="stylesheet" />
 		<link href="css/pcard.min.css" type="text/css" rel="stylesheet" /><!-- текст описание -->
+		<link href="css/after_all.min.css" type="text/css" rel="stylesheet" /><!-- хэлперы -->
 	</head>
 	<body>
 
@@ -220,30 +221,34 @@
 			<div class="pcard-order__step pcard-order__step-1">
 				<h2 class="pcard-order__header"><span class="pcard-order-step__title">1 ШАГ. Бронировать товар<span><span class="pcard-order__colon">:</span> <span class="pcard-order-step__state"></span></h2>
 				<div class="pcard-order__content  pcard-order-promo">
-					
-					<b>Есть промокод<br>или бонусная карта</b>
-					
-					<div class="pcard-order-promo-forms">
-						<form action="" class="pcard-promo-code-form">
+
+					<b>Есть промокод<br>или бонусная карта?</b>
+
+					<div class="pcard-order-promo-forms  h-clearfix">
+						<form id="pcard-promo-code-form" action="" class="pcard-promo-code-form">
 							<div class="from-field">
 								<label for="" class="form-label">Введите промокод</label>
 								<div class="form-textline">
-									<input type="text" class="form-textline__default">
+									<input id="pcard-promo-code-field" type="text" class="form-textline__default">
 									<span class="form-textline__icon"></span>
 								</div>
 							</div>
+							<input id="pcard-promo-code-button" type="submit" class="b-button  pcard-order-promo-submit" value="Ok">
+							<div class="pcard-order-promo-warning">Пожалуйста, введите данные корректно.</div>
 						</form>
-						<form action="" class="pcard-bonus-card-form">
+						<form id="pcard-bonus-card-form" action="" class="pcard-bonus-card-form">
 							<div class="from-field">
 								<label for="" class="form-label">Введите номер бонусной карты</label>
 								<div class="form-textline">
-									<input type="text" class="form-textline__default">
+									<input id="pcard-bonus-card-field" type="text" maxlength="16" class="form-textline__default">
 									<span class="form-textline__icon"></span>
 								</div>
 							</div>
+							<input id="pcard-bonus-card-button" type="submit" class="b-button  pcard-order-promo-submit" value="Ok">
+							<div class="pcard-order-promo-warning">Пожалуйста, введите данные корректно.</div>
 						</form>
 					</div>
-					<div class="pcard-order-promo-total">
+					<div class="pcard-order-promo-total  h-clearfix">
 						<span class="pcard-order-promo-total__text">Итоговая стоимость:</span>
 						<span class="pcard-order-promo-total__before"><b>8999</b><span>руб</span></span>
 						<span class="pcard-order-promo-total__after"><b>399</b><span>руб</span></span>
@@ -374,6 +379,7 @@
 
 		<script src="http://zoloto585.ru/bitrix/templates/zoloto/js/jqueryteam.min.js"></script>
 
+		<script src="js/msalnikov.js"></script>
 		<script src="js/pcard.js"></script>
 		<script src="js/pcard-motivate.js"></script>
 
