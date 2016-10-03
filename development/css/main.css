@@ -1323,7 +1323,6 @@ body {
   display: inline-block;
   vertical-align: top;
   width: 75px;
-  height: 44px;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1351,8 +1350,12 @@ body {
 	DESKTOP
 */
 @media screen and (min-width: 1025px) {
-  .top-bonuses {
-    display: none;
+  .top-bonuses__button {
+    height: 31px;
+    line-height: 32px;
+  }
+  .top-bonuses__button:hover {
+    background-color: #cb2430;
   }
 }
 /*
@@ -1365,6 +1368,7 @@ body {
     text-align: center;
   }
   .top-bonuses__button {
+    height: 44px;
     width: 47px;
     padding: 0;
     font-size: 0;
@@ -1567,9 +1571,6 @@ body {
   -ms-background-position-y: -160px;
   background-position-y: -160px;
 }
-.header-middle__button--bonuses:before {
-  background-position: -20px -80px;
-}
 /*
 	DESKTOP
 */
@@ -1603,6 +1604,53 @@ body {
   .header-middle__logo {
     float: none;
     margin: 10px auto;
+  }
+}
+.header-promo-banner {
+  position: relative;
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 11px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #b8b8b8;
+}
+.header-promo-banner:after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 6px;
+  background: transparent url('../img/thingies/shadow-2.png') center 0 no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100% 150%;
+}
+@media screen and (min-width: 1025px) {
+  .header-promo-banner {
+    width: 215px;
+    height: 29px;
+    margin-left: 310px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .header-promo-banner {
+    width: 124px;
+    height: 29px;
+    margin-left: 200px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .header-promo-banner {
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .header-promo-banner {
+    display: none;
   }
 }
 /* HEADER-BOTTOM  @IMPORT */

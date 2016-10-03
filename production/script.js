@@ -611,6 +611,8 @@ function button_el_det() {
 
 
 		// отмена события по умолчанию для элементов интерфейса
+		// if(event.type === 'click') event.preventDefault();
+		// console.log(event.target);
 
 		// зависимости ширины экрана
 		if(toBreak) { // для меньших(к мобильнику)
@@ -971,6 +973,7 @@ function button_el_det() {
 			makeOrderInterface('init');
 			return false;
 		}
+		else if($(event.target).hasClass('order-button-to-getshop')) makeOrderInterface('getshop');
 		else if($(event.target).hasClass('pcard-order__close-but')) {
 			makeOrderInterface('cancel');
 			return false

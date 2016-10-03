@@ -104,7 +104,7 @@ gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css
 
 // msalnikov.min.css для ПРОДА
 gulp.task('make-msalnikov-css', function () {
-	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/mycrutch.min.css'])
+	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
 		.pipe(concat('msalnikov.min.css'))
 		// .pipe(cssmin())
 		// .pipe(rename({suffix: '.min'}))
@@ -264,6 +264,38 @@ gulp.task('make-index-page-full', ['make-header-block', 'make-index-filter'], fu
 		}))
 		.pipe(gulp.dest('development'));
 });
+
+
+/*
+	HTML INCLUDE 4 
+	"PRODUCT CARD PAGE"
+*/
+// pcard page
+gulp.task('make-pcard-page', function () {
+	return gulp.src('development/htmls/product-card.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'product-card'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+// pcard page FULL
+gulp.task('make-pcard-page-full', ['make-header-block', 'make-pcard-page'], function () {
+	return gulp.src('development/htmls/product-card.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'product-card'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
 
 
 

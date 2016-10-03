@@ -203,5 +203,11 @@
   clear: both;
 }
 /**/
+.h-hidden {
+  display: none;
+}
+/**/
+/**/
+/**/
 /**/
 /* ... */

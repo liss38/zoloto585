@@ -23,37 +23,47 @@ if ($pos !== false) {
 ?>
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#">
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><? $APPLICATION->ShowTitle() ?></title>
-    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title><? $APPLICATION->ShowTitle() ?></title>
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/main.css?v0');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/fonts.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/reset.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/owl-carousel/owl.carousel.css');?>
-
-
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/jqueryui/jquery-ui.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/jqueryui/select.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/base.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery.jscrollpane.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/perfect-scrollbar.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/my.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/responsive.css');?>
-
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/fonts/font.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery-ui.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery.jscrollpane.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/magnificpopup/magnific-popup.css');?>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/footer.css?v1');?>
-  		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/main.min.css');?>
-		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/pcard-motivate.css');?>
-		<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/pcard_order_info.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/main.css?v0');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/fonts.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/reset.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/owl.carousel.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery-ui.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/select.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/base.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery.jscrollpane.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/perfect-scrollbar.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/my.css?v1');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/responsive.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/fonts/font.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery-ui.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery.jscrollpane.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/magnific-popup.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/footer.css?v1');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/main.min.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/pcard-motivate.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/pcard_order_info.css');?>
 	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/msalnikov.min.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/jquery.formstyler.css');?>
+	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/css/tmp.css');?>
 
 
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery-1.11.1.min.js"></script>
+
+	<!-- полифиллы для кроссбраузерности HTML5 и CSS3 -->
+	<script>
+		// Picture element HTML5 shiv
+		document.createElement( "picture" );
+	</script>
+	<script src="<?= SITE_TEMPLATE_PATH ?>/js/picturefill.min.js"></script>
+
+
+	<!-- jqueryteam: пак из плагинов и jquery -->
+	<script src="<?= SITE_TEMPLATE_PATH ?>/js/jqueryteam.min.js"></script>
+
 
     <? $APPLICATION->ShowHead(); /*CJSCore::Init();*/ ?>
 
@@ -64,49 +74,26 @@ if ($pos !== false) {
     <?*/?>
 
 
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/owl-carousel/owl.carousel.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jqueryui/select.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jqueryui/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jqueryui/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jqueryui/jquery.ui.datepicker-ru.js"></script>
-
-    <!-- Menu -->
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/touchswipe/jquery.touchSwipe.min.js"></script>
-
-    <!-- Fotorama -->
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/fotorama/zoom/jquery.zoom.js"></script>
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/fotorama/fotorama.css');?>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/fotorama/fotorama.js"></script>
-
-    <!-- Scroll -->
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/perfectscroll/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/perfectscroll/perfect-scrollbar.js"></script>
-
-    <!-- MagPopup -->
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/magnificpopup/jquery.magnific-popup.js"></script>
-
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.countdown/jquery.plugin.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.countdown/jquery.countdown.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.countdown/jquery.countdown-ru.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.inputmask.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/jquery.jscrollpane.min.js"></script>
-
-    <!-- formstyler -->
-    <?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH .'/js/formstyler/jquery.formstyler.css');?>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/formstyler/jquery.formstyler.min.js"></script>
 
     <!-- VK -->
     <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
     <!-- YANDEX MAP -->
     <script src="//api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
 
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/fancySelect.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/new.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/main.js"></script>
-    <script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/msalnikov.js"></script>
 
+	<!-- кастомный код -->
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/new.js"></script>
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/new.js"></script>
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/main.js"></script>
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/msalnikov.js"></script>
+
+
+	<!-- тестирование гипотез -->
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/retailrocket.segmentator.js"></script>
+	<script type="text/javascript" src="<?= SITE_TEMPLATE_PATH ?>/js/ab_test.retailrocket.segmentator.js"></script>
+
+
+	<!-- ... -->
     <script type="application/javascript">
         jQuery(document).ready(function ($) {
             <? foreach ($_GET as $key=>$param) { ?>            
@@ -272,7 +259,7 @@ if($dir!='/about/address/'):
 						    isset($_COOKIE['mark_fav']) ? $favs = unserialize($_COOKIE['mark_fav']) : '';
 					    $count_favs = count($favs);
 					    ?>
-					    <a href="/favorites/?SECTION_CODE=all&TYPE=all" class="top-favorites__button"><?=$count_favs?></a>
+					    <a href="/favorites/?SECTION_CODE=all&TYPE=all" class="top-favorites__button">0</a>
 				    </div>
 				    <div class="header-top__item  top-bonuses">
 					    <a href="#" class="top-bonuses__button">Бонус</a>
@@ -288,11 +275,21 @@ if($dir!='/about/address/'):
 				    <a href="/" class="header-middle__logo">
 					    <img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.png">
 				    </a>
-				    <div class="header-middle__bar">
-					    <a href="/action/" class="header-middle__button  header-middle__button--promo">Акции</a>
-					    <a href="/catalog/skidka_70/" class="header-middle__button  header-middle__button--sale">Суперцена</a>
-					    <a href="/registraciya_karty/" class="header-middle__button  header-middle__button--bonuses">Бонус</a>
-				    </div>
+
+					<a href="#" class="header-promo-banner">
+						<picture>
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_tablet.png" media="(max-width: 1024px)">
+							<source srcset="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_desktop.png">
+							<!--[if IE 9]></video><![endif]-->
+							<img src="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_desktop.png" alt="black friday image text">
+						</picture>
+					</a>
+
+					<div class="header-middle__bar">
+						<a href="/action/" class="header-middle__button  header-middle__button--promo">Акции</a>
+						<a href="/catalog/skidka_70/" class="header-middle__button  header-middle__button--sale">Суперцена</a>
+					</div>
 			    </div>
 		    </div>
 
@@ -818,51 +815,6 @@ if($dir!='/about/address/'):
 						    </div>
 					    </li>
 
-					    <li class="main-nav__item">
-						    <a href="#" class="main-nav__link">КОЛЛЕКЦИИ</a>
-						    <div class="main-nav-level-1">
-							    <div class="main-nav-level-1__header">КОЛЛЕКЦИИ</div>
-							    <ul class="main-nav-level-1__list">
-								    <li class="main-nav-level-1__item">
-									    <a href="#" class="main-nav-level-1__link">Украшения с драгоценными и полудрагоценными камнями</a>
-									    <div class="main-nav-level-2">
-										    <div class="main-nav-level-2__header">Украшения с драгоценными и полудрагоценными камнями</div>
-										    <ul class="main-nav-level-2__list">
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/kollektsiya-lady-gold/" class="main-nav-level-2__link">Базовые модели lady gold</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/siyanie/" class="main-nav-level-2__link">Классические украшения с бриллиантами Сияние</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/kollektsiya-caprice/" class="main-nav-level-2__link">Модные украшения caprice</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/luxury/" class="main-nav-level-2__link">Ультра модные украшения luxury</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/-euro-mode/" class="main-nav-level-2__link">Европейские украшения из золота 375 пробы euro mode</a></li>
-										    </ul>
-									    </div>
-								    </li>
-								    <li class="main-nav-level-1__item">
-									    <a href="#" class="main-nav-level-1__link">Золотые украшения с фианитами и без вставок</a>
-									    <div class="main-nav-level-2">
-										    <div class="main-nav-level-2__header">Золотые украшения с фианитами и без вставок</div>
-										    <ul class="main-nav-level-2__list">
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/kollektsiya-lovely/" class="main-nav-level-2__link">Модные украшения lovely</a></li>
-										    </ul>
-									    </div>
-								    </li>
-								    <li class="main-nav-level-1__item">
-									    <a href="#" class="main-nav-level-1__link">Серебряные украшения</a>
-									    <div class="main-nav-level-2">
-										    <div class="main-nav-level-2__header">Серебряные украшения</div>
-										    <ul class="main-nav-level-2__list">
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/kollektsiya-imagine/" class="main-nav-level-2__link">Классика imagine</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/kollektsiya-charmony/" class="main-nav-level-2__link">Керамика charmony</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/-laerte/" class="main-nav-level-2__link">Наборные кольца и браслеты laerte</a></li>
-											    <li class="main-nav-level-2__item"><a href="http://zoloto585.ru/catalog/collection/-mademoiselle/" class="main-nav-level-2__link">Модные украшения mademoiselle</a></li>
-										    </ul>
-									    </div>
-								    </li>
-								    <li class="main-nav-level-1__item">
-									    <a href="http://zoloto585.ru/catalog/collection/" class="main-nav-level-1__link  main-nav-level-1__link--all-items">Смотреть все коллекции</a>
-								    </li>
-							    </ul>
-						    </div>
-					    </li>
 				    </ul>
 			    </nav>
 		    </div>

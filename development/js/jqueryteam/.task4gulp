@@ -1,0 +1,38 @@
+var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	order = require('gulp-order'),
+	rename = require('gulp-rename'),
+	uglifyjs = require('gulp-uglifyjs');
+
+// jQuery Team
+var jQueryTeamPath = ''; // 'js/jqueryteam_in/''
+	jQueryTeamOrderList = [
+		jQueryTeamPath + 'jquery-1.11.1.min.js',
+		jQueryTeamPath + 'owl.carousel.js',
+		jQueryTeamPath + 'select.js',
+		jQueryTeamPath + 'jquery-ui.js',
+		jQueryTeamPath + 'jquery.ui.touch-punch.min.js',
+		jQueryTeamPath + 'jquery.ui.datepicker-ru.js',
+		jQueryTeamPath + 'jquery.touchSwipe.min.js',
+		jQueryTeamPath + 'jquery.zoom.js',
+		jQueryTeamPath + 'fotorama.js',
+		jQueryTeamPath + 'jquery.mousewheel.js',
+		jQueryTeamPath + 'perfect-scrollbar.js',
+		jQueryTeamPath + 'jquery.magnific-popup.js',
+		jQueryTeamPath + 'jquery.plugin.js',
+		jQueryTeamPath + 'jquery.countdown.js',
+		jQueryTeamPath + 'jquery.countdown-ru.js',
+		jQueryTeamPath + 'jquery.inputmask.js',
+		jQueryTeamPath + 'jquery.validate.min.js',
+		jQueryTeamPath + 'jquery.cookie.js',
+		jQueryTeamPath + 'jquery.jscrollpane.min.js',
+		jQueryTeamPath + 'jquery.formstyler.min.js',
+	];
+gulp.task('make-jqueryteam', function () {
+	return gulp.src('js/jqueryteam_in/*.js')
+		.pipe(order(jQueryTeamOrderList))
+		.pipe(concat('jqueryteam.js'))
+		.pipe(uglifyjs())
+		.pipe(rename('jqueryteam.min.js'))
+		.pipe(gulp.dest('js/jqueryteam_out'));
+});
