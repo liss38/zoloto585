@@ -19,6 +19,20 @@
 
 @img-sprite-promo-labels: '@{img-sprites}/sprite__promo-labels.png';
 
+/* основной спрайт, который содержит много иконок */
+@img-sprite-primary: '@{img-sprites}/sprite__primary-icon-set.png';
+
+.img-sprite-primary-icon(@w, @h, @x, @y) {
+	height: @h;
+	width: @w;
+	overflow: hidden;
+
+	background: transparent url(@img-sprite-primary) @x @y no-repeat;
+}
+.primary-sprite-icon__1() {.img-sprite-primary-icon(20px, 20px, -25px, -59px);}
+.primary-sprite-icon__2() {.img-sprite-primary-icon(43px, 29px, -60px, -53px);}
+
+
 
 
 

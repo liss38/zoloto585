@@ -142,6 +142,7 @@
 	*******
 	спрайты, много маленьких изображений склеенных в одну картинку
 */
+/* основной спрайт, который содержит много иконок */
 /*
 	PATTERNS
 	********
@@ -631,7 +632,15 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-right: 1px solid #e2e2e2;
-  background-color: #eee;
+  background-color: #f4f4f4;
+}
+.form-textline__icon:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  content: '';
+  display: block;
 }
 .form-textline--active {
   border-color: #b32024;

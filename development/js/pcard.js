@@ -279,7 +279,7 @@ $(document).ready(function() {
 			currentWidth: parseInt(window.innerWidth),
 			// topOffset: $('.pcard-store__reserve-button').offset().top,
 			setTopOffset: function (topOffset) {
-				var topOffset = topOffset || (parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight()));
+				var topOffset = topOffset || (parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight()) - parseInt($('.header-top').outerHeight()));
 				$('body').animate({'scrollTop': topOffset}, 'slow');
 			},
 
@@ -880,16 +880,6 @@ $(document).ready(function() {
 			$pcardOrderStep_2.hide();
 			$pcardOrderStep_3.hide();
 			activatePcardOrderStep($pcardOrderStep_4);
-			// if(toBreak) $pcardOrder.css({'height' : '750px'});
-
-			// тестовая заглушка, которая отображает на экране информацию о заказе
-			// $pcardOrderStep_4.find('table').remove();
-			// $pcardOrderStep_4.prepend(orderInfo.printAsTable());
-			// setTimeout($pcardOrderStep_4.hide(), 1000);
-			// }
-
-			// 
-			// console.log(orderInterface.state);
 		}
 
 		else if(state === 'cancel') {
@@ -900,21 +890,15 @@ $(document).ready(function() {
 			myMap.setCenter([orderInfo.cityLat, orderInfo.cityLon], 10);
 
 			if(isShow($pcardOrderStep_4)) $pcardOrderStep_4.hide();
-
-			// 
-			// console.log(orderInterface.state);
-			// console.log(orderInfo);
 		}// "ШАГИ БРОНИРОВАНИЯ";end
 
 
 		// зависимости ширины экрана
 		if(toBreak) { // для меньших(к мобильнику)
 			orderInterface.state !== 'cancel' ? $pcardOrderReserveButton.hide() : $pcardOrderReserveButton.show();
-			// (orderInterface.state === 'init' || orderInterface.state === 'getshop' || orderInterface.state === 'setshop') ? $pcardOrder.css({'height' : '440px'}) : '';
 			orderInterface.setShopModal();
 			
 			if(orderInterface.state !== 'cancel') {
-				orderInterface.topOffset = parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight());
 				orderInterface.setTopOffset();
 			}
 		}
@@ -962,8 +946,6 @@ $(document).ready(function() {
 	var pcardOlderWidth = parseInt(window.innerWidth);
 	$(window).on('resize', function () {
 		orderInterface.currentWidth = parseInt(window.innerWidth); // ширина экрана после ресайза записывется как свойство объекта
-		// orderInterface.topOffset = parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight());
-		// orderInterface.setTopOffset();
 
 		/*
 			Суть if-else'а:

@@ -218,14 +218,6 @@
 
 
 /* ШАГ3 */
-.pcard-order__step-3 {
-	.pcard-order__content {
-		height: 515px;
-		background: url(@img-thingies-ribbon-1) center bottom no-repeat;
-		border-top: 1px solid #e4e4e4;
-	}
-}
-
 .pcard-order-form {
 	.pos-abs_center_hor(525px, 80px);
 	/*height: 80px;*/
@@ -489,14 +481,9 @@
 	.step-4-img img { width: @step-4-img-width; height: @step-4-img-height; }
 }
 
-@media screen and (max-width:639px) {
-	.pcard-store__reserve-button {
-		&.hidden { .-dn-; }
-	}
-	.pcard-order__close-but {
-		.-dn-;
-		.-tr-(548px, -5px);
-	}
+@media @mobile {
+	
+	
 	.pcard-store__reserve-button {}
 	.pcard-order {
 
@@ -650,11 +637,6 @@
 
 
 
-	
-
-	.pcard-order__step-3 {
-		.pcard-order__content { background: none; }
-	}
 
 	/* ШАГ 4 */
 	@step-4-width: 458px;

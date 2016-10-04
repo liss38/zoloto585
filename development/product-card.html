@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#">
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, maximum-scale=1">
@@ -82,8 +82,10 @@
 
 				<a href="#" class="header-promo-banner" data-img="">
 					<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
 						<source srcset="img/header-banner_tablet.png" media="(max-width: 1024px)">
 						<source srcset="img/header-banner_desktop.png">
+						<!--[if IE 9]></video><![endif]-->
 						<img src="img/header-banner_desktop.png" alt="black friday image text">
 					</picture>
 				</a>
@@ -956,6 +958,11 @@
 						</div>
 						<div class="pcard-order-shops__metro"><img src="http://placehold.it/450x365?text=metro+scheme"></div>
 					</div>
+
+					<div class="pcard-order-info">
+						<p class="pcard-order-info__header">ВНИМАНИЕ! ТОВАР МОЖЕТ ЗАКОНЧИТЬСЯ! ЗАБРОНИРУЙТЕ ТОВАР НА САЙТЕ, ПЕРЕД ТЕМ, КАК ИДТИ В МАГАЗИН.</p>
+						<p class="pcard-order-info__text">В Ювелирной сети 585GOLD большинство украшений представлено в единичных экземплярах. Для того, чтобы быть уверенным, что понравившееся украшение дождется вас в магазине, забронируйте его на сайте <span class="pcard-order-info__important">БЕСПЛАТНО</span>. Если, по какой-либо причине, вы не сможете воспользоваться бронью, то она автоматически снимется с товара через 3 дня.</p>
+					</div>
 				</div>
 			</div>
 
@@ -1048,7 +1055,7 @@
 
 
 		<!-- JS -->
-	<!-- полифиллы -->
+	<!-- полифиллы для кроссбраузерности HTML5 и CSS3 -->
 	<script>
 		// Picture element HTML5 shiv
 		document.createElement( "picture" );

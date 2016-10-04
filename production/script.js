@@ -1,7 +1,7 @@
-var offerId;
-var ajax_path_bron="/bitrix/templates/zoloto/components/bitrix/catalog/custom/bitrix/catalog.element/.default/ajax/"
+var offerId,promoCode,bonusCard;
+var ajax_path_bron="/bitrix/templates/zoloto/components/bitrix/catalog/custom/bitrix/catalog.element/.default/ajax/";
 var offerStoreData;
-var myPlacemark = []
+var myPlacemark = [];
 var phoneSendCheck=false;
 var codeSendCheck=false;
 var globalResizeFlag=false;
@@ -200,9 +200,8 @@ function button_el_det() {
 		stateValues: ['init', 'cancel', 'getshop', 'setshop', 'smsstart', 'smssubmitphone', 'smsgetcode', 'smscheckcode', ],
 
 		currentWidth: parseInt(window.innerWidth),
-		// topOffset: $('.pcard-store__reserve-button').offset().top,
 		setTopOffset: function (topOffset) {
-			var topOffset = topOffset || (parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight()));
+			var topOffset = topOffset || (parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight()) - parseInt($('.header-top').outerHeight()));
 			$('body').animate({'scrollTop': topOffset}, 'slow');
 		},
 
@@ -607,12 +606,12 @@ function button_el_det() {
 
 	// ###
 	function makeOrderInterface(state) {
-		var toBreak = orderInterface.currentWidth < 749;
+		var toBreak = orderInterface.currentWidth < 639;
 
 
 		// отмена события по умолчанию для элементов интерфейса
-		// if(event.type === 'click') event.preventDefault();
-		// console.log(event.target);
+		if(event.type === 'click') event.preventDefault();
+		console.log(event.target);
 
 		// зависимости ширины экрана
 		if(toBreak) { // для меньших(к мобильнику)
@@ -659,16 +658,22 @@ function button_el_det() {
 					$warningMessage = $this.find('.pcard-order-promo-warning'),
 					$textField = $this.find('.form-textline'),
 
-					bonusCard = $this.find('.form-textline__default').val(),
 					bonusCardValid = false;
 
 				event.preventDefault();
 
-				// console.log(bonusCard);
 
-				// 
+                //вынес из локалного определения в глобальное, так как мне нужно будет это значение мне надо будет потом на последнем шаге отправлять в php
+                bonusCard = $this.find('.form-textline__default').val();
 
-				if(bonusCard != false) bonusCardValid = true;
+
+                //тут ничего на php проверять не надо, главное убедиться что число длиной 16 знаков
+				if(/^[0-9]{16}$/.test(bonusCard))
+                    bonusCardValid = true;
+                else
+                    bonusCard = ""; // если валидацию не прошла то зануляем, чтобы не передалась неверная на php при подтверждении заказа
+
+                console.log(bonusCard);
 
 				if(bonusCardValid) {
 					$warningMessage.removeClass('pcard-order-promo-warning--invalid');
@@ -688,6 +693,8 @@ function button_el_det() {
 					$submitButton.addClass('pcard-order-promo-submit--invalid');
 					$textField.addClass('form-textline--invalid');
 				}
+
+				console.log(bonusCardValid);
 			});
 
 			// проверка с формы промокода
@@ -697,33 +704,56 @@ function button_el_det() {
 					$warningMessage = $this.find('.pcard-order-promo-warning'),
 					$textField = $this.find('.form-textline'),
 
-					promoCode = $this.find('.form-textline__default').val(),
-					promoCodeValid = false;
+					promoCodeValid = false,
+
+                    newPrice;
 
 				event.preventDefault();
 
-				// console.log(promoCode);
+                //вынес из локалного определения в глобальное, так как мне нужно будет это значение потом на последнем шаге отправлять в php
+                promoCode = $this.find('.form-textline__default').val();
 
-				if(promoCode != false) promoCodeValid = true;
+                // Отправляем на проверку, если купон есть в системе то вернет цену
+                // Цена может быть оказаться той же самой (так как у существующих купонов есть есть свои условия )
+                // Если цена таже самая то нужно сказать, что данный купон не распространняется на данный товар (на js сделать сравнение текущей и полученной цены, может есть резон проверять по дельте в 1 рубль)
+                // Если цена не ровна текущей, значит скидка применилась и можно ее вывести как новую
+                // А если цена вернулась равной 0, то значит такого купона вообще нету в системе
 
-				if(promoCodeValid) {
-					$warningMessage.removeClass('pcard-order-promo-warning--invalid');
-					$submitButton.removeClass('pcard-order-promo-submit--invalid');
-					$textField.removeClass('form-textline--invalid');
+                $.getJSON(ajax_path_bron + "check_coupon.php", {coupon:promoCode, id:offerId}, function (data) {
 
-					$warningMessage.addClass('pcard-order-promo-warning--valid');
-					$submitButton.addClass('pcard-order-promo-submit--valid');
-					$textField.addClass('form-textline--valid');
-				}
-				else {
-					$warningMessage.removeClass('pcard-order-promo-warning--valid');
-					$submitButton.removeClass('pcard-order-promo-submit--valid');
-					$textField.removeClass('form-textline--valid');
+                    console.log(data);
 
-					$warningMessage.addClass('pcard-order-promo-warning--invalid');
-					$submitButton.addClass('pcard-order-promo-submit--invalid');
-					$textField.addClass('form-textline--invalid');
-				}
+                    /*
+                       Вот тут следовательно будет вся логика по проверки
+                       а) купон не найден data.price == 0
+                       б) купон не для этого товара data.price == curPrice
+                       в) купон применился и вывести новую цену в попапе data.price < curPrice
+                    */
+                    
+                    if(promoCodeValid) {
+                        $warningMessage.removeClass('pcard-order-promo-warning--invalid');
+                        $submitButton.removeClass('pcard-order-promo-submit--invalid');
+                        $textField.removeClass('form-textline--invalid');
+
+                        // newPrice  - надо ее вывести как новую цену с учетом промокода на попапе шага 1
+                        console.log(newPrice);
+
+                        $warningMessage.addClass('pcard-order-promo-warning--valid');
+                        $submitButton.addClass('pcard-order-promo-submit--valid');
+                        $textField.addClass('form-textline--valid');
+                    }
+                    else {
+                        $warningMessage.removeClass('pcard-order-promo-warning--valid');
+                        $submitButton.removeClass('pcard-order-promo-submit--valid');
+                        $textField.removeClass('form-textline--valid');
+
+                        $warningMessage.addClass('pcard-order-promo-warning--invalid');
+                        $submitButton.addClass('pcard-order-promo-submit--invalid');
+                        $textField.addClass('form-textline--invalid');
+                    }
+                });
+
+
 			});
 
 
@@ -731,38 +761,32 @@ function button_el_det() {
 			{
 				$(".pcard-order-shops__select option:eq(0)").attr("selected","selected");
 				$(".pcard-order-shops__select").trigger("change");
-				//console.log("sssssAA")
 			}
-			//
-			//console.log(orderInterface.state);
 		}
 
 		else if(state === 'getshop') {
 			// скрываем предыдущий шаг
 			completePcardOrderStep($pcardOrderStep_1);
 
+
 			// дефолтный город в выпадающем списке
 			orderInfo.setDefault();
 			orderInterface.selectCity(orderInfo.cityId);
 
-			$pcardOrderCloseButton.show();
-			
-			if(!isShow($pcardOrderStep_2)) $pcardOrderStep_2.show();
-			
-			orderInterface.stepActivate($pcardOrderStep_2);
-			
-			$pcardOrderStepTitle_2.text('2 шаг: Выберите магазин');
-			
-			orderInterface.setShopCount(orderInfo.cityId); // количество магазинов в этом городе
 
+			$pcardOrderCloseButton.show();
+
+
+			if(!isShow($pcardOrderStep_2)) $pcardOrderStep_2.show();
+			orderInterface.stepActivate($pcardOrderStep_2);
+			$pcardOrderStepTitle_2.text('2 шаг: Выберите магазин');
+			orderInterface.setShopCount(orderInfo.cityId); // количество магазинов в этом городе
 			orderInterface.stepHide($('.pcard-order__step-3'));
 
 			orderInterface.state = 'getshop';
 			orderInterface.selectCity(+$('.pcard-order-city__select').find('option:selected').attr('data-pcard-order-city-id'));
 			orderInterface.setShopCount(+$('.pcard-order-city__select').find('option:selected').attr('data-pcard-order-city-id'));
 
-			//
-			//console.log(orderInterface.state + ' + ' + orderInfo.cityId);
 
 			if(toBreak)
 			{
@@ -843,7 +867,7 @@ function button_el_det() {
 			var code=$("#pcard-order-sms-code").val();
 			var regex = /\d{4}/;
 			var phone=$('#pcard-order-user-phone').inputmask("unmaskedvalue");
-
+console.log('smscheckcode');
 			if(code!="" && (m = regex.exec(code)) !== null && code.length==4 )
 			{
 				if(!codeSendCheck) {
@@ -854,14 +878,22 @@ function button_el_det() {
 						city: orderInfo.city,
 						phone: phone,
 						shop: orderInfo.shopId,
-						name: orderInfo.item
+						name: orderInfo.item,
+                        card: bonusCard,
+                        coupon: promoCode
 					}, function (data) {
-						if (data.response == "ok") {							
+						if (data.response == "ok") {
 							$pcardOrderStep_4.show();
-							completePcardOrderStep($pcardOrderStep_3);
+							if ($pcardOrderStep_2) {
+								completePcardOrderStep($pcardOrderStep_2);
+								$pcardOrderStep_2.hide();
+							}
+							if ($pcardOrderStep_3) {
+								completePcardOrderStep($pcardOrderStep_3);
+								$pcardOrderStep_3.hide();
+							}
 							$pcardOrderStep_1.hide();
-							$pcardOrderStep_2.hide();
-							$pcardOrderStep_3.hide();
+							
 							activatePcardOrderStep($pcardOrderStep_4);
 							// if(toBreak) $pcardOrder.css({'height' : '750px'});
 							$(".pcard-order__step-4 .step-4-text-1").html("Ваша заявка № "+data.order_id+" принята")
@@ -920,32 +952,19 @@ function button_el_det() {
 			if(isShow($pcardOrderStep_4)) $pcardOrderStep_4.hide();
 			//
 			getOfferData()
-			console.log(orderInterface.state);
-			console.log(orderInfo);
+			// console.log(orderInterface.state);
+			// console.log(orderInfo);
 		}
 
-		//console.log(state+"SSSSS");
-		// зависимости ширины экрана
-	/*	if(toBreak) { // для меньших(к мобильнику)
-			orderInterface.state !== 'cancel' ? $pcardOrderReserveButton.hide() : $pcardOrderReserveButton.show();
-			(orderInterface.state === 'init' || orderInterface.state === 'getshop' || orderInterface.state === 'setshop') ? $pcardOrder.css({'height' : '440px'}) : '';
 
-		}
-		else { // для больших(к десктопу)
-			$pcardOrderReserveButton.show();
-		}*/
 		if(toBreak) { // для меньших(к мобильнику)
-			orderInterface.state !== 'cancel' ? $pcardOrderReserveButton.hide() : $pcardOrderReserveButton.show();
-			// (orderInterface.state === 'init' || orderInterface.state === 'getshop' || orderInterface.state === 'setshop') ? $pcardOrder.css({'height' : '530px'}) : '';
+			orderInterface.state !== 'cancel' ? $('.pcard-store__reserve-button').hide() : $('.pcard-store__reserve-button').show();
 			orderInterface.setShopModal();
 
-			if(orderInterface.state !== 'cancel') {
-				orderInterface.topOffset = parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight());
-				orderInterface.setTopOffset();
-			}
+			if(orderInterface.state !== 'cancel') orderInterface.setTopOffset();
 		}
 		else { // для больших(к десктопу)
-			$pcardOrderReserveButton.show();
+			$('.pcard-store__reserve-button').show();
 			orderInterface.setShopModal([], 'none');
 		}
 	}
@@ -971,64 +990,52 @@ function button_el_det() {
 			pcardMapInit();
 			console.log(offerStoreData.currentCity.cityId);
 			makeOrderInterface('init');
-			return false;
 		}
 		else if($(event.target).hasClass('order-button-to-getshop')) makeOrderInterface('getshop');
 		else if($(event.target).hasClass('pcard-order__close-but')) {
 			makeOrderInterface('cancel');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-popup__overlay')) {
 			makeOrderInterface('cancel');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-map-shop__close-but')){
 			makeOrderInterface('getshop');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-order-shops__item')) {
 			orderInfo.refresh($(event.target));
 			makeOrderInterface('setshop');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-map-shop__button')) {
-			// if ($.cookie('GOLD585_ORDER_PHONE') != undefined) {
-			// 	//Пользователь недавно оформил заказ, не требуем подтверждения телефона и сразу оформляем
-			// } else {
-				
-			// }
-			makeOrderInterface('smsstart');
-			return false
-
+			if ($.cookie('GOLD585_ORDER_PHONE') != undefined) {
+				//Пользователь недавно оформил заказ, не требуем подтверждения телефона и сразу оформляем
+				$('#pcard-order-user-phone').val($.cookie('GOLD585_ORDER_PHONE'));
+				$("#pcard-order-sms-code").val('0000');
+				makeOrderInterface('smscheckcode');
+			} else {
+				makeOrderInterface('smsstart');
+			}
 		}
 		else if($(event.target).hasClass('pcard-order__return')){
 			makeOrderInterface('init');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-order__submit-phone')) {
 			makeOrderInterface('smssubmitphone');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-order__submit-smscode')) {
 			makeOrderInterface('smscheckcode');
-			return false
 
 		}
 		else if($(event.target).hasClass('pcard-order-form-message__close-but')) {
 			makeOrderInterface('smsstart');
-			return false
-
 		}
 		else if($(event.target).hasClass('pcard-order-form__field')) {
 			console.log('continue');
-			return false
-
 		}
 	});
 
@@ -1047,8 +1054,6 @@ function button_el_det() {
 
 	$(window).on('resize', function () {
 		orderInterface.currentWidth = parseInt(window.innerWidth); // ширина экрана после ресайза записывется как свойство объекта
-		// orderInterface.topOffset = parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight());
-		// orderInterface.setTopOffset();
 
 		/*
 		 Суть if-else'а:

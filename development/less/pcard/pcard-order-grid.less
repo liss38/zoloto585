@@ -5,10 +5,6 @@ pcard-order__header
 pcard-order__content
 */
 
-.pcard-order__step_hidden {
-	display: none;
-}
-
 .pcard-order {
 	.pos-fix_center_all(730px, 630px);
 	position: fixed;
@@ -27,6 +23,15 @@ pcard-order__content
 	background: #fff;
 	border: 1px solid #8c8c8c;
 	border-radius: 5px;
+
+
+	&__step {
+
+
+		&_hidden {
+			display: none;
+		}
+	}
 }
 
 
@@ -39,12 +44,32 @@ pcard-order__content
 
 @media @mobile {
 	.pcard-order {
-		position: static;
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
 		width: 100%;
 		height: auto;
 		margin-top: 0;
 		margin-left: 0;
 		border-radius: 0;
 		border: 0;
+
+
+		&__close-but {
+			/*display: none;*/
+			top: 0;
+			right: 0;
+		}
+
+
+		&__reserve-button {
+
+
+			&.hidden {
+				display: none;
+			}
+		}
 	}
 }
