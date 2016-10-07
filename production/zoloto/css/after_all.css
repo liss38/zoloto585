@@ -203,6 +203,14 @@
 .h-clearfix:after {
   clear: both;
 }
+/*
+	эффект антискролла, используется для отмены прокрутки какого-то слоя
+*/
+.h-canvas-freeze {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 /**/
 .h-hidden {
   display: none;

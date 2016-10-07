@@ -679,6 +679,20 @@ body {
 .form-textline--active .form-textline__icon {
   border-color: #b32024;
 }
+.form-textline--invalid {
+  border-color: #b32024;
+}
+.form-textline--invalid .form-textline__icon {
+  border-color: #b32024;
+}
+.form-textline--valid {
+  /* border-color: #b32024;
+	
+	
+	.form-textline__icon {
+		border-color: #b32024;
+	} */
+}
 .promo-label {
   position: absolute;
   top: 10px;

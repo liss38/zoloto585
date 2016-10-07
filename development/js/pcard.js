@@ -277,7 +277,6 @@ $(document).ready(function() {
 			stateValues: ['init', 'cancel', 'getshop', 'setshop', 'smsstart', 'smssubmitphone', 'smsgetcode', 'smscheckcode', ],
 
 			currentWidth: parseInt(window.innerWidth),
-			// topOffset: $('.pcard-store__reserve-button').offset().top,
 			setTopOffset: function (topOffset) {
 				var topOffset = topOffset || (parseInt($('.pcard-store-fitting').offset().top) + parseInt($('.pcard-store-fitting').outerHeight()) - parseInt($('.header-top').outerHeight()));
 				$('body').animate({'scrollTop': topOffset}, 'slow');
@@ -426,7 +425,7 @@ $(document).ready(function() {
 	function activatePcardOrderStep($selector) { return $selector.removeClass('pcard-order__step_hidden').removeClass('pcard-order__step_done').addClass('pcard-order__step_active'); }
 	// function resetPcardOrderStep($selector) { return $selector; }
 	function hidePcardOrderStep($selector) { return $selector.removeClass('pcard-order__step_active').removeClass('pcard-order__step_done').addClass('pcard-order__step_hidden'); }
-	function completePcardOrderStep($selector) { return $selector.removeClass('pcard-order__step_hidden').addClass('pcard-order__step_done'); }
+	function completePcardOrderStep($selector) { $selector.removeClass('pcard-order__step_hidden').addClass('pcard-order__step_done'); }
 	function hide() { return this.css({'display' : 'none'}); }
 	function show() { return this.css({'display' : 'block'}); }
 
@@ -607,18 +606,13 @@ $(document).ready(function() {
 			if($(event.target).hasClass('pcard-order-shops__item')) {
 				var placemarkId = $(event.target).attr('data-pcard-order-placemark-id');
 				myPlacemark.forEach(function (e) {
-					e.balloon.close();
-					if(e.balloon._uh.properties._K.placemarkId === placemarkId) {
-						e.balloon.open();
-						myMap.setCenter(e.geometry._oc, 15);
-
-						orderInfo.cityId    = e.balloon._uh.properties._K['cityId'];
-						orderInfo.city      = e.balloon._uh.properties._K['cityName'];
-						orderInfo.shopId    = e.balloon._uh.properties._K['shopId'];
-						orderInfo.shop      = e.balloon._uh.properties._K['shopName'];
-						orderInfo.address   = e.balloon._uh.properties._K['shopAddress'];
-						orderInfo.timeshift = e.balloon._uh.properties._K['shopTime'];
-						orderInfo.when      = e.balloon._uh.properties._K['shopWhen'];
+					if(e!= null) {
+						e.balloon.close();
+						if (e.properties.get('placemarkId') === placemarkId) {
+							e.balloon.open();
+							//console.log(e.geometry.getCoordinates());
+							myMap.setCenter(e.geometry.getCoordinates(), 15);
+						}
 					}
 				});
 			}
@@ -669,9 +663,21 @@ $(document).ready(function() {
 
 
 
-	// ###
+
+
+	/*
+		makeOrderInterface(state)  -  функция прохождения по цепочки шагов интерфейса бронирования, 
+		state  -  текстовый идентификатор шага
+
+		state === 'init'  -  открытие первого шага бронирования
+		state === 'getshop'  -  второй шаг, выбор нужного магазина
+		state === 'setshop'  -  второй шаг, подтверждение выбранного магазина
+		state === 'smssubmitphone'  -  третий шаг, добавление телефона
+		state === 'smscheckcode'  -  третий шаг, проверка смскода
+		state === 'cancel'  -  закрытие, отмена
+	*/
 	function makeOrderInterface(state) {
-		var toBreak = orderInterface.currentWidth < 639;
+		var toBreak = orderInterface.currentWidth < 640;
 
 
 		// отмена события по умолчанию для элементов интерфейса
@@ -682,23 +688,13 @@ $(document).ready(function() {
 		if(toBreak) { // для меньших(к мобильнику)
 			$pcardStore.append($pcardOrder.detach());
 			orderInterface.popUpOff();
-			// $pcardOrder.css({'height' : '550px'});
 		}
 		else { // для больших(к десктопу)
 			$pcardStore.find($pcardOrder) ? $('.pcard-main').after($pcardOrder.detach()) : '';
 			orderInterface.popUpOn();
-			// $pcardOrder.css({'height' : '630px'});
 		}
 
 
-
-		// *******************************************
-		// "ШАГИ БРОНИРОВАНИЯ"
-		// if-else-конструкция прохождения по 
-		// состояниям/шагам интерфейса бронирования
-		// главная часть этой(makeOrderInterface) 
-		// функции
-		// *******************************************
 		if(state === 'init') {
 
 			pcardMapDefaultCity();
@@ -717,17 +713,6 @@ $(document).ready(function() {
 			// делаем заголовок 1шага информативным
 			$pcardOrderStepState_1.text(' ' + orderInfo.item + ', '+ orderInfo.size + ' размер');
 
-
-			// 2 шаг 'НАЧАТ'
-			/*$pcardOrderCloseButton.show();
-			if(!isShow($pcardOrderStep_2)) $pcardOrderStep_2.show();
-			orderInterface.stepActivate($pcardOrderStep_2);
-			$pcardOrderStepTitle_2.text('2 шаг: Выберите магазин');
-			orderInterface.setShopCount(orderInfo.cityId); // количество магазинов в этом городе
-
-			orderInterface.stepHide($('.pcard-order__step-3'));
-*/
-			
 
 			// проверка с формы бонусной карты
 			$('#pcard-bonus-card-form').on('submit', function (event) {
@@ -922,7 +907,7 @@ $(document).ready(function() {
 			makeOrderInterface('setshop');
 		}
 		else if($(event.target).hasClass('pcard-map-shop__button')) makeOrderInterface('smsstart');
-		else if($(event.target).hasClass('pcard-order__return')) makeOrderInterface('init');
+		else if($(event.target).hasClass('pcard-order__return')) makeOrderInterface('getshop');
 		else if($(event.target).hasClass('pcard-order__submit-phone')) makeOrderInterface('smssubmitphone');
 		else if($(event.target).hasClass('pcard-order__submit-smscode')) makeOrderInterface('smscheckcode');
 		else if($(event.target).hasClass('pcard-order-form-message__close-but')) makeOrderInterface('smsstart');

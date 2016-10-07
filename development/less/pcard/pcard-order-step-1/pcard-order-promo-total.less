@@ -16,7 +16,7 @@
 
 
 	&__before {
-		display: inline-block;
+		display: none;
 		vertical-align: bottom;
 		padding-left: 10px;
 
@@ -53,6 +53,11 @@
 
 		span {
 			font-size: 12px;
+		}
+
+
+		&--yes {
+			display: inline-block;
 		}
 	}
 
@@ -126,18 +131,18 @@
 
 		border-bottom: 1px solid #e3e3e3;
 
+		text-align: right;
 
-		&__text {}
 
-
-		&__before {
-			display: none;
+		&__text {
+			float: left;
 		}
 
 
-		&__after {
-			float: right;
-		}
+		&__before {}
+
+
+		&__after {}
 	}
 }
 
