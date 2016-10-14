@@ -247,6 +247,11 @@
   display: none;
 }
 /**/
+@media screen and (min-width: 1025px) {
+  .h-desktop-showed {
+    display: block;
+  }
+}
 /**/
 /**/
 /**/

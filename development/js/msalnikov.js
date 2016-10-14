@@ -181,7 +181,63 @@
 			}
 		}
 	});
+
+
+
+	// обработка 
+	// десктопной 
+	// версии
+	// 
+	// ХОВЕРЫ
+	// 
+	var $mainNav = $('.main-nav'),
+		$altMainNav = $('.alt-main-nav'),
+		$headerBottom = $('.header-bottom');
+
+	$('.alt-main-nav__item').hover(function (el) {
+		var innerListId = $(this).attr('data-inner-list');
+
+		if(innerListId != 0) {
+			$mainNav.addClass('main-nav--hover');
+			$('.main-nav__item').removeClass('main-nav__item--active');
+			$('.main-nav__item[data-inner-list = ' + innerListId + ']').addClass('main-nav__item--active');
+
+			
+			// test
+			console.log(innerListId + 'hoverin');
+			$('.header-bottom').addClass('header-bottom--hover');
+		}
+		
+	}, function (el) {
+		var innerListId = $(this).attr('data-inner-list');
+
+		$mainNav.removeClass('main-nav--hover');
+		// $('.main-nav__item[data-inner-list = ' + innerListId + ']').css({'display' : 'none'});
+
+		// test
+		console.log(innerListId + 'hoverout');
+		$('.header-bottom').removeClass('header-bottom--hover');
+	});
+
+	$('.main-nav').hover(function (el) {
+		$('.header-bottom').addClass('header-bottom--hover');
+		$mainNav.addClass('main-nav--hover');
+	}, function (el) {
+		// $('.header-bottom').removeClass('header-bottom--hover');
+		// $mainNav.removeClass('main-nav--hover');
+	});
 });
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 // 
 // 
 // 

@@ -1,11 +1,20 @@
 /* нулевой уровень вложенности элементов каталога */
 .main-nav {
 
+
 	&__header {}
 
-	&__list {}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+
 
 	&__item {}
+
 
 	&__link {}
 }
@@ -16,18 +25,79 @@
 
 
 /* DESKTOP */
-@media screen and (min-width: @desktop-min) {
+@media @desktop {
 	/* нулевой уровень вложенности элементов каталога */
 	.main-nav {
+		position: absolute;
+		top: 26px;
+		left: 0;
+		z-index: 100;
+
 		display: none;
+		width: 100%;
+		height: 402px;
+		overflow: hidden;
 
-		&__header {}
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 
-		&__list {}
+		background-color: #f8f8f8;
+		border-top: 1px solid #992528;
+		/*border-bottom: 1px solid #992528;*/
 
-		&__item {}
+
+		&__header {
+			display: none;
+		}
+
+		&__list {
+			
+		}
+
+		&__item {
+			display: none;
+			width: 50%;
+			height: 402px;
+
+
+			&--active {
+				position: relative;
+
+				display: block;
+
+
+				&:after {
+					position: absolute;
+					left: 0;
+					bottom: 1px;
+					z-index: 0;
+
+					content: '';
+
+					display: block;
+					width: 1000px;
+					height: 40px;
+					overflow: hidden;
+
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+
+					background-color: #f3f3f3;
+					border-top: 1px solid #bcbcbc;
+					border-bottom: 1px solid #cccbca;
+				}
+			}
+		}
 
 		&__link {}
+
+
+		&:hover,
+		&--hover {
+			display: block;
+		}
 	}
 }
 
@@ -36,7 +106,7 @@
 
 
 /* TOUCH */
-@media screen and (max-width: @tablet_a-max) {
+@media @touch {
 
 	.main-nav {
 
@@ -46,12 +116,7 @@
 		}
 
 
-		&__list {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			display: block;
-		}
+		&__list {}
 
 
 		&__item {}

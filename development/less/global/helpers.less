@@ -33,7 +33,13 @@
 .h-hidden { display: none; }
 
 /**/
-.h-desktop-hidden {}
+@media @desktop {
+	.h-desktop-hidden {}
+	.h-desktop-showed {
+		display: block;
+	}
+}
+
 
 /**/
 .h-touch-hidden {}

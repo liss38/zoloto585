@@ -3,7 +3,12 @@
 
 	&__header {}
 
-	&__list {}
+	&__list {
+		list-style: none;
+
+		margin: 0;
+		padding: 0;
+	}
 
 	&__item {}
 
@@ -13,17 +18,63 @@
 
 
 /* DESKTOP */
-@media screen and (min-width: @desktop-min) {
+@media @desktop {
 	/* первый уровень вложенности элементов каталога */
 	.main-nav-level-1 {
 
-		&__header {}
+		&__header {
+			display: none;
+		}
 
-		&__list {}
+		&__list {
+			/* отработка */
+			/*display: flex;*/
+			padding-top: 14px;
+		}
 
-		&__item {}
+		&__item {
+			float: left;
 
-		&__link {}
+			/* отработка */
+			width: 230px;
+			padding-right: 20px;
+		}
+
+		&__link {
+
+
+			&--all-items {
+				display: inline-block;
+				width: 200px;
+				height: 30px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+
+				border: 0;
+				border-radius: 3px;
+				background-color: #ed3030;
+				-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+				box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+				outline: none;
+				cursor: pointer;
+
+				text-decoration: none;
+				text-transform: uppercase;
+				text-align: center;
+				.font-circe_regular(11px, 30px, #fff);
+
+				/*safari, iOS*/
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+
+
+				&:hover {
+					background-color: #b32024;
+				}
+			}
+		}
 	}
 }
 
@@ -32,7 +83,7 @@
 
 
 /* TOUCH */
-@media screen and (max-width: @tablet_a-max) {
+@media @touch {
 	.main-nav-level-1 {
 
 		&__header {
@@ -78,13 +129,9 @@
 
 
 		&__list {
-			list-style: none;
-
 			display: block;
 			height: 0;
 			overflow: hidden;
-			margin: 0;
-			padding: 0;
 
 			background-color: #c2332f;
 			border-top: 1px solid #dc2a2b;
