@@ -3237,11 +3237,13 @@ pcard-order__content
 @media screen and (min-width: 1025px) {
   .order-button-to-getshop {
     margin-top: 25px;
+    width: 260px;
   }
 }
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .order-button-to-getshop {
     margin-top: 58px;
+    width: 260px;
   }
 }
 @media screen and (max-width: 639px) {

@@ -58,6 +58,7 @@ gulp.task('make-catalog-css', function () {
 
 
 // after_all.css
+// классы хэлперы
 gulp.task('make-after-all-css', function () {
 	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/after_all.less'])
 		.pipe(concat('after_all.temp.less'))
@@ -77,10 +78,8 @@ gulp.task('make-mycrutch-css', function () {
 });
 
 
-
-
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-after-all-css', 'make-mycrutch-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -94,7 +93,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 	2PROD
 */
 // make-prod
-gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-after-all-css', 'make-mycrutch-css'], function () {
+gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))

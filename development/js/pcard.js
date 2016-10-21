@@ -676,7 +676,7 @@ $(document).ready(function() {
 		state === 'smscheckcode'  -  третий шаг, проверка смскода
 		state === 'cancel'  -  закрытие, отмена
 	*/
-	function makeOrderInterface(state) {
+	function makeOrderInterface(state, event) {
 		var toBreak = orderInterface.currentWidth < 640;
 
 
@@ -897,21 +897,21 @@ $(document).ready(function() {
 	// обработка событий связанных с интерфейсом
 	$(document).on('click', function (event) {
 		// order-button-to-getshop
-		if($(event.target).hasClass('pcard-store__reserve-button')) makeOrderInterface('init');
-		else if($(event.target).hasClass('order-button-to-getshop')) makeOrderInterface('getshop');
-		else if($(event.target).hasClass('pcard-order__close-but')) makeOrderInterface('cancel');
-		else if($(event.target).hasClass('pcard-popup__overlay')) makeOrderInterface('cancel');
-		else if($(event.target).hasClass('pcard-map-shop__close-but')) makeOrderInterface('getshop');
+		if($(event.target).hasClass('pcard-store__reserve-button')) makeOrderInterface('init', event);
+		else if($(event.target).hasClass('order-button-to-getshop')) makeOrderInterface('getshop', event);
+		else if($(event.target).hasClass('pcard-order__close-but')) makeOrderInterface('cancel', event);
+		else if($(event.target).hasClass('pcard-popup__overlay')) makeOrderInterface('cancel', event);
+		else if($(event.target).hasClass('pcard-map-shop__close-but')) makeOrderInterface('getshop', event);
 		else if($(event.target).hasClass('pcard-order-shops__item')) {
 			orderInfo.refresh($(event.target));
-			makeOrderInterface('setshop');
+			makeOrderInterface('setshop', event);
 		}
-		else if($(event.target).hasClass('pcard-map-shop__button')) makeOrderInterface('smsstart');
-		else if($(event.target).hasClass('pcard-order__return')) makeOrderInterface('getshop');
-		else if($(event.target).hasClass('pcard-order__submit-phone')) makeOrderInterface('smssubmitphone');
-		else if($(event.target).hasClass('pcard-order__submit-smscode')) makeOrderInterface('smscheckcode');
-		else if($(event.target).hasClass('pcard-order-form-message__close-but')) makeOrderInterface('smsstart');
-		else if($(event.target).hasClass('pcard-order-form__field')) console.log('continue');
+		else if($(event.target).hasClass('pcard-map-shop__button')) makeOrderInterface('smsstart', event);
+		else if($(event.target).hasClass('pcard-order__return')) makeOrderInterface('getshop', event);
+		else if($(event.target).hasClass('pcard-order__submit-phone')) makeOrderInterface('smssubmitphone', event);
+		else if($(event.target).hasClass('pcard-order__submit-smscode')) makeOrderInterface('smscheckcode', event);
+		else if($(event.target).hasClass('pcard-order-form-message__close-but')) makeOrderInterface('smsstart', event);
+		else if($(event.target).hasClass('pcard-order-form__field')) console.log('continue', event);
 
 		// console.log('doc on click');
 	});
