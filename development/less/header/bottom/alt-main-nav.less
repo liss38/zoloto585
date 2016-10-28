@@ -25,6 +25,7 @@
 			position: absolute;
 			left: 50%;
 			bottom: 0;
+			z-index: 0;
 
 			margin-left: -12px;
 
@@ -75,6 +76,9 @@
 
 
 	&__link {
+		position: relative;
+		z-index: 1;
+
 		display: inline-block;
 		vertical-align: top;
 		padding: 0 10px;
@@ -92,9 +96,9 @@
 
 
 @media @desktop {
-
-
-
+	.alt-main-nav {
+		float: left;
+	}
 }
 
 

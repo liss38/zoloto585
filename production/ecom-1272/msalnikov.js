@@ -93,11 +93,20 @@
 // ================================
 ;$(document).ready(function() {
 
+	// --------------------------
 	// вспомогательные переменные
-	var a;
+	// --------------------------
+	var $altMainNavItems = $('.alt-main-nav__item'),
+		$naviInnerListWrapper = $('.navi-inner-list-wrapper');
 
 
+
+	// -----------------------
 	// вспомогательные функции
+	// -----------------------
+
+	// закрывает touchnavi и/или сбрасывает настройки активности навгиции, 
+	// которые доступны только для touch-устройств
 	function resetTouchNavi() {
 		$('.section').removeClass('section--offset-left');
 
@@ -113,6 +122,40 @@
 		$('.main-nav-level-1__list').removeClass('main-nav-level-1__list--active');
 		$('.main-nav-level-2__header').removeClass('main-nav-level-2__header--active');
 		$('.main-nav-level-2__list').removeClass('main-nav-level-2__list--active');
+	}
+
+	// 
+	// function openTouchNavi() {}
+
+	// сбрасывает/удаляет элементы присущие навигации только для desktop-устройств
+	function resetDesktopNavi() {}
+
+	// фон тянущийся на всю ширину для каждой вкладки
+	function setDesktopNaviOuterBackground(innerListId) {
+		var bg = $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') === 'none' ? 'none' : 'url(' + $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') + ')';
+		if(innerListId != 0) {
+			$('.navi-inner-list-wrapper').addClass('navi-inner-list-wrapper--active');
+			$('.navi-inner-list-wrapper').css({'background-image' : bg});
+		}
+		// console.log(bg);
+	}
+	// убирает фон тянущийся на всю ширину
+	function resetDesktopNaviOuterBackground(innerListId) {
+		$('.navi-inner-list-wrapper').removeClass('navi-inner-list-wrapper--active');
+	}
+
+	function setDesktopNaviInnerListWrapper(innerListId) {
+		var bg = $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') === 'none' ? 'none' : 'url(' + $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') + ')';
+		if(innerListId != 0) {
+			$naviInnerListWrapper
+				.addClass('navi-inner-list-wrapper--active')
+				.css({'background-image' : bg})
+				.attr('data-inner-list', innerListId);
+		}
+		
+	}
+	function resetDesktopNaviInnerListWrapper() {
+		$('.navi-inner-list-wrapper').removeClass('navi-inner-list-wrapper--active');
 	}
 
 
@@ -141,11 +184,6 @@
 			$('.main-nav-level-2__list').first().addClass('main-nav-level-2__list--active');
 		}
 
-		
-
-		function openTouchNavi() {
-
-		}
 
 
 		var wanted = el.target,
@@ -202,7 +240,7 @@
 			}
 		}
 
-		// уровень вложенности 1
+		// уровень вложенности 2
 		if($wanted.hasClass('main-nav-level-2__header')) {
 			if($(wanted).hasClass('main-nav-level-2__header--active')) { // закрываем открытое
 				$('.main-nav-level-2__header').removeClass('main-nav-level-2__header--active');
@@ -228,35 +266,43 @@
 	var $mainNav = $('.main-nav'),
 		$mainNavItems = $('.main-nav__item'),
 		$altMainNav = $('.alt-main-nav'),
-		$altMainNavItems = $('.alt-main-nav__item'),
+		
 		$headerBottom = $('.header-bottom');
 
+	// #ref
+	function showInnerListForDesktop(el) {
+		var innerListId = $(this).attr('data-inner-list'),
+			bg = $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') === 'none' ? 'none' : 'url(' + $('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').attr('data-outer-background-image') + ')';
 
+		$('.alt-main-nav__item').removeClass('alt-main-nav__item--active');
+		if(innerListId != 0) {
+			$('.main-nav').addClass('main-nav--hover');
+			$('.main-nav__item').removeClass('main-nav__item--active');
+			$('.main-nav__item[data-inner-list = ' + innerListId + ']').addClass('main-nav__item--active');
+			$('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').addClass('alt-main-nav__item--active');
+			$('.navi-inner-list-wrapper').attr('data-inner-list', innerListId);
+			$('.navi-inner-list-wrapper[data-inner-list = ' + innerListId + ']')
+				.addClass('navi-inner-list-wrapper--active')
+				.css({'background-image' : bg});
+			$('.header-bottom').addClass('header-bottom--hover');
+		}
+	}
 
 	// (1) hover
 	// рассматривается hover когда
 	// указатель мыши находится над одной из
 	// кнопок "КАТАЛОГ", "КОЛЬЦА", "СЕРbГИ", ..., для варианта в десктоп-версии
 	// и открывает соответствующее кнопке внутренне подменю;
-	$('.alt-main-nav__item').hover(function (el) {
-		var innerListId = $(this).attr('data-inner-list');
-
-		$altMainNavItems.removeClass('alt-main-nav__item--active');
-
-		if(innerListId != 0) {
-			$mainNav.addClass('main-nav--hover');
-			$mainNavItems.removeClass('main-nav__item--active');
-			$('.main-nav__item[data-inner-list = ' + innerListId + ']').addClass('main-nav__item--active');
-			$('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').addClass('alt-main-nav__item--active');
-			$headerBottom.addClass('header-bottom--hover');
-		}
-		
-	}, function (el) {
+	$('.alt-main-nav__item').hover(showInnerListForDesktop, function (el) {
 		var innerListId = $(this).attr('data-inner-list');
 
 		$mainNav.removeClass('main-nav--hover');
 		$headerBottom.removeClass('header-bottom--hover');
 		$altMainNavItems.removeClass('alt-main-nav__item--active');
+
+
+		// test
+		resetDesktopNaviOuterBackground(innerListId);
 	});
 
 
@@ -270,15 +316,11 @@
 	// оставляет черный треуголник активности на кнопке
 	// когда курсор ушёл с этой кнопке
 	// на выпадающий блок
-	$('.main-nav__item').hover(function (el) {
-		var innerListId = $(this).attr('data-inner-list');
-
-		$('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').addClass('alt-main-nav__item--active');
-
-	}, function (el) {
+	$('.main-nav__item').hover(showInnerListForDesktop, function (el) {
 		var innerListId = $(this).attr('data-inner-list');
 
 		$('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').removeClass('alt-main-nav__item--active');
+		resetDesktopNaviOuterBackground(innerListId);
 	});
 
 
@@ -297,6 +339,29 @@
 		$mainNav.removeClass('main-nav--hover');
 		$altMainNavItems.removeClass('alt-main-nav__item--active');
 	});
+
+
+	
+
+	
+	// #ref
+	function resetNaviInnerList(el) {
+		var innerListId = $(this).attr('data-inner-list');
+
+		$mainNav.removeClass('main-nav--hover');
+		$mainNavItems.removeClass('main-nav__item--active');
+		$('.main-nav__item[data-inner-list = ' + innerListId + ']').removeClass('main-nav__item--active');
+		$('.alt-main-nav__item[data-inner-list = ' + innerListId + ']').removeClass('alt-main-nav__item--active');
+		$headerBottom.removeClass('header-bottom--hover');
+		resetDesktopNaviInnerListWrapper(innerListId);
+		console.log(innerListId);
+	}
+
+	// (2) hover
+	// (3) hover
+	// (4) hover
+	// для naviInnerListWrapper
+	$naviInnerListWrapper.hover(showInnerListForDesktop, resetNaviInnerList);
 
 
 

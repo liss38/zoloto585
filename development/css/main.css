@@ -1998,8 +1998,8 @@ body {
   }
   .main-nav-level-2__link {
     display: inline-block;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     text-decoration: none;
     text-transform: uppercase;
     font: 400 10px/12px 'Circe';
@@ -2147,6 +2147,7 @@ body {
   position: absolute;
   left: 50%;
   bottom: 0;
+  z-index: 0;
   margin-left: -12px;
   content: '';
   display: none;
@@ -2173,11 +2174,18 @@ body {
   background: transparent url('../img/sprites/sprite__primary-icon-set.png') -42px -142px no-repeat;
 }
 .alt-main-nav__link {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   vertical-align: top;
   padding: 0 10px;
   text-decoration: none;
   color: #333;
+}
+@media screen and (min-width: 1025px) {
+  .alt-main-nav {
+    float: left;
+  }
 }
 @media screen and (max-width: 1024px) {
   .alt-main-nav {
@@ -2223,6 +2231,305 @@ body {
     border-top: 1px solid #bcbcbc;
     border-bottom: 1px solid #cccbca;
     box-shadow: -1px 0 0 0 #f2f2f2;
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* 1: "ОБРУЧАЛЬНЫЕ КОЛЬЦА"" */
+  .main-nav__item:nth-child(1) {
+    /* МАТЕРИАЛ */
+    /* ДИЗАЙН */
+    /* ПО ТЕМЕ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(1) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(1) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 130px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(1) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+  }
+  .main-nav__item:nth-child(1) .main-nav-level-1__item:nth-child(5) {
+    position: absolute;
+    top: 335px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(1) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 250px;
+  }
+  /* 2: "КОЛЬЦА"  */
+  .main-nav__item:nth-child(2) {
+    /* ПО ТЕМЕ */
+    /* МАТЕРИАЛ */
+    /* ДИЗАЙН */
+    /* СТИЛЬ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 135px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__item:nth-child(4) {
+    position: absolute;
+    top: 160px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__item:nth-child(6) {
+    position: absolute;
+    top: 350px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(2) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 200px;
+  }
+  /* 3: "СЕРЬГИ" */
+  .main-nav__item:nth-child(3) {
+    /* ПО ТЕМЕ */
+    /* МАТЕРИАЛ */
+    /* ДИЗАЙН */
+    /* СТИЛЬ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 155px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__item:nth-child(4) {
+    position: absolute;
+    top: 200px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__item:nth-child(6) {
+    position: absolute;
+    top: 350px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(3) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 175px;
+  }
+  /* 4: "КУЛОНЫ" */
+  .main-nav__item:nth-child(4) {
+    /* МАТЕРИАЛ */
+    /* ДИЗАЙН */
+    /* СТИЛЬ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(4) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 110px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(4) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(4) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(4) .main-nav-level-1__item:nth-child(5) {
+    position: absolute;
+    top: 350px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(4) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 175px;
+  }
+  /* 5: "КОЛЬЕ и ЦЕПИ" */
+  .main-nav__item:nth-child(5) {
+    /* МАТЕРИАЛ */
+    /* РАЗМЕР */
+    /* ДИЗАЙН */
+    /* ВЕС */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__item:nth-child(4) {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 220px;
+    left: 300px;
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__item:nth-child(6) {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(5) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 175px;
+  }
+  /* 6: "ЧАСЫ" */
+  .main-nav__item:nth-child(6) {
+    /* ТЕМАТИКА */
+    /* МАТЕРИАЛ */
+    /* ПРОИЗВОДИТЕЛЬ */
+    /* МЕХАНИЗМ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    /*top: 90px;
+			left: 30px;*/
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(4) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 155px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(6) {
+    position: absolute;
+    /* top: 290px;
+			left: 30px; */
+    top: 155px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 200px;
+  }
+  /* 7: "СЕРЕБРО" */
+  .main-nav__item:nth-child(7) {
+    /* ТИП ИЗДЕЛИЯ */
+    /* КОЛЛЕКЦИЯ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(7) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    left: 600px;
+  }
+  .main-nav__item:nth-child(7) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+  }
+  .main-nav__item:nth-child(7) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 340px;
+    left: 200px;
+  }
+  .main-nav__item:nth-child(7) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 200px;
+  }
+  /* 8: "БИЖУТЕРИЯ" */
+  .main-nav__item:nth-child(8) {
+    /* ТИП ИЗДЕЛИЯ */
+    /* СТИЛЬ */
+    /* СОБЫТИЕ */
+    /* КНОПКА */
+  }
+  .main-nav__item:nth-child(8) .main-nav-level-1__item:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    left: 600px;
+  }
+  .main-nav__item:nth-child(8) .main-nav-level-1__item:nth-child(2) {
+    position: absolute;
+    top: 155px;
+    left: 600px;
+  }
+  .main-nav__item:nth-child(8) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 255px;
+    left: 600px;
+  }
+  .main-nav__item:nth-child(8) .main-nav-level-1__item:nth-child(4) {
+    position: absolute;
+    top: 340px;
+    left: 200px;
+  }
+  .main-nav__item:nth-child(8) .main-nav-level-1__link--all-items {
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: 200px;
+  }
+}
+/*
+	СТИЛИЗАЦИЯ
+	YANDEX
+	ПОИСКА
+*/
+@media screen and (min-width: 1025px) {
+  .header-search {
+    float: right;
+    width: 190px;
   }
 }
 /* PAGINATION @IMPORT */
