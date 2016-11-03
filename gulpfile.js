@@ -17,9 +17,17 @@ var dev_or_prod = '_2prod'; // префикс для prod-версии
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
 
+gulp.task('make-css-ext', function () {
+	return gulp.src('development/less/_ext.less')
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(rename('ext.min.css'))
+		.pipe(gulp.dest(gulpDestFolder));
+});
+
 // main.css
 gulp.task('make-main-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less', 'development/less/_external.less'])
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less'])
 		.pipe(concat('main.temp.less'))
 		.pipe(less())
 		.pipe(rename('main.css'))
@@ -99,6 +107,8 @@ gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(gulpDestFolder));
 });
+
+
 
 
 // msalnikov.min.css для ПРОДА

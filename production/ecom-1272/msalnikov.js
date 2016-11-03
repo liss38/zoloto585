@@ -1,3 +1,6 @@
+/*
+	
+*/
 // ==============
 // == forms.js ==
 // ==============
@@ -30,6 +33,10 @@
 // 
 // 
 // 
+// 
+// 
+// 
+// 
 // =======================
 // = ПОПАП ВЫБОРА ГОРОДА =
 // =======================
@@ -45,15 +52,19 @@
 		}
 	}
 
-	$('#top-geo-wrap').on('click', '.top-geo__button', function(){
+	$('.top-geo__button').on('click', function () {
 		topGeoModal(true);
 	});
-	
-	$('#top-geo-wrap').on('click', '.top-geo-modal__close', function(){
+
+	$('.top-geo-modal__close').on('click', function () {
 		topGeoModal(false);
 	});
 
-	$('#top-geo-wrap').on('click', '.top-geo-form__button', function(event){
+	$(document).on('click', function (event) {
+		if($(event.target).hasClass('top-geo-modal')) topGeoModal(false);
+	});
+
+	$('.top-geo-form__button').on('click', function (event) {
 		event.preventDefault();
 
 		var selectKey = $('.top-geo-form__option').find('.form__field-select').val(), // ключ либо идентификатор города
@@ -67,12 +78,7 @@
 		set_city();
 		$('.top-geo__button>span').text(selectValue); // устанавлмвает в рзамтке в шапке название выбранного города
 		topGeoModal(false); // закрывает окно
-	});	
-
-	$(document).on('click', function (event) {
-		if($(event.target).hasClass('top-geo-modal')) topGeoModal(false);
 	});
-	
 });
 // 
 // 
@@ -452,6 +458,18 @@
 	$('.filter-tags__tab').on('click', function (event) {
 		$(this).remove();
 	});
+});
+// Юля Остапенко
+$(function(){
+	$('#catalog_filter_form .js-scroll-pane').jScrollPane(
+		{
+			autoReinitialise : true,
+			verticalDragMinHeight: 9,
+			verticalDragMaxHeight: 9,
+			horizontalDragMinWidth: 9,
+			horizontalDragMaxWidth: 9
+		}
+	);
 });
 // 
 // 

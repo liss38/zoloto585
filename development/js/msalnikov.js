@@ -459,6 +459,18 @@
 		$(this).remove();
 	});
 });
+// Юля Остапенко
+$(function(){
+	$('#catalog_filter_form .js-scroll-pane').jScrollPane(
+		{
+			autoReinitialise : true,
+			verticalDragMinHeight: 9,
+			verticalDragMaxHeight: 9,
+			horizontalDragMinWidth: 9,
+			horizontalDragMaxWidth: 9
+		}
+	);
+});
 // 
 // 
 // 

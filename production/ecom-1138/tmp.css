@@ -1,0 +1,169 @@
+.catalog-item { /* строка 11884 */
+    height: 360px!important;
+}
+
+.catalog-item:hover {
+    border-color: #9f9f9f;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+
+.catalog-item-reserve {
+    position: relative;
+
+    display: block;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+
+}
+
+/*Интеренет-цена*/
+.catalog-item-info__label {
+    position: absolute;
+    top: 33px;
+    left: 14px;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666;
+}
+
+/*тень над кнопкой*/
+.catalog-item-reserve:after {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+
+    display: block;
+    width: 100%;
+    height: 6px;
+
+    content: '';
+
+    background: transparent url("http://zoloto585.ru/bitrix/templates/zoloto/css/../images/cabinet/favorite_item__shadow.png") center top no-repeat;
+}
+
+.catalog-item__button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+}
+.catalog-item__button:after {
+    background-image: url('/images/card_icons.png');
+    background-repeat: no-repeat;
+}
+
+.catalog-item__button_reserve {
+    background-color: #ed3030;
+    color: #fff;
+}
+.catalog-item__button_reserve:hover {
+    background-color: #b32024;
+}
+.catalog-item__button_reserve:before,
+.catalog-item__button_soon:before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+
+    content: '';
+}
+.catalog-item__button_reserve:before { background: transparent url('/images/card_icons.png') 0 -1px no-repeat; }
+.catalog-item__button_reserve:after {}
+
+.catalog-item__button_soon {
+    background-color: #f3f3f3;
+    color: #ed3030;
+}
+.catalog-item__button_soon:hover {
+    background-color: #ed3030;
+    color: #fff;
+}
+.catalog-item__button_soon:before { background: transparent url('/images/card_icons.png') -22px -23px no-repeat; }
+.catalog-item__button_soon:hover:before { background-position: 0 -23px; }
+.catalog-item__button_soon:after {}
+
+
+/*
+	ВЫРАВНИВАНИЕ ПО ГОРИЗОНТАЛИ
+*/
+.section__h-grid_100 .catalog-item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.journal-linked-products .filter_catalog,
+.bigdata-recommendations .filter_catalog{
+    display: none;
+}
+
+.journal-linked-products .catalog .catalog_list,
+.bigdata-recommendations .catalog .catalog_list{
+    max-width: 100%;
+}
+
+.journal-linked-products .block_sort,
+.bigdata-recommendations .block_sort{
+    display: none;
+}
+
+.journal-linked-products article h1,
+.bigdata-recommendations article h1{
+    display: none;
+}
+
+.pcard-store-fitting-select__menu_default{
+    width: auto !important;
+}
+
+
+@media screen and (max-width: 639px) {
+    .pcard-store-fitting-select{
+        text-align:center !important;        
+    }
+    .pcard-store-fitting{
+        height: 110px !important;
+    }
+    .pcard-store-fitting-select__label{
+        top: 14px !important;
+    }
+    .pcard-store-fitting-select__menu_default {
+        position: static !important;
+        width: 90% !important;
+        display: inline-block !important;
+        margin-top: 45px !important;
+    }   
+}
+
+.bigdata-recommendations{
+    margin-top: 25px;
+}
+
+/*http://joxi.ru/L21WlezTxaJGrX*/
+@media screen and (min-width: 1025px) {
+    .order-button-to-getshop {
+        width: 260px;
+    }
+}
+
+.bron-error-msg {
+	padding-top: 40%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
