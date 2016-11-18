@@ -88,7 +88,7 @@ if (window.frameCacheVars !== undefined) {
         initFavoritesActions();
     });
 } else {
-    BX.ready(function() {    	    	
+    BX.ready(function() {
     	initFavoritesActions();
     });
 }

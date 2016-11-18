@@ -1,0 +1,335 @@
+/*
+	======
+	IMAGES
+	======
+*/
+/*
+	=====
+	FONTS
+	=====
+*/
+/*
+	===
+	SVG
+	===
+*/
+.index-slider {
+  height: 449px;
+}
+.index-slider__inner {
+  height: 449px;
+  background: transparent url('../img/stub/index_stub__460px__index-slider.jpg') center 0 no-repeat;
+}
+.showcase {
+  height: 947px;
+}
+.showcase__inner {
+  height: 947px;
+  background: transparent url('../img/stub/index_stub__460px__showcase.jpg') center 0 no-repeat;
+}
+.index-info {
+  height: 546px;
+}
+.index-info__inner {
+  height: 546px;
+  background: transparent url('../img/stub/index_stub__460px__index-info.jpg') center 0 no-repeat;
+}
+.footer-all {
+  height: 311px;
+}
+.footer-all__inner {
+  height: 311px;
+  background: transparent url('../img/stub/index_stub__460px__footer-all.jpg') center 0 no-repeat;
+}
+/* .header-bottom {
+	height: 10px;
+} */
+/************************************************
+******* ГРУППЫ СВОЙСТВ **************************
+*************************************************/
+/*display*/
+.-dn- {
+  display: none;
+}
+.-db- {
+  display: block;
+}
+.-dib- {
+  display: inline-block;
+}
+.-di- {
+  display: inline;
+}
+.-dt- {
+  display: table;
+}
+.-dtc- {
+  display: table-cell;
+}
+.-dtr- {
+  display: table-row;
+}
+/*----------end;display---------------------------------*/
+/*box-sizing*/
+/*----------end;box-sizing---------------------------------*/
+/*position*/
+/*----------end;position---------------------------------*/
+/*text*/
+.-tal- {
+  text-align: left;
+}
+.-tac- {
+  text-align: center;
+}
+.-tar- {
+  text-align: right;
+}
+.-taj- {
+  text-align: justify;
+}
+.-tdn- {
+  text-decoration: none;
+}
+.-tdu- {
+  text-decoration: underline;
+}
+.-tdl- {
+  text-decoration: line-through;
+}
+.-tdo- {
+  text-decoration: overline;
+}
+.-ttu- {
+  text-transform: uppercase;
+}
+.-ttl- {
+  text-transform: lowercase;
+}
+.-ttc- {
+  text-transform: capitalize;
+}
+.-ttn- {
+  text-transform: none;
+}
+.-toc- {
+  -ms-text-overflow: clip;
+  text-overflow: clip;
+}
+.-toe- {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/*------------------end;text---------------------------------*/
+/*border*/
+/*-----------------------------------end;border---------------------------------*/
+/*border-radius*/
+/*----------end;border-radius---------------------------------*/
+/*background*/
+/*background: [background-attachment || background-color || background-image || background-position || background-repeat] | inherit;*/
+.-cover- {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.-contain- {
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+/*----------end;background---------------------------------*/
+/*box-shadow*/
+.-bxshadn- {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/*----------end;box-shadow---------------------------------*/
+/*********************************************
+********* UI-элементы и модификации***********
+*********************************************/
+/* Box */
+/*.-box-bg-() {}*/
+/*
+	@mix less
+*/
+/*
+	@mix less
+*/
+/*
+	миксин для определения нестандартного шрифта для @font-face
+*/
+/*
+	БИБЛИОТЕКА СНИППЕТОВ и МИКСИНОВ 
+	ДЛЯ РАБОТЫ СО ШРИФТАМИ НА САЙТЕ 585
+*/
+/*
+	Circe
+*/
+/*
+	Circe Rounded
+*/
+/*
+	Helvetica Neue
+*/
+/*
+	SPRITES
+	*******
+	спрайты, много маленьких изображений склеенных в одну картинку
+*/
+/* основной спрайт, который содержит много иконок */
+/* значкм с доставкой и т.п. в футере */
+/* значки соц сетей в футере */
+/* значения координат не верные */
+/*
+	PATTERNS
+	********
+	паттерны узоров/текстур, фоновые картинки не имеющие ярко выраженный смысл композиции
+*/
+/*@img-pattern-...*/
+/*
+	PRINTS
+	******
+	принты, большие фоны, иллюстрации, фотофоны, выражена композиция картинки
+*/
+/* @img-prints-middle-1: '@{img-prints}/'; */
+/*@img-prints-large-1: '@{img-prints}/';*/
+/*
+	THINGIES
+	********
+	тени, рюшечки, вензеля и т.п.
+*/
+/*
+	STUB
+	****
+	картинки для заглушки, в "прод" не идут
+*/
+/*
+	======
+	COLORS
+	======
+*/
+/*
+	ЗНАЧЕНИЯ
+	ТОЧЕК
+	СЛОМА
+*/
+/* DESKTOP */
+/* TABLET ALBUM */
+/* TABLET PORTRAIT */
+/* MOBILE ALBUM */
+/* MOBILE PORTRAIT */
+/*@mobile_p-min: px;*/
+/*
+	ПРАВИЛА
+	ДЛЯ
+	@MEDIA-ВЫРАЖЕНИЙ
+*/
+.fancy-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.fancy-select.disabled {
+  opacity: 0.5;
+}
+div.fancy-select div.trigger {
+  background: #fff;
+  cursor: pointer;
+  padding: 9px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  color: #000;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  transition: all 240ms ease-out;
+  -webkit-transition: all 240ms ease-out;
+  -moz-transition: all 240ms ease-out;
+  -ms-transition: all 240ms ease-out;
+  -o-transition: all 240ms ease-out;
+}
+div.fancy-select div.trigger:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #C8021C;
+  right: 11px;
+  top: 50%;
+  margin-top: -2px;
+}
+div.fancy-select div.trigger.open {
+  background: #7a7a7a;
+  color: #fff;
+}
+div.fancy-select div.trigger.open:after {
+  border-bottom: 4px solid #C8021C;
+  border-top: none;
+}
+div.fancy-select ul.options {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+  max-height: 250px;
+  overflow: auto;
+  background: #7a7a7a;
+  min-width: 300px;
+  padding: 0px 0 5px;
+  text-align: left;
+  transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+div.fancy-select ul.options.open {
+  visibility: visible;
+  top: 30px;
+  opacity: 1;
+  transition: opacity 300ms ease-out, top 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+div.fancy-select ul.options.overflowing {
+  top: auto;
+  bottom: 30px;
+  transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+div.fancy-select ul.options.overflowing.open {
+  top: auto;
+  bottom: 30px;
+  transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+div.fancy-select ul.options li {
+  font-size: 12px;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+  -webkit-transition: all 150ms ease-out;
+  -moz-transition: all 150ms ease-out;
+  -ms-transition: all 150ms ease-out;
+  -o-transition: all 150ms ease-out;
+}
+div.fancy-select ul.options li.selected,
+div.fancy-select ul.options li.hover {
+  text-decoration: underline;
+}

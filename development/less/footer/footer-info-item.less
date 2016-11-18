@@ -1,0 +1,109 @@
+.footer-info-item {
+	position: relative;
+
+	float: left;
+	display: block;
+	height: 57px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-top: 30px;
+
+	text-transform: uppercase;
+	text-align: center;
+	.font-circe_regular(11px, 24px, #333);
+
+
+	&:before {
+		position: absolute;
+		top: 6px;
+		left: 50%;
+
+		content: '';
+
+		display: block;
+	}
+
+
+	&--points {
+
+
+		&:before {
+			.primary-sprite-icon__9();
+			margin-left: -8.5px;
+		}
+	}
+
+
+	&--age {
+
+
+		&:before {
+			.primary-sprite-icon__10();
+			margin-left: -11.5px;
+		}
+	}
+
+
+	&--range {
+
+
+		&:before {
+			.primary-sprite-icon__11();
+			margin-left: -16.5px;
+			top: 14px;
+		}
+	}
+
+
+	&--prices {
+
+
+		&:before {
+			.primary-sprite-icon__12();
+			margin-left: -12.5px;
+		}
+	}
+}
+
+
+
+
+@media @desktop {
+	.footer-info-item {
+		height: 57px;
+		width: 25%;
+		line-height: 28px;
+	}
+	
+}
+
+@media @tablet {
+	.footer-info-item {
+		width: 25%;
+		padding-top: 33px;
+	}
+}
+
+@media @mobile {
+	.footer-info-item {
+		width: 33.3%;
+		padding-top: 33px;
+
+
+		&--range {
+			display: none;
+		}
+	}
+}
+
+@media @mobile-portrait {
+	.footer-info-item {
+		width: 50%;
+
+
+		&--prices {
+			display: none;
+		}
+	}
+}

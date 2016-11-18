@@ -1,0 +1,160 @@
+/* Registration Card */
+.tizer_text {
+  background: #f4f4f4;
+  padding: 17px 0 5px;
+  margin: 40px 0 15px;
+}
+.tizer_text .wrp {
+  padding: 0 15px;
+}
+.tizer_text .col {
+  width: 38%;
+  float: left;
+  margin-right: 56px;
+}
+.tizer_text .col:last-child {
+  width: 45%;
+  margin-right: 0;
+}
+.tizer_text .col h3 {
+  font: 24px 'Helvetica LIght';
+  color: #bf1d33;
+  margin: 0 0 14px;
+}
+.tizer_text .col p {
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.card_info {
+  position: relative;
+  padding-right: 370px;
+  margin-bottom: 45px;
+}
+.card_info:after {
+  content: "";
+  background: url(../images/pic/card.png) no-repeat 100% 100%;
+  display: block;
+  width: 368px;
+  height: 248px;
+  position: absolute;
+  right: 0;
+  top: -65px;
+}
+
+#reg_confirm {
+  margin: 30px 0;
+}
+#reg_confirm .line_inp .inp label,
+#reg_confirm .line_inp .inp {
+  width: auto;
+}
+#reg_confirm .line_inp .inp {
+  margin-right: 20px;
+}
+#reg_confirm .btn {
+  height: 35px;
+}
+
+.lasted_article article h1 {
+  font: 24px/45px 'Helvetica Roman';
+  margin: 0 0 19px;
+  line-height: 24px;
+}
+.lasted_article article h2 {
+  font: 20px 'Helvetica LIght';
+  line-height: 24px;
+  color: #bf1d33;
+  margin-bottom: 0;
+}
+.lasted_article article.layers .item {
+  background: #fff;
+  margin: 0 -15px 10px;
+  padding: 15px;
+}
+.lasted_article article.layers .item p {
+  line-height: 20px;
+  margin: 15px 0;
+}
+.lasted_article article.faq p {
+  line-height: 17px;
+  margin: 15px 0;
+}
+.lasted_article article.faq .btn {
+  margin-top: 25px;
+}
+.lasted_article article.ads {
+  float: left;
+  width: 47.5%;
+  float: left;
+  padding: 35px 35px 20px;
+}
+.lasted_article article.ads p {
+  line-height: 20px;
+  text-decoration: none;
+}
+.lasted_article article.ads .accordion {
+  margin: 20px 0;
+}
+.lasted_article article.ads .accordion h3 {
+  color: #c01d33;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-bottom: 3px;
+  padding: 0;
+  cursor: pointer;
+}
+.lasted_article article.ads .accordion .clr {
+  padding: 20px 0;
+  display: none;
+}
+.lasted_article article.ads .accordion .open .clr {
+  display: block;
+}
+
+/* Address */
+.shops {
+  border: 1px solid #ffd679;
+  padding: 23px 23px 27px;
+  overflow: hidden;
+  /* card shop */
+}
+.shops .shop_list {
+  float: left;
+  width: 50%;
+}
+.shops .shop_list select {
+  width: 200px;
+}
+.shops .shop_list .list figure {
+  margin: 0 0 27px;
+}
+.shops .shop_list .list figure figcaption a {
+  font: 20px 'Helvetica Light';
+  color: #e02c34;
+}
+.shops .shop_list .list figure p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-size: 12px;
+  color: #000;
+}
+.shops .shop_list .list figure .address a {
+  font-weight: 400;
+  color: #e02c34;
+}
+.shops .detail_shop {
+  float: left;
+  width: 50%;
+}
+.shops .detail_shop .address {
+  font-size: 18px;
+}
+.shops .maps {
+  width: 47%;
+  float: right;
+}
+.shops .maps #map {
+  height: 630px;
+}

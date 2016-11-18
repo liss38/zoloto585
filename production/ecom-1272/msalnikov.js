@@ -52,19 +52,19 @@
 		}
 	}
 
-	$('.top-geo__button').on('click', function () {
+	$(document).on('click', '.top-geo__button', function () {
 		topGeoModal(true);
 	});
 
-	$('.top-geo-modal__close').on('click', function () {
+	$(document).on('click', '.top-geo-modal__close', function () {
 		topGeoModal(false);
 	});
 
-	$(document).on('click', function (event) {
+	$(document).on('click', '.top-geo-modal', function (event) {
 		if($(event.target).hasClass('top-geo-modal')) topGeoModal(false);
 	});
 
-	$('.top-geo-form__button').on('click', function (event) {
+	$(document).on('click', '.top-geo-form__button', function (event) {
 		event.preventDefault();
 
 		var selectKey = $('.top-geo-form__option').find('.form__field-select').val(), // ключ либо идентификатор города

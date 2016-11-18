@@ -264,15 +264,15 @@ if($dir!='/about/address/'):
 					<img src="<?= SITE_TEMPLATE_PATH ?>/images/logo.png">
 				</a>
 
-				<a href="/catalog/yuvelirnye_izdeliya/black_friday/" class="header-promo-banner">
+				<!-- <a href="/catalog/yuvelirnye_izdeliya/black_friday/" class="header-promo-banner">
 					<picture>
-						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						[if IE 9]><video style="display: none;"><![endif]
 						<source srcset="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_tablet.png" media="(max-width: 1024px)">
 						<source srcset="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_desktop.png">
-						<!--[if IE 9]></video><![endif]-->
+						[if IE 9]></video><![endif]
 						<img src="<?= SITE_TEMPLATE_PATH ?>/images/header-banner_desktop.png" alt="black friday image text">
 					</picture>
-				</a>
+				</a> -->
 
 				<div class="header-middle__bar">
 					<a href="/action/" class="header-middle__button  header-middle__button--promo">Акции</a>

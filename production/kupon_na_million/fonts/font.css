@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Circe Rounded';
+  src: url('CirceRounded-Regular.eot'); /* IE9 Compat Modes */
+  src: url('CirceRounded-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('CirceRounded-Regular.woff') format('woff'), /* Modern Browsers */
+       url('CirceRounded-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('CirceRounded-Regular.svg#7c9f0a061254d9a23151643acefae610') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}

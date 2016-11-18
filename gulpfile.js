@@ -64,6 +64,16 @@ gulp.task('make-catalog-css', function () {
 		.pipe(gulp.dest(gulpDestFolder));
 });
 
+// registration-card.css
+gulp.task('make-regcard-css', function () {
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/registration-card.less'])
+		.pipe(concat('registration-card.temp.less'))
+		.pipe(less())
+		.pipe(rename('registration-card.css'))
+		.pipe(gulp.dest(gulpDestFolder));
+});
+
+
 
 // after_all.css
 // классы хэлперы
@@ -87,7 +97,7 @@ gulp.task('make-mycrutch-css', function () {
 
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -101,7 +111,7 @@ gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'mak
 	2PROD
 */
 // make-prod
-gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
+gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-regcard-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -113,7 +123,7 @@ gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css
 
 // msalnikov.min.css для ПРОДА
 gulp.task('make-msalnikov-css', function () {
-	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
+	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/registration-card.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
 		.pipe(concat('msalnikov.min.css'))
 		// .pipe(cssmin())
 		// .pipe(rename({suffix: '.min'}))
