@@ -1,0 +1,203 @@
+.index-sl .wrp
+{
+	max-width: 1200px;
+}
+.index-sl .owl-wrapper:after
+{
+    display: table;
+    content: '';
+    clear: both;
+}
+.index-sl .owl-buttons
+{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+}
+.index-sl .owl-buttons div
+{
+    text-indent: -999px;
+    overflow: hidden;
+    width: 62px;
+    height: 62px;
+    background: url(../images/sl-arrows.png) no-repeat;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+.index-sl .owl-buttons div.owl-prev
+{
+    left: 22px;
+}
+.index-sl .owl-buttons div.owl-prev:hover
+{
+    background-position: bottom left;
+}
+.index-sl .owl-buttons div.owl-next
+{
+    right: 22px;
+    background-position: top right;
+}
+.index-sl .owl-buttons div.owl-next:hover
+{
+    background-position: bottom right;
+}
+.index-sl .owl-pagination
+{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    bottom: 12px;
+    text-align: center;
+}
+.index-sl .owl-pagination .owl-page
+{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ff0007;
+    margin: 0 3px;
+    background: #fff;
+    cursor: pointer;
+}
+.index-sl .owl-pagination .owl-page.active
+{
+    background: #ff0007;
+}
+.index-sl .item img
+{
+    display: block;
+    margin: 0 auto;
+}
+.index-sl .item img.sl-mob
+{
+    display: none;
+}
+.index-sl .item .hover-a
+{
+	display: none;
+	width: 440px;
+	height: 440px;
+	line-height: 440px;
+	background: #ee3030;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	text-transform: uppercase;
+	position: absolute;
+	top: -18px;
+	right: 50%;
+	margin-right: -504px;
+}
+.index-sl .item .hover-a:hover
+{
+	background: #b32023;
+}
+.index-sl .item:hover .hover-a
+{
+	display: block;
+}
+.bx-touch .index-sl .item:hover .hover-a
+{
+	display: none;
+}
+.index-sl iframe
+{
+	display: block;
+	margin: 0 auto;
+    width: 100%;
+}
+#main-sl2
+{
+	margin-top: 30px;
+}
+#main-sl2 .owl-pagination
+{
+	display: none;
+}
+.index-sl .item
+{
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+}
+.index-sl .item .gradient-l,
+.index-sl .item .gradient-r
+{
+	content: '';
+	display: block;
+	width: 200px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+.index-sl .item .gradient-l
+{
+	left: 50%;
+	margin-left: -600px;
+}
+.index-sl .item .gradient-r
+{
+	right: 50%;
+	margin-right: -600px;
+}
+.index-sl .item .slide{
+	position: absolute;
+	width: 1920px;
+	top: 0;
+	left: 50%;
+	margin-left: -960px;
+}
+
+
+
+@media (max-width: 1019px) {
+	.index-sl .item {
+		height: 280px;
+	}
+	.index-sl .item img,
+	.index-sl .item iframe {
+	    width: 1344px;
+	    height: 280px;
+	}
+}
+
+
+
+@media (max-width: 749px) {
+	.index-sl .item,
+	.index-sl .item img,
+	.index-sl .item iframe {
+	    height: 230px;
+	}
+	.index-sl .item img,
+	.index-sl .item iframe {
+	    width: 1104px;
+	}
+}
+
+@media (max-width: 599px) {
+	.index-sl .item .slide {
+		width: 599px;
+		margin-left: -299px;
+	}
+		.index-sl .item img.sl-desc,
+	.index-sl .item iframe {
+	    display:none;
+	}
+	.index-sl .item,
+	.index-sl .item img {
+		height: 390px;
+	}
+	.index-sl .item img {
+		width: 599px;
+	}
+	.index-sl .item img.sl-mob {
+	    display: block;
+	}
+}

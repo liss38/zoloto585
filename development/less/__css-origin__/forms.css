@@ -1,0 +1,122 @@
+/* Select */
+.ui-selectmenu-button {
+  background: #fff;
+}
+.ui-selectmenu-button span.ui-icon {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #C8021C;
+  right: 11px;
+  margin-top: -3px;
+}
+.ui-selectmenu-button span.ui-selectmenu-text {
+  padding: 7.5px 7px;
+  color: #000;
+  font-size: 12px;
+}
+.ui-selectmenu-button.ui-corner-top {
+  background: #7a7a7a;
+}
+.ui-selectmenu-button.ui-corner-top span.ui-icon {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #C8021C;
+  border-top: none;
+}
+.ui-selectmenu-button.ui-corner-top span.ui-selectmenu-text {
+  color: #fff;
+}
+
+.ui-selectmenu-menu {
+  background: #7a7a7a;
+}
+
+.ui-menu .ui-menu-item {
+  font-size: 12px;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.ui-menu .ui-state-focus, .ui-menu .ui-state-active {
+  margin: 0;
+  text-decoration: underline;
+}
+
+/* Slider Range */
+.slider-range.ui-slider {
+  position: relative;
+  display: inline-block;
+  text-align: right;
+}
+
+.slider-range.ui-slider-horizontal {
+  height: 3px;
+  width: 114px;
+  background: #797a7a;
+}
+
+.slider-range.ui-slider-horizontal .ui-slider-range {
+  height: 100%;
+  top: 0;
+}
+
+.slider-range.ui-slider .ui-slider-range {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background: #ab0421;
+}
+
+.slider-range.ui-slider-horizontal .ui-slider-handle {
+  margin-left: 0;
+  top: -4px;
+}
+
+.slider-range.ui-slider .ui-slider-handle, .ui-slider-start, .ui-slider-end {
+  cursor: default;
+  height: 7px;
+  position: absolute;
+  width: 2px;
+  z-index: 2;
+}
+
+.slider-range .ui-state-default {
+  background: #ab0421;
+}
+
+.slider-range .ui-slider-start {
+  background: #797a7a;
+  left: 0;
+  top: -4px;
+}
+
+.slider-range .ui-slider-end {
+  background: #797a7a;
+  left: 100%;
+  top: -4px;
+}
+
+.slider-range .ui-slider-values {
+  width: 114px;
+  display: inline-block;
+  text-align: right;
+}
+
+.ui-slider-values {
+  width: 114px;
+  text-align: right;
+  color: #333;
+  font: 12px/18px 'Helvetica Light';
+  margin-bottom: 10px;
+}
+
+/* Forms */
+.line_inp .inp {
+  width: 50%;
+  float: left;
+}
+.line_inp .inp:nth-child(2n) {
+  float: right;
+}

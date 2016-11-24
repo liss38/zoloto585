@@ -1,0 +1,80 @@
+.after-sl {
+	background: #fff;
+	height: 54px;
+	border-bottom: 1px solid #a0a497;
+	border-top: 1px solid #a0a497;
+	position: relative;
+	-webkit-box-shadow: 0px 7px 7px -7px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 7px 7px -7px rgba(0,0,0,0.75);
+	box-shadow: 0px 7px 7px -7px rgba(0,0,0,0.75);
+}
+.after-sl ul {
+	float: left;
+	margin-left: 50px;
+}
+.after-sl ul + ul {
+	float: right;
+	margin-left: 0px;
+	margin-right: 50px;
+}
+.after-sl ul li {
+	display: inline-block;
+	line-height: 54px;
+	margin: 0 12px;
+}
+.after-sl ul li a {
+	font-size: 11px;
+	color: #282828;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+.after-sl ul li a:hover {
+	text-decoration: none;
+}
+.after-sl .next-a {
+	display: block;
+	width: 75px;
+	height: 75px;
+	background: url(../images/next-a.png) no-repeat;
+	position: absolute;
+	top: -37.5px;
+	left: 50%;
+	margin-left: -37.5px;
+}
+
+
+
+@media (max-width: 1019px) {
+	.after-sl ul {
+		margin-left: 0;
+	}
+	.after-sl ul + ul {
+		margin-right: 0;
+	}
+	.after-sl ul li {
+		margin: 0 8px;
+	}
+	.after-sl ul li a {
+		font-size: 10px;
+	}
+}
+
+
+
+@media (max-width: 749px) {
+	.after-sl ul li:last-child {
+		display: none;
+	}
+}
+
+
+
+@media (max-width: 619px) {
+	.after-sl {
+		height: 0;
+		margin-top: 35px;
+	}
+	.after-sl ul {
+		display: none;
+	}
+}

@@ -366,3 +366,20 @@ gulp.task('zip', function () {
 		.pipe(zip(zip_name_1))
 		.pipe(gulp.dest(zip_dest_1));
 });
+
+
+
+
+/*
+	proj
+	CSS SLIM
+*/
+var qwerty = '_2prod';
+gulp.task('slim-index-css', function () {
+	return gulp.src(['development/less/' + qwerty + '.less', 'development/less/_mix.less', 'development/less/slim.index-page.less'])
+		.pipe(concat('index.temp.less'))
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(rename('slim.index-page.min.css'))
+		.pipe(gulp.dest('production/zoloto/css/slim'));
+});

@@ -1,0 +1,13 @@
+.b{
+text-wigth: bold;
+}
+.breadcrumbs ul li{display: inline;}
+.breadcrumbs{font-size: 12px;}
+.seo_url_img{
+	display:block;
+	margin: 0 auto;
+	width: 100%;
+}
+.bron_container{
+	display: none;
+}

@@ -1,0 +1,12 @@
+/* Index pAgeStyle */
+.catalog_section {
+  margin-bottom: 20px;
+}
+.catalog_section .item {
+  width: 249px;
+  height: 154px;
+  margin-right: 1px;
+}
+.catalog_section .item img {
+  width: 100%;
+}

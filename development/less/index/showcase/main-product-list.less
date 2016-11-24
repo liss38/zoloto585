@@ -1,0 +1,254 @@
+.main-product-list
+{
+    padding-top: 28px;
+    background: url('/bitrix/templates/zoloto/images/thingies/shadow-5.png') center top no-repeat;
+}
+.main-product-list .row
+{
+    margin-left: -6px;
+    margin-right: -6px;
+}
+.main-product-list .product
+{
+    float: left;
+    width: 50%;
+    padding: 0 6px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.main-product-list .product a
+{
+    display: block;
+}
+.main-product-list .product.product-big img
+{
+    box-shadow: 0px 0px 8px rgba(24,24,24,.12);
+}
+.main-product-list .product.product-big a:hover img
+{
+    outline: 1px solid #e52424;
+}
+.main-product-list .product .product-inner > img,
+.main-product-list .product a > img
+{
+    width: 100%;
+    height: auto;
+}
+.main-product-list .product.four .product1
+{
+	display: none;
+}
+.main-product-list .product.four .product1:first-child
+{
+	display: block;
+}
+.main-product-list .product.four .product
+{
+    position: relative;
+    margin-bottom: 12px;
+}
+.main-product-list .product.four .product+.product+.product
+{
+    margin-bottom: 0;
+}
+.main-product-list .product.four .product .product-inner
+{
+    box-shadow: 0px 0px 8px rgba(24,24,24,.12);
+}
+.main-product-list .product.four .product:hover .product-info
+{
+    display: block;
+}
+.main-product-list .product.four .product .product-info
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 7px;
+    right: 7px;
+    bottom: 0;
+    background: #fff;
+    border: 1px solid #e52424;
+}
+.main-product-list .product.four .product .product-info .product-name
+{
+	display: block;
+    text-align: center;
+    background: #f2f2f2;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.5;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    margin-bottom: 15%;
+}
+.main-product-list .product.four .product .product-info .cost1,
+.main-product-list .product.four .product .product-info .cost2
+{
+	display: block;
+}
+.main-product-list .product.four .product .product-info .cost1 > span,
+.main-product-list .product.four .product .product-info .cost2 > span
+{
+	display: block;
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+}
+.main-product-list .product.four .product .product-info .cost1 > span:first-child,
+.main-product-list .product.four .product .product-info .cost2 > span:first-child
+{
+    text-align: right;
+}
+.main-product-list .product.four .product .product-info .cost1
+{
+    height: 21px;
+    margin-bottom: 10px;
+}
+.main-product-list .product.four .product .product-info .cost1 > span
+{
+    font-size: 18px;
+    color: #7b7b7b;
+    line-height: 21px;
+}
+.main-product-list .product.four .product .product-info .cost1 > span span
+{
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.main-product-list .product.four .product .product-info .cost2 > span
+{
+    font-size: 11px;
+    color: #ce3d3d;
+    line-height: 1.2;
+}
+.main-product-list .product.four .product .product-info .cost2 > span span
+{
+    display: block;
+    font-size: 18px;
+}
+.main-product-list .product.four .product .product-info img
+{
+    width: auto;
+}
+.main-product-list .product.four .product .product-info span.btn
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ed3030;
+    margin-bottom: 0;
+    line-height: 40px;
+    color: #fff;
+    font-size: 11px;
+}
+.main-product-list .product.push
+{
+    left: 50%;
+}
+.main-product-list .product.pull
+{
+    right: 50%;
+}
+
+@media (max-width: 1019px) {
+	.main-product-list .product.four .product .product-info .product-name {
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    margin-bottom: 11%;
+	}
+	.main-product-list .product.four .product .product-info .cost1 > span, 
+	.main-product-list .product.four .product .product-info .cost2 > span {
+	    padding: 0 2px;
+	}
+	.main-product-list .product.four .product .product-info .cost1 > span {
+	    font-size: 12px;
+	}
+	.main-product-list .product.four .product .product-info .cost1 > span + span {
+	    font-size: 16px;
+	}
+	.main-product-list .product.four .product .product-info span.btn {
+	    line-height: 28px;
+	}
+}
+
+
+@media (max-width: 749px) {
+	.main-product-list .product.four .product .product-info {
+	    background: transparent;
+	}
+	.main-product-list .product.four .product .product-info .product-name,
+	.main-product-list .product.four .product .product-info .cost1,
+	.main-product-list .product.four .product .product-info .cost2,
+	.main-product-list .product.four .product .product-info span.btn {
+	    display: none;
+	}
+}
+
+
+
+@media (max-width: 619px) {
+	.main-product-list .row {
+		margin-left: -4px;
+		margin-right: -4px;
+	}
+	.main-product-list .product {
+		padding: 0 4px;
+	}
+	.main-product-list .product.four {
+	    width: 33.47%;
+	}
+	.main-product-list .product.product-big {
+	    width: 66.53%;
+	}
+	.main-product-list .product.push {
+	    left: 33.47%;
+	}
+	.main-product-list .product.pull {
+	    right: 66.53%;
+	}
+	.main-product-list .product.four .product {
+	    width: 100%;
+	}
+	.main-product-list .product.four .product + .product {
+	    margin-bottom: 0;
+	}
+	.main-product-list .product.four .product + .product + .product {
+	    display: none;
+	}
+	.main-product-list .product.four .product {
+		margin-bottom: 6px;
+	}
+}
+
+
+
+@media (max-width: 459px) {
+	.main-product-list .row {
+		margin-left: -2px;
+		margin-right: -2px;
+	}
+	.main-product-list .product {
+	    padding: 0 2px;
+	    margin-bottom: 4px;
+	}
+	.main-product-list .product.four {
+	    width: 100%;
+	}
+	.main-product-list .product.product-big {
+	    width: 100%;
+	}
+	.main-product-list .product.four .product {
+	    width: 50%;
+	    margin-bottom: 0;
+	}
+	.main-product-list .product.push {
+	    left: 0;
+	}
+	.main-product-list .product.pull {
+	    right: 0;
+	}
+}
