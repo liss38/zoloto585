@@ -190,6 +190,7 @@
 	ДЛЯ
 	@MEDIA-ВЫРАЖЕНИЙ
 */
+/* фильтр каталога */
 /*@import "catalog/filter/filter.less";*/
 /*@import "catalog/filter/filter-group.less";*/
 /*@import "catalog/filter/filter-group-by.less";*/
@@ -201,4 +202,9 @@
 /* catalog-item */
 .catalog-item-pic {
   position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .content_pagination {
+    display: none;
+  }
 }

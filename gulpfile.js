@@ -371,12 +371,12 @@ gulp.task('zip', function () {
 
 
 /*
-	proj
+	SLIM-PROJECT
+	
 	CSS SLIM
 */
-var qwerty = '_2prod';
 gulp.task('slim-index-css', function () {
-	return gulp.src(['development/less/' + qwerty + '.less', 'development/less/_mix.less', 'development/less/slim.index-page.less'])
+	return gulp.src(['development/less/_2prod.less', 'development/less/_mix.less', 'development/less/slim.index-page.less'])
 		.pipe(concat('index.temp.less'))
 		.pipe(less())
 		.pipe(cssmin())
