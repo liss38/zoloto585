@@ -904,7 +904,7 @@ body {
   color: #fff;
 }
 .top-jewelry a:last-child {
-  width: 100px;
+  width: 98px;
 }
 .top-jewelry a:hover {
   background-color: #b32023;
@@ -2040,14 +2040,17 @@ body {
   .main-nav-level-2--like-numerics .main-nav-level-2__link {
     display: inline-block;
     vertical-align: top;
-    width: 25px;
+    /*width: 25px;*/
     height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 2px;
     text-align: center;
+    text-transform: lowercase;
     /*line-height: 15px;*/
     font: 400 12px/15px 'Circe';
     color: #666;
@@ -2388,20 +2391,17 @@ body {
     left: 0;
     margin-left: 0;
     bottom: 0;
-    width: 175px;
+    /*width: 175px;*/
+    width: 200px;
   }
   /* 6: "ЧАСЫ" */
   .main-nav__item:nth-child(6) {
-    /* ТЕМАТИКА */
     /* МАТЕРИАЛ */
-    /* ПРОИЗВОДИТЕЛЬ */
+    /* СТИЛЬ */
+    /* ТЕМАТИКА */
     /* МЕХАНИЗМ */
+    /* ПРОИЗВОДИТЕЛЬ */
     /* КНОПКА */
-  }
-  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(2) {
-    position: absolute;
-    top: 10px;
-    left: 30px;
   }
   .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(1) {
     position: absolute;
@@ -2410,17 +2410,27 @@ body {
     top: 10px;
     left: 30px;
   }
-  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(4) {
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(2) {
     position: absolute;
-    top: 10px;
-    left: 270px;
+    top: 135px;
+    left: 30px;
   }
   .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(3) {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(4) {
     position: absolute;
     top: 155px;
     left: 270px;
   }
-  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(6) {
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(5) {
+    position: absolute;
+    top: 10px;
+    left: 270px;
+  }
+  .main-nav__item:nth-child(6) .main-nav-level-1__item:nth-child(7) {
     position: absolute;
     /* top: 290px;
 			left: 30px; */
@@ -2428,9 +2438,9 @@ body {
     left: 30px;
   }
   .main-nav__item:nth-child(6) .main-nav-level-1__link--all-items {
+    top: 90px;
     left: 0;
     margin-left: 0;
-    bottom: 0;
     width: 200px;
   }
   /* 7: "СЕРЕБРО" */
@@ -2464,7 +2474,7 @@ body {
   .main-nav__item:nth-child(8) {
     /* ТИП ИЗДЕЛИЯ */
     /* СТИЛЬ */
-    /* СОБЫТИЕ */
+    /* ТЕМАТИКА */
     /* КНОПКА */
   }
   .main-nav__item:nth-child(8) .main-nav-level-1__item:nth-child(1) {
@@ -2722,7 +2732,7 @@ body {
     float: none;
   }
 }
-@media (max-width: 339px) {
+@media (max-width: 389px) {
   .footer-socials {
     display: none;
   }
