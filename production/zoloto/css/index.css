@@ -388,25 +388,26 @@
 */
 .infoblock {
   padding: 55px 0;
+  background-color: #f9f9fb;
 }
 @media screen and (min-width: 1025px) {
   .infoblock {
-    background: url('/bitrix/templates/zoloto/images/thingies/infoblock_bg--50.jpg') center top no-repeat;
+    /*background: url(@img-thingies-infoblock) center top no-repeat;*/
   }
 }
 @media (max-width: 999px) {
   .infoblock {
-    background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;
+    /*background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;*/
   }
 }
 @media (max-width: 749px) {
   .infoblock {
-    background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;
+    /*background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;*/
   }
 }
 @media (max-width: 619px) {
   .infoblock {
-    background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;
+    /*background: url('/bitrix/templates/zoloto/images/bg_0.jpg') left top repeat;*/
     padding-bottom: 25px;
   }
 }

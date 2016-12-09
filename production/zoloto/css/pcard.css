@@ -3846,19 +3846,19 @@ pcard-order__content
   top: 50%;
   right: 0;
   z-index: 10000;
-  margin-top: -175px;
+  margin-top: -190px;
   display: block;
   width: 250px;
-  height: 350px;
-  background: #fff url('/bitrix/templates/zoloto/images/prints/pcard_motivate__bg.jpg') center center no-repeat;
+  height: 380px;
+  background: #fff url('/bitrix/templates/zoloto/images/prints/pcard_motivate__bg-002.jpg') center center no-repeat;
   border: 1px solid #ddd;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   opacity: .90;
 }
 .pcard-motivate__button {
   position: absolute;
-  left: 35px;
-  bottom: 33px;
+  left: 40px;
+  top: 110px;
   margin: auto;
   height: 30px;
   width: 185px;
