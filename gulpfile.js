@@ -11,8 +11,8 @@ var gulp = require('gulp'),
 
 
 
-// var dev_or_prod = '_2dev'; // префикс для dev-версии
-var dev_or_prod = '_2prod'; // префикс для prod-версии
+var dev_or_prod = '_2dev'; // префикс для dev-версии
+// var dev_or_prod = '_2prod'; // префикс для prod-версии
 
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
@@ -84,6 +84,19 @@ gulp.task('make-404-css', function () {
 });
 
 
+// user cabinet
+gulp.task('make-ucab-css', function () {
+	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/ucab.less'])
+		.pipe(concat('ucab.temp.less'))
+		.pipe(less())
+		.pipe(rename('ucab.css'))
+		.pipe(gulp.dest(gulpDestFolder));
+});
+
+
+
+
+
 
 // after_all.css
 // классы хэлперы
@@ -107,7 +120,7 @@ gulp.task('make-mycrutch-css', function () {
 
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-404-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
+gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -324,6 +337,83 @@ gulp.task('make-pcard-page-full', ['make-header-block', 'make-pcard-page'], func
 		}))
 		.pipe(gulp.dest('development'));
 });
+
+
+
+
+
+/*
+	HTML INCLUDE 4 
+	"USER CABINET"
+*/
+
+// USER-CABINET page FULL
+gulp.task('make-ucab-page-full', ['make-header-block'], function () {
+	return gulp.src('development/htmls/user-cabinet.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'user-cabinet'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+// USER-REGISTRATION page FULL
+gulp.task('make-ureg-page-full', ['make-header-block'], function () {
+	return gulp.src('development/htmls/user-registration.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'user-registration'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+// USER-LOGIN page FULL
+gulp.task('make-ulog-page-full', ['make-header-block'], function () {
+	return gulp.src('development/htmls/user-login.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'user-login'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+// USER-PASSWORD-RECOVERY page FULL
+gulp.task('make-urec-page-full', ['make-header-block'], function () {
+	return gulp.src('development/htmls/user-recovery.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'user-recovery'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+
+// USER-PASSWORD-RECOVERY page FULL
+gulp.task('make-ucab-all-page-full', ['make-ucab-page-full', 'make-ureg-page-full', 'make-ulog-page-full', 'make-urec-page-full'], function () {
+	return gulp.src('development/htmls/user-cabinet.tmpl.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			// basepath: '/development/'
+		}))
+		.pipe(rename({
+			basename: 'user-cabinet'
+		}))
+		.pipe(gulp.dest('development'));
+});
+
+
 
 
 
