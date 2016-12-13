@@ -1,0 +1,364 @@
+.cabinet-unit-profile {
+	background: #fff;
+	top: 120px;
+}
+
+
+
+/*
+	БЛОК "Личные данные"
+*/
+.profile-form {
+	max-width: 850px;
+	width: 100%;
+	margin: 0 auto;
+}
+.profile-form-required,
+.profile-form-additional {
+	float: left;
+	width: 425px;
+}
+
+.profile-form-required {}
+.profile-form-additional {}
+
+
+
+
+.profile-field-row {
+	width: 325px;
+	height: 58px;
+	margin: 0 50px;
+
+	font-size: 0;
+
+	position: relative;
+}
+.profile-field-row:hover .profile-field-name { color: #bebebe; }
+.profile-field-row:hover .profile-field-ico { border-color: #d1d1d1; }
+.profile-field-row:hover .profile-field-data { border-color: #d1d1d1; }
+
+.profile-field-name {
+	display: inline-block;
+	vertical-align: top;
+	width: 120px;
+	padding-left: 5px;
+
+	text-align: left;
+	text-transform: uppercase;
+	font: 400 10px/30px "Circe-Regular";
+	color: #a5a5a5;
+
+}
+
+.profile-field-row--warning {}
+.profile-field-ico {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	background: url("../images/cabinet/form_field__ico_sprite.png");
+	border: 1px solid #e2dedf;
+	border-radius: 4px 0 0 4px;
+	
+	position: absolute;
+}
+.profile-field-data {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 30px;
+	padding: 3px 5px 3px 35px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border: 1px solid #e2dedf;
+	border-radius: 2px;
+	outline: none;
+
+	font: 400 14px "Circe-Light";
+	color: #666;
+}
+/*.profile-field-data:focus { border-color: #d1d1d1; }*/
+
+.profile-user-data-surname { background-position: 0px 0px; }
+.profile-user-data-name { background-position: 0px 0px; }
+.profile-user-data-middlename { background-position: 0px 0px; }
+.profile-user-data-birth { background-position: 0px -30px; }
+.profile-user-data-mobile { background-position: 0px -60px; }
+.profile-user-data-birth:after {
+	content: "Дарим подарки!";
+
+	display: block;
+	width: 55px;
+	height: 20px;
+
+	text-transform: uppercase;
+	text-align: left;
+	font: 10px/11px "Circe-Regular";
+	color: #d0d0d0;
+
+	position: absolute;
+	top: 4px;
+	right: -163px;
+}
+.profile-user-data-email { background-position: 0px -90px; }
+
+/*.profile-user-data- { background-position: 0px 0px; }*/
+.profile-user-data-region { background-position: -30px -150px; }
+.profile-user-data-city { background-position: -30px -150px; }
+.profile-user-data-street { background-position: -30px -180px; }
+.profile-user-data-house { background-position: -30px -180px; }
+.profile-user-data-index { background-position: -30px -210px; }
+
+/* Кастомизация для селекта, <select> */
+.profile-field-row .fancy-select {
+	width: 200px;
+
+	font-size: 11px !important; /* перекрытие div.fancy-select div.trigger в select.css:12 */
+}
+.profile-field-row .fancy-select .trigger {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 30px;
+	padding: 3px 25px 3px 15px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border: 1px solid #e2dedf;
+	border-radius: 2px;
+
+	text-transform: uppercase;
+	font: 400 11px/25px "Circe-Light";
+	color: #bcbcbc;
+}
+.profile-field-row .fancy-select .trigger:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url("../images/cabinet/form_field__ico_sprite.png") -30px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+.profile-field-row .fancy-select .trigger.open:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url("../images/cabinet/form_field__ico_sprite.png") 0px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+.profile-field-row .fancy-select .trigger:hover,
+.profile-field-row .fancy-select .trigger.open {
+	background: #fff;
+	border: 1px solid #c93232;
+
+	color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected {
+	border: 1px solid #c93232;
+
+	color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url("../images/cabinet/form_field__ico_sprite.png") 0px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+
+.profile-field-row .fancy-select .options,
+.profile-field-row .fancy-select .options.open {
+	width: 200px;
+	min-width: 200px; /* перекрытие div.fancy-select ul.options в select.css */
+	padding: 0;
+
+	background: #fff;
+	border: 1px solid #c93232;
+}
+.profile-field-row .fancy-select .options.open > li {
+	display: block;
+	padding: 8px 10px 2px 13px;
+
+	border-top: 1px solid #f7f7f7;
+	border-bottom: 1px solid #e7e6e6;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	font: 400 11px/25px "Circe-Light" !important;
+	color: #bcbcbc;
+
+	cursor: pointer;
+}
+.profile-field-row .fancy-select .options > li.hover {
+	background: #f7f7f7;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #666;
+}
+.profile-field-row .fancy-select .options > li.selected {}
+/**/
+
+
+/*
+	Валидация полей профиля, стили состояния
+*/
+.check-field--valid:after,
+.check-field--invalid:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+
+	background: url("../images/cabinet/form_field__ico_sprite.png") 0 -300px no-repeat;
+
+	position: absolute;
+	top: 0;
+	right: -25px;
+}
+
+.check-field--invalid {}
+.check-field--invalid .profile-field-name {}
+
+.check-field--invalid:hover .profile-field-ico,
+.check-field--invalid .profile-field-ico {
+	border-color: #ff3333;
+}
+
+.check-field--invalid:hover .profile-field-data,
+.check-field--invalid .profile-field-data {
+	border-color: #ff3333;
+}
+
+.check-field--invalid .profile-field-data::-webkit-input-placeholder { color: #666; }
+.check-field--invalid .profile-field-data::-moz-placeholder { color: #666; }
+.check-field--invalid .profile-field-data:-moz-placeholder { color: #666; }
+.check-field--invalid .profile-field-data:-ms-input-placeholder { color: #666; }
+
+
+
+.check-field--valid {}
+.check-field--valid:after {
+	background-position: 0 -270px;
+}
+.check-field--valid .profile-field-name {}
+.check-field--valid .profile-field-ico {}
+.check-field--valid .profile-field-data {}
+/*    */
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+	.cabinet-unit-profile { top: 0px; }
+	.cabinet--profile .cabinet-unit:after { bottom: 40px; }
+}
+@media screen and (min-width: 600px) and (max-width: 749px) {
+	.cabinet-unit-profile { top: 40px; }
+	.cabinet--profile .cabinet-unit:after {
+		bottom: 0;
+	}
+}
+@media screen and (max-width: 749px) {
+	.cabinet-unit-profile {
+		height: 1090px;
+
+		background: transparent;
+		/*top: 0px;*/
+	}
+	.cabinet--profile .cabinet-unit:after {
+		content: "";
+
+		display: block;
+		width: 100%;
+		height: 280px;
+
+		background: #f4f4f4;
+		border-top: 1px solid #e9e9e9;
+
+		position: absolute;
+		/*bottom: 40px;*/
+	}
+
+
+	.profile-form { width: 250px; height: auto; padding: 13px 0 30px 0; }
+	.profile-form-required,
+	.profile-form-additional {
+		float: none;
+		width: 250px;
+	}
+
+
+	.profile-field-row { width: 225px; /*height: 51px;*/ padding-top: 7px; margin: 0 12.5px; position: relative; }
+	.profile-field-name {
+		width: 200px;
+		padding: 0;
+
+		line-height: 21px;
+		color: #d0d0d0;
+	}
+	.profile-field-ico { left: 12px; bottom: 0; }
+	.profile-field-data {}
+
+	/*
+		Валидация полей профиля, стили состояния
+	*/
+		.check-field--valid:after,
+		.check-field--invalid:after {
+			top: 27px;
+			right: -16px;
+		}
+	/*    */
+
+	
+}
+
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+	.cabinet-unit-profile {
+		height: 1090px;
+
+		background: transparent;
+		top: 100px;
+	}
+	.profile-form { width: 725px; padding-bottom: 20px; }
+	.profile-form-required { width: 400px; }
+	.profile-form-additional { width: 325px; }
+	.profile-field-row { width: 325px; margin: 0; }
+}
