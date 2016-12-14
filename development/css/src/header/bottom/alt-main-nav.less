@@ -1,0 +1,110 @@
+.alt-main-nav {
+
+
+	&__list {
+		list-style: none;
+
+		padding: 0;
+
+		font-size: 0;
+	}
+
+
+	&__item {
+		position: relative;
+
+		display: inline-block;
+		vertical-align: top;
+
+		text-transform: uppercase;
+		font: 400 11px/28px 'Circe';
+		color: #333;
+
+
+		&:after {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			z-index: 0;
+
+			margin-left: -12px;
+
+			content: '';
+
+			display: none;
+
+			border: 12px solid transparent;
+			border-bottom: 6px solid #992528;
+		}
+
+
+		&--active,
+		&:hover {
+
+
+			&:after {
+				display: block;
+			}
+		}
+
+
+		&--catalog {
+			padding-left: 22px;
+
+
+			&:after {
+				left: 1px;
+				top: 50%;
+
+				margin-top: -7px;
+				margin-left: 1px;
+
+				display: block;
+
+				border: 0;
+				.primary-sprite-icon__8();
+			}
+
+
+			&:hover {
+
+
+				&:after {}
+			}
+		}
+	}
+
+
+	&__link {
+		position: relative;
+		z-index: 1;
+
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 10px;
+
+		text-decoration: none;
+		color: #333;
+
+
+		&--catalog {
+
+		}
+	}
+}
+
+
+
+@media @desktop {
+	.alt-main-nav {
+		float: left;
+	}
+}
+
+
+
+@media @touch {
+	.alt-main-nav {
+		display: none;
+	}
+}

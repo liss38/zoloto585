@@ -1,0 +1,289 @@
+.footer-accordions .item {
+	background-color: #ec2a31;
+	border-top: 1px solid #fb3036;
+	border-bottom: 1px solid #da252c;
+	position: relative;
+}
+.footer-accordions .item .icon {
+	position: absolute;
+	top: 13px;
+	left: 4px;
+	pointer-events: none;
+}
+.footer-accordions .item:last-child {
+	border-bottom: 0;
+}
+.footer-accordions .item .item-inner {
+	display: block;
+	position: relative;
+	padding: 0 26px;
+	color: white;
+}
+.footer-accordions .item .item-inner > span ,
+.footer-accordions .item .item-inner > span > a {
+	display: block;
+	line-height: 28px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 11px;
+	color: white;
+	margin-bottom: 15px;
+}
+.footer-accordions .accord {
+	max-height: 0;
+	overflow: hidden;
+	background: #8a2226;
+	width: 100%;
+	padding: 0 26px;
+	margin-left: -26px;
+	box-shadow: 0 7px 10px -10px #000 inset;
+}
+.footer-accordions .accord a {
+	display: inline-block;
+	font-size: 13px;
+	color: white;
+	text-decoration: underline;
+}
+.footer-accordions .accord li {
+	display: block;
+	margin-bottom: 6px;
+}
+.footer-accordions .accord a:hover {
+	text-decoration: none;
+}
+
+.footer-accordions form input {
+	height: 21px;
+	border: 1px solid #dad2d3;
+	border-radius: 2px;
+	background: url("../images/new/news2.png") #fff 3px 2px no-repeat;
+	padding-left: 22px;
+	padding-right: 4px;
+	/*vertical-align: top;*/
+	margin-right: 7px;
+	font-size: 11px;
+}
+
+.footer-accordions form button {
+	border: 1px solid #8b171a;
+	background-color: #e92f2f;
+	padding: 0;
+	color: white;
+	text-align: center;
+	width: 24px;
+	height: 22px;
+	border-radius: 2px;
+	/*vertical-align: top;*/
+	font-size: 11px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.footer-accordions form textarea {
+	display: block;
+	width: 100%;
+	height: 78px;
+	margin: 0 auto 25px;
+	border: 1px solid #dad2d3;
+	border-radius: 2px;
+	padding: 8px 10px;
+}
+
+.footer-accordions .item > label > span i
+{
+	font-style: normal;
+}
+
+
+
+
+@media (min-width: 1000px) {
+	.footer-accordions .accord {
+		max-height: none;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+	.footer-accordions .accord:before,
+	.footer-accordions .accord:after {
+		display: none;
+	}
+	.footer-accordions .item {
+		display: block;
+		float: left;
+		width: 200px;
+		vertical-align: top;
+		margin-top: -27px;
+		background-color: transparent;
+		border-top: 0;
+		border-bottom: 0;
+		padding-left: 26px;
+	}
+	.footer-accordions .item:after {
+		position: absolute;
+		content:"";
+		background: url("../images/str2.png") no-repeat 0 0;
+		width: 4px;
+		height: 127px;
+		right: 20px;
+		top: 20px;
+	}
+	.footer-accordions .item:first-child {
+		width: 200px;
+	}
+	.footer-accordions .item:nth-child(2) {
+		width: 285px;
+	}
+	.footer-accordions .item:nth-child(3):after {
+		right: -20px;
+	}
+	.footer-accordions .item > .item-inne span {
+		cursor: default;
+		margin-bottom: 15px;
+	}
+	.footer-accordions .accord {
+		background: transparent;
+		padding: 0!important;
+		margin-left: 0;
+		box-shadow: none;
+	}
+	.footer-accordions .item.block-newsletter {
+		position: absolute;
+		right: 0;
+		width: 200px;
+		top: 37px;
+		padding-left: 0;
+	}
+	.footer-accordions .item.block-quest {
+		width: 175px;
+		float: right;
+		padding-left: 0;
+	}
+	.footer-accordions .item .icon {
+		display: inline-block;
+		margin-right: 4px;
+		vertical-align: top;
+		position: static;
+		margin-top: 5px;
+	}
+	.footer-accordions .item.block-newsletter .icon {
+		display: none;
+	}
+	.footer-accordions .item .item-inner {
+		padding: 0;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.footer-accordions .item.block-newsletter .accord {
+		/*margin-top: -18px;*/
+	}
+	.footer-accordions .item.block-newsletter input {
+		max-width: 125px;
+	}
+
+	.footer-accordions .item > .item-inne > span, 
+	.footer-accordions .item > .item-inne > span a {
+		line-height: 28px;
+	}
+	.footer-accordions form button:before {
+		content: "ок";
+	}
+	.footer-accordions form.form-question {
+		display: none;
+	}
+	.footer-accordions form.form-newsletter .input-div {
+		display: inline-block;
+	}
+	.footer-accordions .item > .item-inner > span i {
+		display: none;
+		font-style: normal;
+	}
+	.footer-accordions .block-newsletter .item-inner span {
+		margin-bottom: 0;
+	}
+}
+
+
+
+@media (max-width: 999px) {
+	.footer-accordions .item .item-inner {
+		padding: 0 0;
+	}
+	.footer-accordions .item .item-inner:before {
+		content: "";
+		position: absolute;
+		width: 2px;
+		height: 14px;
+		background-color: #FFFFFF;
+		top: 15px;
+		right: 36px;
+		opacity: 1;
+	}
+	.footer-accordions .item .item-inner:after {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 14px;
+		background-color: #FFFFFF;
+		right: 30px;
+		top: 21px;
+	}
+	.footer-accordions .item .item-inner.act:before {
+		opacity: 0;
+	}
+	.footer-accordions .item .item-inner .accord {
+		display:none;
+	}
+	.footer-accordions .item .item-inner.act .accord {
+		display: block;
+	}
+	.footer-accordions .accord {
+		padding: 0 0;
+		margin-left: 0;
+		overflow: visible;
+		max-height: none;
+	}
+	.footer-accordions .item .item-inner > span,
+	.footer-accordions .item .item-inner > span > span,
+	.footer-accordions .item .item-inner > span a {
+		line-height: 44px;
+	}
+	.footer-accordions .item .item-inner > span {
+		padding: 0 25px;
+		margin-bottom: 0;
+	}
+	.footer-accordions .item .item-inner > span > a {
+		display: none;
+	}
+	.footer-accordions .item .item-inner > span > i {
+		display: block;
+		font-style: normal;
+	}
+	.footer-accordions .accord {
+		padding: 0 0;
+	}
+	.footer-accordions .accord li {
+		margin-bottom: 0;
+		border-top: 1px solid #97292d;
+		border-bottom: 1px solid #7a1e21;
+	}
+	.footer-accordions .accord li a {
+		display: block;
+		line-height: 42px;
+		padding: 0 25px;
+	}
+
+	.footer-accordions form.form-question small
+	{
+		color: #fff;
+	}
+	.footer-accordions form.form-question input, 
+	.footer-accordions form.form-question div.fancy-select div.trigger,
+	.footer-accordions form.form-question textarea
+	{
+		border: 1px solid #7b1c20;
+	}
+	.footer-accordions form.form-newsletter button:before
+	{
+		content: "подписаться на рассылку ";
+	}
+}

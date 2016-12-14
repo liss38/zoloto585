@@ -1,0 +1,92 @@
+/*"top-bonuses"*/
+.top-bonuses {
+	width: 75px;
+
+	&__button {
+		position: relative;
+
+		display: inline-block;
+		vertical-align: top;
+		width: 75px;
+		overflow: hidden;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-left: 25px;
+
+		text-decoration: none;
+		text-transform: uppercase;
+		.font-circe_light(11px, 47px, #fff);
+
+		cursor: pointer;
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 13px;
+			margin-top: -10px;
+			margin-left: -10px;
+
+			content: '';
+
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: transparent url(@img-sprite-header_20x20) 0 -80px no-repeat;
+		}
+	}
+}
+
+
+/*
+	DESKTOP
+*/
+@media screen and (min-width: @desktop-min) {
+	.top-bonuses {
+
+
+		&__button {
+			height: 31px;
+			line-height: 32px;
+
+
+			&:hover {
+				background-color: #cb2430;
+			}
+		}
+	}
+}
+
+
+/*
+	TOUCH
+*/
+/*@mobile Portrait*/
+@media screen and (max-width: @mobile_p-max) {
+
+	.top-bonuses {
+		width: 16.6%;
+
+		text-align: center;
+
+		&__button {
+			height: 44px;
+			width: 47px;
+			padding: 0;
+			font-size: 0;
+
+			&:before {
+				left: 50%;
+				margin-left: -10px;
+			}
+		}
+	}
+}
+/*
+	"top-bonuses";end
+
+
+
+
+
+*/

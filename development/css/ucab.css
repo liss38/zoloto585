@@ -393,8 +393,13 @@
   }
 }
 .ucab-group {
-  height: 40px;
+  height: 0;
   overflow: hidden;
+}
+@media screen and (max-width: 639px) {
+  .ucab-group {
+    height: 40px;
+  }
 }
 .ucab-group--active {
   height: auto;
@@ -2010,6 +2015,9 @@
     right: -16px;
   }
 }
+.profile-info {
+  padding-top: 80px;
+}
 .profile-info__inner {
   max-width: 850px;
   width: 100%;
@@ -2017,11 +2025,17 @@
   padding-bottom: 30px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .profile-info {
+    padding-top: 60px;
+  }
   .profile-info__inner {
     width: 725px;
   }
 }
 @media screen and (max-width: 767px) {
+  .profile-info {
+    padding-top: 20px;
+  }
   .profile-info__inner {
     width: 200px;
     height: auto;
@@ -2217,6 +2231,25 @@
   .profile-password-submit {
     top: 165px;
   }
+}
+.ucab-group .bonuses-card,
+.ucab-group .bonuses-level,
+.ucab-group .profile-info,
+.ucab-group .profile-password,
+.ucab-group .ucab-tools,
+.ucab-group .favorites-list {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.ucab-group--active .bonuses-card,
+.ucab-group--active .bonuses-level,
+.ucab-group--active .profile-info,
+.ucab-group--active .profile-password,
+.ucab-group--active .ucab-tools,
+.ucab-group--active .favorites-list {
+  opacity: 1;
 }
 /*
 

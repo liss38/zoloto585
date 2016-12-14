@@ -1,0 +1,143 @@
+/* миксин для анимации */
+.ear_transition(@property: all, @time: 0.6s, @function: ease-in-out) {
+	-webkit-transition: @property @time @function;
+	-o-transition: @property @time @function;
+	transition: @property @time @function;
+}
+
+
+
+
+.header-bottom {
+	/*height: 1000px;*/
+	/*background: rgba(255, 255, 255, .7) url(@img-thingies-shadow-1) center -1px no-repeat ;*/
+}
+
+@media @desktop {
+	.header-bottom {
+		height: 28px;
+
+		background-color: #e9e3e5;
+		background-image: none;
+		border-top: 1px solid #eff0f1;
+		border-bottom: 1px solid #d5d5d5;
+		box-shadow: 0px -1px 0px 0px #e0e1e3;
+
+
+		&__inner {
+			height: 100%;
+		}
+
+
+		&--hover {
+			z-index: 11;
+
+
+			&:before {
+				position: absolute;
+				top: 26px;
+				left: 0;
+
+				content: '';
+
+				display: block;
+				width: 100%;
+				height: 403px;
+
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+
+				background-color: #f8f8f8;
+				border-top: 1px solid #992528;
+				border-bottom: 1px solid #efefef;
+				/*box-shadow: 1px 0 0 0 #efefef;*/
+			}
+
+
+			&:after {
+				position: absolute;
+				top: 388px;
+				left: 0;
+
+				content: '';
+
+				display: block;
+				width: 100%;
+				height: 40px;
+
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+
+				background-color: #f3f3f3;
+				border-top: 1px solid #bcbcbc;
+				border-bottom: 1px solid #cccbca;
+				box-shadow: -1px 0 0 0 #f2f2f2;
+			}
+		}
+	}
+}
+
+
+
+/* TOUCH */
+@media @touch {
+	.header-bottom {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9990;
+		margin-left: -100%;
+
+		opacity: 0;
+		width: 100%;
+		/*width: 0;*/
+		height: 120%;
+
+		/*background-color: rgba(255, 255, 255, .7);*/
+		background: rgba(255, 255, 255, .7) url(@img-thingies-shadow-1) center -1px no-repeat ;
+
+		.ear_transition(opacity);
+
+
+		&__inner {
+			width: 300px;
+			height: 100%;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+			margin-left: -300px;
+			padding-top: 45px;
+			padding-bottom: 170px;
+			overflow: auto;
+
+			background-color: #ed3030;
+
+			.ear_transition(margin-left);
+
+			&--active {
+				margin-left: 0;
+			}
+		}
+
+
+		&--active {
+			opacity: 1;
+			margin-left: 0;
+		}
+	}
+
+
+	.section--offset-left {
+		padding-left: 300px;
+		overflow: hidden;
+	}
+	.section {
+		.ear_transition(padding-left);
+	}
+
+	.header-top.section--offset-left {
+		border-color: transparent;
+	}
+}

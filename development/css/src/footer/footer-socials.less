@@ -1,0 +1,50 @@
+.footer-socials {
+	float: right;
+	margin-top: 6px;
+
+
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+		width: 26px;
+		height: 26px;
+		overflow: hidden;
+
+		margin: 0 1px;
+
+		background-image: url(@img-sprite-primary);
+		background-repeat: no-repeat;
+
+		font-size: 0;
+
+
+		&--vk {
+			background-position: -108px -226px;
+		}
+		&--ok {
+			background-position: -27px -226px;
+		}
+		&--insta {
+			background-position: -54px -226px;
+		}
+		&--youtube {
+			background-position: -81px -226px;
+		}
+		&--fb {
+			background-position: 0 -226px;
+		}
+	}
+}
+
+@media @desktop {
+	.footer-socials {
+		float: none;
+	}
+}
+
+@media (max-width: 389px) {
+	.footer-socials {
+		display: none;
+	}
+}
+

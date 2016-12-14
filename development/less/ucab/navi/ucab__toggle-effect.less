@@ -1,0 +1,23 @@
+.ucab-group {
+	.bonuses-card,
+	.bonuses-level,
+	.profile-info,
+	.profile-password,
+	.ucab-tools,
+	.favorites-list {
+		opacity: 0;
+		.transition(opacity);
+	}
+
+
+	&--active {
+		.bonuses-card,
+		.bonuses-level,
+		.profile-info,
+		.profile-password,
+		.ucab-tools,
+		.favorites-list {
+			opacity: 1;
+		}
+	}
+}

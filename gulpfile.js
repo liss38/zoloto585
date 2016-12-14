@@ -120,7 +120,7 @@ gulp.task('make-mycrutch-css', function () {
 
 
 // make-dev
-gulp.task('make-dev', ['make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
+gulp.task('make-dev', ['make-css-ext', 'make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))

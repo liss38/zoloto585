@@ -1,0 +1,97 @@
+/*"top-geo"*/
+.top-geo {
+	&__button {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+
+		text-decoration: none;
+		text-transform: uppercase;
+		.font-circe_light(10px, 32px, #fff);
+
+		cursor: pointer;
+
+		& span {
+			border-bottom: 1px dotted #b36b6b;
+			cursor: pointer;
+		}
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -10px;
+			margin-left: -10px;
+
+			content: '';
+
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: transparent url(@img-sprite-header_20x20) 0 -20px no-repeat;
+		}
+	}
+	
+}
+
+
+/*
+	DESKTOP
+*/
+@media screen and (min-width: @desktop-min) {
+	.top-geo {
+		width: 125px;
+		max-width: 215px;/*от переполнения контентом*/
+		overflow: hidden;/*от переполнения контентом*/
+
+		&__button {
+			height: 31px;
+
+			&:hover {
+				background-color: #cb2430;
+			}
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+
+/*
+	TOUCH
+*/
+@media screen and (max-width: @tablet_a-max) {
+	.top-geo {
+		width: 50px;
+
+		&__button {
+			width: 50px;
+			height: 44px;
+
+			font-size: 0;
+
+			&:before {
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -10px;
+			}
+		}
+	}
+}
+/*@mobile Portrait*/
+@media screen and (max-width: @mobile_p-max) {
+	.top-geo {
+		width: 16.6%;
+	}
+}
+/*
+	"top-geo";end
+
+
+
+
+
+*/

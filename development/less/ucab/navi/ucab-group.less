@@ -1,10 +1,14 @@
 .ucab-group {
-	height: 40px;
+	height: 0;
 	overflow: hidden;
+
+
+	@media @mobile {
+		height: 40px;
+	}
 
 
 	&--active {
 		height: auto;
-		// overflow: auto;
 	}
 }

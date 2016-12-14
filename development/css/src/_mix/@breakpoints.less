@@ -1,0 +1,54 @@
+/*
+	ЗНАЧЕНИЯ
+	ТОЧЕК
+	СЛОМА
+*/
+
+/* DESKTOP */
+@desktop-min: 1025px;
+
+/* TABLET ALBUM */
+@tablet_a-min: 768px;
+@tablet_a-max: (@desktop-min - 1);
+
+/* TABLET PORTRAIT */
+@tablet_p-min: 640px;
+@tablet_p-max: (@tablet_a-min - 1);
+
+/* MOBILE ALBUM */
+@mobile_a-min: 480px;
+@mobile_a-max: (@tablet_p-min - 1);
+
+/* MOBILE PORTRAIT */
+/*@mobile_p-min: px;*/
+@mobile_p-max: (@mobile_a-min - 1);
+
+
+
+/*
+	ПРАВИЛА
+	ДЛЯ
+	@MEDIA-ВЫРАЖЕНИЙ
+*/
+@desktop: ~'screen and (min-width: @{desktop-min})';
+
+
+
+@touch: ~'screen and (max-width: @{tablet_a-max})';
+@touch-between: ~'screen and (min-width: 480px) and (max-width: 767px)';
+
+
+
+@tablet: ~'screen and (min-width: @{tablet_p-min}) and (max-width: @{tablet_a-max})';
+@tablet-album: ~'screen and (min-width: @{tablet_a-min}) and (max-width: @{tablet_a-max})';
+@tablet-portrait: ~'screen and (min-width: @{tablet_p-min}) and (max-width: @{tablet_p-max})';
+
+@tablet-under: ~'screen and (max-width: @{tablet_p-max})';
+
+
+
+@mobile: ~'screen and (max-width: @{mobile_a-max})';
+@mobile-album: ~'screen and (min-width: @{mobile_a-min}) and (max-width: @{mobile_a-max})';
+@mobile-portrait: ~'screen and (max-width: @{mobile_p-max})';
+
+

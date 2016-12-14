@@ -1,0 +1,31 @@
+	========================================
+	(*)ХЭДЭР, СРЕДНЯЯ ЧАСТЬ
+	Где лого "585"
+	========================================
+*/
+
+
+
+-1-
+.header-middle
+.header-middle__inner
+.header-middle__logo
+.header-middle__bar
+.header-middle__button
+.header-middle__button--promo
+.header-middle__button--sale
+.header-middle__button--bonuses
+/*
+	средняя часть хэдера,
+	контентный центрирующий слой
+	логотип ссылка на главную
+	панель с кнопками
+	кнопка
+	модификаторы кнопок
+
+
+
+
+
+
+

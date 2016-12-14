@@ -1,0 +1,115 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	-webkit-font-smoothing: antialiased;
+}
+/*
+	"SECTIONS"
+*/
+.section {
+	position: relative;
+
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+
+	&__inner {
+		position: relative;
+
+		margin: 0 auto;
+
+		width: 100%;
+		max-width: 1000px;
+		min-width: 300px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+
+		&:before {
+			content: '';
+			display: table;
+		}
+
+
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+
+		@media @tablet-album {
+			width: 750px;
+		}
+
+
+		@media @tablet-portrait {
+			width: 620px;
+		}
+
+
+		@media @mobile-album {
+			width: 460px;
+		}
+
+
+		@media @mobile-portrait {
+			width: 300px;
+		}
+	}
+}
+
+
+
+
+/* END-of-"SECTIONS" */
+
+
+/*
+	"HORIZONTAL GRIDS"
+
+	25%
+	33.3%
+	50%
+	66.5%
+	75%
+	100%
+*/
+
+.section__column_25,
+.section__column_33,
+.section__column_50,
+.section__column_66,
+.section__column_75,
+.section__column_100 {
+	float: left;
+	display: block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.section__column_25 {
+	width: 25%;
+}
+.section__column_33 {
+	width: 33.3%;
+}
+.section__column_50 {
+	width: 50%;
+}
+.section__column_66 {
+	width: 66.6%;
+}
+.section__column_75 {
+	width: 75%;
+}
+.section__column_100 {
+	width: 100%;
+}
