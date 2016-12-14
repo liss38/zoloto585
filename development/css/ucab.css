@@ -1509,17 +1509,24 @@
   padding-bottom: 30px;
   font-size: 0;
 }
-@media screen and (max-width: 1024px) {
-  .favorites-list__inner {
-    width: 100%;
-    padding-top: 15px;
-    text-align: center;
-  }
-}
 @media screen and (min-width: 1025px) {
   .favorites-list__inner {
     padding-top: 27px;
-    text-align: justify;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .favorites-list__inner {
+    padding-top: 15px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .favorites-list__inner {
+    width: 465px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .favorites-list__inner {
+    text-align: center;
   }
 }
 /* один предмет */
@@ -1653,9 +1660,17 @@
   right: -23px;
   bottom: -1px;
 }
-@media screen and (max-width: 479px) {
+@media screen and (min-width: 1025px) {
   .favorites-item {
-    margin: 8px;
+    margin: 0 13px 16px 0;
+  }
+  .favorites-item:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .favorites-item {
+    margin: 4px;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -1727,39 +1742,25 @@
     font-size: 15px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 479px) {
   .favorites-item {
-    margin: 4px;
+    margin: 8px;
   }
-}
-@media screen and (min-width: 1025px) {
-  .favorites-item {
-    margin: 0px 1px 16px 1px;
-  }
-}
-.cabinet-unit-profile {
-  background: #fff;
-  top: 120px;
-}
-/*
-	БЛОК "Личные данные"
-*/
-.profile-form {
-  max-width: 850px;
-  width: 100%;
-  margin: 0 auto;
-}
-.profile-form-required,
-.profile-form-additional {
-  float: left;
-  width: 425px;
 }
 .profile-field-row {
+  position: relative;
   width: 325px;
   height: 58px;
-  margin: 0 50px;
+  margin: 0;
   font-size: 0;
-  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .profile-field-row {
+    position: relative;
+    width: 200px;
+    padding-top: 7px;
+    height: auto;
+  }
 }
 .profile-field-row:hover .profile-field-name {
   color: #bebebe;
@@ -1770,6 +1771,100 @@
 .profile-field-row:hover .profile-field-data {
   border-color: #d1d1d1;
 }
+/* Кастомизация для селекта, <select> */
+.profile-field-row .fancy-select {
+  width: 200px;
+  font-size: 11px !important;
+  /* перекрытие div.fancy-select div.trigger в select.css:12 */
+}
+.profile-field-row .fancy-select .trigger {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  height: 30px;
+  padding: 3px 25px 3px 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #e2dedf;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font: 300 11px/25px 'Circe';
+  color: #bcbcbc;
+}
+.profile-field-row .fancy-select .trigger:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 30px;
+  padding: 0;
+  background: url('../img/sprites/sprite__ucab-icos--profile.png') -30px -119px no-repeat;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+.profile-field-row .fancy-select .trigger.open:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 30px;
+  padding: 0;
+  background: url('../img/sprites/sprite__ucab-icos--profile.png') 0px -119px no-repeat;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+.profile-field-row .fancy-select .trigger:hover,
+.profile-field-row .fancy-select .trigger.open {
+  background: #fff;
+  border: 1px solid #c93232;
+  color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected {
+  border: 1px solid #c93232;
+  color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 30px;
+  padding: 0;
+  background: url('../img/sprites/sprite__ucab-icos--profile.png') 0px -119px no-repeat;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+.profile-field-row .fancy-select .options,
+.profile-field-row .fancy-select .options.open {
+  width: 200px;
+  min-width: 200px;
+  /* перекрытие div.fancy-select ul.options в select.css */
+  padding: 0;
+  background: #fff;
+  border: 1px solid #c93232;
+}
+.profile-field-row .fancy-select .options.open > li {
+  display: block;
+  padding: 8px 10px 2px 13px;
+  border-top: 1px solid #f7f7f7;
+  border-bottom: 1px solid #e7e6e6;
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 300 11px/25px 'Circe' !important;
+  color: #bcbcbc;
+  cursor: pointer;
+}
+.profile-field-row .fancy-select .options > li.hover {
+  background: #f7f7f7;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #666;
+}
+/**/
 .profile-field-name {
   display: inline-block;
   vertical-align: top;
@@ -1777,35 +1872,29 @@
   padding-left: 5px;
   text-align: left;
   text-transform: uppercase;
-  font: 400 10px/30px "Circe-Regular";
+  font: 400 10px/30px 'Circe';
   color: #a5a5a5;
 }
+@media screen and (max-width: 767px) {
+  .profile-field-name {
+    width: 200px;
+    padding: 0;
+    line-height: 21px;
+    color: #d0d0d0;
+  }
+}
 .profile-field-ico {
+  position: absolute;
+  left: 125px;
   display: inline-block;
   width: 30px;
   height: 30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: url("../images/cabinet/form_field__ico_sprite.png");
+  background: url('../img/sprites/sprite__ucab-icos--profile.png');
   border: 1px solid #e2dedf;
   border-radius: 4px 0 0 4px;
-  position: absolute;
-}
-.profile-field-data {
-  display: inline-block;
-  vertical-align: top;
-  width: 200px;
-  height: 30px;
-  padding: 3px 5px 3px 35px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e2dedf;
-  border-radius: 2px;
-  outline: none;
-  font: 400 14px "Circe-Light";
-  color: #666;
 }
 /*.profile-field-data:focus { border-color: #d1d1d1; }*/
 .profile-user-data-surname {
@@ -1830,7 +1919,7 @@
   height: 20px;
   text-transform: uppercase;
   text-align: left;
-  font: 10px/11px "Circe-Regular";
+  font: 400 10px/11px 'Circe';
   color: #d0d0d0;
   position: absolute;
   top: 4px;
@@ -1855,100 +1944,27 @@
 .profile-user-data-index {
   background-position: -30px -210px;
 }
-/* Кастомизация для селекта, <select> */
-.profile-field-row .fancy-select {
-  width: 200px;
-  font-size: 11px !important;
-  /* перекрытие div.fancy-select div.trigger в select.css:12 */
+@media screen and (max-width: 767px) {
+  .profile-field-ico {
+    left: 0;
+    bottom: 0;
+  }
 }
-.profile-field-row .fancy-select .trigger {
+.profile-field-data {
   display: inline-block;
   vertical-align: top;
   width: 200px;
   height: 30px;
-  padding: 3px 25px 3px 15px;
+  padding: 3px 5px 3px 35px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #e2dedf;
   border-radius: 2px;
-  text-transform: uppercase;
-  font: 400 11px/25px "Circe-Light";
-  color: #bcbcbc;
-}
-.profile-field-row .fancy-select .trigger:after {
-  content: "";
-  display: block;
-  width: 25px;
-  height: 30px;
-  padding: 0;
-  background: url("../images/cabinet/form_field__ico_sprite.png") -30px -119px no-repeat;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 4px;
-}
-.profile-field-row .fancy-select .trigger.open:after {
-  content: "";
-  display: block;
-  width: 25px;
-  height: 30px;
-  padding: 0;
-  background: url("../images/cabinet/form_field__ico_sprite.png") 0px -119px no-repeat;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 4px;
-}
-.profile-field-row .fancy-select .trigger:hover,
-.profile-field-row .fancy-select .trigger.open {
-  background: #fff;
-  border: 1px solid #c93232;
+  outline: none;
+  font: 300 14px 'Circe';
   color: #666;
 }
-.profile-field-row .fancy-select .trigger.selected {
-  border: 1px solid #c93232;
-  color: #666;
-}
-.profile-field-row .fancy-select .trigger.selected:after {
-  content: "";
-  display: block;
-  width: 25px;
-  height: 30px;
-  padding: 0;
-  background: url("../images/cabinet/form_field__ico_sprite.png") 0px -119px no-repeat;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 4px;
-}
-.profile-field-row .fancy-select .options,
-.profile-field-row .fancy-select .options.open {
-  width: 200px;
-  min-width: 200px;
-  /* перекрытие div.fancy-select ul.options в select.css */
-  padding: 0;
-  background: #fff;
-  border: 1px solid #c93232;
-}
-.profile-field-row .fancy-select .options.open > li {
-  display: block;
-  padding: 8px 10px 2px 13px;
-  border-top: 1px solid #f7f7f7;
-  border-bottom: 1px solid #e7e6e6;
-  text-decoration: none;
-  text-transform: uppercase;
-  font: 400 11px/25px "Circe-Light" !important;
-  color: #bcbcbc;
-  cursor: pointer;
-}
-.profile-field-row .fancy-select .options > li.hover {
-  background: #f7f7f7;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #666;
-}
-/**/
 /*
 	Валидация полей профиля, стили состояния
 */
@@ -1958,7 +1974,7 @@
   display: block;
   width: 25px;
   height: 30px;
-  background: url("../images/cabinet/form_field__ico_sprite.png") 0 -300px no-repeat;
+  background: url('../img/sprites/sprite__ucab-icos--profile.png') 0 -300px no-repeat;
   position: absolute;
   top: 0;
   right: -25px;
@@ -1987,94 +2003,46 @@
   background-position: 0 -270px;
 }
 /*    */
-@media screen and (max-width: 599px) {
-  .cabinet-unit-profile {
-    top: 0px;
-  }
-  .cabinet--profile .cabinet-unit:after {
-    bottom: 40px;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 749px) {
-  .cabinet-unit-profile {
-    top: 40px;
-  }
-  .cabinet--profile .cabinet-unit:after {
-    bottom: 0;
-  }
-}
-@media screen and (max-width: 749px) {
-  .cabinet-unit-profile {
-    height: 1090px;
-    background: transparent;
-    /*top: 0px;*/
-  }
-  .cabinet--profile .cabinet-unit:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 280px;
-    background: #f4f4f4;
-    border-top: 1px solid #e9e9e9;
-    position: absolute;
-    /*bottom: 40px;*/
-  }
-  .profile-form {
-    width: 250px;
-    height: auto;
-    padding: 13px 0 30px 0;
-  }
-  .profile-form-required,
-  .profile-form-additional {
-    float: none;
-    width: 250px;
-  }
-  .profile-field-row {
-    width: 225px;
-    /*height: 51px;*/
-    padding-top: 7px;
-    margin: 0 12.5px;
-    position: relative;
-  }
-  .profile-field-name {
-    width: 200px;
-    padding: 0;
-    line-height: 21px;
-    color: #d0d0d0;
-  }
-  .profile-field-ico {
-    left: 12px;
-    bottom: 0;
-  }
-  /*
-		Валидация полей профиля, стили состояния
-	*/
+@media screen and (max-width: 767px) {
   .check-field--valid:after,
   .check-field--invalid:after {
     top: 27px;
     right: -16px;
   }
-  /*    */
 }
-@media screen and (min-width: 750px) and (max-width: 1000px) {
-  .cabinet-unit-profile {
-    height: 1090px;
-    background: transparent;
-    top: 100px;
-  }
-  .profile-form {
+.profile-info__inner {
+  max-width: 850px;
+  width: 100%;
+  min-width: 200px;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .profile-info__inner {
     width: 725px;
-    padding-bottom: 20px;
   }
-  .profile-form-required {
+}
+@media screen and (max-width: 767px) {
+  .profile-info__inner {
+    width: 200px;
+    height: auto;
+  }
+}
+.profile-info-form__group {
+  float: left;
+  width: 425px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .profile-info-form__group {
     width: 400px;
   }
-  .profile-form-additional {
+  .profile-info-form__group:nth-child(2) {
     width: 325px;
   }
-  .profile-field-row {
-    width: 325px;
-    margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .profile-info-form__group {
+    float: none;
+    width: 200px;
   }
 }
 .profile-info-submit {
@@ -2093,22 +2061,16 @@
 }
 .profile-password-form {
   position: absolute;
-  top: 30px;
+  top: 40px;
   left: 50%;
   margin-left: -237.5px;
   display: block;
   width: 475px;
 }
-@media screen and (min-width: 640px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .profile-password-form {
-    width: 250px;
-    margin-left: -125px;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 639px) {
-  .profile-password-form {
-    width: 250px;
-    margin-left: -125px;
+    width: 200px;
+    margin-left: -100px;
   }
 }
 .profile-password-item {
@@ -2151,19 +2113,18 @@
   border-color: #d1d1d1;
 }
 @media screen and (max-width: 767px) {
-  .profile-password-item {
-    left: 25px;
+  .profile-password-item:nth-child(1) {
+    left: 0;
   }
   .profile-password-item:nth-child(2) {
     top: 55px;
-    left: 25px;
+    left: 0;
   }
   .profile-password-item:nth-child(3) {
     top: 110px;
-    left: 25px;
+    left: 0;
   }
 }
-/*.profile-password-field-ico--validate,*/
 .profile-password-field-ico {
   display: inline-block;
   width: 30px;
@@ -2171,12 +2132,11 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: url("../images/cabinet/form_field__ico_sprite.png") -1px -241px no-repeat;
+  background: url('../img/sprites/sprite__ucab-icos--profile.png') -1px -241px no-repeat;
   border: 1px solid #e2dedf;
   border-radius: 4px 0 0 4px;
   position: absolute;
 }
-/*.profile-password-field-ico--validate { background-position: -1px -241px; }*/
 .profile-password-field--validate,
 .profile-password-field {
   display: inline-block;
@@ -2191,26 +2151,26 @@
   border: 1px solid #e2dedf;
   border-radius: 2px;
   outline: none;
-  font: 400 20px/30px "Circe-Light";
+  font: 300 10px/20px 'Circe';
   color: #666;
 }
 .profile-password-field::-webkit-input-placeholder {
   font-size: 10px;
-  line-height: 34px;
+  line-height: 24px;
 }
 .profile-password-field::-moz-placeholder {
   font-size: 10px;
-  line-height: 34px;
+  line-height: 24px;
 }
 /* Firefox 19+ */
 .profile-password-field:-moz-placeholder {
   font-size: 10px;
-  line-height: 34px;
+  line-height: 24px;
 }
 /* Firefox 18- */
 .profile-password-field:-ms-input-placeholder {
   font-size: 10px;
-  line-height: 34px;
+  line-height: 24px;
 }
 .profile-password-field--validate::-webkit-input-placeholder {
   color: #666;
@@ -2227,13 +2187,13 @@
 .profile-password-submit {
   width: 200px;
   height: 37px;
-  background: url("../images/cabinet/button_gradient_bg.png") 0 0 repeat-x;
+  background: url('../img/thingies/surface-01.png') 0 0 repeat-x;
   border: 1px solid #dedede;
   border-radius: 2px;
   box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
   text-align: center;
-  font: 11px "Circe-Regular";
+  font: 400 11px 'Circe';
   color: #666;
   position: absolute;
   top: 112px;
@@ -2247,13 +2207,13 @@
   border-radius: 2px;
   color: #fff;
 }
-@media screen and (min-width: 600px) and (max-width: 749px) {
+@media screen and (min-width: 640px) and (max-width: 767px) {
   .profile-password-submit {
     left: 50%;
     margin-left: -100px;
   }
 }
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .profile-password-submit {
     top: 165px;
   }

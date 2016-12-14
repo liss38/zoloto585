@@ -33,14 +33,22 @@
 @desktop: ~'screen and (min-width: @{desktop-min})';
 
 
+
 @touch: ~'screen and (max-width: @{tablet_a-max})';
+@touch-between: ~'screen and (min-width: 480px) and (max-width: 767px)';
+
 
 
 @tablet: ~'screen and (min-width: @{tablet_p-min}) and (max-width: @{tablet_a-max})';
 @tablet-album: ~'screen and (min-width: @{tablet_a-min}) and (max-width: @{tablet_a-max})';
 @tablet-portrait: ~'screen and (min-width: @{tablet_p-min}) and (max-width: @{tablet_p-max})';
 
+@tablet-under: ~'screen and (max-width: @{tablet_p-max})';
+
+
 
 @mobile: ~'screen and (max-width: @{mobile_a-max})';
 @mobile-album: ~'screen and (min-width: @{mobile_a-min}) and (max-width: @{mobile_a-max})';
 @mobile-portrait: ~'screen and (max-width: @{mobile_p-max})';
+
+

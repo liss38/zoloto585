@@ -135,15 +135,26 @@
 
 
 
-@media @mobile-portrait {
+
+
+@media @desktop {
 	.favorites-item {
-		margin: 8px;
+		margin: 0 13px 16px 0;
+
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
 	}
 }
 
 
+@media @tablet-album {
+	.favorites-item { margin: 4px; }
+}
 
-@media screen and (min-width: 480px) and (max-width: 767px) {
+
+@media @touch-between {
 	/* ресайз для item */
 	.favorites-item { width: 221px; height: 279px; overflow: hidden; margin: 4px; }
 	.favorites-item-control,
@@ -180,12 +191,8 @@
 }
 
 
-
-
-@media @tablet-album {
-	.favorites-item { margin: 4px; }
-}
-
-@media @desktop {
-	.favorites-item { margin: 0px 1px 16px 1px; }
+@media @mobile-portrait {
+	.favorites-item {
+		margin: 8px;
+	}
 }

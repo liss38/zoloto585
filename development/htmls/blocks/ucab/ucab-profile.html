@@ -8,8 +8,8 @@
 
 	<div class="section  profile-info">
 		<div class="section__inner  profile-info__inner">
-			<form class="profile-form clearfix" action="">
-				<div class="profile-form-required">
+			<form class="profile-info-form clearfix" action="">
+				<div class="profile-info-form__group">
 					<div class="profile-field-row"><div class="profile-field-name">Фамилия</div><label for="profile-user-data-surname" class="profile-field-ico profile-user-data-surname"></label><input id="profile-user-data-surname" type="text" class="profile-field-data" placeholder="введите свою фамилию"></div>
 					<div class="profile-field-row check-field--invalid"><div class="profile-field-name">Имя</div><label for="profile-user-data-name" class="profile-field-ico profile-user-data-name"></label><input id="profile-user-data-name" type="text" class="profile-field-data" placeholder="введите своё имя"></div>
 					<div class="profile-field-row check-field--valid"><div class="profile-field-name">Отчество</div><label for="profile-user-data-middlename" class="profile-field-ico profile-user-data-middlename"></label><input id="profile-user-data-middlename" type="text" class="profile-field-data" placeholder="введите своё отчество" value="Александровна"></div>
@@ -18,7 +18,7 @@
 					<div class="profile-field-row"><div class="profile-field-name">Email</div><label for="profile-user-data-email" class="profile-field-ico profile-user-data-email"></label><input id="profile-user-data-email" type="text" class="profile-field-data" placeholder="введите свой email"></div>
 					
 				</div>
-				<div class="profile-form-additional">
+				<div class="profile-info-form__group">
 					<div class="profile-field-row">
 						<div class="profile-field-name">Мой магазин</div>
 						<select class="profile-user-data-store" id="materials">
@@ -45,7 +45,7 @@
 	<div class="section  profile-password">
 		<div class="section__inner  profile-password__inner">
 			<form class="profile-password-form">
-				<div class="profile-password-item"><label for="profile-password-1" class="profile-password-field-ico"></label><input id="profile-password-1" type="password" class="profile-password-field" placeholder="ТЕКУЩИЙ ПАРОЛЬ*" /></div>
+				<div class="profile-password-item"><label for="profile-password-1" class="profile-password-field-ico"></label><input id="profile-password-1" type="password" class="profile-password-field  profile-password-field--validate" placeholder="ТЕКУЩИЙ ПАРОЛЬ*" /></div> <!-- "profile-password-field--validate"  -  флаг невалидного поля  -->
 				<div class="profile-password-item"><label for="profile-password-2" class="profile-password-field-ico"></label><input id="profile-password-2" type="password" class="profile-password-field" placeholder="НОВЫЙ ПАРОЛЬ*" /></div>
 				<div class="profile-password-item"><label for="profile-password-3" class="profile-password-field-ico"></label><input id="profile-password-3" type="password" class="profile-password-field" placeholder="ПОДТВЕРЖДЕНИЕ ПАРОЛЯ*" /></div>
 				<input class="profile-password-submit" type="submit" name="" value="Изменить пароль">
