@@ -400,7 +400,7 @@ gulp.task('make-urec-page-full', ['make-header-block'], function () {
 });
 
 
-// USER-PASSWORD-RECOVERY page FULL
+// USER-CABINET page FULL
 gulp.task('make-ucab-all-page-full', ['make-ucab-page-full', 'make-ureg-page-full', 'make-ulog-page-full', 'make-urec-page-full'], function () {
 	return gulp.src('development/htmls/user-cabinet.tmpl.html')
 		.pipe(fileinclude({

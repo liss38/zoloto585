@@ -404,6 +404,32 @@
 .ucab-group--active {
   height: auto;
 }
+.ucab-group--login {
+  background: url('../img/thingies/ucab__login-bg--1920x449.jpg') center top no-repeat;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-group--login {
+    background-image: url('../img/thingies/ucab__login-bg--750x435.jpg');
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-group--login {
+    background-image: url('../img/thingies/ucab__login-bg--425x328.jpg');
+  }
+}
+.ucab-group--active.ucab-group--login {
+  height: 450px;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-group--active.ucab-group--login {
+    height: 435px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-group--active.ucab-group--login {
+    height: 328px;
+  }
+}
 .ucab-promo {
   height: 58px;
   background: #d02829;
@@ -2237,7 +2263,8 @@
 .ucab-group .profile-info,
 .ucab-group .profile-password,
 .ucab-group .ucab-tools,
-.ucab-group .favorites-list {
+.ucab-group .favorites-lis,
+.ucab-group .ucab-login {
   opacity: 0;
   -webkit-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
@@ -2248,7 +2275,8 @@
 .ucab-group--active .profile-info,
 .ucab-group--active .profile-password,
 .ucab-group--active .ucab-tools,
-.ucab-group--active .favorites-list {
+.ucab-group--active .favorites-list,
+.ucab-group--active .ucab-login {
   opacity: 1;
 }
 /*
@@ -2258,3 +2286,554 @@
 
 @import "ucab/subscribes/.less";
  */
+.ucab-login-form {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -100px;
+  display: block;
+  width: 200px;
+  height: 185px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 479px) {
+  .ucab-login-form {
+    top: 60px;
+  }
+}
+.ucab-login-field {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ucab-login-field:nth-child(1) {
+  top: 0px;
+}
+.ucab-login-field:nth-child(2) {
+  top: 58px;
+}
+.ucab-login-field__ico {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  z-index: 10;
+  display: block;
+  height: 28px;
+  width: 30px;
+  background: url('../img/sprites/sprite__ucab-icos.png') top left no-repeat;
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid #d8c8c6;
+}
+.ucab-login-field__ico--email {
+  background-position: 0 -120px;
+}
+.ucab-login-field__ico--password {
+  background-position: 0 -152px;
+}
+.ucab-login-field__ico--phone {
+  background-position: 0 -182px;
+}
+.ucab-login-field__ico--card {
+  background-position: 0 -212px;
+}
+.ucab-login-field__input {
+  display: block;
+  width: 200px;
+  height: 30px;
+  padding-left: 35px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #dfc9c7;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font: 400 11px/30px 'Circe';
+  color: #bebebe;
+  outline: none;
+}
+.ucab-login-field__input:hover {
+  border: 1px solid #ed3838;
+}
+.ucab-login-field__input:focus {
+  border: 1px solid #ed3838;
+  color: #666;
+}
+.ucab-login-button {
+  position: absolute;
+  bottom: 0;
+  height: 35px;
+  font-size: 12px;
+  line-height: 35px;
+}
+.ucab-login-option {
+  position: absolute;
+  top: 232px;
+  left: 50%;
+  margin-left: -100px;
+  display: block;
+  width: 200px;
+  height: 12px;
+}
+@media screen and (max-width: 479px) {
+  .ucab-login-option {
+    top: 174px;
+  }
+}
+.ucab-login-option__item {
+  position: absolute;
+  top: 0;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font: 400 11px 'Circe';
+  color: #666;
+}
+.ucab-login-option__item:hover {
+  text-decoration: none;
+}
+.ucab-login-option__item:first-child {
+  left: 0;
+}
+.ucab-login-option__item:last-child {
+  right: 0;
+}
+.ucab-login-option__item:last-child:before {
+  position: absolute;
+  top: 3px;
+  left: -11px;
+  content: '';
+  display: block;
+  width: 2px;
+  height: 8px;
+  background: #666;
+  border-left: 1px solid #cbb9b8;
+}
+.ucab-registration {
+  background: url('../img/patterns/pattern-1.jpg') top left repeat;
+}
+.ucab-registration__inner {
+  width: 800px;
+  height: 530px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .ucab-registration__inner {
+    width: 700px;
+    height: 480px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-registration__inner {
+    width: 380px;
+    height: 888px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-registration__inner {
+    width: 300px;
+    height: 850px;
+  }
+}
+/*
+	CABINET-REGISTRATION
+*/
+.cabinet-registration-if-you {
+  height: 101px;
+  padding: 13px 70px;
+  background: #fefefe url("../images/cabinet/question.png") 20px 30px no-repeat;
+  font: 12px/18px "Circe-Regular";
+  color: #666;
+}
+.cabinet-registration-if-you__header {
+  padding-left: 10px;
+  font-size: 14px;
+}
+.cabinet-registration-if-you__item {
+  padding-left: 10px;
+  position: relative;
+}
+.cabinet-registration-if-you__item:before {
+  content: "-";
+  display: block;
+  width: 10px;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+.cabinet-registration-if-you__item-link {
+  text-decoration: underline;
+  color: #666;
+}
+.cabinet-registration-if-you__item-link:hover {
+  text-decoration: none;
+  color: #ed3030;
+}
+.cabinet-registration-form {
+  width: 300px;
+  height: 422px;
+  left: 450px;
+}
+.cabinet-registration-form__header {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 1px 0px 0px #f6f6f6;
+  text-align: center;
+  text-transform: uppercase;
+  font: 14px/60px "Circe-Regular";
+  color: #ed3030;
+}
+/* разметка полей формы */
+.cabinet-registration-form__email-label,
+.cabinet-registration-form__password-label {
+  display: block;
+  text-transform: uppercase;
+  font: 11px/11px "Circe-Regular";
+  color: #303030;
+  position: absolute;
+  left: 50px;
+}
+.cabinet-registration-form__email-field,
+.cabinet-registration-form__password-field {
+  display: block;
+  width: 200px;
+  height: 30px;
+  padding: 0 10px 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #e2dedf;
+  border-radius: 2px;
+  outline: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+}
+.cabinet-registration-form__email-field:hover,
+.cabinet-registration-form__password-field:hover {
+  border: 1px solid #ed3838;
+}
+.cabinet-registration-form__email-label:before,
+.cabinet-registration-form__password-label:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/cabinet/cabinet__icos_sprite.png") 0 0 no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+  z-index: 10;
+}
+.cabinet-registration-form__email-label:before {
+  background-position: -30px -119px;
+}
+.cabinet-registration-form__password-label:before {
+  background-position: -30px -151px;
+}
+.cabinet-registration-form__email-label {
+  top: 85px;
+}
+.cabinet-registration-form__email-field {
+  top: 98px;
+}
+.cabinet-registration-form__password-label {
+  top: 138px;
+}
+.cabinet-registration-form__password-field {
+  top: 151px;
+}
+.cabinet-registration-form-agreement {
+  display: block;
+  width: 175px;
+  height: 170px;
+  font: 10px/12px "Circe-Regular";
+  color: #bcbcbc;
+  position: absolute;
+  top: 195px;
+  left: 75px;
+}
+.cabinet-registration-form-agreement__link {
+  text-decoration: underline;
+  color: #bcbcbc;
+}
+.cabinet-registration-form-agreement__link:hover {
+  text-decoration: none;
+  color: #666;
+}
+.cabinet-registration-form__agree-field {
+  display: block;
+  width: 15px;
+  height: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #e2dedf;
+  border-radius: 2px;
+  position: absolute;
+  top: 196px;
+  left: 53px;
+  cursor: pointer;
+}
+.cabinet-registration-form__agree-field--true:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/cabinet/cabinet__icos_sprite.png") -30px -240px no-repeat;
+  position: absolute;
+  top: -9px;
+  left: -8px;
+}
+@media screen and (max-width: 459px) {
+  .cabinet-registration-if-you {
+    top: 720px;
+  }
+  .cabinet-registration-form {
+    top: 19px;
+    height: 370px;
+  }
+  .cabinet-registration-form__email-label,
+  .cabinet-registration-form__password-label {
+    left: 39px;
+  }
+  .cabinet-registration-form__email-label:before,
+  .cabinet-registration-form__password-label:before {
+    left: -5px;
+  }
+  .cabinet-registration-form__agree-field {
+    left: 38px;
+  }
+  .cabinet-registration-form-agreement {
+    left: 61px;
+  }
+  .cabinet-registration-if-you {
+    background-size: 24px 24px;
+    background-position: 16px 34px;
+  }
+  .cabinet-registration-if-you {
+    padding: 13px 10px 13px 50px;
+  }
+  .cabinet-registration-if-you__header {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .cabinet-registration-if-you__item {
+    width: 212px;
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
+@media screen and (min-width: 460px) and (max-width: 749px) {
+  .cabinet-registration-form__email-label,
+  .cabinet-registration-form__password-label {
+    left: 93px;
+  }
+  .cabinet-registration-form__email-label:before,
+  .cabinet-registration-form__password-label:before {
+    left: -5px;
+  }
+  .cabinet-registration-form__agree-field {
+    left: 89px;
+  }
+  .cabinet-registration-form-agreement {
+    left: 113px;
+  }
+}
+/*****************************************************************************************/
+.ucab-regblock {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fefefe;
+  border: 1px solid #ebeaea;
+  box-shadow: 1px 1px 12px -4px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-family: 'Circe';
+  color: #666;
+}
+.ucab-regblock:nth-child(1) {
+  top: 45px;
+  left: 25px;
+  width: 375px;
+  height: 101px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .ucab-regblock:nth-child(1) {
+    top: 22px;
+    left: 3px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-regblock:nth-child(1) {
+    width: 380px;
+    height: 101px;
+    top: 736px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-regblock:nth-child(1) {
+    width: 270px;
+    height: 101px;
+    top: 720px;
+    left: 0;
+  }
+}
+.ucab-regblock:nth-child(2) {
+  top: 160px;
+  left: 25px;
+  width: 375px;
+  height: 307px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .ucab-regblock:nth-child(2) {
+    top: 139px;
+    left: 3px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-regblock:nth-child(2) {
+    width: 380px;
+    height: 307px;
+    top: 417px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-regblock:nth-child(2) {
+    width: 270px;
+    height: 307px;
+    top: 401px;
+    left: 0;
+  }
+}
+.ucab-regblock:nth-child(3) {
+  top: 45px;
+  left: 450px;
+  width: 300px;
+  height: 422px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .ucab-regblock:nth-child(3) {
+    top: 22px;
+    left: 393px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-regblock:nth-child(3) {
+    width: 380px;
+    height: 370px;
+    top: 35px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-regblock:nth-child(3) {
+    width: 270px;
+    height: 370px;
+    top: 19px;
+    left: 0;
+  }
+}
+.ucab-reginfo {
+  margin: 0;
+  padding: 20px 25px 0 75px;
+  list-style: none;
+}
+.ucab-reginfo__item {
+  position: relative;
+  display: block;
+  padding: 5px 0 30px 0;
+  line-height: 20px;
+  font-size: 14px;
+}
+@media screen and (max-width: 479px) {
+  .ucab-reginfo__item {
+    padding-bottom: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.ucab-reginfo__item:before {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  content: '';
+  display: block;
+  width: 25px;
+  height: 30px;
+  background: url('../img/sprites/sprite__ucab-icos.png') 0 0 no-repeat;
+}
+.ucab-reginfo__item:nth-child(1):before {
+  background-position: left 5px;
+}
+.ucab-reginfo__item:nth-child(2):before {
+  background-position: left -25px;
+}
+.ucab-reginfo__item:nth-child(3):before {
+  background-position: left -55px;
+}
+.ucab-reginfo__item:nth-child(4):before {
+  background-position: left -95px;
+}
+.ucab-reginfo__item a {
+  text-decoration: underline;
+  color: #666;
+}
+.ucab-reginfo__item a:hover {
+  text-decoration: none;
+  color: #ed3030;
+}
+@media screen and (max-width: 459px) {
+  .cabinet-registration-info {
+    top: 401px;
+    padding-left: 60px;
+  }
+  .cabinet-registration-info__item {
+    padding-bottom: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .cabinet-registration-info__item:before {
+    left: -46px;
+  }
+  .cabinet-registration-info__item:nth-child(1):before {
+    top: 10px;
+  }
+  .cabinet-registration-info__item:nth-child(2):before {
+    top: 3px;
+  }
+  .cabinet-registration-info__item:nth-child(3):before {
+    top: 9px;
+  }
+  .cabinet-registration-info__item:nth-child(4):before {
+    top: 8px;
+  }
+}
+.ucab-regform-button {
+  position: absolute;
+  top: 288px;
+  left: 44px;
+  width: 210px;
+  height: 35px;
+  font-size: 12px;
+  line-height: 35px;
+}
+@media screen and (max-width: 767px) {
+  .ucab-regform-button {
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+  }
+}

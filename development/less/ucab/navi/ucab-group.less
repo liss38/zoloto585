@@ -11,4 +11,35 @@
 	&--active {
 		height: auto;
 	}
+
+
+	&--login {
+		background: url(@img-thingies-ucab-login-bg-1) center top no-repeat;
+
+
+		@media @touch-between {
+			// height: 435px;
+			background-image: url(@img-thingies-ucab-login-bg-2);
+		}
+
+
+		@media @mobile-portrait {
+			// height: 435px;
+			background-image: url(@img-thingies-ucab-login-bg-4);
+		}
+	}
+}
+
+.ucab-group--active.ucab-group--login {
+	height: 450px;
+
+
+	@media @touch-between {
+		height: 435px;
+	}
+
+
+	@media @mobile-portrait {
+		height: 328px;
+	}
 }
