@@ -1,16 +1,34 @@
-<div class="sction">
-	<div class="section__inner">
-		<form action="" class="ucab-regform">
+<div class="sction  ucab-recovery">
+	<div class="section__inner  ucab-recovery__inner">
 
-			<div class="form-field  ucab-regform-field">
-				<label for="ucab-regform-email" class="form-label">email</label>
-				<div class="form-textline">
-					<input id="ucab-regform-email" type="text" class="form-textline__default  js-mask-email">
-					<span class="form-textline__icon"></span>
-				</div>
+		<!-- если такого пользователя нет -->
+		<div id="ucab-recanswer-no" class="ucab-recanswer">
+			В интернет-магазине нет зарегистрированного пользователя с e-mail q@as.ru.
+			Возможно, Вы ошиблись при написании адреса. Попробуйте еще раз.
+		</div>
+
+
+		<!-- такой пользователь найден -->
+		<div id="ucab-recanswer-yes" class="ucab-recanswer">
+			На e-mail max@yandex.ru выслано письмо с Вашим логином и паролем. Проверить почту на yandex.ru
+		</div>
+
+
+		<!-- стартовое сообщение -->
+		<div id="ucab-recanswer-info" class="ucab-recanswer  ucab-recanswer--active">
+			В форму ниже введите свой электронный адрес, указанный при регистрации, и через несколько минут на Ваш E-mail придет письмо с паролем
+		</div>
+
+
+		<form action="" class="ucab-recform">
+
+			<div class="form-textline  ucab-recform-field">
+				<input id="ucab-regform-email" type="text" class="form-textline__default  js-mask-email">
+				<span class="form-textline__icon"></span>
 			</div>
 
-			<input type="submit" class="b-button  ucab-regform-button" value="Восстановить пароль">
+
+			<input type="submit" class="b-button  ucab-recform-button" value="Восстановить пароль">
 
 		</form>
 
