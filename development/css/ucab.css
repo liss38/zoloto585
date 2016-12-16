@@ -2435,219 +2435,66 @@
 }
 @media screen and (max-width: 479px) {
   .ucab-registration__inner {
-    width: 300px;
+    min-width: 270px;
+    width: 270px;
     height: 850px;
   }
 }
-/*
-	CABINET-REGISTRATION
-*/
-.cabinet-registration-if-you {
-  height: 101px;
-  padding: 13px 70px;
-  background: #fefefe url("../images/cabinet/question.png") 20px 30px no-repeat;
-  font: 12px/18px "Circe-Regular";
-  color: #666;
-}
-.cabinet-registration-if-you__header {
-  padding-left: 10px;
-  font-size: 14px;
-}
-.cabinet-registration-if-you__item {
-  padding-left: 10px;
-  position: relative;
-}
-.cabinet-registration-if-you__item:before {
-  content: "-";
-  display: block;
-  width: 10px;
-  height: 5px;
-  position: absolute;
-  top: 0;
-  left: 0px;
-}
-.cabinet-registration-if-you__item-link {
-  text-decoration: underline;
-  color: #666;
-}
-.cabinet-registration-if-you__item-link:hover {
-  text-decoration: none;
-  color: #ed3030;
-}
-.cabinet-registration-form {
-  width: 300px;
-  height: 422px;
-  left: 450px;
-}
-.cabinet-registration-form__header {
-  display: block;
-  padding: 0;
+.ucab-if-you-header {
   margin: 0;
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0px 1px 0px 0px #f6f6f6;
-  text-align: center;
-  text-transform: uppercase;
-  font: 14px/60px "Circe-Regular";
-  color: #ed3030;
+  padding: 13px 70px 0 80px;
+  font-size: 14px;
+  font-weight: 400;
 }
-/* разметка полей формы */
-.cabinet-registration-form__email-label,
-.cabinet-registration-form__password-label {
-  display: block;
-  text-transform: uppercase;
-  font: 11px/11px "Circe-Regular";
-  color: #303030;
-  position: absolute;
-  left: 50px;
-}
-.cabinet-registration-form__email-field,
-.cabinet-registration-form__password-field {
-  display: block;
-  width: 200px;
-  height: 30px;
-  padding: 0 10px 0 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e2dedf;
-  border-radius: 2px;
-  outline: none;
-  position: absolute;
-  left: 50%;
-  margin-left: -100px;
-}
-.cabinet-registration-form__email-field:hover,
-.cabinet-registration-form__password-field:hover {
-  border: 1px solid #ed3838;
-}
-.cabinet-registration-form__email-label:before,
-.cabinet-registration-form__password-label:before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: url("../images/cabinet/cabinet__icos_sprite.png") 0 0 no-repeat;
-  position: absolute;
-  left: 0;
-  bottom: -32px;
-  z-index: 10;
-}
-.cabinet-registration-form__email-label:before {
-  background-position: -30px -119px;
-}
-.cabinet-registration-form__password-label:before {
-  background-position: -30px -151px;
-}
-.cabinet-registration-form__email-label {
-  top: 85px;
-}
-.cabinet-registration-form__email-field {
-  top: 98px;
-}
-.cabinet-registration-form__password-label {
-  top: 138px;
-}
-.cabinet-registration-form__password-field {
-  top: 151px;
-}
-.cabinet-registration-form-agreement {
-  display: block;
-  width: 175px;
-  height: 170px;
-  font: 10px/12px "Circe-Regular";
-  color: #bcbcbc;
-  position: absolute;
-  top: 195px;
-  left: 75px;
-}
-.cabinet-registration-form-agreement__link {
-  text-decoration: underline;
-  color: #bcbcbc;
-}
-.cabinet-registration-form-agreement__link:hover {
-  text-decoration: none;
-  color: #666;
-}
-.cabinet-registration-form__agree-field {
-  display: block;
-  width: 15px;
-  height: 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #e2dedf;
-  border-radius: 2px;
-  position: absolute;
-  top: 196px;
-  left: 53px;
-  cursor: pointer;
-}
-.cabinet-registration-form__agree-field--true:before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: url("../images/cabinet/cabinet__icos_sprite.png") -30px -240px no-repeat;
-  position: absolute;
-  top: -9px;
-  left: -8px;
-}
-@media screen and (max-width: 459px) {
-  .cabinet-registration-if-you {
-    top: 720px;
-  }
-  .cabinet-registration-form {
-    top: 19px;
-    height: 370px;
-  }
-  .cabinet-registration-form__email-label,
-  .cabinet-registration-form__password-label {
-    left: 39px;
-  }
-  .cabinet-registration-form__email-label:before,
-  .cabinet-registration-form__password-label:before {
-    left: -5px;
-  }
-  .cabinet-registration-form__agree-field {
-    left: 38px;
-  }
-  .cabinet-registration-form-agreement {
-    left: 61px;
-  }
-  .cabinet-registration-if-you {
-    background-size: 24px 24px;
-    background-position: 16px 34px;
-  }
-  .cabinet-registration-if-you {
-    padding: 13px 10px 13px 50px;
-  }
-  .cabinet-registration-if-you__header {
+@media screen and (max-width: 479px) {
+  .ucab-if-you-header {
+    padding-left: 60px;
     font-size: 11px;
     line-height: 18px;
   }
-  .cabinet-registration-if-you__item {
+}
+.ucab-if-you {
+  margin: 0;
+  padding: 0 70px 0 80px;
+  list-style: none;
+  background: url('../img/sprites/sprite__ucab-question.png') 20px 0 no-repeat;
+}
+.ucab-if-you__item {
+  position: relative;
+  font-size: 12px;
+  line-height: 18px;
+}
+.ucab-if-you__item:before {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  content: '- ';
+  display: inline-block;
+  width: 10px;
+  height: 5px;
+}
+.ucab-if-you__item a {
+  text-decoration: underline;
+  color: #666;
+}
+.ucab-if-you__item a:hover {
+  text-decoration: none;
+  color: #ed3030;
+}
+@media screen and (max-width: 479px) {
+  .ucab-if-you__item {
     width: 212px;
     font-size: 11px;
     line-height: 18px;
   }
 }
-@media screen and (min-width: 460px) and (max-width: 749px) {
-  .cabinet-registration-form__email-label,
-  .cabinet-registration-form__password-label {
-    left: 93px;
-  }
-  .cabinet-registration-form__email-label:before,
-  .cabinet-registration-form__password-label:before {
-    left: -5px;
-  }
-  .cabinet-registration-form__agree-field {
-    left: 89px;
-  }
-  .cabinet-registration-form-agreement {
-    left: 113px;
+@media screen and (max-width: 479px) {
+  .ucab-if-you {
+    padding: 0 10px 13px 60px;
+    background-size: 24px 24px;
+    background-position: 15px 5px;
   }
 }
-/*****************************************************************************************/
 .ucab-regblock {
   position: absolute;
   display: block;
@@ -2775,6 +2622,11 @@
   height: 30px;
   background: url('../img/sprites/sprite__ucab-icos.png') 0 0 no-repeat;
 }
+@media screen and (max-width: 479px) {
+  .ucab-reginfo__item:before {
+    left: -45px;
+  }
+}
 .ucab-reginfo__item:nth-child(1):before {
   background-position: left 5px;
 }
@@ -2794,6 +2646,11 @@
 .ucab-reginfo__item a:hover {
   text-decoration: none;
   color: #ed3030;
+}
+@media screen and (max-width: 479px) {
+  .ucab-reginfo {
+    padding-left: 60px;
+  }
 }
 @media screen and (max-width: 459px) {
   .cabinet-registration-info {
@@ -2819,6 +2676,134 @@
   }
   .cabinet-registration-info__item:nth-child(4):before {
     top: 8px;
+  }
+}
+.ucab-regform-header {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 1px 0px 0px #f6f6f6;
+  text-align: center;
+  text-transform: uppercase;
+  font: 400 14px/60px 'Circe';
+  color: #ed3030;
+}
+.ucab-regform-field {
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+}
+.ucab-regform-field:nth-child(1) {
+  top: 85px;
+}
+.ucab-regform-field:nth-child(2) {
+  top: 138px;
+}
+.ucab-regform-field .form-label {
+  display: block;
+  font-size: 11px;
+  line-height: 11px;
+  color: #333;
+}
+.ucab-regform-field .form-textline {
+  height: 30px;
+}
+.ucab-regform-field .form-textline:hover {
+  border-color: #b32024;
+}
+.ucab-regform-field .form-textline__icon {
+  width: 30px;
+  background-color: #fff;
+  border-right: 0;
+}
+.ucab-regform-field .form-textline__icon:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/sprites/sprite__ucab-icos.png');
+  background-repeat: no-repeat;
+}
+.ucab-regform-field .form-textline__default {
+  padding-left: 35px;
+  padding-right: 10px;
+}
+.ucab-regform-field:nth-child(1) .form-textline__icon:before {
+  background-position: -30px -119px;
+}
+.ucab-regform-field:nth-child(2) .form-textline__icon:before {
+  background-position: -30px -151px;
+}
+.ucab-regform-text {
+  position: absolute;
+  top: 195px;
+  left: 75px;
+  display: block;
+  width: 175px;
+  height: 170px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #bcbcbc;
+}
+.ucab-regform-text a {
+  text-decoration: underline;
+  color: #bcbcbc;
+}
+.ucab-regform-text a:hover {
+  text-decoration: none;
+  color: #666;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-regform-text {
+    left: 113px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-regform-text {
+    left: 61px;
+  }
+}
+.ucab-regform-proof {
+  position: absolute;
+  top: 196px;
+  left: 53px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #e2dedf;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.ucab-regform-proof input {
+  display: none;
+}
+.ucab-regform-proof input:checked + label {
+  background: url('../img/sprites/sprite__ucab-icos.png') -30px -240px no-repeat;
+}
+.ucab-regform-proof label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .ucab-regform-proof {
+    left: 89px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .ucab-regform-proof {
+    left: 38px;
   }
 }
 .ucab-regform-button {

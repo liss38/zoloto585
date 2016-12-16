@@ -2,10 +2,11 @@
 	<div class="section__inner ucab-registration__inner">
 
 		<div class="ucab-regblock">
-			<ul class="cabinet-registration-if-you">
-				<li class="cabinet-registration-if-you__header">Если Вы</li>
-				<li class="cabinet-registration-if-you__item">уже получили бонусную карту</li>
-				<li class="cabinet-registration-if-you__item">уже ранее регистрировались на сайте, пожалуйста, <a href="#" class="cabinet-registration-if-you__item-link">восстановите Ваш пароль>></a></li>
+			<h3 class="ucab-if-you-header">Если Вы</h3>
+
+			<ul class="ucab-if-you">
+				<li class="ucab-if-you__item">уже получили бонусную карту</li>
+				<li class="ucab-if-you__item">уже ранее регистрировались на сайте, пожалуйста, <a href="#">восстановите Ваш пароль>></a></li>
 			</ul>
 		</div>
 
@@ -21,20 +22,41 @@
 
 
 		<div class="ucab-regblock">
-			<h2 class="cabinet-registration-form__header">Регистрация</h2>
+
+			<h3 class="ucab-regform-header">Регистрация</h3>
+
 			<form action="" class="ucab-regform">
-				<label for="cabinet-registration-form-email" class="cabinet-registration-form__email-label">email</label>
-				<input type="text" id="cabinet-registration-form-email" class="cabinet-registration-form__email-field" />
 
-				<label for="cabinet-registration-form-password" class="cabinet-registration-form__password-label">введите пароль</label>
-				<input type="password" id="cabinet-registration-form-password" class="cabinet-registration-form__password-field" />
+				<div class="form-field  ucab-regform-field">
+					<label for="ucab-regform-email" class="form-label">email</label>
+					<div class="form-textline">
+						<input id="ucab-regform-email" type="text" class="form-textline__default  js-mask-email">
+						<span class="form-textline__icon"></span>
+					</div>
+				</div>
 
-				<label for="" class="cabinet-registration-form-agreement">Нажимая кнопку Зарегистрироваться, я подтверждаю свою дееспособность, ознакомление с <a href="#" class="cabinet-registration-form-agreement__link">правилами программы лояльности</a>, и даю <a href="#" class="cabinet-registration-form-agreement__link">согласие установленной формы</a> на обработку моих персональных данных.</label>
-				<div class="cabinet-registration-form__agree-field cabinet-registration-form__agree-field--true"></div>
-				<input type="hidden" id="cabinet-registration-form__agree-value" name="checkBoxValue" value="true" />
-				<!-- <input type="checkbox" class="cabinet-registration-form__agree-field"> -->
 
-				<input type="text" class="b-button  ucab-regform-button" value="зарегистрироваться" />
+				<div class="form-field  ucab-regform-field">
+					<label for="ucab-regform-password" class="form-label">введите пароль</label>
+					<div class="form-textline">
+						<input id="ucab-regform-password" type="password" class="form-textline__default  js-mask-password">
+						<span class="form-textline__icon"></span>
+					</div>
+				</div>
+
+				<div class="ucab-regform-text">
+					Нажимая кнопку Зарегистрироваться, я подтверждаю свою дееспособность, ознакомление с <a href="#">правилами программы лояльности</a>, и даю <a href="#">согласие установленной формы</a> на обработку моих персональных данных.
+				</div>
+
+
+				<div class="ucab-regform-proof">
+					<input id="ucab-regform-proof" type="checkbox">
+					<label for="ucab-regform-proof"></label>
+				</div>
+
+
+				<input type="submit" class="b-button  ucab-regform-button" value="зарегистрироваться" />
+
 			</form>
 		</div>
 

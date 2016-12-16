@@ -1,0 +1,59 @@
+.ucab-if-you {
+	margin: 0;
+	padding: 0 70px 0 80px;
+
+	list-style: none;
+
+	background: url(@img-sprite-ucab-question) 20px 0 no-repeat;
+
+
+	&__item {
+		position: relative;
+
+		font-size: 12px;
+		line-height: 18px;
+
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: -10px;
+
+			content: '- ';
+
+			display: inline-block;
+			width: 10px;
+			height: 5px;
+		}
+
+
+		a {
+			text-decoration: underline;
+			color: #666;
+
+
+			&:hover {
+				text-decoration: none;
+				color: #ed3030;
+			}
+		}
+
+
+
+		@media @mobile-portrait {
+			width: 212px;
+
+			font-size: 11px;
+			line-height: 18px;
+		}
+	}
+
+
+
+	@media @mobile-portrait {
+		padding: 0 10px 13px 60px;
+
+		background-size: 24px 24px;
+		background-position: 15px 5px;
+	}
+}
