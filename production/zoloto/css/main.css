@@ -146,6 +146,7 @@
 /* значкм с доставкой и т.п. в футере */
 /* значки соц сетей в футере */
 /* значения координат не верные */
+/* для личного кабинета */
 /*
 	PATTERNS
 	********
@@ -164,6 +165,7 @@
 	********
 	тени, рюшечки, вензеля и т.п.
 */
+/* используется в кабинете */
 /*
 	STUB
 	****
@@ -277,42 +279,39 @@ body {
   box-sizing: border-box;
 }
 .section__inner {
+  position: relative;
+  margin: 0 auto;
   width: 100%;
   max-width: 1000px;
   min-width: 300px;
-  margin: 0 auto;
-  position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.section__inner:before,
-.section__inner:after {
-  content: " ";
+.section__inner:before {
+  content: '';
   display: table;
 }
 .section__inner:after {
+  content: '';
+  display: table;
   clear: both;
 }
-/*@tablet Album*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .section__inner {
     width: 750px;
   }
 }
-/*@tablet Portrait*/
 @media screen and (min-width: 640px) and (max-width: 767px) {
   .section__inner {
     width: 620px;
   }
 }
-/*@mobile Album*/
 @media screen and (min-width: 480px) and (max-width: 639px) {
   .section__inner {
     width: 460px;
   }
 }
-/*@mobile Portrait*/
 @media screen and (max-width: 479px) {
   .section__inner {
     width: 300px;
@@ -599,6 +598,12 @@ body {
     height: 50px;
     line-height: 50px;
   }
+}
+.form-label {
+  text-transform: uppercase;
+  font-family: 'Circe';
+  font-weight: 400;
+  color: #666;
 }
 /*
 	КАСТОМИЗАЦИЯ ДЛЯ <input type="text">

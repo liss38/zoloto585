@@ -134,7 +134,7 @@ gulp.task('make-dev', ['make-css-ext', 'make-main-css', 'make-index-css', 'make-
 	2PROD
 */
 // make-prod
-gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-regcard-css', 'make-404-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
+gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
 	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
@@ -146,7 +146,7 @@ gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css
 
 // msalnikov.min.css для ПРОДА
 gulp.task('make-msalnikov-css', function () {
-	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/registration-card.min.css', 'production/zoloto/css/page-404.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
+	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/registration-card.min.css', 'production/zoloto/css/page-404.min.css', 'production/zoloto/css/ucab.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
 		.pipe(concat('msalnikov.min.css'))
 		// .pipe(cssmin())
 		// .pipe(rename({suffix: '.min'}))
