@@ -64,7 +64,7 @@ var navBanners = {
 		},
 
 		'WWatch': {
-			
+
 		},
 
 		init: function (id, banners) {
@@ -76,8 +76,8 @@ var navBanners = {
 
 
 
-/*document.querySelector('.main-nav__item[data-inner-list="1"]').innerHTML += navBanners['Engagement Rings']();
+document.querySelector('.main-nav__item[data-inner-list="1"]').innerHTML += navBanners['Engagement Rings']();
 document.querySelector('.main-nav__item[data-inner-list="7"]').innerHTML += navBanners['Silver']();
-document.querySelector('.main-nav__item[data-inner-list="6"]').innerHTML += navBanners['Watch']();*/
+document.querySelector('.main-nav__item[data-inner-list="6"]').innerHTML += navBanners['Watch']();
 
 navBanners.init(6, navBanners['Watch']());

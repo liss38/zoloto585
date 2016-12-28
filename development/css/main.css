@@ -1214,7 +1214,7 @@ body {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 150px;
+  width: 170px;
   height: 100%;
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -1230,7 +1230,7 @@ body {
 .top-phone__button:before {
   position: absolute;
   top: 50%;
-  left: 8px;
+  left: 20px;
   margin-top: -10px;
   content: '';
   display: block;

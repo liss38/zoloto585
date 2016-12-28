@@ -4,13 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, maximum-scale=1">
 
-		<!-- <link href="http://zoloto585.ru/bitrix/templates/zoloto/js/fotorama/fotorama.css" type="text/css" rel="stylesheet" /> -->
-		<!-- FOTORAMA -->
-
-
-		<link href="css/main.min.css" type="text/css" rel="stylesheet" />
-		<link href="css/pcard.min.css" type="text/css" rel="stylesheet" /><!--  -->
-		<link href="css/after_all.min.css" type="text/css" rel="stylesheet" /><!-- хэлперы -->
+		@@include('blocks/css-list.html')
 	</head>
 	<body>
 		<header>
@@ -19,18 +13,21 @@
 
 
 		<main>
+			@@include('blocks/pcard/pcard-breadcrumbs.html')
 			@@include('blocks/pcard/pcard-main.html')
+			@@include('blocks/pcard/pcard-order.html')
+			@@include('blocks/pcard/pcard-description.html')
+			<!-- // @@include('blocks/pcard/pcard-video.html') -->
+			@@include('blocks/pcard/pcard-reviews.html')
+
+			<!-- модальные окна -->
+			@@include('blocks/pcard/pcard-motivate.html')
+
 		</main>
 
 
 		<footer>
-			<!-- "FOOTER-ALL" -->
-			<div class="section footer-all">
-				<div class="section__inner footer-all__inner">
-					
-				</div>
-			</div>
-			<!-- END-of-"FOOTER-ALL" -->
+			@@include('blocks/footer.html')
 		</footer>
 
 

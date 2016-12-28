@@ -1,0 +1,130 @@
+<!-- PCARD-OREDR -->
+		<div class="pcard-order">
+			<div class="pcard-order__close-but"></div>
+			<!-- ШАГ 1 -->
+			<div class="pcard-order__step pcard-order__step-1">
+				<h2 class="pcard-order__header"><span class="pcard-order-step__title">1 ШАГ. Бронировать товар<span><span class="pcard-order__colon">:</span> <span class="pcard-order-step__state"></span></h2>
+				<div class="pcard-order__content  pcard-order-promo">
+
+					<b>Есть промокод<br>или бонусная карта?</b>
+
+					<div class="pcard-order-promo-forms  h-clearfix">
+						<form id="pcard-promo-code-form" action="" class="pcard-promo-code-form">
+							<div class="from-field">
+								<label for="" class="form-label">Введите промокод</label>
+								<div class="form-textline">
+									<input id="pcard-promo-code-field" type="text" class="form-textline__default">
+									<span class="form-textline__icon"></span>
+								</div>
+							</div>
+							<input id="pcard-promo-code-button" type="submit" class="b-button  pcard-order-promo-submit" value="Ok">
+							<div class="pcard-order-promo-warning">Пожалуйста, введите данные корректно.</div>
+						</form>
+						<form id="pcard-bonus-card-form" action="" class="pcard-bonus-card-form">
+							<div class="from-field">
+								<label for="" class="form-label">Введите номер бонусной карты</label>
+								<div class="form-textline">
+									<input id="pcard-bonus-card-field" type="text" maxlength="16" class="form-textline__default">
+									<span class="form-textline__icon"></span>
+								</div>
+							</div>
+							<input id="pcard-bonus-card-button" type="submit" class="b-button  pcard-order-promo-submit" value="Ok">
+							<div class="pcard-order-promo-warning">Пожалуйста, введите данные корректно.</div>
+						</form>
+					</div>
+					<div class="pcard-order-promo-total  h-clearfix">
+						<span class="pcard-order-promo-total__text">Итоговая стоимость:</span>
+						<span class="pcard-order-promo-total__before"><b>8999</b><span>руб</span></span>
+						<span class="pcard-order-promo-total__after"><b>399</b><span>руб</span></span>
+					</div>
+
+					<cite>Внимание, специальная цена действительна только при бронировании товаров на сайте</cite>
+
+					<div class="b-button  order-button-to-getshop">Перейти к выбору магазина&nbsp;&gt;</div>
+				</div>
+			</div>
+
+			<!-- ШАГ 2 -->
+			<div class="pcard-order__step pcard-order__step-2">
+				<h2 class="pcard-order__header"><span class="pcard-order-step__title">2 ШАГ.МАГАЗИН ВЫБРАН</span><span class="pcard-order__colon">:</span> <span class="pcard-order-step__state"></span></h2>
+				<div class="pcard-order__content">
+					<div class="pcard-order-scheme">
+						<b class="pcard-order-scheme__map active">На карте</b>
+						<b class="pcard-order-scheme__metro">На схеме метро</b>
+					</div>
+					<div class="pcard-order-city">
+						<label class="pcard-order-city__label" for="pcard-order-city__search">Ваш город:</label>
+						<!-- pcard.js-> $city.append(htmlCitiesList()) -->
+
+						<span class="pcard-order-city__result-text">Найдено</span>
+						<span class="pcard-order-city__result-value">35 магазинов</span>
+					</div>
+					<div class="pcard-order-shops">
+						<label class="pcard-order-shops__label" for="pcard-order-city__search">Адрес магазина:</label>
+						<!-- pcard.js-> $pcardOrderShops.append(htmlShopPointsList() -->
+
+						<div class="pcard-order-shops__map">
+							<div class="pcard-map-shop">
+								<div class="pcard-map-shop__header">
+									<div class="pcard-map-shop__address"></div>
+									<div class="pcard-map-shop__close-but">X</div>
+								</div>
+								<div class="pcard-map-shop__content">
+									<div class="pcard-map-shop__when">можно забрать:</div>
+									<div class="pcard-map-shop__when_strike">завтра</div>
+									<div class="pcard-map-shop__time"></div>
+									<div class="pcard-map-shop__button">бронировать изделие</div>
+								</div>
+							</div>
+							<div id="pcard-map-container" class="pcard-map-container" style="height: 365px;">
+								<!--<img src="http://placehold.it/450x365?text=google+map">-->
+							</div>
+						</div>
+						<div class="pcard-order-shops__metro"><img src="http://placehold.it/450x365?text=metro+scheme"></div>
+					</div>
+
+					<div class="pcard-order-info">
+						<p class="pcard-order-info__header">ВНИМАНИЕ! ТОВАР МОЖЕТ ЗАКОНЧИТЬСЯ! ЗАБРОНИРУЙТЕ ТОВАР НА САЙТЕ, ПЕРЕД ТЕМ, КАК ИДТИ В МАГАЗИН.</p>
+						<p class="pcard-order-info__text">В Ювелирной сети 585GOLD большинство украшений представлено в единичных экземплярах. Для того, чтобы быть уверенным, что понравившееся украшение дождется вас в магазине, забронируйте его на сайте <span class="pcard-order-info__important">БЕСПЛАТНО</span>. Если, по какой-либо причине, вы не сможете воспользоваться бронью, то она автоматически снимется с товара через 3 дня.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- ШАГ 3 -->
+			<div class="pcard-order__step pcard-order__step-3">
+				<h2 class="pcard-order__header"><span class="pcard-order__return"></span><span class="pcard-order-step__title">3 ШАГ. Подтверждение бронирования</span><span class="pcard-order__colon">:</span> <span class="pcard-order-step__state"></span></h2>
+				<div class="pcard-order__content">
+					<form class="pcard-order-form pcard-order__user-phone">
+						<label class="pcard-order-form__label" for="pcard-order-user-phone">введите номер телефона:</label>
+						<input class="pcard-order-form__field" id="pcard-order-user-phone" type="text" placeholder="введите номер телефона">
+						<input class="pcard-order-form__button pcard-order__submit-phone" type="submit" value="получить смс код">
+					</form>
+
+					<p class="pcard-order-form__notice">Мы гарантируем конфиденциальность данных. Введение номера телефона необходимо для подтверждения бронирования товара.</p>
+					<div class="pcard-order-form__message">
+						<p>Вам отправлен SMS код!</p>
+						<p>Введите полученный номер в поле ниже для подтверждения Вашего заказа. </p>
+					</div>
+
+					<form class="pcard-order-form pcard-order__sms-code">
+						<label class="pcard-order-form__label" for="pcard-order-sms-code">Код подтверждения:</label>
+						<input class="pcard-order-form__field" id="pcard-order-sms-code" type="text" placeholder="введите код из смс">
+						<input class="pcard-order-form__button pcard-order__submit-smscode" type="submit" value="подтвердить заказ">
+					</form>
+
+				</div>
+			</div>
+
+			<!-- ШАГ 4 -->
+			<div class="pcard-order__step pcard-order__step-4">
+				<div class="pcard-order__content step-4__content">
+					<h3 class="step-4-text-1">Ваша заявка № 0000 принята</h3>
+					<div class="step-4-text-2">Мы поверяем наличие товара <span class="step-4__item-info">«Кольцо серебряное с керамикой и фианитами, № 07-0546, размер 5»</span> в магазине по адресу: <span class="step-4__store-info">Санкт-Петербург, ул. Площадь восстания, д. 15, TRK «Галерея», этаж 2.</span></div>
+					<div class="step-4-text-3">В течение нескольких часов Вы получите <span class="step-4__sms">SMS с подтверждением бронирования товара.</span></div>
+					<div class="step-4-text-4">Подтверждение бронирования производится в рабочее время магазина (с <span class="step-4__store-time">10.00 до 19.00</span> часов). В случае возникновения вопросов - пишите нам на <a class="step-4__email-link" href="mailto: eshop@zoloto585.ru">eshop@zoloto585.ru</a></div>
+					<div class="step-4-text-5">Спасибо, что выбрали Ювелирную сеть 585GOLD!</div>
+					<div class="step-4-img"><img src="http://placehold.it/390x190" alt=""></div>
+				</div>
+			</div>
+		</div>
+		<!-- END-of-PCARD-OREDR -->

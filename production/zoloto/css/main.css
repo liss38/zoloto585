@@ -720,6 +720,7 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   text-align: center;
+  text-decoration: none;
   font: 400 14px/40px 'Circe';
   color: #fff;
   /*safari, iOS*/
@@ -1182,7 +1183,7 @@ body {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 150px;
+  width: 170px;
   height: 100%;
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -1198,7 +1199,7 @@ body {
 .top-phone__button:before {
   position: absolute;
   top: 50%;
-  left: 8px;
+  left: 20px;
   margin-top: -10px;
   content: '';
   display: block;
@@ -2519,6 +2520,95 @@ body {
     float: right;
     width: 190px;
   }
+}
+.nav-banners {
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 510px;
+  height: 330px;
+}
+.nav-banners--type-1 {
+  right: 10px;
+  width: 510px;
+  height: 330px;
+}
+.nav-banners--type-2 {
+  right: 10px;
+  width: 440px;
+  height: 330px;
+}
+.nav-banners--type-3 {
+  left: 0;
+  width: 590px;
+  height: 270px;
+}
+.nav-banners__item {
+  position: absolute;
+  display: block;
+  border: 1px solid #dedede;
+}
+.nav-banners__item:hover {
+  border-color: #ed3030;
+}
+.nav-banners__item--type-1 {
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 160px;
+}
+.nav-banners__item--type-2 {
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  height: 160px;
+}
+.nav-banners__item--type-3 {
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 330px;
+}
+.nav-banners__item--type-4 {
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 330px;
+}
+.nav-banners__item--type-5 {
+  width: 290px;
+  height: 130px;
+}
+.nav-banners__item--type-5:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.nav-banners__item--type-5:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+.nav-banners__item--type-5:nth-child(3) {
+  left: 0;
+  bottom: 0;
+}
+.nav-banners__item--type-5:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+.nav-banners-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nav-banners-button {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  margin-left: -100px;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
 }
 /* FOOTER-INFO @IMPORT */
 .footer {
