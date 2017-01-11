@@ -88,7 +88,7 @@
 		if(num.length) {
 			$.getJSON("/cabinet/add_card.php", {numbk: num}, function (data) {
 				if (data.success == 1) {
-				    location.reload();
+					location.reload();
 				} else {
 					//card-exist - карта уже привязана к пользователю
 					//card-not-find - карта не найдена
@@ -103,6 +103,7 @@
 	// авторизация
 	$(document).on('submit', '.ucab-login-form', function () {
 		console.log('submit');
+		return true;
 	});
 
 
