@@ -27,7 +27,7 @@
 			});
 		});
 
-		console.log(dependences[needValue]);
+		// console.log(dependences[needValue]);
 
 		needArray[0] = '#' + dependences[needValue][0];
 		needArray[1] = '#' + dependences[needValue][1];
@@ -51,35 +51,9 @@
 
 	$(".profile-user-data-store").fancySelect();
 
-	//подстановка полей при регистрации
-	$(".ucab-regblock form").on("submit",function(){
-		var email = $('[name="REGISTER[EMAIL]"]').val();
-		var password = $('[name="REGISTER[PASSWORD]"]').val();
 
-		if (email.length>0)
-			$('[name="REGISTER[LOGIN]"]').val(email);
-		else
-			$('[name="REGISTER[LOGIN]"]').val("login");
 
-		if (password.length>0)
-			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val(password);
-		else
-			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");
-
-		return true;
-	});
-
-	//подстановка логина при редактированни профиля
-	$("form.profile-info-form").on("submit",function(){
-		var email = $('[name=EMAIL]').val();
-
-		if (email.length>0)
-			$('[name=LOGIN]').val(email);
-		else
-			$('[name=LOGIN]').val("login");
-
-		return true;
-	});
+	
 
 	//добавить карту
 	$("#add-card").on("click",function () {
@@ -100,13 +74,6 @@
 	});
 
 
-	// авторизация
-	$(document).on('submit', '.ucab-login-form', function () {
-		console.log('submit');
-		return true;
-	});
-
-
 	//выслать карту
 	$(".bonuses-card-identifier__sms-button").on("click",function () {
 		$.getJSON("/cabinet/get_card.php", function (data) {
@@ -122,13 +89,122 @@
 	})
 
 
-	// бегунок уровня скидки
-	// $('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level', '2'); // ## для тестирования, потом удалить
+	
+});
+
+
+
+// "ЛИЧНЫЙ КАБИНЕТ", вкладка "ПРОФИЛЬ"
+//подстановка логина при редактированни профиля
+;$(function () {
+	$(document).on('submit', '.profile-info-form', function (event) {
+		/*var email = $('[name=EMAIL]').val();
+
+		if (email.length>0)
+			$('[name=LOGIN]').val(email);
+		else
+			$('[name=LOGIN]').val("login");
+
+		return true;*/
+
+		event.preventDefault();
+
+		var profileInfo = [
+				$('#profile-user-data-surname'),
+				$('#profile-user-data-name'),
+				$('#profile-user-data-middlename'),
+				$('#profile-user-data-birth'),
+				$('#profile-user-data-mobile'),
+				$('#profile-user-data-email')
+			];
+
+		profileInfo.forEach(function (item, index, array) {
+			item.val().length > 0 ? 
+				item.parent('.profile-field-row').removeClass('check-field--invalid').addClass('check-field--valid') : 
+				item.parent('.profile-field-row').removeClass('check-field--valid').addClass('check-field--invalid');
+		});
+	});
+});
+
+
+
+
+// "ЛИЧНЫЙ КАБИНЕТ", вкладка "БОНУСЫ"
+// // бегунок уровня скидки
+;$(function () {
+
+	// $('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level', '9'); // ## для тестирования, потом эту строку удалить
 
 	var discountLevelMax = 10;
-
 	var dataDiscountLevel = +$('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level'); //data-discount-level
-	// console.log(dataDiscountLevel);
 
 	$('.bonuses-discount-level-progress-line__rhomb').css({'left' : dataDiscountLevel / discountLevelMax * 100 + '%'});
 });
+
+
+// ucab-regform
+//подстановка полей при регистрации
+;$(function () {
+
+	$(document).on('submit', '.ucab-regform', function (event) {
+		/*var email = $('[name="REGISTER[EMAIL]"]').val();
+		var password = $('[name="REGISTER[PASSWORD]"]').val();*/
+
+		/*if (email.length>0)
+			$('[name="REGISTER[LOGIN]"]').val(email);
+		else
+			$('[name="REGISTER[LOGIN]"]').val("login");
+
+		if (password.length>0)
+			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val(password);
+		else
+			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");*/
+
+		// return true;
+
+		event.preventDefault();
+
+		var $email = $('#ucab-regform-email'),
+			$password = $('#ucab-regform-password');
+
+		$email.val().length > 0 ? $email.parent('.form-textline').removeClass('h-error-border') : $email.parent('.form-textline').addClass('h-error-border');
+		$password.val().length > 0 ? $password.parent('.form-textline').removeClass('h-error-border') : $password.parent('.form-textline').addClass('h-error-border');
+	});
+});
+
+
+
+
+// "ЛИЧНЫЙ КАБИНЕТ", АВТОРИЗАЦИЯ
+// авторизация(по карте, по email, по телефону)
+;$(function () {
+	$(document).on('submit', '.ucab-login-form', function (event) {
+		event.preventDefault();
+
+		var $password = $(this).find('input[type=password]'),
+			$login = $(this).find('input[type=text]');
+
+		$password.val().length < 1 ? $password.addClass('h-error-border') : $password.removeClass('h-error-border');
+		$login.val().length < 1 ? $login.addClass('h-error-border') : $login.removeClass('h-error-border');
+
+
+		// результат проверки пользователя на существование
+		var authSuccess = $password.val() === '123' && $login.val() === '123'; // ##
+
+		if(authSuccess) {
+			// пользователь найден
+			location.href = 'http://localhost/zoloto585/development/user-cabinet.html'; // если все ок, редирект на страницу кабинета
+		} else {
+			// пользователь не найден
+			$('.ucab-login-field').find('input').removeClass('h-error-border');
+			$login.addClass('h-error-border');
+			$password.addClass('h-error-border');
+		}
+	});
+});
+
+
+
+// ;$(function () {});
+// ;$(function () {});
+// ;$(function () {});
