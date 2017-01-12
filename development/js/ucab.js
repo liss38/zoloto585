@@ -50,11 +50,17 @@
 
 
 	$(".profile-user-data-store").fancySelect();
+});
 
 
 
-	
 
+
+
+// "ЛИЧНЫЙ КАБИНЕТ", вкладка "БОНУСЫ"
+// добавление номера бонусной карты
+// выслать номер карты по смс
+;$(function () {
 	//добавить карту
 	$("#add-card").on("click",function () {
 		var num = $(".bonuses-card-identifier__input").val();
@@ -86,11 +92,12 @@
 				alert(data.error);
 			}
 		});
-	})
-
-
-	
+	});
 });
+
+
+
+
 
 
 
@@ -98,17 +105,6 @@
 //подстановка логина при редактированни профиля
 ;$(function () {
 	$(document).on('submit', '.profile-info-form', function (event) {
-		/*var email = $('[name=EMAIL]').val();
-
-		if (email.length>0)
-			$('[name=LOGIN]').val(email);
-		else
-			$('[name=LOGIN]').val("login");
-
-		return true;*/
-
-		event.preventDefault();
-
 		var profileInfo = [
 				$('#profile-user-data-surname'),
 				$('#profile-user-data-name'),
@@ -118,22 +114,46 @@
 				$('#profile-user-data-email')
 			];
 
+		// event.preventDefault();
+
+
+		// обязательные для заполнения поля в Профиле Кабинета
 		profileInfo.forEach(function (item, index, array) {
 			item.val().length > 0 ? 
-				item.parent('.profile-field-row').removeClass('check-field--invalid').addClass('check-field--valid') : 
-				item.parent('.profile-field-row').removeClass('check-field--valid').addClass('check-field--invalid');
+				item.parent('.profile-field-row').removeClass('check-field--invalid').addClass('check-field--valid') : item.parent('.profile-field-row').removeClass('check-field--valid').addClass('check-field--invalid');
 		});
+
+
+		// проверка полей на корректность данных по маске
+		// ... 
+
+
+		// если хотя бы одно из обязательных полей не корректно заполнено отмена отправки формы
+		if($('.check-field--invalid').length > 0) return false;
+
+		var email = $('[name=EMAIL]').val();
+
+
+		if (email.length>0)
+			$('[name=LOGIN]').val(email);
+		else
+			$('[name=LOGIN]').val("login");
+
+		return true;
 	});
 });
 
 
 
 
+
+
+
 // "ЛИЧНЫЙ КАБИНЕТ", вкладка "БОНУСЫ"
-// // бегунок уровня скидки
+// бегунок уровня скидки
 ;$(function () {
 
-	// $('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level', '9'); // ## для тестирования, потом эту строку удалить
+	// $('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level', '2'); // ## для тестирования, потом эту строку удалить
 
 	var discountLevelMax = 10;
 	var dataDiscountLevel = +$('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level'); //data-discount-level
@@ -142,15 +162,40 @@
 });
 
 
-// ucab-regform
+
+
+
+
+
+// "ЛИЧНЫЙ КАБИНЕТ", РЕГИСТРАЦИЯ
 //подстановка полей при регистрации
 ;$(function () {
 
 	$(document).on('submit', '.ucab-regform', function (event) {
-		/*var email = $('[name="REGISTER[EMAIL]"]').val();
-		var password = $('[name="REGISTER[PASSWORD]"]').val();*/
+		var $email = $('#ucab-regform-email'),
+			$password = $('#ucab-regform-password');
 
-		/*if (email.length>0)
+		// удаление пустых символов
+		// ... 
+
+
+		// проверка на пустоту
+		if($email.val().length < 1 || $password.val().length < 1) {
+			$email.val().length > 0 ? $email.parent('.form-textline').removeClass('h-error-border') : $email.parent('.form-textline').addClass('h-error-border');
+			$password.val().length > 0 ? $password.parent('.form-textline').removeClass('h-error-border') : $password.parent('.form-textline').addClass('h-error-border');
+
+			return false;
+		}
+
+
+		// проверка данных по маске(телефон, номер карты, email)
+		// ... 
+
+
+		var email = $('[name="REGISTER[EMAIL]"]').val();
+		var password = $('[name="REGISTER[PASSWORD]"]').val();
+
+		if (email.length>0)
 			$('[name="REGISTER[LOGIN]"]').val(email);
 		else
 			$('[name="REGISTER[LOGIN]"]').val("login");
@@ -158,19 +203,14 @@
 		if (password.length>0)
 			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val(password);
 		else
-			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");*/
+			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");
 
-		// return true;
-
-		event.preventDefault();
-
-		var $email = $('#ucab-regform-email'),
-			$password = $('#ucab-regform-password');
-
-		$email.val().length > 0 ? $email.parent('.form-textline').removeClass('h-error-border') : $email.parent('.form-textline').addClass('h-error-border');
-		$password.val().length > 0 ? $password.parent('.form-textline').removeClass('h-error-border') : $password.parent('.form-textline').addClass('h-error-border');
+		return true;
 	});
 });
+
+
+
 
 
 
@@ -179,27 +219,25 @@
 // авторизация(по карте, по email, по телефону)
 ;$(function () {
 	$(document).on('submit', '.ucab-login-form', function (event) {
-		event.preventDefault();
-
 		var $password = $(this).find('input[type=password]'),
 			$login = $(this).find('input[type=text]');
 
-		$password.val().length < 1 ? $password.addClass('h-error-border') : $password.removeClass('h-error-border');
-		$login.val().length < 1 ? $login.addClass('h-error-border') : $login.removeClass('h-error-border');
+
+		// удаление пустых символов
+		// ... 
 
 
-		// результат проверки пользователя на существование
-		var authSuccess = $password.val() === '123' && $login.val() === '123'; // ##
+		// проверка на пустоту
+		if($password.val().length < 1 || $login.val().length < 1) {
+			$password.val().length < 1 ? $password.addClass('h-error-border') : $password.removeClass('h-error-border');
+			$login.val().length < 1 ? $login.addClass('h-error-border') : $login.removeClass('h-error-border');
 
-		if(authSuccess) {
-			// пользователь найден
-			location.href = 'http://localhost/zoloto585/development/user-cabinet.html'; // если все ок, редирект на страницу кабинета
-		} else {
-			// пользователь не найден
-			$('.ucab-login-field').find('input').removeClass('h-error-border');
-			$login.addClass('h-error-border');
-			$password.addClass('h-error-border');
+			return false;
 		}
+
+
+		// проверка данных по маске(телефон, номер карты, email)
+		// ... 
 	});
 });
 

@@ -1,5 +1,6 @@
 .ucab-regform-field {
 	position: absolute;
+	top: 85px;
 	left: 50%;
 
 	margin-left: -100px;
@@ -7,12 +8,7 @@
 	width: 200px;
 
 
-	&:nth-child(1) {
-		top: 85px;
-	}
-
-
-	&:nth-child(2) {
+	&--password {
 		top: 138px;
 	}
 
@@ -60,20 +56,19 @@
 	}
 
 
-	&:nth-child(1) {
-		.form-textline {
-			&__icon {
+
+	.form-textline {
+		&__icon {
 
 
-				&:before {
-					background-position: -30px -119px;
-				}
+			&:before {
+				background-position: -30px -119px;
 			}
 		}
 	}
 
 
-	&:nth-child(2) {
+	&--password {
 		.form-textline {
 			&__icon {
 

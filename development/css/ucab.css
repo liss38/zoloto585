@@ -2308,6 +2308,7 @@
 }
 .ucab-login-field {
   position: absolute;
+  top: 0px;
   display: block;
   width: 100%;
   height: 30px;
@@ -2315,10 +2316,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.ucab-login-field:nth-child(1) {
-  top: 0px;
-}
-.ucab-login-field:nth-child(2) {
+.ucab-login-field--password {
   top: 58px;
 }
 .ucab-login-field__ico {
@@ -2694,14 +2692,12 @@
 }
 .ucab-regform-field {
   position: absolute;
+  top: 85px;
   left: 50%;
   margin-left: -100px;
   width: 200px;
 }
-.ucab-regform-field:nth-child(1) {
-  top: 85px;
-}
-.ucab-regform-field:nth-child(2) {
+.ucab-regform-field--password {
   top: 138px;
 }
 .ucab-regform-field .form-label {
@@ -2733,10 +2729,10 @@
   padding-left: 35px;
   padding-right: 10px;
 }
-.ucab-regform-field:nth-child(1) .form-textline__icon:before {
+.ucab-regform-field .form-textline__icon:before {
   background-position: -30px -119px;
 }
-.ucab-regform-field:nth-child(2) .form-textline__icon:before {
+.ucab-regform-field--password .form-textline__icon:before {
   background-position: -30px -151px;
 }
 .ucab-regform-text {
