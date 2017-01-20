@@ -687,7 +687,6 @@
 .bonuses-card-identifier-text,
 .bonuses-card-identifier__details-link,
 .bonuses-card-identifier__input,
-.bonuses-card-identifier-text-virtual,
 .bonuses-card-identifier-points,
 .bonuses-card-identifier__sms-button {
   position: absolute;
@@ -697,76 +696,7 @@
   left: 35px;
   text-align: left;
 }
-.bonuses-card-identifier-text-virtual {
-  width: 40px;
-  height: 20px;
-  top: 40px;
-  left: 77px;
-  z-index: 10;
-}
-.bonuses-card-identifier-text-virtual__button {
-  display: block;
-  width: 30px;
-  height: 40px;
-  background: url('../img/sprites/sprite__ucab-questions.png') left -8px no-repeat;
-  position: absolute;
-  top: -40px;
-  right: 50%;
-  margin-right: -15px;
-}
-.bonuses-card-identifier-text-virtual-info {
-  display: none;
-  width: 211px;
-  padding: 5px 9px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #fff;
-  border: 1px solid #eb6666;
-  border-radius: 4px;
-  text-transform: none;
-  font: 300 12px/15px 'Circe';
-  color: #666;
-  top: 42px;
-  left: 50%;
-  margin-left: -85px;
-  z-index: 20;
-}
-.bonuses-card-identifier-text-virtual-info__link {
-  text-decoration: underline;
-  color: #666;
-}
-.bonuses-card-identifier-text-virtual-info__link:hover {
-  text-decoration: none;
-  color: #999;
-}
-/* прорисовка треуглдника для пузыря */
-.bonuses-card-identifier-text-virtual-info:before,
-.bonuses-card-identifier-text-virtual-info:after {
-  content: "";
-  display: block;
-  border: 6px solid transparent;
-  border-bottom: 7px solid #fff;
-  position: absolute;
-  left: 50%;
-  margin-left: -7px;
-  top: -12px;
-  z-index: 10;
-}
-.bonuses-card-identifier-text-virtual-info:after {
-  border: 6px solid transparent;
-  border-bottom: 7px solid #eb6666;
-  top: -13.5px;
-  z-index: 9;
-}
 /*;*/
-/* поведение/всплытие для пузыря*/
-.bonuses-card-identifier-text-virtual:hover .bonuses-card-identifier-text-virtual__button {
-  background-position: -31px -8px;
-}
-.bonuses-card-identifier-text-virtual:hover .bonuses-card-identifier-text-virtual-info {
-  display: block;
-}
 /*;*/
 .bonuses-card-identifier__details-link {
   text-decoration: underline;
@@ -929,12 +859,6 @@
     position: absolute;
     top: -18px;
   }
-  .bonuses-card-identifier-text-virtual__button {
-    top: -42px;
-  }
-  .bonuses-card-identifier-text-virtual {
-    top: 24px;
-  }
   .bonuses-card-identifier__card585-gold {
     width: 124px;
     height: 94px;
@@ -977,12 +901,6 @@
     position: absolute;
     top: -18px;
   }
-  .bonuses-card-identifier-text-virtual__button {
-    top: -42px;
-  }
-  .bonuses-card-identifier-text-virtual {
-    top: 24px;
-  }
   .bonuses-card-identifier__card585-gold {
     background-position: right top;
     background-size: 80% 77%;
@@ -1023,12 +941,6 @@
   .bonuses-card-identifier-text__virtual {
     position: absolute;
     top: -18px;
-  }
-  .bonuses-card-identifier-text-virtual__button {
-    top: -42px;
-  }
-  .bonuses-card-identifier-text-virtual {
-    top: 24px;
   }
   .bonuses-card-identifier__card585-gold {
     background-position: right top;
@@ -1491,6 +1403,209 @@
 .bonuses-card {
   background-color: #e8e8e8;
   border-bottom: 1px solid #dbdbdb;
+}
+.bonuses-card-add-button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 30px;
+  height: 28px;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;
+  line-height: 30px;
+  font-size: 25px;
+}
+.bonuses-card-add-error {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  display: none;
+  vertical-align: bottom;
+  width: 280px;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #ed3030;
+}
+.bonuses-card-add-error:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: 'X';
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 5px 3px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  color: #666;
+  cursor: pointer;
+}
+.bonuses-card-add-error:hover:after {
+  color: #fff;
+  background-color: #ed3030;
+}
+.bonuses-card-add-error--active {
+  display: block;
+}
+.bonuses-card-add-form {
+  position: absolute;
+  top: 42px;
+  left: 200px;
+  display: block;
+  width: 200px;
+  height: 30px;
+}
+@media screen and (max-width: 479px) {
+  .bonuses-card-add-form {
+    left: 0;
+    top: 58px;
+    width: 200px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .bonuses-card-add-form {
+    left: 0px;
+    top: 66px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .bonuses-card-add-form {
+    left: 26px;
+    top: 66px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bonuses-card-add-form {
+    left: 0;
+    top: 66px;
+  }
+}
+.bonuses-card-add-input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 35px 0 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e0ddde;
+  border-radius: 2px;
+  outline: none;
+  text-align: left;
+  text-transform: uppercase;
+  font: 300 11px/30px 'Circe';
+  color: #303030;
+}
+.bonuses-card-identifier-text-virtual {
+  position: absolute;
+  top: 0;
+  left: 77px;
+  z-index: 10;
+  width: 40px;
+  height: 20px;
+}
+.bonuses-card-identifier-text-virtual__button {
+  display: block;
+  width: 30px;
+  height: 40px;
+  background: url('../img/sprites/sprite__ucab-questions.png') left -8px no-repeat;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: -15px;
+}
+.bonuses-card-identifier-text-virtual-info {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  margin-left: -105.5px;
+  z-index: 20;
+  display: none;
+  width: 211px;
+  padding: 5px 9px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #eb6666;
+  border-radius: 4px;
+  text-transform: none;
+  font: 300 12px/15px 'Circe';
+  color: #666;
+}
+.bonuses-card-identifier-text-virtual-info__link {
+  text-decoration: underline;
+  color: #666;
+}
+.bonuses-card-identifier-text-virtual-info__link:hover {
+  text-decoration: none;
+  color: #999;
+}
+@media screen and (max-width: 1024px) {
+  .bonuses-card-identifier-text-virtual-info {
+    top: 5px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .bonuses-card-identifier-text-virtual-info {
+    top: 22px;
+  }
+}
+/* поведение/всплытие для пузыря*/
+.bonuses-card-identifier-text-virtual:hover .bonuses-card-identifier-text-virtual__button {
+  background-position: -31px -8px;
+}
+.bonuses-card-identifier-text-virtual:hover .bonuses-card-identifier-text-virtual-info {
+  display: block;
+}
+/* прорисовка треуглдника для пузыря */
+.bonuses-card-identifier-text-virtual-info:before,
+.bonuses-card-identifier-text-virtual-info:after {
+  content: "";
+  display: block;
+  border: 6px solid transparent;
+  border-bottom: 7px solid #fff;
+  position: absolute;
+  left: 50%;
+  margin-left: -7px;
+  top: -12px;
+  z-index: 10;
+}
+.bonuses-card-identifier-text-virtual-info:after {
+  border: 6px solid transparent;
+  border-bottom: 7px solid #eb6666;
+  top: -13.5px;
+  z-index: 9;
+}
+@media screen and (max-width: 1024px) {
+  .bonuses-card-identifier-text-virtual__button {
+    top: -18px;
+  }
+  .bonuses-card-identifier-text-virtual {
+    top: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .bonuses-card-identifier-text-virtual__button {
+    top: 0;
+  }
+  .bonuses-card-identifier-text-virtual {
+    top: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .bonuses-card-identifier-text-virtual__button { top: -42px; }
+	.bonuses-card-identifier-text-virtual { top: 24px; } */
 }
 .ucab-tools {
   border-bottom: 1px solid #e7e7e7;
@@ -2130,23 +2245,23 @@
   font: 400 10px/30px 'Circe';
   color: #666;
 }
-.profile-password-item:nth-child(1) {
+.profile-password-item--old {
   left: 25px;
 }
-.profile-password-item:nth-child(1):before {
+.profile-password-item--old:before {
   content: '1';
 }
-.profile-password-item:nth-child(2) {
+.profile-password-item--new {
   left: 275px;
 }
-.profile-password-item:nth-child(2):before {
+.profile-password-item--new:before {
   content: '2';
 }
-.profile-password-item:nth-child(3) {
+.profile-password-item--new-repeat {
   left: 275px;
   top: 55px;
 }
-.profile-password-item:nth-child(3):before {
+.profile-password-item--new-repeat:before {
   content: '3';
 }
 .profile-password-item:hover .profile-password-field-ico {
@@ -2156,14 +2271,14 @@
   border-color: #d1d1d1;
 }
 @media screen and (max-width: 767px) {
-  .profile-password-item:nth-child(1) {
+  .profile-password-item--old {
     left: 0;
   }
-  .profile-password-item:nth-child(2) {
+  .profile-password-item--new {
     top: 55px;
     left: 0;
   }
-  .profile-password-item:nth-child(3) {
+  .profile-password-item--new-repeat {
     top: 110px;
     left: 0;
   }

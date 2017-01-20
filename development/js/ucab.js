@@ -79,18 +79,10 @@
 				if (data.success == 1) {
 					location.reload();
 				} else {
-					//card-exist - карта уже привязана к пользователю
-					//card-not-find - карта не найдена
-					//not-auth - не авторизован
-					
 					$errorDiv.addClass('bonuses-card-add-error--active');
-					
 					$errorDiv.text('');
 					$errorDiv.text(errors[data.error]);
-					
 					$num.addClass('h-error-border');
-					
-					// console.log(errors[data.error]);
 				}
 			});
 		}
@@ -99,17 +91,29 @@
 
 	//выслать карту
 	$(document).on('click', '.bonuses-card-identifier__sms-button', function () {
+		var success = false,
+			$errorDiv = $('.bonuses-card-add-error'),
+			errors = {
+				'empty-phone': 'не указан телефон в профиле',
+				'card-not-find': 'карта не найдена',
+				'not-auth': 'не авторизован',
+			};
+
 		$.getJSON("/cabinet/get_card.php", function (data) {
 			if (data.success == 1) {
-				console.log("смс отправлена");
+				$errorDiv.addClass('bonuses-card-add-error--active');
+				$errorDiv.text('смс отправлена');
 			} else {
-				//empty-phone - не указан телефон в профиле
-				//card-not-find - карта не найдена
-				//not-auth - не авторизован
-				console.log('++++');
-				console.log(data.error);
+				$errorDiv.addClass('bonuses-card-add-error--active');
+				$errorDiv.text(errors[data.error]);
 			}
 		});
+	});
+
+
+	// скрывает окно с ошибкой
+	$(document).on('click', '.bonuses-card-add-error', function () {
+		if($(this).hasClass('bonuses-card-add-error--active')) $(this).removeClass('bonuses-card-add-error--active');
 	});
 });
 
@@ -141,11 +145,6 @@
 				item.parent('.profile-field-row').removeClass('check-field--invalid').addClass('check-field--valid') : item.parent('.profile-field-row').removeClass('check-field--valid').addClass('check-field--invalid');
 		});
 
-
-		// проверка полей на корректность данных по маске
-		// ... 
-
-
 		// если хотя бы одно из обязательных полей не корректно заполнено отмена отправки формы
 		if($('.check-field--invalid').length > 0) return false;
 
@@ -167,63 +166,74 @@
 
 
 
-// "ЛИЧНЫЙ КАБИНЕТ", вкладка "БОНУСЫ"
-// бегунок уровня скидки
-;$(function () {
-
-	// $('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level', '2'); // ## для тестирования, потом эту строку удалить
-
-	var discountLevelMax = 10;
-	var dataDiscountLevel = +$('.bonuses-discount-level-progress-line__rhomb').attr('data-discount-level'); //data-discount-level
-
-	$('.bonuses-discount-level-progress-line__rhomb').css({'left' : dataDiscountLevel / discountLevelMax * 100 + '%'});
-});
-
-
-
-
-
-
-
 // "ЛИЧНЫЙ КАБИНЕТ", РЕГИСТРАЦИЯ
 //подстановка полей при регистрации
 ;$(function () {
 
 	$(document).on('submit', '.ucab-regform', function (event) {
-		var $email = $('#ucab-regform-email'),
-			$password = $('#ucab-regform-password');
-
-		// удаление пустых символов
-		// ... 
-
-
-		// проверка на пустоту
-		if($email.val().length < 1 || $password.val().length < 1) {
-			$email.val().length > 0 ? $email.parent('.form-textline').removeClass('h-error-border') : $email.parent('.form-textline').addClass('h-error-border');
-			$password.val().length > 0 ? $password.parent('.form-textline').removeClass('h-error-border') : $password.parent('.form-textline').addClass('h-error-border');
-
-			return false;
-		}
+		var $login = $('#ucab-regform-email'),
+			$password = $('#ucab-regform-password'),
+			$agreement = $('#ucab-regform-proof');
+			testLogin = false,
+			testPassword = false,
+			testAgreement = false;
 
 
 		// проверка данных по маске(телефон, номер карты, email)
-		// ... 
+		if($login.val().length < 1) {
+			$login.parent('.form-textline').addClass('h-error-border');
+			testLogin = false;
+		} else {
+			$login.parent('.form-textline').removeClass('h-error-border');
+			testLogin = true;
+		}
+
+		if($password.val().length < 1) {
+			$password.parent('.form-textline').addClass('h-error-border');
+			testPassword = false;
+		} else {
+			$password.parent('.form-textline').removeClass('h-error-border');
+			testPassword = true;
+		}
+
+		if(!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test($login.val())) {
+			$login.parent('.form-textline').addClass('h-error-border');
+			testLogin = false;
+		} else {
+			$login.parent('.form-textline').removeClass('h-error-border');
+			testLogin = true;
+		}
+
+		if($agreement.prop('checked')) {
+			testAgreement = true;
+		} else {
+			testAgreement = false;
+		}
+
+		console.log('login - ' + testLogin);
+		console.log('password - ' + testPassword);
+		console.log('agreement - ' + testAgreement);
+
+		// if(!(testLogin && testPassword && testAgreement)) return false;
 
 
 		var email = $('[name="REGISTER[EMAIL]"]').val();
 		var password = $('[name="REGISTER[PASSWORD]"]').val();
 
-		if (email.length>0)
-			$('[name="REGISTER[LOGIN]"]').val(email);
-		else
-			$('[name="REGISTER[LOGIN]"]').val("login");
+		if(email && password) {
+			if (email.length>0)
+				$('[name="REGISTER[LOGIN]"]').val(email);
+			else
+				$('[name="REGISTER[LOGIN]"]').val("login");
 
-		if (password.length>0)
-			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val(password);
-		else
-			$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");
+			if (password.length>0)
+				$('[name="REGISTER[CONFIRM_PASSWORD]"]').val(password);
+			else
+				$('[name="REGISTER[CONFIRM_PASSWORD]"]').val("123");
+		}
 
-		return true;
+		// return false;
+		return testLogin && testPassword && testAgreement;
 	});
 });
 
@@ -238,24 +248,108 @@
 ;$(function () {
 	$(document).on('submit', '.ucab-login-form', function (event) {
 		var $password = $(this).find('input[type=password]'),
-			$login = $(this).find('input[type=text]');
-
-
-		// удаление пустых символов
-		// ... 
-
-
-		// проверка на пустоту
-		if($password.val().length < 1 || $login.val().length < 1) {
-			$password.val().length < 1 ? $password.addClass('h-error-border') : $password.removeClass('h-error-border');
-			$login.val().length < 1 ? $login.addClass('h-error-border') : $login.removeClass('h-error-border');
-
-			return false;
-		}
+			$login = $(this).find('input[type=text]'),
+			typeAuth = $(this).find('[name="TYPE_AUTH"]').val(),
+			testLogin = false,
+			testPassword = false;
 
 
 		// проверка данных по маске(телефон, номер карты, email)
-		// ... 
+		if(typeAuth === 'PHONE') {
+			if($login.val().length < 1) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			if($password.val().length < 1) {
+				$password.addClass('h-error-border');
+				testPassword = false;
+			} else {
+				$password.removeClass('h-error-border');
+				testPassword = true;
+			}
+
+			if(!/^(8|\+7)[0-9]{10}/.test($login.val())) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			/*console.log('typeAuth - ' + typeAuth);
+			console.log('login - ' + testLogin);
+			console.log('password - ' + testPassword);*/
+
+			return testLogin && testPassword;
+		}
+
+		else if(typeAuth === 'EMAIL') {
+			if($login.val().length < 1) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			if($password.val().length < 1) {
+				$password.addClass('h-error-border');
+				testPassword = false;
+			} else {
+				$password.removeClass('h-error-border');
+				testPassword = true;
+			}
+
+			if(!/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test($login.val())) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			/*console.log('typeAuth - ' + typeAuth);
+			console.log('login - ' + testLogin);
+			console.log('password - ' + testPassword);*/
+
+			return testLogin && testPassword;
+		}
+
+		else if(typeAuth === 'CARD') {
+			if($login.val().length < 1) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			if($password.val().length < 1) {
+				$password.addClass('h-error-border');
+				testPassword = false;
+			} else {
+				$password.removeClass('h-error-border');
+				testPassword = true;
+			}
+
+			if(!/^\d+$/.test($login.val())) {
+				$login.addClass('h-error-border');
+				testLogin = false;
+			} else {
+				$login.removeClass('h-error-border');
+				testLogin = true;
+			}
+
+			/*console.log('typeAuth - ' + typeAuth);
+			console.log('login - ' + testLogin);
+			console.log('password - ' + testPassword);*/
+
+			return testLogin && testPassword;
+		}
 	});
 });
 
