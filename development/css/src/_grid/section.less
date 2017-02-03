@@ -1,0 +1,56 @@
+.section {
+	position: relative;
+
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+
+	&__inner {
+		position: relative;
+
+		margin: 0 auto;
+
+		width: 100%;
+		max-width: 1000px;
+		min-width: 300px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+
+		&:before {
+			content: '';
+			display: table;
+		}
+
+
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+
+		@media @tablet-album {
+			width: 750px;
+		}
+
+
+		@media @tablet-portrait {
+			width: 620px;
+		}
+
+
+		@media @mobile-album {
+			width: 460px;
+		}
+
+
+		@media @mobile-portrait {
+			width: 300px;
+		}
+	}
+}

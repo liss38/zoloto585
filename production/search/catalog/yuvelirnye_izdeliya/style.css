@@ -1,0 +1,154 @@
+
+.filter-section__block,
+.filter-section-2 .filter-section__block{
+	padding: 15px 15px 19px;
+}
+
+.filter-section-1 .js-scroll-pane{
+	height: 165px;
+}
+
+.filter-section-1 .filter-section__block{
+	height: 210px;
+}
+
+.filter-section-2{
+	overflow: visible;
+}
+
+.filter-section-2 .filter-section__block{
+	padding-top:10px;
+	padding-left: 7px;
+}
+
+.filter-section__block:last-child{
+	border-right: 1px solid #ededed;
+	position: relative;
+}
+
+.filter-section__block:last-child:before{
+	content:'';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:2px;
+	border-right:solid 1px #fbfbfb;
+}
+
+.filter-product_type-properties,
+.filter-product_category-properties{
+	width: 172px;
+}
+
+.filter-product_type-properties{
+	padding-left: 7px;
+}
+
+.filter-product_metal-properties,
+.filter-product_collection-properties{
+	width: 206px;
+}
+
+.filter-product_metal-properties{
+	padding-left: 12px;
+}
+
+.filter-product_insert-properties{
+	width:184px;
+}
+
+.filter-product_diamondquantity-properties{
+	width: 156px;
+}
+
+.filter-product_typedesign-properties,
+.filter-product_size-properties{
+	width: 282px;
+}
+
+.filter-product_price-properties{
+	width: 340px;
+}
+
+.filter-group__options_colorinsert{
+	position: relative;
+}
+
+.filter-group__note-link{
+	float: right;	
+	font-size: 10px;
+	color: #a9a9a9;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgyQzlFNkVCRTI0MTExRTY4RTlDQjkwNkY1RTAyNzBDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgyQzlFNkVDRTI0MTExRTY4RTlDQjkwNkY1RTAyNzBDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODJDOUU2RTlFMjQxMTFFNjhFOUNCOTA2RjVFMDI3MEMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODJDOUU2RUFFMjQxMTFFNjhFOUNCOTA2RjVFMDI3MEMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5oP3j2AAABlklEQVR42nRSPU/CUBQ9rQ0YoA0RBKmAuBAiOohMTCx+MOiqIW76Oxz8B8af4IKJnTQxZeIXOLkgC+GjFSRiKB0gEbyvtgQ1nuS09717z73vvXu56XQKhvKjytHvmHhOzBAXiTXiHfF6r7D/ARscE5FAIrskSVIhvr4Gv98PnudhDodotzS86rpG/kMSPjERb4tvViKRwnY2g2AwCEEQ0O/3IUoSUhsppLfSMsdxD5Q8bInI2PV4PUfJVBLk+D5quQxVVaEoCsbjMZZDIUTjsQi5LpxKxdVo1DoOQ71eh8/nQ7FYhCiKqFar1n4sHmNJT6jIAovclCTRuSMSiQRyuRwMw0Cv14Msy9a+y+WC2+1eIjPM4x9UKhVks1kEAoE/PiZ6Zll/g1VgVR2wu41Go3cyO0xUajfbmEwmP0SaprGg2brZaILaU6Jn/+Tpo5qmeV+rvsBpNEM+n7ceguGt20Wr0dTJvGRrwY451TX91hyaB05zvV4vjMEAWlsD+ZzmdmYTYY8Rb4/RGXFnbowU4tX8GH0JMAAOppb6oktJGAAAAABJRU5ErkJggg==');
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	padding-left: 20px;
+	position: relative;
+	z-index: 2;
+	line-height: 14px;
+}
+
+.filter-product_size-properties__dropdown-wrapper .dropdown{
+	width: 100%;
+	margin: 0 0 11px;
+}
+
+.filter-option:not(.disabled) .filter-option__title{
+	font-family: 'Circle Regular';
+}
+
+.filter-option {
+	line-height: 1;
+	padding: 1px 0 10px;
+	-webkit-column-break-inside: avoid;
+	   page-break-inside: avoid;
+	        break-inside: avoid;
+}
+
+.filter-option__title{
+	line-height: 1;
+	padding: 3px 0 0 21px;
+}
+
+.filter-product_metal-properties .filter-option__title{
+	white-space: nowrap;
+}
+
+.filter-group{
+	margin: 0 0 4px;
+}
+
+.filter-group__header{
+	margin-bottom: 5px;
+}
+
+.filter-group__options .jspVerticalBar{}
+
+.filter-group__option--2-column{
+	-webkit-column-gap: 29px;
+	   -moz-column-gap: 29px;
+	        column-gap: 29px;
+}
+
+.filter-product_diamondquantity-properties .filter-option__title{
+	display: inline-block;
+}
+
+.filter-product_diamondquantity-properties .filter-group{
+	margin: 0 0 9px;
+}
+
+.filter-option--like-tab{
+	padding:0 2px 17px !important;
+	margin: 0 -1px 1px 0;
+}
+
+.filter-product_diamondquantity-properties .filter-group__option--2-column{
+	-webkit-column-gap: 0;
+	   -moz-column-gap: 0;
+	        column-gap: 0;
+}
+
+.filter-group--weight{
+	margin-top: -4px !important;
+}

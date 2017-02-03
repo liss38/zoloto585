@@ -1,0 +1,176 @@
+/* 
+	"_mix"  -  папка с миксинами/переменными(less), подключается всегда первой
+	"_fonts"  -  папка с подключением web-шрифтов, @font-face
+	"_ext"  -  резет/нормалайз(reset.css), внешние css-либы, например те, корые идут с jquery-плагинами
+	"_grid"  -  файлы базовой сетки страниц
+	"_ui-kit"  -  набор типовых-много-раз-глобально-используемых элементов и блоков пользовательского интерфейса("лего-элементы", элементы "конструктора")
+	"_page"  -  папки/файлы со стилями элементов/блоков/секций хэдера(шапки), футера(подвала) сайта
+	"_"  -  
+	"_"  -  
+ */
+
+
+
+/*
+	"_mix"
+*/
+@import "_mix/@path-global.less";
+@import "_mix/@humdrum.less";
+@import "_mix/@tricks.less";
+@import "_mix/@fonts.less";
+@import "_mix/@images.less";
+
+@import "_mix/@colors.less";
+@import "_mix/@breakpoints.less";
+
+@import "_mix/@effects.less";
+
+
+
+
+
+
+
+/*
+	"_fonts"
+*/
+@import "_fonts/fonts_old.less"; /*  в font-family используется 'Circe-Regular' вместо font-family: 'Circe' и font-weight: 400 */
+@import "_fonts/fonts.less"; /* шрифт и его жиность использутся таким способом font-family: 'Circe' и font-weight: 400 */
+
+
+
+
+
+
+
+
+/* 
+	"_ext"
+*/
+@import "_ext/reset.less"; /* reset/normalize */
+
+// css-файлы идущие с jquery-плагинами
+@import "_ext/fotorama.less";
+@import "_ext/easydropdown.less";
+@import "_ext/tinyscrollbar.less";
+@import "_ext/perfect-scrollbar.less";
+@import "_ext/owl.carousel.less";
+@import "_ext/magnific-popup.less";
+@import "_ext/jquery-ui.less";
+@import "_ext/jquery.jscrollpane.less";
+@import "_ext/jquery.formstyler.less";
+@import "_ext/fancy-select.less";
+
+
+
+
+
+
+/*
+	"_grid"
+*/
+
+@import "_grid/grid_old.less";
+
+@import "_grid/page.less";
+@import "_grid/page-header.less";
+@import "_grid/page-content.less";
+@import "_grid/page-footer.less";
+
+@import "_grid/sections-group.less";
+@import "_grid/section.less";
+
+
+
+
+
+
+
+
+
+/*
+	"_ui-kit"
+*/
+
+
+
+
+/* @import "_ui-kit/forms.less";
+@import "_ui-kit/form-label.less";
+@import "_ui-kit/form-textline.less";
+@import "_ui-kit/promo-label.less";
+@import "_ui-kit/b-button.less"; */
+
+
+
+
+
+
+
+
+
+/*
+	"_page"
+*/
+
+
+// header-top
+@import "_page/header-top/header-top.less";
+@import "_page/header-top/top-sandwich.less";
+@import "_page/header-top/top-jewelry.less";
+@import "_page/header-top/top-shops.less";
+@import "_page/header-top/top-geo.less";
+@import "_page/header-top/top-geo-modal.less";
+@import "_page/header-top/top-phone.less";
+@import "_page/header-top/top-favorites.less";
+@import "_page/header-top/top-bonuses.less";
+@import "_page/header-top/top-user.less";
+
+
+// header-middle
+@import "_page/header-middle/header-middle.less";
+@import "_page/header-middle/header-promo-banner.less";
+
+
+// header-bottom
+@import "_page/header-bottom/header-bottom.less";
+
+@import "_page/header-bottom/main-nav.less";
+@import "_page/header-bottom/main-nav-level-1.less";
+@import "_page/header-bottom/main-nav-level-2.less";
+
+@import "_page/header-bottom/alt-main-nav.less";
+@import "_page/header-bottom/navi-inner-list-wrapper.less";
+@import "_page/header-bottom/navi-pixel-perfect.less";
+
+@import "_page/header-bottom/nav-banners.less";
+@import "_page/header-bottom/nav-banners-link.less";
+@import "_page/header-bottom/nav-banners-button.less";
+
+@import "_page/header-bottom/header-search.less";
+
+
+
+// footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FOOTER-INFO @IMPORT
+/* @import "footer/footer.less";
+@import "footer/footer-info.less";
+@import "footer/footer-info-item.less";
+
+@import "footer/footer-main.less";
+@import "footer/footer-contacts.less";
+@import "footer/footer-phone.less";
+@import "footer/footer-socials.less";  */

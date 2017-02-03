@@ -11,8 +11,8 @@ var gulp = require('gulp'),
 
 
 
-// var dev_or_prod = '_2dev'; // префикс для dev-версии
-var dev_or_prod = '_2prod'; // префикс для prod-версии
+var dev_or_prod = '_2dev'; // префикс для dev-версии
+// var dev_or_prod = '_2prod'; // префикс для prod-версии
 
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
@@ -232,7 +232,7 @@ gulp.task('html-include-catalog-filter', function () {
 		.pipe(gulp.dest('development/htmls/blocks/catalog'));
 });
 
-// cataloп page
+// catalog page
 gulp.task('make-catalog-page', ['html-include-catalog-filter'], function () {
 	return gulp.src('development/htmls/catalog.tmpl.html')
 		.pipe(fileinclude({
@@ -482,4 +482,63 @@ gulp.task('slim-index-css', function () {
 		.pipe(cssmin())
 		.pipe(rename('slim.index-page.min.css'))
 		.pipe(gulp.dest('production/zoloto/css/slim'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	========================
+	===  LESS2CSS tasks  ===
+	========================
+*/
+gulp.task('z585-css-dev', function () {
+	return gulp.src('development/css/src/z585_all--dev.less')
+		.pipe(less())
+		// .pipe(cssmin())
+		.pipe(rename('z585_all--dev.css'))
+		.pipe(gulp.dest('development/css/'));
+});
+
+gulp.task('z585-css-prod', function () {
+	return gulp.src('development/css/src/z585_all--prod.less')
+		.pipe(less())
+		// .pipe(cssmin())
+		.pipe(rename('z585_all.css'))
+		.pipe(gulp.dest('development/css/'));
+});
+
+// минимизация, углификация, оптимизация
+gulp.task('css-min', function () {
+	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest('development/css'));
+});
+
+// комбо с минификацией и на прод и на дев делает общий стилевой файл
+gulp.task('z585-css', ['z585-css-dev', 'z585-css-prod'], function () {
+	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest('development/css'));
 });

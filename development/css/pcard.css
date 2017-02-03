@@ -2972,14 +2972,14 @@ pcard-order__content
 }
 .pcard-order-promo-forms .form-textline__default {
   padding-left: 40px;
-  padding-right: 40px;
+  padding-right: 110px;
 }
 .pcard-order-promo-forms .form-textline__icon {
   width: 35px;
 }
 .pcard-promo-code-form {
   position: relative;
-  width: 210px;
+  width: 250px;
 }
 .pcard-promo-code-form .form-textline__icon:before {
   height: 18px;
@@ -2991,7 +2991,7 @@ pcard-order__content
 }
 .pcard-bonus-card-form {
   position: relative;
-  width: 210px;
+  width: 250px;
 }
 .pcard-bonus-card-form .form-textline__icon:before {
   height: 14px;
@@ -3005,7 +3005,7 @@ pcard-order__content
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 35px;
+  width: 100px;
   height: 35px;
   box-shadow: none;
   border-bottom-left-radius: 0;
@@ -3014,12 +3014,26 @@ pcard-order__content
   line-height: 35px;
   font-size: 11px;
 }
+@media screen and (max-width: 639px) {
+  .pcard-order-promo-submit {
+    height: 50px;
+    width: 120px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}
 .pcard-order-promo-submit--valid {
+  width: 35px;
   background-color: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);
 }
 .pcard-order-promo-submit--valid:hover {
   background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 639px) {
+  .pcard-order-promo-submit--valid {
+    width: 55px;
+  }
 }
 .pcard-order-promo-warning {
   position: absolute;
@@ -3036,7 +3050,7 @@ pcard-order__content
 }
 @media screen and (min-width: 1025px) {
   .pcard-order-promo-forms {
-    width: 520px;
+    width: 550px;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -3055,7 +3069,7 @@ pcard-order__content
 }
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .pcard-order-promo-forms {
-    width: 480px;
+    width: 520px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -3087,7 +3101,7 @@ pcard-order__content
   }
   .pcard-order-promo-forms .form-textline__default {
     padding-left: 65px;
-    padding-right: 60px;
+    padding-right: 130px;
   }
   .pcard-order-promo-forms .form-textline__icon {
     width: 55px;
@@ -3114,12 +3128,6 @@ pcard-order__content
     margin-left: auto;
     margin-right: auto;
   }
-  .pcard-order-promo-submit {
-    height: 50px;
-    width: 55px;
-    font-size: 14px;
-    line-height: 50px;
-  }
   .pcard-order-promo-warning {
     bottom: -13.5px;
   }
@@ -3137,6 +3145,9 @@ pcard-order__content
     width: 286px;
     margin-top: 20px;
   }
+}
+.pcard-order-promo-forms .form-textline--valid .form-textline__default {
+  padding-right: 70px;
 }
 .pcard-order-promo-total {
   -webkit-box-sizing: border-box;
@@ -3885,6 +3896,14 @@ pcard-order__content
   position: relative;
   width: 500px;
 }
+/* кнопка используется в битрикс компоненте */
+.reviews-add-button {
+  height: 40px;
+  width: 250px;
+  line-height: 40px;
+  display: inline-block;
+}
+/* кнопка используется в битрикс компоненте */
 .pcard-motivate {
   position: fixed;
   top: 0;
