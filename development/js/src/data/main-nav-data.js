@@ -141,9 +141,9 @@ var mainNavData = [
 			'tab-name': 'КОЛЬЕ и ЦЕПИ',
 			'tab-name-translit': 'kole-i-cepi',
 			'tab-page-href': '/catalog/yuvelirnye_izdeliya/cepi_i_kole/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_5.jpg.jpg',
+			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_5.jpg',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_5.jpg.jpg',
+			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_5.jpg',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
 					'tab-number': 5,
@@ -161,17 +161,10 @@ var mainNavData = [
 			'tab-name': 'ЧАСЫ',
 			'tab-name-translit': 'chasy',
 			'tab-page-href': '/catalog/chasy/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_6.jpg.jpg',
+			'inner-background-image': 'none',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_6.jpg.jpg',
+			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_6--3.jpg',
 			'outer-background-color': 'inherit',
-			'nav-banners': {
-					'tab-number': 6,
-					'nav-banners-type': 3,
-					'nav-banners-item': [
-						{ 'type': 5, 'href': '#', 'img': bannersImageUrl + '', 'button': 'button-text' },
-					]
-			},
 		},
 
 
@@ -181,9 +174,9 @@ var mainNavData = [
 			'tab-name': 'СЕРЕБРО',
 			'tab-name-translit': 'serebro',
 			'tab-page-href': '/catalog/yuvelirnye_izdeliya/serebro-925-proby/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_7.jpg.jpg',
+			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_7.jpg',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_7.jpg.jpg',
+			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_7.jpg',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
 					'tab-number': 7,
@@ -201,9 +194,9 @@ var mainNavData = [
 			'tab-name': 'БИЖУТЕРИЯ',
 			'tab-name-translit': 'bizhuteriya',
 			'tab-page-href': '/catalog/bizhuteriya/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_8.jpg.jpg',
+			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_8.jpg',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_8.jpg.jpg',
+			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_8.jpg',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
 					'tab-number': 8,
