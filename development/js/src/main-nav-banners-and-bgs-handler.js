@@ -1,20 +1,45 @@
-
-
+// 
+// 
+// 
 // джейсонификация
+// mainNavData - структура из файла main-nav-data.js
+// mainNavData2JSON - содержит структуру mainNavData прегнанную в JSON-строку
+// далее эту JSON-строку вставляем в data-атрибут html-элемента с классом '.alt-main-nav'
+// 
 var mainNavData2JSON = JSON.stringify(mainNavData);
 $('.alt-main-nav').attr('data-main-nav', mainNavData2JSON);
 
 
-// обработка нави
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// ищем элемент с css-классом '.alt-main-nav'
+// у этого элемента берём значение data-атрибута 'data-main-nav'
+// парсим эту JSON-строку в нормальный JavaScript-объект
+// этот объект/структуру называем mainNavData
+// 
+// объявляем переменную mainNavBanners, которая представляет
+// массив из html-кусков групп баннеров для каждой вкладки
+// 8 вкладок = 8 баннеров
+// 
 var mainNavData = JSON.parse($('.alt-main-nav').attr('data-main-nav'));
 var mainNavBanners = [];
 
 
 
-// шаблонизация баннеров из JSON в массив
-// html-кусков, "html-кусок" - группа баннеров и их обёртка, 
-// которые размещаются на одной вкладке
-
+// 
+// 
+// 
+// 
+// 
+// функция, которая делает html-шаблонизацию для объекта/струтктуры mainNavData
+// и записвает этот html с данными в массив mainNavBanners
+// 
 function mainNavBannersHTMLWrapper () {
 	mainNavData.forEach(function (item, index, array) {
 		var bannersHTML = '';
@@ -34,20 +59,46 @@ function mainNavBannersHTMLWrapper () {
 	return mainNavBanners;
 }
 
+
+
+// 
+// 
+// 
+// 
+// функция, которая вставляет в html-разметку главной навигации на странице 
+// сгенерированную разметку баннеров
+// каждая группа баннеров вставляется в свой лист
+// 
 function addMainNavBanners() {
 	mainNavBanners.forEach(function (item, index, array) {
 		$('.main-nav__item[data-inner-list=' + index + ']').append(item);
 	});
 }
 
+
+// 
+// 
+// 
+// 
 // функция, котрая удаляет баннеры из вкладок
+// 
 function removeMainNavBanners() {
 	$('.nav-banners').remove();
 }
 
+
+
+
+// 
+// 
+// 
+// 
+// 
+// функция, которая устанавливает значение для data-атрибутов фонов и фоновых цветов
+// выпадающих вкладок главной навигации
+// 
 function setMainNavBGImages() {
 	mainNavData.forEach(function (item, index, array) {
-		// $('.alt-main-nav__item[data-inner-list=' + item['tab-number'] + ']')
 		$('.alt-main-nav__item[data-inner-list=' + item['tab-number'] + ']').attr('data-inner-background-image', item['inner-background-image']);
 		$('.alt-main-nav__item[data-inner-list=' + item['tab-number'] + ']').attr('data-inner-background-color', item['inner-background-color']);
 		$('.alt-main-nav__item[data-inner-list=' + item['tab-number'] + ']').attr('data-outer-background-image', item['outer-background-image']);
@@ -56,20 +107,23 @@ function setMainNavBGImages() {
 	});
 }
 
+
+
+
+
+// 
+// 
+// 
+// инициализация баннеров
+// в главной навигации
+// 
 mainNavBannersHTMLWrapper();
 setMainNavBGImages();
 
-
-
 // убираю старые значения которые в верстке есть, в проде убрать строку
-removeMainNavBanners(); 
-
-
-
+// removeMainNavBanners(); 
 
 // адаптайзер
-// 
-
 if(parseInt(window.innerWidth) > 1024) {
 	addMainNavBanners();
 } else {

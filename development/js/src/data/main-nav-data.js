@@ -1,11 +1,11 @@
 // переменные локализации
 var z585Url = 'https://zoloto585.ru';
 
-/*var baseHost = 'https://zoloto585.ru/';
-var baseImageUrl = '/bitrix/templates/zoloto/images';*/
+var baseHost = 'https://zoloto585.ru/';
+var baseImageUrl = '/bitrix/templates/zoloto/images/';
 
-var baseHost = 'http://localhost/zoloto585/development/';
-var baseImageUrl = baseHost + 'img/';
+/*var baseHost = 'http://localhost/zoloto585/development/';
+var baseImageUrl = baseHost + 'img/';*/
 
 var thingiesImageUrl = baseImageUrl + 'thingies/';
 var bannersImageUrl = baseImageUrl + 'promo-banners/';
@@ -109,7 +109,7 @@ var mainNavData = [
 					'tab-number': 3,
 					'nav-banners-type': 1,
 					'nav-banners-item': [
-						{ 'type': 6, 'href': 'https://zoloto585.ru/catalog/yuvelirnye_izdeliya/sergi/', 'img': bannersImageUrl + 'sergi-499-rublej.jpg', 'button': 'Смотреть все серьги >' },
+						{ 'type': 6, 'href': '/catalog/yuvelirnye_izdeliya/sergi/', 'img': bannersImageUrl + 'sergi-499-rublej.jpg', 'button': 'Смотреть все серьги >' },
 					]
 			},
 		},
@@ -141,15 +141,15 @@ var mainNavData = [
 			'tab-name': 'КОЛЬЕ и ЦЕПИ',
 			'tab-name-translit': 'kole-i-cepi',
 			'tab-page-href': '/catalog/yuvelirnye_izdeliya/cepi_i_kole/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_5.jpg',
+			'inner-background-image':'none',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_5.jpg',
+			'outer-background-image': 'none',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
-					'tab-number': 5,
-					'nav-banners-type': 3,
+					'tab-number': 4,
+					'nav-banners-type': 2,
 					'nav-banners-item': [
-						{ 'type': 5, 'href': '#', 'img': bannersImageUrl + '', 'button': 'button-text' },
+						{ 'type': 0, 'href': '/catalog/yuvelirnye_izdeliya/cepi_i_kole/', 'img': bannersImageUrl + 'kole-i-cepi.jpg', 'button': 'Смотреть цепи и колье >' },
 					]
 			},
 		},
@@ -174,15 +174,18 @@ var mainNavData = [
 			'tab-name': 'СЕРЕБРО',
 			'tab-name-translit': 'serebro',
 			'tab-page-href': '/catalog/yuvelirnye_izdeliya/serebro-925-proby/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_7.jpg',
+			'inner-background-image':'none',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_7.jpg',
+			'outer-background-image': 'none',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
 					'tab-number': 7,
 					'nav-banners-type': 3,
 					'nav-banners-item': [
-						{ 'type': 5, 'href': '#', 'img': bannersImageUrl + '', 'button': 'button-text' },
+						{ 'type': 5, 'href': '/catalog/yuvelirnye_izdeliya/podveski-breloki-sharmy-s-karabinom/', 'img': bannersImageUrl + 'serebro__1.jpg', 'button': false },
+						{ 'type': 5, 'href': '/catalog/yuvelirnye_izdeliya/podveski-breloki-sharmy-s-karabinom/', 'img': bannersImageUrl + 'serebro__2.jpg', 'button': false },
+						{ 'type': 5, 'href': '/catalog/yuvelirnye_izdeliya/podveski-breloki-sharmy-s-karabinom/', 'img': bannersImageUrl + 'serebro__3.jpg', 'button': false },
+						{ 'type': 5, 'href': '/catalog/yuvelirnye_izdeliya/podveski-breloki-sharmy-s-karabinom/', 'img': bannersImageUrl + 'serebro__4.jpg', 'button': false },
 					]
 			},
 		},
@@ -194,15 +197,15 @@ var mainNavData = [
 			'tab-name': 'БИЖУТЕРИЯ',
 			'tab-name-translit': 'bizhuteriya',
 			'tab-page-href': '/catalog/bizhuteriya/',
-			'inner-background-image': thingiesImageUrl + '/navi_bg_inner_8.jpg',
+			'inner-background-image':'none',
 			'inner-background-color': 'inherit',
-			'outer-background-image': thingiesImageUrl + '/navi_bg_outer_8.jpg',
+			'outer-background-image': 'none',
 			'outer-background-color': 'inherit',
 			'nav-banners': {
 					'tab-number': 8,
-					'nav-banners-type': 3,
+					'nav-banners-type': 4,
 					'nav-banners-item': [
-						{ 'type': 5, 'href': '#', 'img': bannersImageUrl + '', 'button': 'button-text' },
+						{ 'type': 0, 'href': '/catalog/bizhuteriya/', 'img': bannersImageUrl + 'bizhuteriya.jpg', 'button': false },
 					]
 			},
 		},
