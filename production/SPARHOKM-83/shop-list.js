@@ -16,7 +16,7 @@ function lazyGetTemplate(name) {
     deferred.resolve();
   } else {
     $.getScript(
-      "/bitrix/templates/zoloto/views/" + name + ".js")
+      "/bitrix/templates/zoloto/js/views/" + name + ".js")
       .then(function() {
         if ($.templates[name]) {
           deferred.resolve();
