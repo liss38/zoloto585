@@ -1,0 +1,139 @@
+/* Catalog */
+.catalog {
+  /* Filter catalog */
+  /* Catalog List */
+}
+.catalog .tizer {
+  width: 1000px;
+  height: 123px;
+  margin: 0 -15px 20px;
+  background: #f5f5f5;
+}
+.catalog .tizer img {
+  width: 100%;
+}
+.catalog .filter_catalog {
+  width: 203px;
+  float: left;
+  height: 100%;
+}
+.catalog .catalog_list .block_sort span {
+  font: 12px/31px 'Helvetica Light';
+  color: #866a6a;
+  margin-right: 8px;
+}
+.catalog .catalog_list .block_sort .view {
+  float: left;
+  margin-right: 37px;
+}
+.catalog .catalog_list .block_sort .view a {
+  color: #464646;
+  margin: 0 7px;
+  text-decoration: none;
+  font: 12px/18px 'Helvetica Light';
+}
+.catalog .catalog_list .block_sort .view a:hover, .catalog .catalog_list .block_sort .view a.active {
+  color: #ab0421;
+}
+.catalog .catalog_list .block_sort .sort {
+  float: left;
+  margin-right: 37px;
+}
+.catalog .catalog_list .block_sort .sort select {
+  width: 173px;
+}
+.catalog .catalog_list .block_sort .pagination {
+  float: right;
+}
+
+/* New Page Main Catalog */
+.catalog_main {
+  margin-bottom: 30px;
+}
+.catalog_main .col{
+  float:left;
+  width:100%;
+  max-width:315px;
+  margin:0 10px 0 0;
+}
+.catalog_main .col:nth-child(3n+3){
+  margin-right:0;
+}
+.catalog_main .box{
+  max-height:136px;
+  border:3px solid #e1e1e1;
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  width: 315px;
+  position: relative;
+}
+.catalog_main .box:hover{
+  border-top:3px solid #f7a722;
+  border-left:3px solid #f7a722;
+  border-right:3px solid #f7a722;
+  max-height: 999px;
+  width: 315px;
+}
+.catalog_main .box .img{
+  display:block;
+  width:100%;
+  height: auto;
+}
+.catalog_main .box .img img{
+  width:100px;
+  max-height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:10px;
+}
+.catalog_main .box .img h2{
+  font:30px 'Futura Light', sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  max-width:150px;
+  margin-bottom: 0;
+}
+.catalog_main .box .img h2 span{
+  font-size: 20px;
+  display: block;
+}
+.catalog_main .box ul{
+  margin-top:25px;
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 -2px;
+  z-index: 10;
+  padding: 20px 20px;
+}
+.catalog_main .box ul li{
+  margin-bottom:10px;
+}
+.catalog_main .box ul li a{
+  font-size: 14px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.catalog_main .box ul li a:hover{
+  text-decoration: underline;
+}
+.catalog_main .box:hover ul{
+  display: block;
+  background-color: #fff;
+  border-bottom: 3px solid #f7a722;
+  border-left: 3px solid #f7a722;
+  border-right: 3px solid #f7a722;
+}
+
+.tizer_img{
+  margin-bottom: 30px;
+}
+.tizer_img img{
+  width: 100%;
+}

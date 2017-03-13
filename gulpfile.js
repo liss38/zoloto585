@@ -157,6 +157,26 @@ gulp.task('make-msalnikov-css', function () {
 
 
 
+/**
+ * @TODO
+ * сдеалть сборку по новой LESS-структуре
+ */
+// new ***
+gulp.task('make-msalnikov-list', function () {
+	return gulp.src('development/less/msalnikov-list.less')
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(rename({
+			suffix: '.min',
+			basename: 'msalnikov',
+		}))
+		.pipe(gulp.dest('production/zoloto/css'));
+});
+
+
+
+
+
 
 
 

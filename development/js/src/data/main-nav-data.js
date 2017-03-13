@@ -1,11 +1,11 @@
 // переменные локализации
 var z585Url = 'https://zoloto585.ru';
 
-var baseHost = 'https://zoloto585.ru/';
-var baseImageUrl = '/bitrix/templates/zoloto/images/';
+/*var baseHost = 'https://zoloto585.ru/';
+var baseImageUrl = '/bitrix/templates/zoloto/images/';*/
 
-/*var baseHost = 'http://localhost/zoloto585/development/';
-var baseImageUrl = baseHost + 'img/';*/
+var baseHost = 'http://localhost/zoloto585/development/';
+var baseImageUrl = baseHost + 'img/';
 
 var thingiesImageUrl = baseImageUrl + 'thingies/';
 var bannersImageUrl = baseImageUrl + 'promo-banners/';

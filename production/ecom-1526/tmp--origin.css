@@ -1,0 +1,417 @@
+.catalog-item { /* строка 11884 */
+    height: 360px!important;
+}
+
+.catalog-item:hover {
+    border-color: #9f9f9f;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+
+.catalog-item-reserve {
+    position: relative;
+
+    display: block;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+
+}
+
+/*Интеренет-цена*/
+.catalog-item-info__label {
+    position: absolute;
+    top: 33px;
+    left: 14px;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666;
+}
+
+/*тень над кнопкой*/
+.catalog-item-reserve:after {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+
+    display: block;
+    width: 100%;
+    height: 6px;
+
+    content: '';
+
+    background: transparent url("http://zoloto585.ru/bitrix/templates/zoloto/css/../images/cabinet/favorite_item__shadow.png") center top no-repeat;
+}
+
+.catalog-item__button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+}
+.catalog-item__button:after {
+    background-image: url('/images/card_icons.png');
+    background-repeat: no-repeat;
+}
+
+.catalog-item__button_reserve {
+    background-color: #ed3030;
+    color: #fff;
+}
+.catalog-item__button_reserve:hover {
+    background-color: #b32024;
+}
+.catalog-item__button_reserve:before,
+.catalog-item__button_soon:before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+
+    content: '';
+}
+.catalog-item__button_reserve:before { background: transparent url('/images/card_icons.png') 0 -1px no-repeat; }
+.catalog-item__button_reserve:after {}
+
+.catalog-item__button_soon {
+    background-color: #f3f3f3;
+    color: #ed3030;
+}
+.catalog-item__button_soon:hover {
+    background-color: #ed3030;
+    color: #fff;
+}
+.catalog-item__button_soon:before { background: transparent url('/images/card_icons.png') -22px -23px no-repeat; }
+.catalog-item__button_soon:hover:before { background-position: 0 -23px; }
+.catalog-item__button_soon:after {}
+
+
+/*
+	ВЫРАВНИВАНИЕ ПО ГОРИЗОНТАЛИ
+*/
+.section__h-grid_100 .catalog-item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.journal-linked-products .filter_catalog,
+.bigdata-recommendations .filter_catalog{
+    display: none;
+}
+
+.journal-linked-products .catalog .catalog_list,
+.bigdata-recommendations .catalog .catalog_list{
+    max-width: 100%;
+}
+
+.journal-linked-products .block_sort,
+.bigdata-recommendations .block_sort{
+    display: none;
+}
+
+.journal-linked-products article h1,
+.bigdata-recommendations article h1{
+    display: none;
+}
+
+.pcard-store-fitting-select__menu_default{
+    width: auto !important;
+}
+
+
+.promo-label--black-friday
+{
+    background: url("../images/sprites/black_friday.png") center center no-repeat;
+}
+
+@media screen and (max-width: 639px) {
+    .pcard-store-fitting-select{
+        text-align:center !important;        
+    }
+    .pcard-store-fitting{
+        height: 110px !important;
+    }
+    .pcard-store-fitting-select__label{
+        top: 14px !important;
+    }
+    .pcard-store-fitting-select__menu_default {
+        position: static !important;
+        width: 90% !important;
+        display: inline-block !important;
+        margin-top: 45px !important;
+    }   
+}
+
+.bigdata-recommendations{
+    margin-top: 25px;
+}
+
+/*http://joxi.ru/L21WlezTxaJGrX*/
+@media screen and (min-width: 1025px) {
+    .order-button-to-getshop {
+        width: 260px;
+    }
+}
+
+.bron-error-msg {
+	padding-top: 40%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.catalog .catalog_list {max-width: none;}
+
+#reg_card #phone {
+	background-image: url('../images/call_34.png');
+	background-repeat: no-repeat;
+	padding-left: 41px;
+	background-size: auto 100%;
+}
+
+ul.ui-autocomplete {
+	background: #fff;	
+    border-left: 1px solid #888;
+    border-bottom: 1px solid #888;
+    border-right: 1px solid #888;
+}
+
+ul.ui-autocomplete li {
+	padding: 9px 10px 10px;
+}
+
+ul.ui-autocomplete li.ui-state-focus {
+	margin: 0;
+	background: #ccc;
+	color: #fff;
+}
+
+element.style {
+}
+.select div.fancy-select div.trigger {
+    border: 1px solid #888;
+    vertical-align: middle;
+}
+
+.inp .birth_date-select {	
+	width: 100%;
+}
+
+.inp .birth_date-wraps {
+	width: 300px;
+	display: inline-block;		
+}
+
+.inp .birth_date-wraps:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+@media (max-width: 1000px) {
+	.inp .birth_date-wraps {   
+	    width: 100%;
+	    display: block;
+	}
+}
+
+.birth_date-wrap {
+	width: 30%;
+	float: left;
+}
+
+.birth_date-wrap.delimiter {
+	width: 5%;
+}
+
+.inp .select2-container--default .select2-selection--single {
+	border-radius: 0;
+	border: 1px solid #888;
+	padding-left: 10px;
+	height: 36px;
+}
+
+.inp .select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: 36px;
+}
+
+.inp .select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 34px;
+}
+
+.birth_date-caption {
+	font-size: 12px;
+	color: #ccc;
+	text-align: center;
+	display: none;
+}
+.birth_date-wrap.error-inside {
+	
+}
+
+.birth_date-wrap.error-inside .select2-container--default .select2-selection--single {
+	background-color: #ffd1d6;
+    border-color: #c8021c !important;
+    color: #fff;    
+}
+
+
+
+/* COMPARE LIST */
+
+.top-compare__button {
+    vertical-align: top;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+}
+
+.top-compare {
+    width: 50px
+}
+
+.top-compare__button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    box-sizing: border-box;
+    padding-left: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    height: 31px;
+    font: 300 11px/45px Circe;
+    line-height: 32px;
+}
+
+.top-compare__button:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -20px;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/bitrix/templates/zoloto/images/gr.png) no-repeat
+}
+
+/* COMPARE DETAIL */
+
+.pcard-main  .catalog-item-control.compare-item-control{
+    margin-top: -14px;
+}
+
+.catalog-item-control.compare-item-control .compare-item-control_add{
+    left: 0px;
+    width: 200px;
+    font-size: 14;
+    display: block;
+    height: 32px;
+    background: url(/bitrix/templates/zoloto/css/../images/cabinet/favorite__ico_sprite.png) left top no-repeat;
+    background-position: -7px -33px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.catalog-item-control.compare-item-control .compare-item-control_add:hover{
+    background-position: -47px -33px;
+}
+
+.catalog-item-control.compare-item-control.act .compare-item-control_add{
+    background-position: -47px -33px;
+}
+
+.catalog-item-control.compare-item-control.act .compare-item-control_add{
+    background-position: -47px -33px;
+}
+
+.catalog-item-control.compare-item-control .compare-item-control_add .text
+{
+    background: white;
+    line-height: 32px;
+    margin-left: 26px;
+}
+
+
+.catalog-item-control.compare-item-control .compare-item-control_add .text.act{
+    display: none;
+}
+
+.catalog-item-control.compare-item-control .compare-item-control_add .text{
+    display: block;
+}
+
+.catalog-item-control.compare-item-control.act .compare-item-control_add .text{
+    display: none;
+}
+.catalog-item-control.compare-item-control.act .compare-item-control_add .text.act{
+    display: block;
+}
+
+/* COMPARE PAGE */
+.compare-page table tr td.type-td
+{
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compare-page table tr td.img-td .catalog-item-control
+{
+    position: absolute;
+    top: 145px;
+    z-index: 6;
+    margin: 0;
+}
+
+.img-td .catalog-item-control__add
+{
+    display: none;
+}
+.img-td .catalog-item-control__add.act
+{
+    display: block;
+}
+.img-td:hover .catalog-item-control__add
+{
+    display: block;
+}
+.catalog-item-reserve:after {
+     background: transparent url(/bitrix/templates/zoloto/css/../images/cabinet/favorite_item__shadow.png) center top no-repeat;
+}
+
+/** для формы комментариев/отзывов */
+.blog-comments .blog-add-comment b {font-size: 14px}
+
+.pcard-order-promo-submit--valid {
+    width: 35px;
+}
+.form-textline.form-textline--valid .form-textline__default {
+    padding-right: 40px;
+}
+
+@media screen and (max-width: 639px) {
+    .pcard-order-promo-submit--valid {
+        width: 55px;
+    }
+    .form-textline.form-textline--valid .form-textline__default {
+        padding-right: 60px;
+    }
+}

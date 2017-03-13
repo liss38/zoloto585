@@ -1,0 +1,89 @@
+.pcard-main {
+
+
+	// http://joxi.ru/8AnzWDocpoJKAO  звездочка избранного в странице товара
+	.catalog-item-control {
+		position: relative;
+
+		float: left;
+		width: 486px;
+		margin-top: -30px;
+		margin-bottom: 10px;
+
+		border: 0px;
+
+
+		&__add {
+			width: 200px;
+			font-size: 14px;
+
+
+			.text {
+				background: #fff;
+				line-height: 32px;
+				margin-left: 26px;
+			}
+
+
+			.text.act {
+				display: none;
+			}
+
+
+			&.act {
+				// display: none;
+
+
+				.text.act {
+					display:block;
+				}
+			}
+
+
+
+			@media @desktop {
+				left: 0px;
+			}
+
+
+
+			@media @touch {
+				position: absolute;
+				top: -530px;
+
+				width: 32px;
+
+
+				.text {
+					font-size: 0;
+				}
+			}
+
+
+
+			@media @tablet-album {
+				left: 610px;
+			}
+
+
+
+			@media @tablet-portrait {
+				left: 480px;
+			}
+
+
+
+			@media @mobile-album {
+				top: -565px;
+				left: 325px;
+			}
+
+
+
+			@media @mobile-portrait {
+				top: -525px;
+				left: 275px;
+			}
+		}
+	}
+}

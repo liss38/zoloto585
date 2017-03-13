@@ -70,9 +70,11 @@ function mainNavBannersHTMLWrapper () {
 // каждая группа баннеров вставляется в свой лист
 // 
 function addMainNavBanners() {
-	mainNavBanners.forEach(function (item, index, array) {
-		$('.main-nav__item[data-inner-list=' + index + ']').append(item);
-	});
+	if($('.nav-banners').length === 0) {
+		mainNavBanners.forEach(function (item, index, array) {
+			$('.main-nav__item[data-inner-list=' + index + ']').append(item);
+		});
+	}
 }
 
 

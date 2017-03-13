@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Catalog</title>
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/index.min.css">
+	<link rel="stylesheet" href="css/after_all.min.css">
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+</head>
+<body>
+	<div class="page">
+		<header class="page__header"></header>
+		<main class="page__content">
+			<div class="section  shops-addresses-section">
+				<div class="section__inner  shops-addresses-section__inner">
+					<div id="shops-list">
+						<!-- Выборка магазинов -->
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="page__footer"></footer>
+	</div>
+	
+
+
+
+
+	<script id="shops-item-template" type="text/x-jsrender">
+		<article class="shops-item">
+			<h3 class="shops-item__heading">#{{:XML_ID}}</h3>
+			<div class="shops-item__city">{{:CITY}}</div>
+			<div class="shops-item__address">{{:ADDRESS["STREET"]}}</div>
+			<p class="shops-item__coords">({{:GPS_N}}, {{:GPS_S}})</p>
+			<i class="shops-item__url">{{:DETAIL_URL}}</i>
+		</article>
+	</script>
+
+	<script src="js/jqueryteam.min.js"></script>
+	<script src="http://www.jsviews.com/download/jsrender.js"></script>
+	<script>
+		// shop-list.js
+		var $shopsItemTemplate = $.templates("#shops-item-template"); // Get compiled template
+		
+		var data = [
+				{
+					 "ADDRESS":{"STREET":"ул.Ленина","HOUSE_FLAT":" 72"}, 
+					"SCHEDULE_PREPARE":"ежедневно 08:30-19:00",
+					"GPS_N":"47.104732",
+					"GPS_S":"39.427255",
+					"CITY":"Азов",
+					"XML_ID":"224",
+					"DETAIL_URL":"/about/address/azov/ul-lenina-72/"
+				},
+				{
+					 "ADDRESS":{"STREET":"ул.Сталина","HOUSE_FLAT":" 72"}, 
+					"SCHEDULE_PREPARE":"ежедневно 08:30-19:00",
+					"GPS_N":"47.104732",
+					"GPS_S":"39.427255",
+					"CITY":"Азов",
+					"XML_ID":"224",
+					"DETAIL_URL":"/about/address/azov/ul-lenina-72/"
+				},
+				{
+					 "ADDRESS":{"STREET":"ул.Андропова","HOUSE_FLAT":" 72"}, 
+					"SCHEDULE_PREPARE":"ежедневно 08:30-19:00",
+					"GPS_N":"47.104732",
+					"GPS_S":"39.427255",
+					"CITY":"Азов",
+					"XML_ID":"224",
+					"DETAIL_URL":"/about/address/azov/ul-lenina-72/"
+				},
+			];
+		
+		var storeData = $.getJSON('data/shops.json', function (data) {
+				console.log(data.length);
+				var html = $shopsItemTemplate.render(data);
+				$("#shops-list").html(html);
+			});
+
+		
+		// console.log(html);
+		// console.log(storeData['responseText']);
+	</script>
+</body>
+</html>
