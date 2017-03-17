@@ -27,6 +27,10 @@ var jQueryTeamPath = ''; // 'js/jqueryteam_in/''
 		jQueryTeamPath + 'jquery.cookie.js',
 		jQueryTeamPath + 'jquery.jscrollpane.min.js',
 		jQueryTeamPath + 'jquery.formstyler.min.js',
+		jQueryTeamPath + 'jquery.session.js',
+		jQueryTeamPath + 'jquery.easydropdown.js',
+		jQueryTeamPath + 'jquery.maskedinput.min.js',
+		jQueryTeamPath + 'selectivizr-min.js',
 	];
 gulp.task('make-jqueryteam', function () {
 	return gulp.src('js/jqueryteam_in/*.js')

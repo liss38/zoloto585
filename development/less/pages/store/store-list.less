@@ -1,0 +1,29 @@
+.store-list {
+
+
+	&__combobox {
+		width: 240px;
+		height: 30px;
+	}
+
+
+	&__combobox-origin {
+		padding-left: 10px;
+	}
+
+
+	&__combobox-icon {
+		width: 37px;
+		background-image: url(/bitrix/templates/zoloto/images/sprites/sprite__form-icos_37x35.png);
+		background-position: 0 -109px;
+	}
+}
+
+
+// @TODO: плохо, переделать так, чтоб без какскада работало
+.store-list__combobox:hover .store-list__combobox-icon {
+	@media @touch {
+		width: 37px;
+		background-position: 0 -109px;
+	}
+}

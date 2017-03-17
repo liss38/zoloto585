@@ -1,0 +1,128 @@
+.store-item {
+	position: absolute;
+	right: 0;
+	top: 155px;
+	z-index: 1;
+
+	display: none;
+	width: 400px;
+	height: 155px;
+	overflow: hidden;
+
+	background-color: #fff;
+	box-shadow: 0px 0px 6px 1px rgba(0,0,0,.35);
+
+	font-size: 0;
+
+
+	&--active {
+		display: inline-block;
+	}
+
+
+	&__heading {
+		position: relative;
+
+		height: 45px;
+		padding: 5px 35px 5px 13px;
+		background-color: #ebebeb;
+
+		&:after {
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			z-index: 3;
+
+			content: '';
+
+			display: block;
+			width: 100%;
+			height: 5px;
+
+			background: url(/bitrix/templates/zoloto/images/thingies/shadow-2.png) center top no-repeat;
+		}
+	}
+
+
+	&__title {
+		padding-top: 5px;
+
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 14px;
+	}
+
+
+	&__sub-title {}
+
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		display: block;
+		width: 40px;
+		height: 45px;
+
+		text-align: center;
+		font-size: 16px;
+		line-height: 45px;
+		color: #9c9c9c;
+
+		cursor: pointer;
+	}
+
+
+	&__group {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding: 20px 5px 10px 15px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		font-size: 11px;
+	}
+
+
+	&__group-text {
+		display: block;
+		height: 50px;
+		overflow: hidden;
+		padding-left: 47px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		text-transform: uppercase;
+		font-size: 11px;
+		line-height: 14px;
+		font-weight: 400;
+
+
+		&--schedule {
+			background: #fff url('/store/watches.png') top left no-repeat;
+		}
+		&--gps {
+			padding-top: 6px;
+			background: #fff url('/store/yandex.png') top left no-repeat;
+
+			
+		}
+	}
+
+
+	&__button {
+		display: none; // кнопки временно скрыты
+		// width: 185px;
+		width: 100%;
+		height: 25px;
+
+		font-size: 9px;
+		line-height: 25px;
+	}
+}

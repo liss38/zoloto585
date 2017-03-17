@@ -4,7 +4,11 @@ var gulp = require('gulp'),
 	cssmin = require('gulp-cssmin'),
 	rename = require('gulp-rename'),
 	zip = require('gulp-zip');
-	fileinclude = require('gulp-file-include');
+	fileinclude = require('gulp-file-include'),
+	order = require('gulp-order'),
+	uglifyjs = require('gulp-uglifyjs');
+var mainBowerFiles = require('gulp-main-bower-files');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 
@@ -452,6 +456,58 @@ gulp.task('make-msalnikov-js', function () {
 		.pipe(gulp.dest('development/js'));
 });
 
+
+
+// jQuery Team
+var jQueryTeamPath = 'development/js/jqueryteam/', // 'js/jqueryteam_in/''
+	jQueryTeamOrderList = [
+		jQueryTeamPath + 'jquery-1.11.1.min.js',
+		// jQueryTeamPath + 'jquery-1.11.0.min.js',
+		jQueryTeamPath + 'owl.carousel.js',
+		jQueryTeamPath + 'select.js',
+		jQueryTeamPath + 'jquery-ui.js',
+		jQueryTeamPath + 'jquery.ui.touch-punch.min.js',
+		jQueryTeamPath + 'jquery.ui.datepicker-ru.js',
+		jQueryTeamPath + 'jquery.touchSwipe.min.js',
+		jQueryTeamPath + 'jquery.zoom.js',
+		jQueryTeamPath + 'fotorama.js',
+		jQueryTeamPath + 'jquery.mousewheel.js',
+		jQueryTeamPath + 'perfect-scrollbar.js',
+		jQueryTeamPath + 'jquery.magnific-popup.js',
+		jQueryTeamPath + 'jquery.plugin.js',
+		jQueryTeamPath + 'jquery.countdown.js',
+		jQueryTeamPath + 'jquery.countdown-ru.js',
+		jQueryTeamPath + 'jquery.inputmask.js',
+		jQueryTeamPath + 'jquery.validate.min.js',
+		jQueryTeamPath + 'jquery.cookie.js',
+		jQueryTeamPath + 'jquery.jscrollpane.min.js',
+		jQueryTeamPath + 'jquery.formstyler.min.js',
+		jQueryTeamPath + 'jquery.session.js',
+		jQueryTeamPath + 'jquery.easydropdown.js',
+		jQueryTeamPath + 'jquery.maskedinput.min.js',
+		jQueryTeamPath + 'selectivizr-min.js',
+	];
+/*gulp.task('make-jqueryteam', function () {
+	return gulp.src(['development/js/jqueryteam/*.js', '!development/js/jqueryteam/jquery-1.11.0.min.js'])
+		.pipe(order(jQueryTeamOrderList))
+		.pipe(concat('jqueryteam.js'))
+		.pipe(uglifyjs())
+		.pipe(rename('jqueryteam.min.js'))
+		.pipe(gulp.dest('development/js/'));
+});*/
+gulp.task('make-jqueryteam', function () {
+	return gulp.src(jQueryTeamOrderList)
+		/*.pipe(order([
+			'development/js/jqueryteam/jquery-1.11.1.min.js',
+			'development/js/jqueryteam/owl.carousel.js',
+		]))*/
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(concat('jqueryteam.js'))
+		.pipe(uglifyjs())
+		.pipe(rename('jqueryteam.min.js'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('development/js/'));
+});
 
 
 
