@@ -89,6 +89,8 @@
 
 
 	&__group-text {
+		position: relative;
+
 		display: block;
 		height: 50px;
 		overflow: hidden;
@@ -104,14 +106,36 @@
 		font-weight: 400;
 
 
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+
+			content: '';
+
+			display: block;
+			width: 40px;
+			height: 40px;
+			overflow: hidden;
+
+			background-image: url(@img-sprite-primary);
+			background-repeat: no-repeat;
+		}
+
+
 		&--schedule {
-			background: #fff url('/store/watches.png') top left no-repeat;
+			&:before {
+				background-position: 0 -252px;
+			}
 		}
 		&--gps {
 			padding-top: 6px;
-			background: #fff url('/store/yandex.png') top left no-repeat;
 
-			
+
+			&:before {
+				background-position: -40px -252px;
+			}
 		}
 	}
 
@@ -124,5 +148,46 @@
 
 		font-size: 9px;
 		line-height: 25px;
+	}
+}
+
+
+@media @mobile {
+	.store-item {
+		position: absolute;
+		right: 50%;
+		top: 50%;
+		z-index: 1;
+
+
+		margin-top: 90px;
+		margin-right: -145px;
+
+		width: 290px;
+		// height: 210px;
+		height: 220px;
+
+
+		&__group {
+			width: 100%;
+			height: 77px;
+			padding: 0 0 0 19px;
+			padding-right: 80px;
+			padding-top: 30px;
+		}
+
+
+		&__group-text {
+			/* padding-right: 80px;
+			padding-top: 30px; */
+
+
+			&--schedule {
+
+			}
+
+
+			&--gps {}
+		}
 	}
 }

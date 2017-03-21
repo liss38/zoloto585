@@ -63,8 +63,8 @@ if ($pos !== false) {
 
 
 
-	<script src="https://www.jsviews.com/download/jsrender.js"></script>
-	<script src="<?= SITE_TEMPLATE_PATH ?>/js/render/shop-list.js"></script>
+	<script src="<?= SITE_TEMPLATE_PATH ?>/js/libs/jsrender/jsrender.js"></script>
+	<script src="<?= SITE_TEMPLATE_PATH ?>/js/render/store.js"></script>
 
 
 
