@@ -6,27 +6,27 @@
 
 ```
 less
-	mixins
-
-	layout
-		fonts
-		external
-		grid
-		header
-		content
-		footer
-
-	pages
-		index
-		catalog
-		user-cabinet
-		...
-
-	legacy
-
-	system
-
-	scaffolding
+ |-mixins
+ |
+ |-layout
+ |   |-fonts
+ |   |-external
+ |   |-grid
+ |   |-header
+ |   |-content
+ |   |-footer
+ |
+ |pages
+ |   |-index
+ |   |-catalog
+ |   |-user-cabinet
+ |   |-...
+ |
+ |-legacy
+ |
+ |-system
+ |
+ |-scaffolding
 ```
 
 **less** - коренневая папка для less-файлов
