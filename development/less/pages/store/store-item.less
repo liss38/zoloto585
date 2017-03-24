@@ -6,7 +6,7 @@
 
 	display: none;
 	width: 400px;
-	height: 155px;
+	height: 165px;
 	overflow: hidden;
 
 	background-color: #fff;
@@ -23,7 +23,7 @@
 	&__heading {
 		position: relative;
 
-		height: 45px;
+		height: 55px;
 		padding: 5px 35px 5px 13px;
 		background-color: #ebebeb;
 
@@ -140,6 +140,17 @@
 	}
 
 
+	&__gps-clipboard {
+		position: absolute;
+		// border: 0; // это свойство здесь не применять
+		height: 0px;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		opacity: 0;
+	}
+
+
 	&__button {
 		display: none; // кнопки временно скрыты
 		// width: 185px;
@@ -148,6 +159,11 @@
 
 		font-size: 9px;
 		line-height: 25px;
+
+
+		&--gps {
+			display: block;
+		}
 	}
 }
 
@@ -164,16 +180,18 @@
 		margin-right: -145px;
 
 		width: 290px;
-		// height: 210px;
-		height: 220px;
+		height: 265px;
+
+
+		&__title {
+			font-size: 12px;
+		}
 
 
 		&__group {
 			width: 100%;
 			height: 77px;
-			padding: 0 0 0 19px;
-			padding-right: 80px;
-			padding-top: 30px;
+			padding: 30px 54px 0 46px;
 		}
 
 
@@ -188,6 +206,16 @@
 
 
 			&--gps {}
+		}
+
+
+		&__button {
+
+
+			&--gps {
+				margin-top: 5px;
+				margin-left: 5px;
+			}
 		}
 	}
 }
