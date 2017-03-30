@@ -1,0 +1,50 @@
+
+**HTML**
+<header class="page__header">
+	<div class="section  header-section">
+		<div class="section__inner  header-section__inner">
+			<a class="header-logo" href="#">Pink</a>
+			<nav class="main-nav">
+				<div class="main-nav__burger  main-nav__burger--cross"></div>
+				<ul class="main-nav__list">
+					<li class="main-nav__item"><a class="main-nav__link  main-nav__link--active" href="index.html">Главная</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="photo.html">Фотографии</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="form.html">Конкурс</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="https://htmlacademy.ru/">HTML Academy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+
+**LESS**
+.header-logo {
+	background: url(../img/logo-pink-white-mobile.svg) center center no-repeat; 
+	display: inline-block;
+	width: 115px;
+	height: 69px;
+	font-size: 0;
+	vertical-align: top;
+
+
+	@media @tablet {
+		width: 147px;
+		height: 40px;
+		margin-right: 100px;
+		margin-left: 45px;
+		margin-top: 25px;
+		margin-bottom: 35px;
+		background-image: url(../img/logo-pink-white-tablet.svg);
+	}
+
+
+	@media @desktop {
+		width: 147px;
+		height: 40px;
+		margin-right: 100px;
+		margin-top: 17px;
+		background-image: url(../img/logo-pink-white-desktop.svg);
+	}
+}

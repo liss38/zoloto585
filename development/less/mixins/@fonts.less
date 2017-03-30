@@ -1,0 +1,46 @@
+/*
+	миксин для определения нестандартного шрифта для @font-face
+*/
+.set_font_face(@font-family, @font-file, @font-path: @fonts-path, @font-weight: normal, @font-style: normal) {
+	@font-face {
+		font-family: @font-family;
+		src: url('@{font-path}/@{font-file}.eot');
+		src: local('Circe-Regular'),
+			 url('@{font-path}/@{font-file}.woff') format('woff'),
+			 url('@{font-path}/@{font-file}.ttf') format('truetype'),
+			 url('@{font-path}/@{font-file}.svg') format('svg');
+		font-weight: @font-weight;
+		font-style: @font-style;
+	}
+}
+
+
+/*
+	БИБЛИОТЕКА СНИППЕТОВ и МИКСИНОВ 
+	ДЛЯ РАБОТЫ СО ШРИФТАМИ НА САЙТЕ 585
+*/
+
+/*
+	Circe
+*/
+.font-circe_light(@fsize, @lheight, @color) { font: 300 @fsize/@lheight 'Circe'; color: @color; }
+.font-circe_regular(@fsize, @lheight, @color) { font: 400 @fsize/@lheight 'Circe'; color: @color; }
+.font-circe_bold(@fsize, @lheight, @color) { font: 700 @fsize/@lheight 'Circe'; color: @color; }
+
+/*
+	Circe Rounded
+*/
+.font-circerou_regular(@fsize, @lheight, @color) { font: 400 @fsize/@lheight 'Circe Rounded'; color: @color; }
+
+
+/*
+	Helvetica Neue
+*/
+.font-helvn_light(@fsize, @lheight, @color) { font: 300 @fsize/@lheight 'Helvetica Neue'; color: @color; }
+.font-helvn_bold(@fsize, @lheight, @color) { font: 700 @fsize/@lheight 'Helvetica Neue'; color: @color; }
+
+
+
+
+@base-font: 'Circe';
+@base-weight: 400;

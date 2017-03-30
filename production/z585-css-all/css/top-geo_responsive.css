@@ -1,0 +1,151 @@
+@media only screen and (max-width : 1024px) {
+
+	.top-geo-modal__inner--active{
+		width: 90%;
+		top: 45px;
+		left:0;
+		-webkit-transform: none;
+		   -moz-transform: none;
+		    -ms-transform: none;
+		     -o-transform: none;
+		        transform: none;
+	}
+
+	.top-geo-form__search{
+		right:100px;
+	}
+	
+}
+
+@media only screen and (max-width : 999px) {
+
+	.top-geo-form__chosen-city{
+		display: block;
+		position: relative;
+		margin: 11px 0 0;
+	}
+
+	.top-geo-form__chosen-city::before{
+		content:'';
+		position: absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		width: 100%;
+		height: 100%;
+		-webkit-box-shadow: 0 0 5px -1px #000;
+		-moz-box-shadow: 0 0 5px -1px #000;
+				box-shadow: 0 0 5px -1px #000;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+				border-radius: 50%;
+	}
+
+	.top-geo-form__chosen-city-inner{
+		border-top: solid 1px #e3e3e3;
+		border-bottom: solid 1px #e3e3e3;
+		font-size: 0;
+		background: #fff;
+		padding: 7px 27px;
+		position: relative;
+		z-index: 2;
+	}
+
+	.top-geo-form__chosen-city-label,
+	.top-geo-form__chosen-city-result{
+		display: inline-block;
+		font-family: 'Circle Regular';
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	.top-geo-form__chosen-city-label{
+		font-size: 14px;
+		color: #ed3030;
+		margin: 0 10px 0 0;
+	}
+
+	.top-geo-form__chosen-city-result{
+		font-size: 11px;
+		color: #333;
+		margin: 3px 0 0;
+	}
+
+	.top-geo-form__search input{
+		height: 35px;
+		padding-top: 2px;
+	}
+
+	.top-geo-form__cities-wrapper{
+		padding-bottom: 0;
+	}
+	
+}
+
+@media only screen and (max-width : 678px) {
+
+	.top-geo-form__search{
+		width: 200px;
+		right:70px;
+	}
+
+	.top-geo-form__pop-cities-inner{
+		padding:12px 0;
+		text-align: left;
+	}
+
+}
+
+@media only screen and (max-width : 560px) {
+
+	.top-geo-form__search{
+		position: static;
+		margin:10px 0 0;
+		padding:0 21px 0 27px;
+		width: 100%;
+	}
+
+	.top-geo-form__chosen-city-label,
+	.top-geo-form__chosen-city-result{
+		display: block;
+	}
+
+}
+
+@media only screen and (max-width : 320px) {
+
+	.top-geo-modal__close{
+		top:12px;
+		right:6px;
+	}
+
+	.top-geo-form__header{
+		font-size: 16px;
+		padding:14px 0 0 18px;
+	}
+
+	.top-geo-form__total{
+		padding:5px 0 0 18px;
+	}
+
+	.top-geo-form__search{
+		padding: 0 14px 0 18px;
+	}
+
+	.top-geo-form__pop-cities{
+		margin: 10px 0 0;
+	}
+
+	.top-geo-form__pop-cities a{
+		margin:0 12px 0 18px;
+	}
+
+	.top-geo-form__cities-wrapper{
+		padding: 0 0 0 18px;
+	}
+
+	.top-geo-form__chosen-city-inner{
+		padding: 7px 18px;
+	}
+
+}

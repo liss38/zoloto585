@@ -1,0 +1,39 @@
+.promo-label {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+
+	display: block;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border-radius: 50%;
+
+	font-size: 0;
+
+
+	&--shock-price {
+		background: url(@img-sprite-promo-labels) center center no-repeat;
+	}
+
+
+	&--discount {
+		width: 40px;
+		height: 40px;
+
+		background-color: rgba(237, 48, 48, .7);
+
+		text-align: center;
+		font: 400 14px/40px 'Circe';
+		color: #fff;
+	}
+}

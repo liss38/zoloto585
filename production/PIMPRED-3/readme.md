@@ -1,0 +1,1 @@
+/home/bitrix/www/bitrix/templates/zoloto/components/bitrix/catalog.section/.default/template.php

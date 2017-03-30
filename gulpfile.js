@@ -618,3 +618,95 @@ gulp.task('z585-css', ['z585-css-dev', 'z585-css-prod'], function () {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('development/css'));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+/*
+ * *************
+ * NEW GULP FILE
+ * *************
+ */
+
+
+// z585-all-css
+var z585AllScaffoldingList = [
+
+	/* ******************************************* */
+	/* одно из двух должно быть закомментировано */
+	'development/less/_2prod.less', // для прода
+	// 'development/less/_2dev.less', // для локальной сборки
+	/* ******************************************* */
+
+	'development/less/scaffolding/mixins.less',
+	'development/less/scaffolding/layout__fonts.less',
+	'development/less/scaffolding/layout__external.less',
+
+	'development/less/scaffolding/legacy__all.less',
+
+	'development/less/scaffolding/layout__grid.less',
+	'development/less/scaffolding/layout__uikit.less',
+	// 'development/less/scaffolding/layout__header.less',
+	// 'development/less/scaffolding/layout__footer.less',
+	// 
+	// 
+	// стили страниц
+	'development/less/scaffolding/pages__catalog.less'
+];
+
+// scaffolding z585-all-caa import list
+gulp.task('z585-css:scaff', function () {
+	return gulp.src(z585AllScaffoldingList)
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(concat('z585-all-list.less'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('development/less/'));
+});
+
+// build z585_all.min.css
+gulp.task('z585-css:build', function () {
+	return gulp.src('development/less/z585-all-list.less')
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(rename('z585_all.min.css'))
+		.pipe(gulp.dest(gulpDestFolder));
+});

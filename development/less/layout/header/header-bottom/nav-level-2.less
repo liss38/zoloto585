@@ -1,0 +1,232 @@
+/* второй уровень вложенности элементов каталога */
+.main-nav-level-2 {
+
+	&__header {}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {}
+
+	&__link {}
+}
+
+
+
+
+
+
+/* DESKTOP */
+@media @desktop {
+
+	/* второй уровень вложенности элементов каталога */
+	.main-nav-level-2 {
+
+		&__header {
+			padding-top: 10px;
+
+			text-transform: uppercase;
+			font: 700 11px/22px 'Circe';
+			color: #cc3333;
+		}
+
+		&__list {}
+
+		&__item {}
+
+		&__link {
+			display: inline-block;
+			padding-top: 4px;
+			padding-bottom: 4px;
+
+			text-decoration: none;
+			text-transform: uppercase;
+			font: 400 10px/12px 'Circe';
+			color: #333;
+		}
+	}
+
+
+	/* модификатор для десктопа, выдирает блок из потока элементов */
+	.main-nav-level-2--by-price {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 12;
+
+		display: block;
+		width: 1000px;
+		height: 40px;
+		overflow: hidden;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+
+		.main-nav-level-2__header {
+			display: none;
+		}
+
+
+		.main-nav-level-2__list {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			height: 38px;
+		}
+
+
+		.main-nav-level-2__item {
+			display: inline-block;
+		}
+
+
+		.main-nav-level-2__link {
+			position: relative;
+
+			display: inline-block;
+			margin-right: 10px;
+			padding: 0;
+			line-height: 22px;
+
+			text-decoration: underline;
+
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: -13px;
+				z-index: 1;
+
+				margin-top: -6px;
+
+				content: '';
+
+				display: block;
+
+				border: 5px solid transparent;
+				border-left: 5px solid #cc3333;
+			}
+		}
+	}
+
+
+
+	/* модификатор для данных ввиде цифр/чисел */
+	.main-nav-level-2--like-numerics {
+		width: 150px;
+
+
+		.main-nav-level-2__list {
+			font-size: 0;
+		}
+
+
+		.main-nav-level-2__item {
+			display: inline-block;
+			vertical-align: top;
+
+			margin-top: 4px;
+			margin-right: 10px;
+		}
+
+
+		.main-nav-level-2__link {
+			display: inline-block;
+			vertical-align: top;
+			/*width: 25px;*/
+			height: 25px;
+			padding-left: 5px;
+			padding-right: 5px;
+
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			border: 1px solid #ddd;
+			border-radius: 2px;
+
+			text-align: center;
+			text-transform: lowercase;
+			/*line-height: 15px;*/
+			font: 400 12px/15px 'Circe';
+			color: #666;
+		}
+	}
+}
+
+
+
+
+
+/* TOUCH */
+@media @touch {
+
+	.main-nav-level-2 {
+
+		&__header {
+			display: block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 19px 10px 15px 20px;
+
+			text-decoration: none;
+			text-transform: uppercase;
+			.font-circerou_regular(10px, 11px, #fff);
+
+			cursor: pointer;
+
+			&--active {
+				border-bottom: 1px solid #d0433f;
+			}
+		}
+
+		&__list {
+			display: none;
+
+			background-color: #c53e3a;
+			border-top: 1px solid #8f2d2a;
+
+
+			&--active {
+				display: block;
+			}
+		}
+
+		&__item {
+			display: block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			border-top: 1px solid #d0433f;
+			border-bottom: 1px solid #b33b37;
+
+			&--first-item,
+			&:first-child {
+				border-top: 1px solid #af3733;
+			}
+
+			&--last-item,
+			&:last-child {
+				border-bottom: 1px solid #af3733;
+			}
+		}
+
+		&__link {
+			display: block;
+			margin: 0 auto;
+			padding: 19px 10px 15px 20px;
+
+			text-decoration: none;
+			.font-circerou_regular(11px, 11px, #fff);
+		}
+	}
+}

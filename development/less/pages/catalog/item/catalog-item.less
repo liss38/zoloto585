@@ -1,0 +1,195 @@
+.catalog-item{
+    float: left;
+    margin: 0 5px 10px;
+    width: 238px;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    font-family: 'Circe';
+    position: relative;
+    text-align: left;
+    @media @tablet-portrait{
+        float: none;
+        display: inline-block;
+    }
+    @media @mobile{
+        width: 218px;
+    }
+    @media @mobile-portrait{
+        float: none;
+        margin: 0 auto 10px;
+        width: 238px;
+    }
+    &:hover{
+        .catalog-item__img:after{
+            display: block;
+        }
+        .catalog-item__fav{
+            display: block;
+        }
+    }
+    &__fav{
+        display: none;
+        position: absolute;
+        top: 92px;
+        left: 0;
+        right: 0;
+        font-size: 12px;
+        color: @color-2;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 10;
+        &:before{
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 24px;
+            height: 22px;
+            background: url(@img-sprite-primary) -72px -202px no-repeat;
+            margin-right: 8px;
+            margin-top: -2px;
+        }
+        &:hover{
+            text-decoration: underline;
+            &:before{
+                background: url(@img-sprite-primary) -47px -202px no-repeat;
+            }
+        }
+        &--active{
+            &:before{
+                background: url(@img-sprite-primary) -47px -202px no-repeat;
+            }
+        }
+        @media @touch{
+            display: block;
+            top: 10px;
+            right: 10px;
+            left: auto;
+            width: 24px;
+            height: 22px;
+            overflow: hidden;
+        }
+    }
+    &__img{
+        display: block;
+        padding: 17px 0;
+        position: relative;
+        &:after{
+            content: '';
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__info{
+        background: #f3f3f3;
+        border-top: 1px solid #ecebeb;
+        border-bottom: 1px solid #ecebeb;
+        padding: 5px 10px;
+        position: relative;
+        &:after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: url(../img/thingies/shadow-6.png) no-repeat;
+            background-size: 100% auto;
+        }
+    }
+    &__title{
+        display: block;
+        font-size: 12px;
+        line-height: 12px;
+        color: @color-2;
+        height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 8px;
+        text-decoration: none;
+        &:hover{
+            color: #c01d33;
+        }
+    }
+    &__price{
+        float: right;
+        font-size: 24px;
+        line-height: 1;
+        color: @color-1;
+        @media @mobile-album{
+            font-size: 20px;
+        }
+        &--old{
+            float: none;
+            font-weight: 100;
+            text-decoration: line-through;
+            text-transform: uppercase;
+        }
+        small{
+            font-size: 12px;
+        }
+    }
+    &__button{
+        display: block;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 0 0 5px 5px;
+        font-size: 12px;
+        line-height: 40px;
+        &--reserve{
+            background: #ed3030;
+            color: #fff;
+            &:before{
+                background: url(@img-sprite-primary) -135px -158px no-repeat;
+            }
+            &:hover{
+                background: #b32024;
+            }
+
+        }
+        &--soon{
+            background: #f3f3f3;
+            color: @color-2;
+            &:before{
+                background: url(@img-sprite-primary) -91px -90px no-repeat;
+            }
+            &:hover{
+                color: #fff;
+                background: #ed3030;
+                &:before{
+                    background: url(@img-sprite-primary) -135px -177px no-repeat;
+                }
+            }
+
+        }
+        &--reserve:before,
+        &--soon:before {
+            content: '';
+            display: inline-block;
+            width: 22px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-top: -3px;
+        }
+    }
+}

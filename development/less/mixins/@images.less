@@ -1,0 +1,145 @@
+/*
+	SPRITES
+	*******
+	спрайты, много маленьких изображений склеенных в одну картинку
+*/
+@img-sprite-header_20x20: '@{img-sprites}/sprite__header-icons_20x20.png';
+
+@img-sprite-form_37x35: '@{img-sprites}/sprite__form-icos_37x35.png';
+@img-sprite-form_50x48: '@{img-sprites}/sprite__form-icos_50x48.png';
+
+@img-sprite-pcard: '@{img-sprites}/pcard_icos_sprite.png';
+@img-sprite-pcard_mob: '@{img-sprites}/pcard_icos_sprite__mob.png';
+@img-sprite-pcard-order: '@{img-sprites}/pcard_order_sprite.png';
+
+@img-sprite-socials-1: '@{img-sprites}/product-soc.png';
+
+@img-sprite-catalog-filter: '@{img-sprites}/catalog_filter_sprite.png';
+@img-sprite-catalog-filter-colors: '@{img-sprites}/sprite__filter-colors.png';
+
+@img-sprite-promo-labels: '@{img-sprites}/sprite__promo-labels.png';
+
+/* основной спрайт, который содержит много иконок */
+@img-sprite-primary: '@{img-sprites}/sprite__primary-icon-set.png?v4';
+
+.img-sprite-primary-icon(@w, @h, @x, @y) {
+	height: @h;
+	width: @w;
+	overflow: hidden;
+
+	background: transparent url(@img-sprite-primary) @x @y no-repeat;
+}
+.primary-sprite-icon__1() {.img-sprite-primary-icon(20px, 20px, -25px, -59px);}
+.primary-sprite-icon__2() {.img-sprite-primary-icon(43px, 29px, -60px, -53px);}
+.primary-sprite-icon__3() {.img-sprite-primary-icon(30px, 29px, 0, -172px);}
+.primary-sprite-icon__4() {.img-sprite-primary-icon(30px, 21px, -31px, -180px);}
+.primary-sprite-icon__5() {.img-sprite-primary-icon(18px, 18px, -62px, -168px);}
+.primary-sprite-icon__6() {.img-sprite-primary-icon(18px, 14px, -62px, -187px);}
+.primary-sprite-icon__7() {.img-sprite-primary-icon(23px, 22px, 0, -204px);}
+.primary-sprite-icon__8() {.img-sprite-primary-icon(18px, 12px, -42px, -142px);}
+
+/* значкм с доставкой и т.п. в футере */
+.primary-sprite-icon__9()  {.img-sprite-primary-icon(17px, 22px, 0, -145px);}
+.primary-sprite-icon__10() {.img-sprite-primary-icon(23px, 23px, -17px, -144px);}
+.primary-sprite-icon__11() {.img-sprite-primary-icon(33px, 12px, -40px, -155px);}
+.primary-sprite-icon__12() {.img-sprite-primary-icon(27px, 25px, -73px, -142px);}
+
+/* значки соц сетей в футере */
+.primary-sprite-icon__13() {.img-sprite-primary-icon(26px, 26px, 0, -145px);}/* значения координат не верные */
+.primary-sprite-icon__14() {.img-sprite-primary-icon(26px, 26px, 0, -145px);}
+.primary-sprite-icon__15() {.img-sprite-primary-icon(26px, 26px, 0, -145px);}
+.primary-sprite-icon__16() {.img-sprite-primary-icon(26px, 26px, 0, -145px);}
+.primary-sprite-icon__17() {.img-sprite-primary-icon(26px, 26px, 0, -145px);}
+
+/* значок часов, яндекс поиск маршрута */
+.primary-sprite-icon__18() {.img-sprite-primary-icon(40px, 40px, 0, -145px);}
+.primary-sprite-icon__19() {.img-sprite-primary-icon(40px, 40px, 0, -145px);}
+
+
+
+
+/* для личного кабинета */
+@img-sprite-ucab-icos: '@{img-sprites}/sprite__ucab-icos.png';
+@img-sprite-ucab-icos-2: '@{img-sprites}/sprite__ucab-icos--profile.png';
+
+@img-sprite-ucab-plus-minus: '@{img-sprites}/sprite__ucab-plus_minus.png';
+@img-sprite-ucab-plus-minus-red: '@{img-sprites}/sprite__ucab-plus_minus--red.png';
+@img-sprite-ucab-romb: '@{img-sprites}/sprite__ucab-romb.png';
+@img-sprite-ucab-questions: '@{img-sprites}/sprite__ucab-questions.png';
+@img-sprite-ucab-question: '@{img-sprites}/sprite__ucab-question.png';
+
+@img-sprite-ucab-favorites: '@{img-sprites}/sprite__ucab-favorites.png';
+
+
+
+
+
+
+
+
+/*
+	PATTERNS
+	********
+	паттерны узоров/текстур, фоновые картинки не имеющие ярко выраженный смысл композиции
+*/
+@img-pattern-1: '@{img-patterns}/pattern-1.jpg';
+/*@img-pattern-...*/
+
+
+
+
+
+/*
+	PRINTS
+	******
+	принты, большие фоны, иллюстрации, фотофоны, выражена композиция картинки
+*/
+@img-prints-small-1: '@{img-prints}/pcard_motivate__bg.jpg';
+@img-prints-small-2: '@{img-prints}/pcard_motivate__bg-002.jpg';
+
+/* @img-prints-middle-1: '@{img-prints}/'; */
+
+/*@img-prints-large-1: '@{img-prints}/';*/
+
+
+
+
+/*
+	THINGIES
+	********
+	тени, рюшечки, вензеля и т.п.
+*/
+@img-thingies-shadow-1: '@{img-thingies}/shadow-1.png';
+@img-thingies-shadow-2: '@{img-thingies}/shadow-2.png';
+@img-thingies-shadow-3: '@{img-thingies}/shadow-3.png';
+@img-thingies-shadow-4: '@{img-thingies}/shadow-4.png';
+@img-thingies-shadow-5: '@{img-thingies}/shadow-5.png';
+@img-thingies-shadow-6: '@{img-thingies}/shadow-6.png';
+
+
+@img-thingies-surface-01: '@{img-thingies}/surface-01.png';
+
+@img-thingies-ribbon-1: '@{img-thingies}/ribbon-1.jpg';
+@img-thingies-ribbon-2: '@{img-thingies}/ribbon-2.jpg';
+@img-thingies-infoblock: '@{img-thingies}/infoblock_bg--50.jpg';
+
+
+/* используется в кабинете */
+@img-thingies-promocard-2: '@{img-thingies}/promoaction_card2.png';
+@img-thingies-bonus-card-small: '@{img-thingies}/bonus-card--s.png';
+@img-thingies-bonus-card-middle: '@{img-thingies}/bonus-card--m.png';
+@img-thingies-bonus-card-large: '@{img-thingies}/bonus-card--l.png';
+
+@img-thingies-ucab-login-bg-1: '@{img-thingies}/ucab__login-bg--1920x449.jpg';
+@img-thingies-ucab-login-bg-2: '@{img-thingies}/ucab__login-bg--750x435.jpg';
+@img-thingies-ucab-login-bg-3: '@{img-thingies}/ucab__login-bg--625x435.jpg';
+@img-thingies-ucab-login-bg-4: '@{img-thingies}/ucab__login-bg--425x328.jpg';
+@img-thingies-ucab-login-bg-5: '@{img-thingies}/ucab__login-bg--300x328.jpg';
+
+
+
+/*
+	STUB
+	****
+	картинки для заглушки, в "прод" не идут
+*/

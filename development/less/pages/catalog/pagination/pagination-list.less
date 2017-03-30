@@ -1,0 +1,107 @@
+.pagination_list__item {
+	background-color: #ffffff;
+	border: 1px solid #f4f4f4;
+	color: #424242;
+	float: left;
+	line-height: 1.42857;
+	margin-left: -1px;
+	padding: 0;
+	text-align: center;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+}
+.pagination_list__item__link-prev,
+.pagination_list__item__link-next,
+.pagination_list__item__link {
+	width: 30px;
+	height: 28px;
+	display: block;
+	position: relative;
+}
+.pagination_list__item.active {
+	position: relative;
+	cursor: default;
+}
+.pagination_list__item.active:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	left: -1px;
+	top: -1px;
+	border: 2px solid red;
+	width: 32px;
+	height: 30px;
+	z-index:1;
+}
+.pagination_list__item.active a:after {
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #fff;
+	bottom: -4px;
+	content: "";
+	height: 0;
+	left: 10px;
+	position: absolute;
+	width: 0;
+	z-index: 11;
+}
+.pagination_list__item.active:before {
+	position: absolute;
+	content: '';
+	bottom: -6px;
+	left: 10px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #f3483e;
+}
+.pagination_list__item:last-child  {
+	border-radius: 0 3px 3px 0;
+	background: #fafafa;
+}
+.pagination_list__item:first-child  {
+	border-radius: 3px 0 0 3px;
+	background: #fafafa;
+}
+.pagination_list__item__prev,
+.pagination_list__item__next {
+	width: 9px;
+	height: 14px; 
+	position: relative;
+	top: 6px;
+	left: 10px;
+	display:block;
+	background-image: url(../images/filter/filter_option__checkbox.png);
+	background-repeat: no-repeat;
+}
+.pagination_list__item__prev {
+	background-position: -16px -32px; 
+}
+.pagination_list__item__next{ 
+	background-position: -25px -32px;
+	left: 11px;
+}
+.pagination_list {
+	margin: 0 auto;
+	display: block;
+}
+
+.pagination_list__item:hover {
+	cursor: pointer;
+}
+
+.pagination_list>li a{
+	border: 1px solid transparent;
+}
+
+.pagination_list>li:hover a{
+	border: 1px solid #f3483e;
+}
+
+.pagination_list > li.active:hover a,
+.pagination_list > li.active a{
+	border:none;
+}
