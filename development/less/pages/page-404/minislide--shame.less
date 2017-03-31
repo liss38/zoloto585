@@ -1,0 +1,26 @@
+.minislide .item {
+	position: relative;
+	width: 49%;
+	float: right;
+	padding-left: 5px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.minislide .item img {
+	width: 100%;
+}
+.minislide .item h2 {
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	bottom: -14px;
+	width: 100%;
+}
+
+@media screen and (max-width: 619px) {
+	.minislide { font-size: 0; }
+	.minislide .item { float: none; margin: 0; padding: .5%; }
+}

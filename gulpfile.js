@@ -681,16 +681,32 @@ var z585AllScaffoldingList = [
 	'development/less/scaffolding/layout__fonts.less',
 	'development/less/scaffolding/layout__external.less',
 
+	// старый css
 	'development/less/scaffolding/legacy__all.less',
 
 	'development/less/scaffolding/layout__grid.less',
 	'development/less/scaffolding/layout__uikit.less',
-	// 'development/less/scaffolding/layout__header.less',
-	// 'development/less/scaffolding/layout__footer.less',
+	'development/less/scaffolding/layout__header.less',
+	'development/less/scaffolding/layout__footer.less',
 	// 
 	// 
 	// стили страниц
-	'development/less/scaffolding/pages__catalog.less'
+	'development/less/scaffolding/pages__index.less',
+	'development/less/scaffolding/pages__product-card.less',
+	'development/less/scaffolding/pages__catalog.less',
+	'development/less/scaffolding/pages__page-404.less',
+	'development/less/scaffolding/pages__user-cabinet.less',
+	'development/less/scaffolding/pages__store.less',
+
+	// system
+	'development/less/scaffolding/system__helpers.less',
+
+	// after-all
+	// 'development/less/scaffolding/pages__.less',
+	// shame-list
+	// 'development/less/scaffolding/pages__.less',
+	// 'development/less/scaffolding/pages__.less',
+	// 'development/less/scaffolding/pages__.less',
 ];
 
 // scaffolding z585-all-caa import list

@@ -1,0 +1,227 @@
+.bonuses-card-identifier { height: 124px; text-transform: uppercase; font: 400 12px 'Circe'; color: #303030; }
+
+
+.bonuses-card-identifier-text,
+/*.bonuses-card-identifier-text__virtual,*/
+.bonuses-card-identifier__details-link,
+.bonuses-card-identifier__input,
+.bonuses-card-identifier-points,
+.bonuses-card-identifier__sms-button { position: absolute; }
+
+
+
+.bonuses-card-identifier-text { top: 40px; left: 35px; text-align: left; }
+
+
+
+
+
+
+/*;*/
+
+
+/*;*/
+
+
+
+.bonuses-card-identifier__details-link {
+	text-decoration: underline;
+	font: 300 10px 'Circe';
+	color: #303030;
+
+	top: 88px;
+	left: 200px;
+}
+.bonuses-card-identifier__details-link:hover { color: #ed3030; }
+
+
+
+
+.bonuses-card-identifier__input {
+	display: block;
+	width: 200px;
+	height: 30px;
+	padding: 0 30px 0 13px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	background: #fff;
+	border: 1px solid #e0ddde;
+	border-radius: 2px;
+	outline: none;
+
+	text-align: left;
+	font: 400 14px/30px 'Circe';
+	color: #303030;
+
+	top: 42px;
+	left: 200px;
+}
+.bonuses-card-identifier__input-up {}
+
+
+.bonuses-card-identifier-points { text-align: left; top: 40px; left: 430px; }
+.bonuses-card-identifier-points__text { font-size: 11px; line-height: 12px; color: #303030; }
+.bonuses-card-identifier-points__count { font-size: 24px; line-height: 24px; color: #ed3030; }
+.bonuses-card-identifier-points__units { color: #ed3030; }
+
+
+.bonuses-card-identifier__sms-button {
+	display: block;
+	width: 250px;
+	height: 37px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	background: #fff;
+	border: 1px solid #d5d5d5;
+	border-radius: 2px;
+	box-shadow: 1px 1px 7px -3px rgba(0, 0, 0, .5);
+
+	text-decoration: none;
+	text-align: center;
+	font: 400 12px/37px 'Circe';
+	color: #666;
+
+	top: 44px;
+	right: 70px;
+
+	cursor: pointer;
+}
+.bonuses-card-identifier__sms-button:hover { background: #ed3030; border: 1px solid #ed3030; color: #fff; }
+
+.bonuses-card-identifier__card585-gold {
+	display: block;
+	width: 250px;
+	height: 200px;
+
+	background: url(@img-thingies-bonus-card-large) 0 0 no-repeat;
+
+	position: absolute;
+	top: 139px;
+	right: 50px;
+}
+
+@media @mobile-portrait {
+	.bonuses-card-identifier {
+		width: 200px;
+		height: 273px;
+		margin: 0 auto;
+
+		position: relative;
+	}
+
+	.bonuses-card-identifier-text,
+	.bonuses-card-identifier__sms-button,
+	.bonuses-card-identifier__input,
+	.bonuses-card-identifier-text__virtual,
+	.bonuses-card-identifier__details-link { left: 0; }
+
+	.bonuses-card-identifier-points { top: 135px; left: 90px; }
+
+	.bonuses-card-identifier-text { top: 20px; }
+	.bonuses-card-identifier-text__virtual { top: 35px; }
+	.bonuses-card-identifier__input { top: 58px; }
+	.bonuses-card-identifier__details-link { top: 98px; font-size: 9.6px }
+	.bonuses-card-identifier__sms-button { top: 197px; font-size: 10px }
+
+	.bonuses-card-identifier__sms-button,
+	.bonuses-card-identifier__input { width: 200px; }
+	.bonuses-card-identifier__card585-gold {
+		width: 124px;
+		height: 94px;
+		background: url(@img-thingies-bonus-card-small) 0 0 no-repeat;
+		top: 125px;
+		left: 50%;
+		margin-left: -99px;
+	}
+}
+
+@media @mobile-album {
+	.bonuses-card-identifier {
+		width: 400px;
+		height: 214px;
+		margin: 0 auto;
+
+		position: relative;
+	}
+
+	.bonuses-card-identifier-text,
+	.bonuses-card-identifier__details-link,
+	.bonuses-card-identifier__input,
+	.bonuses-card-identifier__sms-button { left: 0px; }
+
+	.bonuses-card-identifier__input { top: 66px; }
+	.bonuses-card-identifier__details-link { top: 108px; }
+	.bonuses-card-identifier__sms-button { top: 148px; }
+	.bonuses-card-identifier-points { top: 65px; left: 244px; }
+
+	.bonuses-card-identifier__sms-button { width: 200px; font-size: 10px; }
+
+	.bonuses-card-identifier-text__virtual { position: absolute; top: -18px; }
+	
+	.bonuses-card-identifier__card585-gold {
+		width: 124px;
+		height: 94px;
+		background: url(@img-thingies-bonus-card-middle) 0 0 no-repeat;
+		top: 109px;
+		left: 245px;
+	}
+}
+
+@media @tablet-portrait {
+	.bonuses-card-identifier {
+		width: 600px;
+		height: 224px;
+		margin: 0 auto;
+
+		position: relative;
+	}
+
+	.bonuses-card-identifier-text,
+	.bonuses-card-identifier__details-link,
+	.bonuses-card-identifier__input,
+	.bonuses-card-identifier__sms-button { left: 26px; }
+
+	.bonuses-card-identifier__input { top: 66px; }
+	.bonuses-card-identifier__details-link { top: 108px; }
+	.bonuses-card-identifier__sms-button { top: 148px; }
+	.bonuses-card-identifier-points { top: 65px; left: 244px; }
+
+	.bonuses-card-identifier__sms-button { width: 200px; font-size: 10px; }
+
+	.bonuses-card-identifier-text__virtual { position: absolute; top: -18px; }
+
+
+	.bonuses-card-identifier__card585-gold { background-position: right top; background-size: 80% 77%; top: 43px; right: 23px; }
+}
+@media @tablet-album {
+	.bonuses-card-identifier {
+		width: 600px;
+		height: 224px;
+		margin: 0 auto;
+
+		position: relative;
+	}
+
+	.bonuses-card-identifier-text,
+	.bonuses-card-identifier__details-link,
+	.bonuses-card-identifier__input,
+	.bonuses-card-identifier__sms-button { left: 0; }
+
+	.bonuses-card-identifier__input { top: 66px; }
+	.bonuses-card-identifier__details-link { top: 108px; }
+	.bonuses-card-identifier__sms-button { top: 148px; }
+	.bonuses-card-identifier-points { top: 65px; left: 218px; }
+
+	.bonuses-card-identifier__sms-button { width: 200px; font-size: 10px; }
+
+	.bonuses-card-identifier-text__virtual { position: absolute; top: -18px; }
+	
+
+	.bonuses-card-identifier__card585-gold { background-position: right top; top: 28px; right: 0; }
+}

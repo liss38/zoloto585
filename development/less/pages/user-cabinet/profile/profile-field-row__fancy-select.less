@@ -1,0 +1,114 @@
+/* Кастомизация для селекта, <select> */
+.profile-field-row .fancy-select {
+	width: 200px;
+
+	font-size: 11px !important; /* перекрытие div.fancy-select div.trigger в select.css:12 */
+}
+.profile-field-row .fancy-select .trigger {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 30px;
+	padding: 3px 25px 3px 15px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border: 1px solid #e2dedf;
+	border-radius: 2px;
+
+	text-transform: uppercase;
+	font: 300 11px/25px 'Circe';
+	color: #bcbcbc;
+}
+.profile-field-row .fancy-select .trigger:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url(@img-sprite-ucab-icos-2) -30px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+.profile-field-row .fancy-select .trigger.open:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url(@img-sprite-ucab-icos-2) 0px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+.profile-field-row .fancy-select .trigger:hover,
+.profile-field-row .fancy-select .trigger.open {
+	background: #fff;
+	border: 1px solid #c93232;
+
+	color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected {
+	border: 1px solid #c93232;
+
+	color: #666;
+}
+.profile-field-row .fancy-select .trigger.selected:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+	padding: 0;
+
+	background: url(@img-sprite-ucab-icos-2) 0px -119px no-repeat;
+	border: 0;
+
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+
+.profile-field-row .fancy-select .options,
+.profile-field-row .fancy-select .options.open {
+	width: 200px;
+	min-width: 200px; /* перекрытие div.fancy-select ul.options в select.css */
+	padding: 0;
+
+	background: #fff;
+	border: 1px solid #c93232;
+}
+.profile-field-row .fancy-select .options.open > li {
+	display: block;
+	padding: 8px 10px 2px 13px;
+
+	border-top: 1px solid #f7f7f7;
+	border-bottom: 1px solid #e7e6e6;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	font: 300 11px/25px 'Circe' !important;
+	color: #bcbcbc;
+
+	cursor: pointer;
+}
+.profile-field-row .fancy-select .options > li.hover {
+	background: #f7f7f7;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #666;
+}
+.profile-field-row .fancy-select .options > li.selected {}
+/**/

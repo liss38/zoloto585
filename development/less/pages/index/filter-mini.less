@@ -1,0 +1,179 @@
+.filter-mini {
+	font-size: 0;
+
+
+	.form__field-select {
+		padding-left: 15px;
+		padding-right: 30px;
+	}
+
+
+	&__row {
+		display: inline-block;
+		width: 50%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-top: 20px;
+
+		text-align: right;
+
+
+		&--even {
+			text-align: left;
+		}
+
+
+		&--button {
+			position: relative;
+			top: 3px;
+			z-index: 2;
+
+			/*height: 37px;*/
+			width: 100%;
+		}
+	}
+}
+.filter-mini-option {
+	display: inline-block;
+	height: 30px;
+	width: 150px;
+}
+
+
+
+@media @desktop {
+	.filter-mini {
+		position: relative;
+
+		vertical-align: top;
+		/*display: inline-block;*/
+		width: 360px;
+		margin: 10px auto;
+
+
+		&__row {
+			height: 40px;
+			width: 180px;
+			padding: 5px 0;
+
+			text-align: center;
+
+
+			&__even {
+				text-align: center;
+			}
+
+
+			&--button {
+				position: absolute;
+				top: 50%;
+				right: -180px;
+				margin-top: -20px;
+
+				width: 150px;
+			}
+		}
+	}
+
+	.filter-mini-option {
+		height: 30px;
+	}
+	.filter-mini-option .form__field-ico {
+		height: 28px;
+	}
+	.filter-mini-option:hover .form__field-ico {
+		-ms-background-position-x: -33px;
+		background-position-x: -33px;
+	}
+	.filter-mini-option .field-icons-4 {
+		background-position: 4px -108px;
+	}
+
+	.filter-mini-submit {
+
+		width: 120px;
+		height: 30px;
+
+		font-size: 11px;
+		line-height: 32px;
+	}
+}
+
+
+@media @touch {
+	.filter-mini {
+		height: 0;
+		overflow: hidden;
+
+		&--opened {
+			height: auto;
+		}
+	}
+	.filter-mini-option {
+		margin-left: 25px;
+		margin-right: 25px;
+
+
+		.form__field-ico {
+			width: 37px;
+
+			background-image: url(@img-sprite-form_37x35);
+			background-position: 4px -108px;
+		}
+
+
+		&:hover  .form__field-ico {
+			-ms-background-position-x: -33px;
+			background-position-x: -33px;
+		}
+	}
+
+	.filter-mini-submit {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+@media @mobile-portrait {
+	.filter-mini {
+
+		.form__field {
+			width: 275px;
+			height: 48px;
+			margin: 0 auto;
+		}
+
+
+		.form__field-select {
+			.font-circe_light(14px, 48px, #666);
+		}
+
+
+		&__row {
+			display: block;
+			width: 100%;
+			text-align: center;
+
+
+			&--even {
+				text-align: center;
+			}
+		}
+	}
+
+	.filter-mini-option {
+		.form__field-ico {
+			width: 50px;
+
+			background-image: url(@img-sprite-form_50x48);
+			background-position: 0 -146px;
+		}
+
+
+		&:hover  .form__field-ico {
+			-ms-background-position-x: -50px;
+			background-position-x: -50px;
+		}
+	}
+}

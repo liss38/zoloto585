@@ -1,0 +1,60 @@
+.ucab-login-option {
+	position: absolute;
+	top: 232px;
+	left: 50%;
+
+	margin-left: -100px;
+
+	display: block;
+	width: 200px;
+	height: 12px;
+
+
+	@media @mobile-portrait {
+		top: 174px;
+	}
+
+
+	&__item {
+		position: absolute;
+		top: 0;
+
+		display: block;
+
+		text-transform: uppercase;
+		text-decoration: underline;
+		font: 400 11px 'Circe';
+		color: #666;
+
+
+		&:hover {
+			text-decoration: none;
+		}
+
+
+		&:first-child {
+			left: 0;
+		}
+
+
+		&:last-child {
+			right: 0;
+
+
+			&:before {
+				position: absolute;
+				top: 3px;
+				left: -11px;
+
+				content: '';
+
+				display: block;
+				width: 2px;
+				height: 8px;
+
+				background: #666;
+				border-left: 1px solid #cbb9b8;
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+.ucab-breadcrumbs {
+	margin: 10px;
+
+
+	&__item {
+		display: inline-block;
+		/*margin: 0 !important;/* перекрывается в base.css:267  */
+		padding-right: 15px;
+
+		text-decoration: underline;
+		text-transform: uppercase;
+		font: italic 400 10px/28px 'Circe';
+		color: #e8e8e8;
+
+		position: relative;
+
+
+		&:hover {
+			text-decoration: none;
+		}
+
+
+		&:after {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+
+			content: '->';
+			display: block;
+
+			text-decoration: none;
+			color: #e8e8e8;
+		}
+
+
+		&--active {
+			text-decoration: none;
+			color: #fff;
+			cursor: default;
+
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+@media @mobile {
+	.ucab-breadcrumbs {
+		display: none;
+	}
+}

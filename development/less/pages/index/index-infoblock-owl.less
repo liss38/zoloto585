@@ -1,0 +1,270 @@
+.infoblock .wrp2
+{
+	max-width: 1165px;
+	margin: 0 auto;
+	text-align: center;
+}
+.infoblock .row
+{
+	margin-left: -6px;
+	margin-right: -6px;
+}
+.infoblock .item
+{
+	float: left;
+	padding: 0 6px;
+}
+.infoblock .item-inner
+{
+	background: #fff;
+	padding: 8px 8px 0;
+	width: 325px;
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	box-shadow: 0px 2px 6px rgba(0,0,0,.25);
+}
+.infoblock .item-inner .caption
+{
+	display: table-cell;
+	vertical-align: middle;
+	width: 646px;
+	height: 65px;
+}
+.infoblock .item-inner.long .caption
+{
+	height: 112px;
+}
+.infoblock .item-inner p
+{
+	font-size: 10px;
+	color: #2f2f2f;
+	margin: 0px 0 5px;
+	line-height: 1.3;
+}
+.infoblock .item-inner a
+{
+	font-size: 12px;
+	color: #707070;
+	text-decoration: underline;
+}
+.infoblock .item-inner a:hover
+{
+	text-decoration: none;
+}
+.infoblock .item .text-block
+{
+	width: 325px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	text-align: center;
+	color: #635b5b;
+	line-height: 1.2;
+	padding: 60px 0 80px;
+	position: relative;
+}
+.infoblock .item .text-block:before,
+.infoblock .item .text-block:after
+{
+	content: '';
+	display: block;
+	width: 29px;
+	height: 25px;
+	background: url(../images/infoblock/kov.png) no-repeat;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.infoblock .item .text-block:before
+{
+	top: 14px;
+}
+.infoblock .item .text-block:after
+{
+	bottom: 25px;
+	background-position: bottom;
+}
+.infoblock .item .text-block span
+{	display: block;
+	font-size: 28px;
+	font-family: 'Helvetica LightItalic';
+	margin-bottom: 15px;
+}
+.infoblock .item .text-block p
+{
+	font-size: 15px;
+	font-family: 'Circe-Bold';
+	font-style: italic;
+	margin-bottom: 20px;
+}
+.infoblock .item .text-block small
+{
+	font-size: 11px;
+}
+.infoblock .item.wide .item-inner
+{
+	width: 663px;
+}
+.infoblock #main-sl3
+{
+	display: none !important;
+}
+.infoblock #main-sl3 .item-inner:last-child
+{
+	margin-bottom: 4px;
+}
+.infoblock #main-sl3 .owl-pagination
+{
+	display: none;
+}
+.infoblock #main-sl3 .owl-buttons
+{
+	position: static;
+}
+.infoblock #main-sl3 .owl-buttons div
+{
+	top: 50%;
+	margin-top: -25px;
+}
+@media (min-width: 1400px) {
+	.infoblock .wrp2
+	{
+		width: 100%;
+	}
+	.infoblock .row
+	{
+		margin-left: -25px;
+		margin-right: -25px;
+		position: relative;
+	}
+	.infoblock .item
+	{
+		padding: 0 25px;
+	}
+	.infoblock .item .text-block
+	{
+		width: 415px;
+		position: absolute;
+	}
+	.infoblock .item:nth-child(3) .item-inner+.item-inner
+	{
+		position: relative;
+		left: 85px;
+	}
+	.infoblock .item:nth-child(1) .item-inner+.item-inner,
+	.infoblock .item:nth-child(4)
+	{
+		position: relative;
+		left: 86px;
+	}
+}
+@media (min-width: 1020px) and (max-width: 1399px) {
+	.infoblock .wrp2
+	{
+		width: 1000px;
+	}
+	.infoblock .item .text-block span
+	{
+		font-size: 25px;
+		font-family: 'Helvetica Roman';
+	}
+}
+@media (max-width: 1019px) {
+	.infoblock .wrp2
+	{
+		width: 666px;
+	}
+	.infoblock .row
+	{
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+	.infoblock .item
+	{
+		padding: 0 8px;
+	}
+	.infoblock .item .text-block {
+		display: none;
+	}
+}
+
+@media (max-width: 749px) {
+	.infoblock .wrp2
+	{
+		width: 592px;
+	}
+	.infoblock .row {
+	    margin-left: -4px;
+	    margin-right: -4px;
+	}
+	.infoblock .item
+	{
+		padding: 0 4px;
+	}
+	.infoblock .item-inner
+	{
+		width: 292px;
+		margin-bottom: 7px;
+		padding: 5px 5px 0;
+	}
+	.infoblock .item-inner img
+	{
+		width: 100%;
+		height: auto;
+	}
+	.infoblock .item-inner iframe
+	{
+		height: 161px;
+	}
+	.infoblock .item-inner.long .caption
+	{
+		height: 101px;
+	}
+	.infoblock .item.wide .item-inner
+	{
+		width: 592px;
+	}
+}
+@media (max-width: 619px){
+	.infoblock .wrp2
+	{
+		display: none;
+	}
+	.infoblock #main-sl3
+	{
+		display: block !important;
+	}
+}
+@media (max-width: 479px) {
+	.infoblock #main-sl3 .owl-controls {
+		position: relative;
+		height: 60px;
+		background: #fff;
+		width: 100%;
+		border-top: 1px solid #cccbca;
+		margin-top: 20px;
+	}
+	.infoblock #main-sl3 .owl-pagination {
+		display: block;
+	}
+	.infoblock #main-sl3 .owl-pagination {
+		bottom: 23px;
+	}
+	.infoblock #main-sl3 .owl-pagination .owl-page {
+		position: relative;
+		z-index: 5;
+	}
+	.infoblock #main-sl3 .owl-buttons {
+		top: auto;
+		margin-top: 0;
+		bottom: 50px;
+	}
+	.infoblock #main-sl3 .owl-buttons div {
+		width: 40px;
+		height: 40px;
+		background-size: 80px 80px;
+		margin-top: -20px;
+	}
+}

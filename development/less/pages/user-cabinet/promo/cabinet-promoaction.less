@@ -1,0 +1,160 @@
+.cabinet-promoaction-header,
+.cabinet-promoaction-one,
+.cabinet-promoaction-plus,
+.cabinet-promoaction-two,
+.cabinet-promoaction-equal,
+.cabinet-promoaction-three {
+	position: absolute;
+	top: 13px;
+
+	margin: 0;
+
+	color: #fff;
+}
+
+
+.cabinet-promoaction-header {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+
+	text-transform: uppercase;
+	font: 300 18px/60px 'Circe';
+
+	top: -54px;
+	left: 275px;
+}
+
+
+.cabinet-promoaction-plus,
+.cabinet-promoaction-equal {
+	top: 21px;
+
+	font: 300 30px/20px 'Circe';
+}
+
+
+
+.cabinet-promoaction-one {left: 155px;}
+.cabinet-promoaction-plus { left: 283px; }
+.cabinet-promoaction-two {left: 325px;}
+.cabinet-promoaction-equal { left: 500px; }
+.cabinet-promoaction-three {left: 550px;}
+
+.cabinet-promoaction__major-text { display: block; text-transform: uppercase; font: 400 16px/20px 'Circe'; }
+.cabinet-promoaction__minor-text { display: block; font: 300 12px/12px 'Circe'; }
+.cabinet-promoaction-three .cabinet-promoaction__minor-text { font-size: 14px; }
+
+
+
+.cabinet-promoaction-card {
+	display: block;
+	width: 133px;
+	height: 73px;
+
+	background: url(@img-thingies-promocard-2) 0 0 no-repeat;
+
+	position: absolute;
+	left: 12px;
+	bottom: 9px;
+}
+
+
+
+@media @mobile-portrait {
+	.cabinet-promoaction-header { top: -47px; left: 24px; font-size: 14px; }
+
+	.cabinet-promoaction-card { display: none; }
+
+	.cabinet-promoaction-plus,
+	.cabinet-promoaction-equal { display: none; }
+
+	.cabinet-promoaction-one,
+	.cabinet-promoaction-two,
+	.cabinet-promoaction-three { width: 260px; left: 30px; }
+
+	.cabinet-promoaction-one {top: 24px;}
+	.cabinet-promoaction-two {top: 45px;}
+	.cabinet-promoaction-three {top: 66px;}
+
+	.cabinet-promoaction-one:before,
+	.cabinet-promoaction-two:before,
+	.cabinet-promoaction-three:before {
+		content: "";
+
+		display: table;
+		width: 30px;
+		height: 30px;
+
+		background: url(@img-sprite-ucab-icos) 0 -270px no-repeat;
+
+		position: absolute;
+		/*top: -9px;*/
+		top: -3px;
+		left: -25px;
+	}
+
+	.cabinet-promoaction__major-text,
+	.cabinet-promoaction__minor-text,
+	.cabinet-promoaction-three .cabinet-promoaction__minor-text {
+		display: inline-block;
+
+		text-transform: uppercase;
+		font-size: 10px;
+		line-height: 14px;
+	}
+	.cabinet-promoaction__major-text { padding-right: 4px; font-family: 'Circe'; font-weight: 700; }
+}
+
+
+
+
+@media @mobile-album {
+	.cabinet-promoaction-header { left: 66px; }
+
+	.cabinet-promoaction-card { display: none; }
+
+	.cabinet-promoaction-one {left: 10px;}
+	.cabinet-promoaction-plus { left: 105px; }
+	.cabinet-promoaction-two {left: 135px;}
+	.cabinet-promoaction-equal { left: 282px; }
+	.cabinet-promoaction-three {left: 312px;}
+
+	.cabinet-promoaction-one,
+	.cabinet-promoaction-two,
+	 .cabinet-promoaction-three { top: 16px; }
+
+	.cabinet-promoaction__major-text,
+	.cabinet-promoaction__minor-text,
+	.cabinet-promoaction-three .cabinet-promoaction__minor-text { font-size: 12px; line-height: 14px; }
+}
+
+
+
+
+@media @tablet-portrait {
+	.cabinet-promoaction-header { left: 144px; }
+
+	.cabinet-promoaction-card { background-size: 81%; left: 0; bottom: -5px; }
+
+	.cabinet-promoaction-one {left: 110px;}
+	.cabinet-promoaction-plus { left: 216px; }
+	.cabinet-promoaction-two {left: 245px;}
+	.cabinet-promoaction-equal { left: 393px; }
+	.cabinet-promoaction-three {left: 428px;}
+
+	.cabinet-promoaction__major-text { font-size: 14px; }
+	.cabinet-promoaction__minor-text { font-size: 12px; }
+}
+
+
+
+@media @tablet-album {
+	.cabinet-promoaction-header { left: 179px; }
+	.cabinet-promoaction-one {left: 144px;}
+	.cabinet-promoaction-plus { left: 278px; }
+	.cabinet-promoaction-two {left: 317px;}
+	.cabinet-promoaction-equal { left: 475px; }
+	.cabinet-promoaction-three {left: 513px;}
+	.cabinet-promoaction-card { left: -6px; }
+}

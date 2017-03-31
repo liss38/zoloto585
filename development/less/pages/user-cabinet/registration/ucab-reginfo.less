@@ -1,0 +1,100 @@
+.ucab-reginfo {
+	margin: 0;
+
+	padding: 20px 25px 0 75px;
+
+	list-style: none;
+
+
+
+	&__item {
+		position: relative;
+
+		display: block;
+		padding: 5px 0 30px 0;
+
+		line-height: 20px;
+		font-size: 14px;
+
+
+		@media @mobile-portrait {
+			padding-bottom: 20px;
+			font-size: 12px;
+			line-height: 18px;
+		}
+
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: -50px;
+
+			content: '';
+
+			display: block;
+			width: 25px;
+			height: 30px;
+
+			background: url(@img-sprite-ucab-icos) 0 0 no-repeat;
+
+
+
+			@media @mobile-portrait {
+				left: -45px;
+			}
+		}
+
+
+		&:nth-child(1) {
+			&:before { background-position: left 5px; }
+		}
+
+
+		&:nth-child(2) {
+			&:before { background-position: left -25px; }
+		}
+
+
+		&:nth-child(3) {
+			&:before { background-position: left -55px; }
+		}
+
+
+		&:nth-child(4) {
+			&:before { background-position: left -95px; }
+		}
+
+
+
+		a {
+			text-decoration: underline;
+			color: #666;
+
+
+			&:hover {
+				text-decoration: none;
+				color: #ed3030;
+			}
+		}
+	}
+
+
+
+	@media @mobile-portrait {
+		padding-left: 60px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 459px) {
+	.cabinet-registration-info { top: 401px; padding-left: 60px; }
+	.cabinet-registration-info__item { padding-bottom: 20px; font-size: 12px; line-height: 18px; }
+
+	.cabinet-registration-info__item:before { left: -46px; }
+	.cabinet-registration-info__item:nth-child(1):before { top: 10px; }
+	.cabinet-registration-info__item:nth-child(2):before { top: 3px; }
+	.cabinet-registration-info__item:nth-child(3):before { top: 9px; }
+	.cabinet-registration-info__item:nth-child(4):before { top: 8px; }
+}

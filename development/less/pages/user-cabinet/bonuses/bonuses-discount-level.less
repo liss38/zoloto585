@@ -1,0 +1,368 @@
+.bonuses-discount-level {}
+
+
+.bonuses-discount-level__header {
+	display: block;
+	width: 675px;
+
+	margin: 10px 0 0 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	text-transform: uppercase;
+	text-align: center;
+	font: 700 12px/40px 'Circe';
+	color: #ed3030;
+}
+
+
+.bonuses-discount-level-progress {
+	display: block;
+	width: 100%;
+	height: 100px;
+
+	position: relative;
+}
+
+.bonuses-discount-level-progress-line {
+	display: block;
+	width: 625px;
+	height: 100px;
+
+	position: absolute;
+	top: 0;
+	left: 25px;
+}
+
+.bonuses-discount-level-progress-line__horizontal {
+	display: block;
+	width: 601px;
+	height: 2px;
+
+	background: #d62a2b;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -1px;
+	left: 13px;
+}
+.bonuses-discount-level-progress-line__vertical-1,
+.bonuses-discount-level-progress-line__vertical-2,
+.bonuses-discount-level-progress-line__vertical-3,
+.bonuses-discount-level-progress-line__vertical-4 {
+	display: block;
+	width: 2px;
+	height: 7px;
+
+	background: #ed3030;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -3.5px;
+	left: 13px;
+}
+
+.bonuses-discount-level-progress-line__vertical-1 {}
+.bonuses-discount-level-progress-line__vertical-2 { left: 211px; }
+.bonuses-discount-level-progress-line__vertical-3 { left: 412px; }
+.bonuses-discount-level-progress-line__vertical-4 { left: 612px; }
+.bonuses-discount-level-progress-line__rhomb {
+	display: block;
+	width: 24px;
+	height: 24px;
+
+	background: url(@img-sprite-ucab-romb) center center no-repeat;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	left: 15.5px;
+	margin-left: -12px;
+}
+.bonuses-discount-level-progress-line__rhomb--start { left: 15.5px; }
+.bonuses-discount-level-progress-line__rhomb--silver { left: 212px; }
+.bonuses-discount-level-progress-line__rhomb--gold { left: 413px; }
+.bonuses-discount-level-progress-line__rhomb--platinum { left: 613px; }
+
+
+.bonuses-discount-level-progress-labels-percent {
+	position: absolute;
+	left: 25px;
+}
+.bonuses-discount-level-progress-labels-percent__item {
+	text-transform: uppercase;
+	font: 300 18px 'Circe';
+	color: #333;
+
+	position: absolute;
+	top: 20px;
+}
+.bonuses-discount-level-progress-labels-percent__item:nth-child(1) { left: 11px; }
+.bonuses-discount-level-progress-labels-percent__item:nth-child(2) { left: 100px; }
+.bonuses-discount-level-progress-labels-percent__item:nth-child(3) { left: 305px; }
+.bonuses-discount-level-progress-labels-percent__item:nth-child(4) { left: 500px; }
+.bonuses-discount-level-progress-labels-percent__item--get { color: #b32023; }
+
+.bonuses-discount-level-progress-labels-status {
+	position: absolute;
+	left: 25px;
+}
+.bonuses-discount-level-progress-labels-status__item {
+	display: block;
+	width: 75px;
+
+	text-transform: uppercase;
+	text-align: center;
+	font: 400 10px 'Circe';
+	color: #303030;
+
+	position: absolute;
+	top: 65px;
+}
+.bonuses-discount-level-progress-labels-status__item:nth-child(1) { text-align: left; left: 13px; }
+.bonuses-discount-level-progress-labels-status__item:nth-child(2) { left: 175px; }
+.bonuses-discount-level-progress-labels-status__item:nth-child(3) { left: 375px; }
+.bonuses-discount-level-progress-labels-status__item:nth-child(4) { left: 540px; }
+.bonuses-discount-level-progress-labels-status__item--get { color: #b32023; }
+.bonuses-discount-level-progress-labels-status__item-number { font-size: 12px; line-height: 14px; }
+.bonuses-discount-level-progress-labels-status__item--get .bonuses-discount-level-progress-labels-status__item-number { font-size: 14px; }
+
+
+.bonuses-discount-level__note {
+	text-transform: uppercase;
+	font: 400 10px 'Circe';
+	color: #666;
+
+	position: absolute;
+	left: 39px;
+	bottom: -48px;
+}
+
+
+.bonuses-discount-level__card585-gold {
+	display: none;
+	width: 250px;
+	height: 200px;
+
+	background: url(@img-thingies-bonus-card-large) 0 0 no-repeat;
+
+	position: absolute;
+	top: -35px;
+	right: 50px;
+}
+
+@media @mobile-portrait {
+	.bonuses-discount-level { width: 100%; min-width: 300px; position: relative; }
+	.bonuses-discount-level:after {
+		content: "";
+
+		display: block;
+		width: 100%;
+
+		border-top: 1px solid #dbdbdb;
+		border-bottom: 1px solid #fff;
+
+		position: absolute;
+		top: 40px;
+	}
+	.bonuses-discount-level__header {
+		width: 100%;
+		height: 40px;
+		margin: 0;
+		padding: 0 18px;
+
+		background: url(@img-sprite-ucab-plus-minus-red) right top no-repeat;
+
+		text-align: left;
+		font: 400 11px/45px 'Circe';
+
+		cursor: pointer;
+	}
+	.bonuses-discount-level__header_active { background-position: right -40px; }
+
+	.bonuses-discount-level-progress { width: 100%; height: 128px; margin: 0 auto; }
+
+	.bonuses-discount-level-progress_hide { display: none; }
+
+	.bonuses-discount-level-progress-line { top: 0px; }
+	.bonuses-discount-level-progress-line,
+	.bonuses-discount-level-progress-line__horizontal { width: 250px; }
+
+	.bonuses-discount-level-progress-line { left: 25px; }
+	.bonuses-discount-level-progress-line__horizontal,
+	.bonuses-discount-level-progress-line__vertical-1 { left: 0; }
+	.bonuses-discount-level-progress-line__vertical-2 { left: 125px; }
+	.bonuses-discount-level-progress-line__vertical-3 { left: 188px; }
+	.bonuses-discount-level-progress-line__vertical-4 { left: 250px; }
+
+	.bonuses-discount-level-progress-line__rhomb--silver { left: 63px; }
+
+	.bonuses-discount-level-progress-labels-percent,
+	.bonuses-discount-level-progress-labels-status,
+	.bonuses-discount-level__note { left: 18px; }
+
+
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(1) { left: 3px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(2) { left: 96px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(3) { left: 157px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(4) { left: 222px; }
+
+
+	.bonuses-discount-level-progress-labels-status__item { font-size: 0; }
+	.bonuses-discount-level-progress-labels-status__item-number { font-size: 14px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(1) { left: 4px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(2) { left: 95px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(3) { left: 161px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(4) { left: 327px; }
+
+
+	.bonuses-discount-level__note { left: 22px; bottom: 8px; }
+	.bonuses-discount-level__card585-gold {
+		width: 124px;
+		height: 94px;
+
+		background: url(@img-thingies-bonus-card-small) 0 0 no-repeat;
+
+		top: -188px;
+		left: 50%;
+		margin-left: -99px;
+	}
+}
+
+
+
+
+
+
+
+
+@media @mobile-album {
+	.bonuses-discount-level__header { height: 46px; text-align: left; line-height: 54px; }
+
+	.bonuses-discount-level__header,
+	.bonuses-discount-level-progress {
+		width: 400px;
+		margin: 0 auto;
+	}
+
+	.bonuses-discount-level-progress {
+		height: 138px;
+	}
+
+	.bonuses-discount-level-progress-line { top: 0px; }
+	.bonuses-discount-level-progress-line,
+	.bonuses-discount-level-progress-line__horizontal { width: 400px; }
+
+	.bonuses-discount-level-progress-line,
+	.bonuses-discount-level-progress-line__horizontal,
+	.bonuses-discount-level-progress-line__vertical-1 { left: 0; }
+	.bonuses-discount-level-progress-line__vertical-2 { left: 200px; }
+	.bonuses-discount-level-progress-line__vertical-3 { left: 300px; }
+	.bonuses-discount-level-progress-line__vertical-4 { left: 400px; }
+
+	.bonuses-discount-level-progress-line__rhomb--silver { left: 200px; }
+
+	.bonuses-discount-level-progress-labels-percent,
+	.bonuses-discount-level-progress-labels-status,
+	.bonuses-discount-level__note { left: 0; }
+
+
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(1) { left: -3px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(2) { left: 100px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(3) { left: 245px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(4) { left: 345px; }
+
+
+	.bonuses-discount-level-progress-labels-status__item { font-size: 0; }
+	.bonuses-discount-level-progress-labels-status__item-number { font-size: 14px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(1) { left: -3px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(2) { left: 161px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(3) { left: 261px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(4) { left: 327px; }
+
+
+	.bonuses-discount-level__note { left: -3px; bottom: 35px; }
+	.bonuses-discount-level__card585-gold {
+		width: 124px;
+		height: 94px;
+
+		background: url(@img-thingies-bonus-card-middle) 0 0 no-repeat;
+
+		top: -151px;
+		left: 245px;
+	}
+}
+@media @tablet-portrait {
+	.bonuses-discount-level__card585-gold { background-position: right top; background-size: 80% 77%; top: -231px; right: 23px; }
+}
+@media @tablet-album {
+.bonuses-discount-level__card585-gold { background-position: right top; top: -246px; right: 0; }
+}
+@media@tablet {
+	.bonuses-discount-level__header { width: 100%; text-align: center; }
+
+	.bonuses-discount-level-progress {
+		height: 150px;
+		width: 600px;
+		margin: 0 auto;
+	}
+
+	.bonuses-discount-level-progress-line,
+	.bonuses-discount-level-progress-line__horizontal,
+	.bonuses-discount-level-progress-line__vertical-1 { left: 0; }
+	.bonuses-discount-level-progress-line__vertical-2 { left: 200px; }
+	.bonuses-discount-level-progress-line__vertical-3 { left: 400px; }
+	.bonuses-discount-level-progress-line__vertical-4 { left: 600px; }
+
+	.bonuses-discount-level-progress-line__rhomb--silver { left: 200px; }
+
+	.bonuses-discount-level-progress-labels-percent,
+	.bonuses-discount-level-progress-labels-status,
+	.bonuses-discount-level__note { left: 0; }
+
+	.bonuses-discount-level {
+
+
+		&__note {
+			bottom: 12px;
+		}
+	}
+
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(1) { left: -3px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(2) { left: 100px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(3) { left: 305px; }
+	.bonuses-discount-level-progress-labels-percent__item:nth-child(4) { left: 500px; }
+
+	.bonuses-discount-level-progress-labels-status__item:nth-child(1) { left: 0; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(2) { left: 161px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(3) { left: 364px; }
+	.bonuses-discount-level-progress-labels-status__item:nth-child(4) { left: 527px; }
+}
+
+
+
+@media @desktop {
+	.bonuses-discount-level {
+
+
+		&__card585-gold {
+			display: block;
+		}
+	}
+
+
+	.bonuses-discount-level {
+
+
+		&__note {
+			bottom: 12px;
+		}
+	}
+
+
+	.bonuses-discount-level-progress {
+		height: 160px;
+	}
+}

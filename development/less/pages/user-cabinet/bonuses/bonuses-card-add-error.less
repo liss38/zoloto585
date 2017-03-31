@@ -1,0 +1,59 @@
+.bonuses-card-add-error {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 999;
+
+	transform: translate(-50%,-50%);
+
+	display: none;
+	vertical-align: bottom;
+	width: 280px;
+	box-sizing: border-box;
+	padding: 40px 20px;
+
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,.3);
+
+	text-align: center;
+	color: #ed3030;
+
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		content: 'X';
+
+		display: block;
+		width: 21px;
+		height: 25px;
+		padding: 5px 3px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		text-align: center;
+		font-size: 15px;
+		line-height: 18px;
+		color: #666;
+
+		cursor: pointer;
+	}
+
+
+	&:hover {
+
+
+		&:after {
+			color: #fff;
+			background-color: #ed3030;
+		}
+	}
+
+
+	&--active {
+		display: block;
+	}
+}

@@ -1,0 +1,189 @@
+/* pcard-map-shop */
+.pcard-map-shop {
+	display: block;
+	.pos-abs_center_all(270px, 140px);
+	z-index: 100;
+	background-color: #fff;
+	.boxing(border-box);
+
+	&__header {
+		height: 33px;
+		background-color: #f4f4f4;
+	}
+
+
+	&__address {
+		.font-circe_light(10px, 21px, #333);
+		.set-order-sprite(0px, -358px);
+		.pos-abs_tl(8px, 30px);
+		padding-left: 15px;
+		text-transform: uppercase;
+	}
+
+
+	&__close-but {
+		.db-square(33px);
+		.pos-abs_tr(0px, 0px);
+		.set-order-sprite(10px, -417px);
+		font-size: 0px;
+		cursor: pointer;
+	}
+
+
+	&__content {}
+
+
+	&__when {
+		.font-circe_light(9px, 10px, #666);
+		.pos-abs_tl(48px, 40px);
+		text-transform: uppercase;
+		&_strike {
+			.font-circe_light(9px, 10px, #666);
+			.pos-abs_tl(59px, 40px);
+			text-decoration: underline;
+			text-transform: uppercase;
+		}
+	}
+
+
+	&__time {
+		.font-circe_light(10px, 17px, #666);
+		.pos-abs_tr(46px, 47px);
+		.set-order-sprite(0px, -648px);
+		padding-left: 19px;
+	}
+
+
+	&__button {
+		display: block;
+		height: 38px;
+		background-color: @color-red;
+		border-radius: 3px;
+		border: 1px solid #d9d9d9;
+		cursor: pointer;
+		text-align: center;
+		text-transform: uppercase;
+		.pos-abs_center_hor(208px, 84px);
+		.font-circe_regular(14px, 38px, #fff);
+
+
+		&:hover {
+			background-color: @color-dark_red;
+		}
+	}
+}
+
+
+
+
+
+
+@media @mobile {
+	.pcard-map-shop {
+		position: static;
+
+		width: 100%;
+		margin-left: 0;
+
+
+		&__header {
+			display: none;
+		}
+
+
+		&__content{
+			font-size: 11px;
+		}
+
+
+		&__when {}
+
+
+		&__when_strike {}
+
+
+		&__time {}
+
+
+		&__button {
+			left: 0;
+			bottom: 0;
+
+			display: block;
+			width: 100%;
+			height: 60px;
+			margin-left: 0;
+
+			border: 0;
+			border-radius: 0;
+
+			font-size: 16px;
+			line-height: 60px;
+		}
+	}
+}
+
+@media @mobile-album {
+	.pcard-map-shop {
+
+
+		&__when {
+			top: 5px;
+			left: 29px;
+
+			.font-circe_light(12px, 12px, #666);
+
+
+			&_strike {
+				top: 5px;
+				left: 144px;
+
+				.font-circe_light(12px, 12px, #666);
+			}
+		}
+
+
+		&__time {
+			top: 5px;
+			right: 29px;
+
+			font-size: 11px;
+		}
+
+
+		&__button {
+			top: 127px;
+		}
+	}
+}
+
+@media @mobile-portrait {
+	.pcard-map-shop {
+
+
+		&__when {
+			top: 0;
+			left: 14px;
+
+			.font-circe_light(11px, 11px, #333);
+
+			&_strike {
+				top: 0;
+				left: 118px;
+
+				.font-circe_light(11px, 11px, #333);
+			}
+		}
+
+
+		&__time {
+			top: 0;
+			right: 14px;
+		}
+
+
+		&__button {
+			top: 146px;
+		}
+	}
+}

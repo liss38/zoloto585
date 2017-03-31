@@ -1,0 +1,56 @@
+/*
+	Валидация полей профиля, стили состояния
+*/
+.check-field--valid:after,
+.check-field--invalid:after {
+	content: "";
+
+	display: block;
+	width: 25px;
+	height: 30px;
+
+	background: url(@img-sprite-ucab-icos-2) 0 -300px no-repeat;
+
+	position: absolute;
+	top: 0;
+	right: -25px;
+}
+
+.check-field--invalid {}
+.check-field--invalid .profile-field-name {}
+
+.check-field--invalid:hover .profile-field-ico,
+.check-field--invalid .profile-field-ico {
+	border-color: #ff3333;
+}
+
+.check-field--invalid:hover .profile-field-data,
+.check-field--invalid .profile-field-data {
+	border-color: #ff3333;
+}
+
+.check-field--invalid .profile-field-data::-webkit-input-placeholder { color: #666; }
+.check-field--invalid .profile-field-data::-moz-placeholder { color: #666; }
+.check-field--invalid .profile-field-data:-moz-placeholder { color: #666; }
+.check-field--invalid .profile-field-data:-ms-input-placeholder { color: #666; }
+
+
+
+.check-field--valid {}
+.check-field--valid:after {
+	background-position: 0 -270px;
+}
+.check-field--valid .profile-field-name {}
+.check-field--valid .profile-field-ico {}
+.check-field--valid .profile-field-data {}
+/*    */
+
+
+
+@media @tablet-under {
+	.check-field--valid:after,
+	.check-field--invalid:after {
+		top: 27px;
+		right: -16px;
+	}
+}

@@ -1,0 +1,285 @@
+@color-red: #ed3030;
+@color-dark_red: #b32023;
+
+
+.set_pcard_sprite(@hor, @ver) { background: url(@img-sprite-pcard) @hor @ver no-repeat; }
+.set_pcard_sprite_mob(@hor: 0, @ver: 0) { background: url(@img-sprite-pcard_mob) @hor @ver no-repeat; }
+
+.set_pcard_socials(@hor, @ver) {
+	background: url(@img-sprite-socials-1) @hor @ver no-repeat;
+	-webkit-background-size: 148px 48px;
+	background-size: 148px 48px;
+}
+
+
+
+/* позиционирование */
+.a-pos_tl(@t, @l) { position: absolute; top: @t; left: @l; }
+.a-pos_tr(@t, @r) { position: absolute; top: @t; right: @r; }
+.a-pos_bl(@b, @l) { position: absolute; bottom: @b; left: @l; }
+.a-pos_br(@b, @r) { position: absolute; bottom: @b; right: @r; }
+
+.a-pos-center_all(@width, @height) {
+	width: @width;
+	height: @height;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -@height/2;
+	margin-left: -@width/2;
+}
+.a-pos-center_hor(@width, @top) { width: @width; position: absolute; top: @top; left: 50%; margin-left: -@width/2; }
+/*.a-pos-center_ver() { position: absolute;  }*/
+
+/* position */
+.pos-abs_center_hor(@width, @top) {
+	width: @width;
+	position: absolute;
+	top: @top;
+	left: 50%;
+	margin-left: -@width/2;
+}
+.pos-abs_tl(@t, @l) { position: absolute; top: @t; left: @l; }
+.pos-abs_tr(@t, @r) { position: absolute; top: @t; right: @r;; }
+.pos-abs_bl(@b, @l) { position: absolute; bottom: @b; left: @l; }
+.pos-abs_br(@b, @r) { position: absolute; bottom: @b; right: @r; }
+
+.pos-fix_center_all(@width, @height) {
+	width: @width;
+	height: @height;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -@height/2;
+	margin-left: -@width/2;
+}
+
+
+/* геометрия */
+.box-b() { -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; }
+/*.box-p() { -webkit-box-sizing: padding-box;-moz-box-sizing: padding-box;box-sizing: padding-box; }*/
+/*.box-c() { -webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box; }*/
+
+.db-square(@size) { display: block; width: @size; height: @size; }/* элементы у которых высота = ширине */
+.dib-square(@size) { display: inline-block; width: @size; height: @size; }/* элементы у которых высота = ширине */
+
+
+/*
+=====================================================================================================================
+
+
+=====================================================================================================================
+
+
+=====================================================================================================================
+
+
+=====================================================================================================================
+
+
+=====================================================================================================================
+*/
+
+
+.pcard-store {
+	float: left;
+	position: relative;
+	margin-bottom: 45px;
+	width: 486px;
+	border: 1px solid #e9e9e9;
+	border-radius: 4px;
+}
+.pcard-store__price {
+	.a-pos_tl(24px, 22px);
+}
+.pcard-store__price-old {
+	.font-circe_light(13px, 13px, #7b7b7b);
+	text-transform: uppercase;
+	text-decoration: line-through;
+}
+.pcard-store__price-current {
+	.font-circe_light(18px, 25px, #303030);
+	text-transform: uppercase;
+}
+
+.pcard-store__card {
+	padding-left: 50px;
+	.set_pcard_sprite(0px, -90px);
+	.a-pos_tl(26px, 158px);
+}
+.pcard-store__card-text {
+	.font-circe_light(12px, 16px, #7b7b7b);
+	text-transform: uppercase;
+}
+.pcard-store__card-price {
+	.font-circe_bold(18px, 16px, #ff1037);
+}
+.pcard-store__bonuses {
+	width: 140px;
+	height: 42px;
+
+	border: 1px dotted #ababab;
+	border-radius: 3px;
+	.a-pos_tl(17px, 323px);
+}
+.pcard-store__bonuses-count {
+	padding-right: 15px;
+	.font-circe_light(18px, 18px, #303030);
+	text-transform: uppercase;
+	.a-pos_tl(6px, 7px);
+
+
+	&:after {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		margin-top: -8.5px;
+
+		content: '';
+
+		display: block;
+		width: 11px;
+		height: 14px;
+
+		.set_pcard_sprite(-10px, -188px);
+	}
+}
+
+.pcard-store__bonuses-text {
+	.font-circe_light(11px, 11px, #303030);
+	text-transform: uppercase;
+	.a-pos_tl(27px, 7px);
+}
+
+.pcard-store__bonuses-about {
+	.db-square(18px);
+	.a-pos_tr(0px, 0px);
+	.set_pcard_sprite(-6px, -409px);
+	font-size: 0;
+	cursor: pointer;
+}
+.pcard-store__reserve-button {
+	.-box-(block, 100%, 37px);
+	background: #ed3030 url(@img-thingies-shadow-2) center top no-repeat;
+	.-brad-ad-(4px);
+	.font-circe_light(12px, 37px, #fff);
+	.-t-cnu-(#fff);
+}
+.pcard-store__reserve-button:hover { background-color: #b32023; }
+
+
+/* Скоро в наличии */
+.pcard-store__soon-button {
+	.-box-(block, 100%, 57px);
+	background: #f8f8f8 url(@img-thingies-shadow-2) center -1px no-repeat;
+	.-brad-ad-(4px);
+	.font-circe_light(12px, 57px, #fff);
+	.-t-cnu-(#333);
+	border-top: 1px solid #d3d3d3;
+	vertical-align: middle;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		.set_pcard_sprite(0px, -217px);
+		vertical-align: middle;
+	}
+}
+.pcard-store__soon-button:hover {}
+
+
+@media screen and (max-width: 1024px) {
+	.pcard-store {
+		position: static; display: block; float: none;
+	}
+	.pcard-store {
+		width: 100%;
+		.-bxsz-(border-box);
+		overflow: hidden;
+		border-top: none;
+		.-brad-bc-();
+
+		
+
+		&__price { top: 29px; }
+		&__card { top: 27px; }
+		&__bonuses { top: 22px; }
+
+
+		&__reserve-button {
+			height: 60px;
+			.font-circe_regular(16px, 60px, #fff);
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.pcard-store {
+		&__price { left: 100px; }
+		&__card { left: 255px; }
+		&__bonuses { left: 465px; }
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 767px) {
+	.pcard-store {
+		&__card { left: 170px; }
+		&__bonuses { left: 380px; }
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+	.pcard-store {
+		&__card {
+			left: 140px;
+		}
+		&__bonuses {
+			left: 300px;
+		}
+	}
+}
+@media screen and (max-width: 479px) {
+	.pcard-store {
+		.-block-(310px);
+		.-brad-bc-(0);
+
+		&__price {
+			top: 17px;
+		}
+		&__card {
+			.-tl-(17px, 137px);
+		}
+
+
+		&__bonuses {
+			.-wh-(175px, auto);
+			.-tl-(60px, 137px);
+			border: 0;
+		}
+
+
+		&__bonuses-about { .-dn-; }
+
+
+		&__bonuses-count {
+			/*width: 100%;*/
+			.-tl-();
+			.font-circe_light(11px, 16px, #666);
+			.-bgpos-(138px, -189px);
+			display: inline-block;
+			position: relative;
+		}
+
+
+		&__bonuses-text {
+			.font-circe_light(11px, 16px, #666);
+			position: static;
+			display: inline-block;
+			padding-left: 3px;
+		}
+	}
+}

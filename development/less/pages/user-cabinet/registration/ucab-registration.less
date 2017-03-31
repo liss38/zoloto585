@@ -1,0 +1,28 @@
+.ucab-registration {
+	background: url(@img-pattern-1) top left repeat;
+
+
+	&__inner {
+		width: 800px;
+		height: 530px;
+
+
+		@media @tablet-album {
+			width: 700px;
+			height: 480px;
+		}
+
+
+		@media @touch-between {
+			width: 380px;
+			height: 888px;
+		}
+
+
+		@media @mobile-portrait {
+			min-width: 270px;
+			width: 270px;
+			height: 850px;
+		}
+	}
+}

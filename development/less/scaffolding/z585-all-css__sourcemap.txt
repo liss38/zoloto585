@@ -21,3 +21,21 @@
 
 6. Стили футера
 	layout__footer.less
+
+7. Стили главной страницы
+	pages__index.less
+
+8. Стили страницы товара
+	pages__product-card.less
+
+9. Стили страницы каталога
+	pages__catalog.less
+
+10. Стили страницы
+	pages__.less
+
+11. Стили страницы
+	pages__.less
+
+12. Стили страницы
+	pages__.less

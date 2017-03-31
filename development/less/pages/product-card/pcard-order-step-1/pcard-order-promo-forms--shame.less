@@ -1,0 +1,325 @@
+.pcard-order-promo-forms {
+
+
+	.form-label {
+		display: block;
+
+		text-transform: uppercase;
+		font: 300 14px/25px Circe;
+		color: #666;
+	}
+
+
+	.form-textline {
+		height: 35px;
+
+
+		&--valid {
+
+
+			&:after {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+
+				content: '';
+
+				display: block;
+				width: 23px;
+				height: 22px;
+
+				.primary-sprite-icon__7();
+				background-color: #ed3030;
+			}
+
+
+			&:before {
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				content: '';
+
+				display: block;
+				width: 33px;
+				height: 33px;
+
+				background-color: #ed3030;
+			}
+		}
+	}
+
+
+	.form-textline__default {
+		padding-left: 40px;
+		padding-right: 110px;
+	}
+
+
+	.form-textline__icon {
+		width: 35px;
+	}
+}
+
+
+.pcard-promo-code-form {
+	position: relative;
+
+	width: 250px;
+
+
+	.form-textline__icon {
+
+
+		&:before {
+			.primary-sprite-icon__5();
+
+			margin-top: -10px;
+			margin-left: -9px;
+		}
+	}
+}
+
+.pcard-bonus-card-form {
+	position: relative;
+
+	width: 250px;
+
+
+	.form-textline__icon {
+
+
+		&:before {
+			.primary-sprite-icon__6();
+
+			margin-top: -7px;
+			margin-left: -9px;
+		}
+	}
+}
+
+.pcard-order-promo-submit {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	width: 100px;
+	height: 35px;
+
+	box-shadow: none;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border: 1px solid #b32024;
+
+	line-height: 35px;
+	font-size: 11px;
+
+
+
+	@media @mobile {
+		height: 50px;
+		width: 120px;
+
+		font-size: 14px;
+		line-height: 50px;
+	}
+}
+
+.pcard-order-promo-submit--valid {
+	width: 35px;
+	background-color: rgba(0, 0, 0, 0.0);
+
+	color: rgba(0, 0, 0, 0.0);
+
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.0);
+	}
+
+
+
+	@media @mobile {
+		width: 55px;
+	}
+}
+
+
+
+
+.pcard-order-promo-warning {
+	position: absolute;
+	left: 0;
+	bottom: -26px;
+
+	display: none; /* пока скрыто */
+
+	text-transform: uppercase;
+	font: 400 10px/10px 'Circe';
+	color: #b32024;
+
+
+	&--invalid {
+		display: block;
+	}
+}
+
+@media @desktop {
+	.pcard-order-promo-forms {
+		width: 550px;
+		margin-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+
+
+		.pcard-bonus-card-form {
+			float: right;
+		}
+
+
+		.pcard-promo-code-form {
+			float: left;
+		}
+
+
+		.form-label {
+			font-weight: 400px;
+			font-size: 11px;
+			line-height: 28px;
+		}
+	}
+}
+
+
+@media @tablet {
+	.pcard-order-promo-forms {
+		width: 520px;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+
+
+		.pcard-bonus-card-form {
+			float: right;
+		}
+
+
+		.pcard-promo-code-form {
+			float: left;
+		}
+
+
+		.form-label {
+			font-weight: 400px;
+			font-size: 11px;
+			line-height: 28px;
+		}
+	}
+}
+
+
+@media @mobile {
+	.pcard-order-promo-forms {
+
+
+		.form-textline {
+			width: 100%;
+			height: 50px;
+
+
+			&--valid {
+
+
+				&:after {
+					top: 13px;
+					right: 15px;
+				}
+
+
+				&:before {
+					width: 53px;
+					height: 48px;
+				}
+			}
+		}
+
+
+		.form-textline__default {
+			padding-left: 65px;
+			padding-right: 130px;
+		}
+
+
+		.form-textline__icon {
+			width: 55px;
+		}
+	}
+
+
+	.pcard-promo-code-form {
+
+
+		.form-textline__icon {
+
+
+			&:before {
+				.primary-sprite-icon__3();
+
+				margin-top: -16px;
+				margin-left: -15px;
+			}
+		}
+	}
+
+
+	.pcard-bonus-card-form {
+
+
+		.form-textline__icon {
+
+
+			&:before {
+				.primary-sprite-icon__4();
+
+				margin-top: -10.5px;
+				margin-left: -15px;
+			}
+		}
+	}
+
+
+	.pcard-bonus-card-form,
+	.pcard-promo-code-form {
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+
+	.pcard-order-promo-warning {
+		bottom: -13.5px;
+	}
+}
+
+
+@media @mobile-album {
+	.pcard-bonus-card-form,
+	.pcard-promo-code-form {
+		width: 400px;
+		margin-top: 20px;
+	}
+}
+
+
+@media @mobile-portrait {
+	.pcard-bonus-card-form,
+	.pcard-promo-code-form {
+		width: 286px;
+		margin-top: 20px;
+	}
+}
+
+
+.pcard-order-promo-forms .form-textline--valid .form-textline__default {
+	padding-right: 70px;
+}

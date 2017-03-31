@@ -1,0 +1,58 @@
+.profile-field-ico {
+	position: absolute;
+	left: 125px;
+
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	background: url(@img-sprite-ucab-icos-2);
+	border: 1px solid #e2dedf;
+	border-radius: 4px 0 0 4px;
+}
+
+
+/*.profile-field-data:focus { border-color: #d1d1d1; }*/
+
+.profile-user-data-surname { background-position: 0px 0px; }
+.profile-user-data-name { background-position: 0px 0px; }
+.profile-user-data-middlename { background-position: 0px 0px; }
+.profile-user-data-birth { background-position: 0px -30px; }
+.profile-user-data-mobile { background-position: 0px -60px; }
+.profile-user-data-birth:after {
+	content: "Дарим подарки!";
+
+	display: block;
+	width: 55px;
+	height: 20px;
+
+	text-transform: uppercase;
+	text-align: left;
+	font: 400 10px/11px 'Circe';
+	color: #d0d0d0;
+
+	position: absolute;
+	top: 4px;
+	right: -163px;
+}
+.profile-user-data-email { background-position: 0px -90px; }
+
+/*.profile-user-data- { background-position: 0px 0px; }*/
+.profile-user-data-region { background-position: -30px -150px; }
+.profile-user-data-city { background-position: -30px -150px; }
+.profile-user-data-street { background-position: -30px -180px; }
+.profile-user-data-house { background-position: -30px -180px; }
+.profile-user-data-index { background-position: -30px -210px; }
+
+
+
+@media @tablet-under {
+	.profile-field-ico {
+		left: 0;
+		bottom: 0;
+	}
+}

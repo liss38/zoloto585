@@ -1,0 +1,205 @@
+.pcard-order-shops {
+	height: 365px;
+	width: 728px;
+
+
+	&__list {
+		display: block;
+		width: 278px;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		.boxing(border-box);
+		overflow-y: scroll;
+
+		float: left;
+
+		background: #f4f4f4;
+	}
+
+	&__item {
+		display: block;
+		width: 200px;
+		padding: 7px 0 7px 42px;
+		margin: 0;
+		list-style: none;
+		.font-circe_light(12px, 16px, #333);
+		cursor: pointer;
+		text-transform: uppercase;
+		.set-order-sprite(20px, -162px);
+		&.active,
+		&:hover {
+			.set-order-sprite(20px, -55px);
+		}
+	}
+	&__map {
+		float: right;
+		position: relative;
+		.-wh-(450px, 365px);
+	}
+	&__metro {
+		display: none;
+	}
+	&__label {
+		.-dn-;
+		.pos-abs_tl(20px, 125px);
+		text-transform: uppercase;
+		.font-circe_light(14px, 28px, #b9b6b8);
+
+		&:after {
+			content: '';
+
+			.-block-(27px, 26px);
+			.-posa-tr-(1px, -103px, 5);
+			.set-order-sprite(7px, -354px);
+			background-color: #f4f4f4;
+			.-solid-r-(#e8e8e8);
+			.-brad-ab-(2px);
+		}
+	}
+	&__select {
+		display: none;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+}
+
+@media @tablet-portrait {
+	@width-inner: 300px;
+	@inner-margin: 160px;
+
+	.pcard-order-shops {
+		width: 578px;
+
+
+		&__list {
+			width: 168px;
+		}
+
+
+		&__item {
+			.-block-(150px, auto, 7px 0 7px 30px, 0);
+			list-style: none;
+			.font-circe_light(11px, 14px, #333);
+			cursor: pointer;
+			text-transform: uppercase;
+			.set-order-sprite(9px, -162px);
+			&.active,
+			&:hover {
+				.set-order-sprite(9px, -55px);
+			}
+		}
+
+
+		&__map {
+			width: 410px;
+		}
+	}
+}
+
+
+@media @mobile {
+	.pcard-order-shops {
+		position: relative;
+
+		width: 100%;
+		height: 238px; /*!! прийти к height: auto; */
+		margin: 0 auto;
+
+
+		&__list {
+			display: none;
+		}
+
+
+		&__map {
+			position: relative;
+			top: 100px;
+			left: 0;
+			margin-left: 0;
+
+			width: 100%;
+			height: auto;
+		}
+
+
+		&__label {
+			top: 10px;
+
+			display: block;
+
+			font-size: 12px;
+
+			&:after {
+				top: 25px;
+				left: 1px;
+
+				height: 48px;
+
+				.set-order-sprite(10px, -52px);
+				background-color: inherit;
+				border: 0;
+			}
+		}
+
+
+		&__select {
+			position: absolute;
+			top: 36px;
+
+			display: block;
+			height: 50px;
+			padding: 0 17px 0 30px;
+
+			border: 1px solid #e8e8e8;
+			border-radius: 2px;
+
+			text-transform: uppercase;
+			.font-circe_light(14px, 28px, #b9b6b8);
+			color: #333;
+
+			outline: none;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				border: 1px solid #c93232;
+			}
+		}
+	}
+}
+@media @mobile-album {
+	.pcard-order-shops {
+
+
+		&__label {
+			left: 29px;
+		}
+
+
+		&__select {
+			left: 29px;
+
+			width: 400px;
+		}
+	}
+}
+
+@media @mobile-portrait {
+	.pcard-order-shops {
+
+
+		&__label {
+			left: 14px;
+		}
+
+
+		&__select {
+			left: 14px;
+
+			width: 280px;
+		}
+	}
+}

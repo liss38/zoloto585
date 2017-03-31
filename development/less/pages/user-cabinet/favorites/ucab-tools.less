@@ -1,0 +1,66 @@
+.ucab-tools {
+	border-bottom: 1px solid #e7e7e7;
+
+
+	&__inner {
+		padding: 11px 0;
+
+		text-align: right;
+		font-size: 0;
+	}
+
+
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+		width: 160px;
+		height: 32px;
+
+		margin: 0 44px 0 0;
+		padding: 0 0 0 25px;
+
+		background: url(@img-sprite-ucab-favorites) -12px -128px no-repeat;
+
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: left;
+		font: 400 10px/35px 'Circe';
+		color: #b9b6b8;
+
+
+		&:hover {
+			color: #ed3030;
+		}
+
+
+		&--print {
+			background-position: -12px -128px;
+
+
+			&:hover {
+				background-position: -12px -160px;
+			}
+		}
+
+
+		&--mail {
+			background-position: -12px -192px;
+			margin-right: 12px;
+
+
+			&:hover {
+				background-position: -12px -224px;
+			}
+		}
+	}
+}
+
+
+
+
+
+@media @touch {
+	.ucab-tools {
+		display: none;
+	}
+}
