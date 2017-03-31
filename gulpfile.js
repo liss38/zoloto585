@@ -698,6 +698,9 @@ var z585AllScaffoldingList = [
 	'development/less/scaffolding/pages__user-cabinet.less',
 	'development/less/scaffolding/pages__store.less',
 
+	// latest legacy
+	'development/less/scaffolding/legacy__latest.less',
+
 	// system
 	'development/less/scaffolding/system__helpers.less',
 

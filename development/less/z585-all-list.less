@@ -67,3 +67,257 @@
 @import "layout/uikit/form-textline.less";
 @import "layout/uikit/promo-label.less";
 @import "layout/uikit/b-button.less";
+/*
+	******
+	HEADER
+	******
+ */
+// HEADER-BOTTOM
+@import "layout/header/header-top/header-top.less";
+@import "layout/header/header-top/top-sandwich.less";
+@import "layout/header/header-top/top-jewelry.less";
+@import "layout/header/header-top/top-shops.less";
+@import "layout/header/header-top/top-geo.less";
+@import "layout/header/header-top/top-geo-modal.less";
+@import "layout/header/header-top/top-phone.less";
+@import "layout/header/header-top/top-favorites.less";
+@import "layout/header/header-top/top-bonuses.less";
+@import "layout/header/header-top/top-user.less";
+
+
+// HEADER-MIDDLE
+@import "layout/header/header-middle/header-middle.less";
+@import "layout/header/header-middle/header-promo-banner.less";
+
+
+// HEADER-BOTTOM
+@import "layout/header/header-bottom/header-bottom.less";
+@import "layout/header/header-bottom/main-nav.less";
+@import "layout/header/header-bottom/main-nav-level-1.less";
+@import "layout/header/header-bottom/main-nav-level-2.less";
+@import "layout/header/header-bottom/alt-main-nav.less";
+@import "layout/header/header-bottom/navi-inner-list-wrapper.less";
+@import "layout/header/header-bottom/main-nav--pixel-perfect.less"; // используется каскад, nth-child и position: abcolute для "подравнивания" ссылок в каждой вкладке индивидуально в меню для десктопной версии
+@import "layout/header/header-bottom/header-search.less";
+@import "layout/header/header-bottom/ya-site-form.less"; // shame@"переписывание стилей для yandex-search в шапке сайта, поиск рядом с навигацией"
+@import "layout/header/header-bottom/nav-banners.less";
+@import "layout/header/header-bottom/nav-banners-link.less";
+@import "layout/header/header-bottom/nav-banners-button.less";
+/*
+	******
+	FOOTER
+	******
+ */
+@import "layout/footer/footer.less";
+@import "layout/footer/footer-info.less";
+@import "layout/footer/footer-info-item.less";
+@import "layout/footer/footer-main.less";
+@import "layout/footer/footer-contacts.less";
+@import "layout/footer/footer-phone.less";
+@import "layout/footer/footer-socials.less";
+/*
+	*****
+	INDEX
+	*****
+ */
+
+// filter
+@import "index/filter/main.less";
+@import "index/filter/filter-mini.less";
+
+// infoblock
+@import "index/infoblock/index-infoblock.less"; // legacy
+@import "index/infoblock/index-infoblock-photos.less"; // legacy
+@import "index/infoblock/index-infoblock-text.less"; // legacy
+@import "index/infoblock/index-infoblock-owl.less"; // legacy
+/*
+	************
+	PRODUCT-CARD
+	************
+ */
+
+@import "pages/product-card/pcard-store.less"; // внутри какие-то миксины, файл грязный
+@import "pages/product-card/pcard--shame.less"; // внутри фарш из миксинов и других БЭМ-блоков
+@import "pages/product-card/pcard-order--shame.less"; // shame@
+@import "pages/product-card/pcard-order.less";
+@import "pages/product-card/pcard-main__catalog-item-control.less"; // shame@"http://joxi.ru/8AnzWDocpoJKAO  звездочка избранного в странице товара"
+
+// первый шаг бронирования
+@import "pages/product-card/pcard-order-step-1/pcard-order-promo.less";
+@import "pages/product-card/pcard-order-step-1/pcard-order-promo-forms--shame.less"; // shame@
+@import "pages/product-card/pcard-order-step-1/pcard-order-promo-total.less";
+@import "pages/product-card/pcard-order-step-1/order-button-to-getshop.less";
+
+// второй шаг бронирования
+@import "pages/product-card/pcard-order-step-2/pcard-order-city.less";
+@import "pages/product-card/pcard-order-step-2/pcard-order-shops.less";
+@import "pages/product-card/pcard-order-step-2/pcard-map-shop.less";
+@import "pages/product-card/pcard-order-step-2/pcard-order-info.less";
+
+// третий шаг бронирования
+@import "pages/product-card/pcard-order-step-3/pcard-order-step-3--shame.less"; // shame@
+
+// секция с описанием товара, текст
+@import "pages/product-card/pcard-description.less";
+
+// отзывы
+@import "pages/product-card/reviews/reviews-new-sections.less";
+@import "pages/product-card/reviews/reviews-top-bar-section.less";
+@import "pages/product-card/reviews/reviews-top-bar.less";
+@import "pages/product-card/reviews/reviews-top-bar-button.less";
+@import "pages/product-card/reviews/reviews-list-section.less";
+@import "pages/product-card/reviews/reviews-list.less";
+@import "pages/product-card/reviews/reviews-item.less";
+@import "pages/product-card/reviews/reviews-form-section.less";
+@import "pages/product-card/reviews/reviews-form.less";
+@import "pages/product-card/reviews/reviews-add-button.less"; // кнопка используется в битрикс компоненте
+
+// промо-блок справа
+@import "pages/product-card/pcard-motivate.less";
+
+/*
+	*******
+	CATALOG
+	*******
+ */
+
+// фильтр каталога
+@import "pages/catalog/filter/filter-section.less";
+@import "pages/catalog/filter/filter-section-1.less";
+@import "pages/catalog/filter/filter-section-2.less";
+@import "pages/catalog/filter/filter-group.less";
+@import "pages/catalog/filter/filter-option.less";
+
+// catalog-item
+@import "pages/catalog/item/catalog-item-pic.less";
+@import "pages/catalog/item/catalog-list.less";
+@import "pages/catalog/item/catalog-item.less";
+
+// pagination
+@import "pages/catalog/pagination/pagination-list.less";
+@import "pages/catalog/pagination/b-pagination-top.less";
+@import "pages/catalog/pagination/b-pagination-bottom.less";
+@import "pages/catalog/pagination/b-pagination-bottom__pagination-list.less";
+/*
+	********
+	PAGE-404
+	********
+ */
+
+@import "pages/page-404/page-404.less";
+@import "pages/page-404/page-404-block.less";
+@import "pages/page-404/page-404-filter--shame.less"; // shame@
+@import "pages/page-404/minislide--shame.less"; // shame@
+/*
+	************
+	USER-CABINET
+	************
+ */
+
+// общие стили для всех вкладок кабинета
+@import "pages/user-cabinet/header/ucab-header.less";
+@import "pages/user-cabinet/header/ucab-breadcrumbs.less";
+@import "pages/user-cabinet/header/ucab-title.less";
+@import "pages/user-cabinet/navi/ucab-navi.less";
+@import "pages/user-cabinet/navi/ucab-tab.less";
+@import "pages/user-cabinet/navi/ucab-group.less";
+@import "pages/user-cabinet/promo/ucab-promo.less";
+@import "pages/user-cabinet/promo/cabinet-promoaction.less";
+
+
+// вкладка "БОНУСЫ"
+@import "pages/user-cabinet/bonuses/bonuses-card-identifier.less";
+@import "pages/user-cabinet/bonuses/bonuses-discount-level.less";
+@import "pages/user-cabinet/bonuses/bonuses-level.less";
+@import "pages/user-cabinet/bonuses/bonuses-card.less";
+@import "pages/user-cabinet/bonuses/bonuses-card-add-button.less";
+@import "pages/user-cabinet/bonuses/bonuses-card-add-error.less";
+@import "pages/user-cabinet/bonuses/bonuses-card-add-form.less";
+@import "pages/user-cabinet/bonuses/bonuses-card-add-input.less";
+@import "pages/user-cabinet/bonuses/bonuses-card-identifier-text-virtual.less";
+
+
+// вкладка "ИЗБРАННОЕ"
+@import "pages/user-cabinet/favorites/ucab-tools.less";
+@import "pages/user-cabinet/favorites/favorites-list.less";
+@import "pages/user-cabinet/favorites/favorites-item--shame.less";
+
+
+// вкладка "ПРОФИЛЬ"
+@import "pages/user-cabinet/profile/profile-field-row.less";
+@import "pages/user-cabinet/profile/profile-field-row__hover.less";
+@import "pages/user-cabinet/profile/profile-field-row__fancy-select.less";
+@import "pages/user-cabinet/profile/profile-field-name.less";
+@import "pages/user-cabinet/profile/profile-field-ico.less";
+@import "pages/user-cabinet/profile/profile-field-data.less";
+@import "pages/user-cabinet/profile/check-field.less";
+@import "pages/user-cabinet/profile/profile-info.less";
+@import "pages/user-cabinet/profile/profile-info-form.less";
+@import "pages/user-cabinet/profile/profile-info-submit.less";
+@import "pages/user-cabinet/profile/profile-password.less";
+@import "pages/user-cabinet/profile/profile-password-form.less";
+@import "pages/user-cabinet/profile/profile-password-item.less";
+@import "pages/user-cabinet/profile/profile-password-field.less";
+@import "pages/user-cabinet/profile/profile-password-submit.less";
+
+
+// 
+@import "pages/user-cabinet/navi/ucab__toggle-effect.less";
+
+
+// "ВХОД В КАБИНЕТ"   "ULOG"
+@import "pages/user-cabinet/login/ucab-login.less";
+@import "pages/user-cabinet/login/ucab-login-form.less";
+@import "pages/user-cabinet/login/ucab-login-field.less";
+@import "pages/user-cabinet/login/ucab-login-button.less";
+@import "pages/user-cabinet/login/ucab-login-option.less";
+
+
+// "РЕГИСТРАЦИЯ"   "UREG"
+@import "pages/user-cabinet/registration/ucab-registration.less";
+@import "pages/user-cabinet/registration/ucab-if-you-header.less";
+@import "pages/user-cabinet/registration/ucab-if-you.less";
+@import "pages/user-cabinet/registration/ucab-regblock.less";
+@import "pages/user-cabinet/registration/ucab-reginfo.less";
+@import "pages/user-cabinet/registration/ucab-regform-header.less";
+@import "pages/user-cabinet/registration/ucab-regform.less";
+@import "pages/user-cabinet/registration/ucab-regform-field.less";
+@import "pages/user-cabinet/registration/ucab-regform-text.less";
+@import "pages/user-cabinet/registration/ucab-regform-proof.less";
+@import "pages/user-cabinet/registration/ucab-regform-button.less";
+
+
+// "ВОССТАНОВЛЕНИЕ ПАРОЛЯ"   "UREC"
+@import "pages/user-cabinet/recovery/ucab-recovery.less";
+@import "pages/user-cabinet/recovery/ucab-recanswer.less";
+@import "pages/user-cabinet/recovery/ucab-recform.less";
+@import "pages/user-cabinet/recovery/ucab-recform-field.less";
+@import "pages/user-cabinet/recovery/ucab-recform-button.less";
+/*
+	*****
+	STORE
+	*****
+ */
+@import "pages/store/store-about-section.less";
+@import "pages/store/store-about.less";
+@import "pages/store/store-map-section.less";
+@import "pages/store/store-list.less";
+@import "pages/store/store-item.less";
+@import "pages/store/store-search.less";
+@import "pages/store/store-map-container.less";
+// @import "pages/store/";
+/*
+	*************
+	LEGACY LATEST
+	*************
+ */
+// 
+@import "legacy-css/catalog-item-control--shame.less"; // shame@""
+/*
+	*******
+	HELPERS
+	*******
+ */
+// хэлперы
+// в разметке используются редко, сделаны для удобной работы с отладчиком в браузере
+@import "system/helpers.less";
