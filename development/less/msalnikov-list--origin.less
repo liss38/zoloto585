@@ -1,0 +1,552 @@
+
+// src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less'])
+// 
+// src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/index.less'])
+// 
+// .src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/pcard.less'])
+// 
+// 
+
+
+
+
+
+/* 
+	2PROD
+ */
+@import "mixins/@path-global.less";
+/* 
+===================================================================================================
+ */
+
+
+
+
+
+
+
+/* 
+
+	_MIX
+ */
+@import "mixins/@humdrum.less";
+@import "mixins/@tricks.less";
+@import "mixins/@fonts.less";
+@import "mixins/@images.less";
+
+@import "mixins/@colors.less";
+@import "mixins/@breakpoints.less";
+
+@import "mixins/@effects.less";
+/* 
+=================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+			MAIN.CSS
+ */
+
+/*
+	FONTS,
+	GRID,
+	TYPICAL UI ELEMENTS
+*/
+@import "global/fonts.less";
+@import "global/grid.less";
+@import "global/forms.less";
+@import "global/form-label.less";
+@import "global/form-textline.less";
+@import "global/promo-label.less";
+@import "global/b-button.less";
+
+
+
+
+
+/* HEADER-TOP  @IMPORT */
+@import "header/top/main.less";
+@import "header/top/sandwich.less";
+@import "header/top/jewelry.less";
+@import "header/top/shops.less";
+@import "header/top/geo.less";
+@import "header/top/geo-modal.less";
+@import "header/top/phone.less";
+@import "header/top/favorites.less";
+@import "header/top/bonuses.less";
+@import "header/top/user.less";
+
+
+
+
+
+/* HEADER-MIDDLE  @IMPORT */
+@import "header/middle/main.less";
+@import "header/middle/header-promo-banner.less";
+
+
+
+
+
+/* HEADER-BOTTOM  @IMPORT */
+@import "header/bottom/main.less";
+@import "header/bottom/nav.less";
+@import "header/bottom/nav-level-1.less";
+@import "header/bottom/nav-level-2.less";
+
+@import "header/bottom/alt-main-nav.less";
+@import "header/bottom/navi-inner-list-wrapper.less";
+@import "header/bottom/navi-pixel-perfect.less";
+
+@import "header/bottom/header-search.less";
+
+@import "header/bottom/nav-banners.less";
+@import "header/bottom/nav-banners-link.less";
+@import "header/bottom/nav-banners-button.less";
+
+
+
+
+
+
+/* FOOTER-INFO @IMPORT */
+@import "footer/footer.less";
+@import "footer/footer-info.less";
+@import "footer/footer-info-item.less";
+
+@import "footer/footer-main.less";
+@import "footer/footer-contacts.less";
+@import "footer/footer-phone.less";
+@import "footer/footer-socials.less";
+
+
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+		INDEX.CSS
+ */
+@import "index/filter/main.less";
+@import "index/filter/filter-mini.less";
+
+
+/*
+	infoblock
+*/
+@import "index/infoblock/index-infoblock.less";
+@import "index/infoblock/index-infoblock-photos.less";
+@import "index/infoblock/index-infoblock-text.less";
+@import "index/infoblock/index-infoblock-owl.less";
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+			PCARD.CSS
+ */
+@import "pcard/store/main.less";
+@import "pcard/pcard.less";
+
+
+/* pcard-order  main */
+@import "pcard/pcard_order.less";
+@import "pcard/pcard-order-grid.less";
+
+
+/* pcard-order-step-1 */
+@import "pcard/pcard-order-step-1/pcard-order-promo.less";
+@import "pcard/pcard-order-step-1/pcard-order-promo-forms.less";
+@import "pcard/pcard-order-step-1/pcard-order-promo-forms--shame.less";
+@import "pcard/pcard-order-step-1/pcard-order-promo-total.less";
+@import "pcard/pcard-order-step-1/order-button-to-getshop.less";
+
+
+/* pcard-order-step-2 */
+@import "pcard/pcard-order-step-2/pcard-order-step-2.less";
+@import "pcard/pcard-order-step-2/pcard-order-city.less";
+@import "pcard/pcard-order-step-2/pcard-order-shops.less";
+@import "pcard/pcard-order-step-2/pcard-order-shop.less";
+@import "pcard/pcard-order-step-2/pcard-map-shop.less";
+@import "pcard/pcard-order-step-2/pcard-order-info.less";
+
+
+/* pcard-order-step-3 */
+@import "pcard/pcard-order-step-3/pcard-order-step-3.less";
+
+
+/* pcard-order-step-4 */
+@import "pcard/pcard-order-step-4/pcard-order-step-4.less";
+
+
+
+@import "pcard/description/main.less";
+
+
+
+// 
+// ОТЗЫВЫ
+// 
+@import "pcard/reviews/reviews-new-sections.less";
+
+@import "pcard/reviews/reviews-top-bar-section.less";
+@import "pcard/reviews/reviews-top-bar.less";
+@import "pcard/reviews/reviews-top-bar-button.less";
+
+@import "pcard/reviews/reviews-list-section.less";
+@import "pcard/reviews/reviews-list.less";
+@import "pcard/reviews/reviews-item.less";
+
+@import "pcard/reviews/reviews-form-section.less";
+@import "pcard/reviews/reviews-form.less";
+
+@import "pcard/reviews/reviews-add-button.less"; /* кнопка используется в битрикс компоненте */
+
+
+
+
+
+// 
+// 
+// 
+@import "pcard/motivate/main.less";
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CATALOG.CSS */
+
+// фильтр каталога
+@import "pages/catalog/filter/filter-section.less";
+@import "pages/catalog/filter/filter-section-1.less";
+@import "pages/catalog/filter/filter-section-2.less";
+@import "pages/catalog/filter/filter-group.less";
+@import "pages/catalog/filter/filter-option.less";
+
+// catalog-item
+@import "pages/catalog/item/catalog-item-pic.less";
+@import "pages/catalog/item/catalog-list.less";
+@import "pages/catalog/item/catalog-item.less";
+
+// pagination
+@import "pages/catalog/pagination/pagination-list.less";
+@import "pages/catalog/pagination/b-pagination-top.less";
+@import "pages/catalog/pagination/b-pagination-bottom.less";
+@import "pages/catalog/pagination/b-pagination-bottom__pagination-list.less";
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+					REGCARD.CSS
+ */
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+						PAGE-404.CSS
+ */
+@import "page-404/page-404.less";
+@import "page-404/page-404-block.less";
+@import "page-404/page-404-filter.less";
+@import "page-404/minislide.less";
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+										UCAB.CSS
+ */
+@import "ucab/header/ucab-header.less";
+@import "ucab/header/ucab-breadcrumbs.less";
+@import "ucab/header/ucab-title.less";
+
+
+@import "ucab/navi/ucab-navi.less";
+@import "ucab/navi/ucab-tab.less";
+@import "ucab/navi/ucab-group.less";
+@import "ucab/promo/ucab-promo.less";
+@import "ucab/promo/cabinet-promoaction.less";
+
+
+
+// вкладка "БОНУСЫ"
+@import "ucab/bonuses/bonuses-card-identifier.less";
+@import "ucab/bonuses/bonuses-discount-level.less";
+@import "ucab/bonuses/bonuses-level.less";
+@import "ucab/bonuses/bonuses-card.less";
+
+@import "ucab/bonuses/bonuses-card-add-button.less";
+@import "ucab/bonuses/bonuses-card-add-error.less";
+@import "ucab/bonuses/bonuses-card-add-form.less";
+@import "ucab/bonuses/bonuses-card-add-input.less";
+
+@import "ucab/bonuses/bonuses-card-identifier-text-virtual.less";
+
+
+
+// вкладка "ИЗБРАННОЕ"
+@import "ucab/favorites/ucab-tools.less";
+@import "ucab/favorites/favorites-list.less";
+@import "ucab/favorites/favorites-item--shame.less";
+
+
+
+// вкладка "ПРОФИЛЬ"
+@import "ucab/profile/profile-field-row.less";
+@import "ucab/profile/profile-field-row__hover.less";
+@import "ucab/profile/profile-field-row__fancy-select.less";
+@import "ucab/profile/profile-field-name.less";
+@import "ucab/profile/profile-field-ico.less";
+@import "ucab/profile/profile-field-data.less";
+@import "ucab/profile/check-field.less";
+
+@import "ucab/profile/profile-info.less";
+@import "ucab/profile/profile-info-form.less";
+@import "ucab/profile/profile-info-submit.less";
+
+@import "ucab/profile/profile-password.less";
+@import "ucab/profile/profile-password-form.less";
+@import "ucab/profile/profile-password-item.less";
+@import "ucab/profile/profile-password-field.less";
+@import "ucab/profile/profile-password-submit.less";
+
+// 
+@import "ucab/navi/ucab__toggle-effect.less";
+
+
+
+/*
+
+@import "ucab/purchases/.less";
+
+
+@import "ucab/subscribes/.less";
+ */
+
+
+
+// "ВХОД В КАБИНЕТ"   "ULOG"
+@import "ucab/login/ucab-login.less";
+@import "ucab/login/ucab-login-form.less";
+@import "ucab/login/ucab-login-field.less";
+@import "ucab/login/ucab-login-button.less";
+@import "ucab/login/ucab-login-option.less";
+
+
+
+
+// "РЕГИСТРАЦИЯ"   "UREG"
+@import "ucab/registration/ucab-registration.less";
+
+@import "ucab/registration/ucab-if-you-header.less";
+@import "ucab/registration/ucab-if-you.less";
+
+@import "ucab/registration/ucab-regblock.less";
+@import "ucab/registration/ucab-reginfo.less";
+
+@import "ucab/registration/ucab-regform-header.less";
+@import "ucab/registration/ucab-regform.less";
+@import "ucab/registration/ucab-regform-field.less";
+@import "ucab/registration/ucab-regform-text.less";
+@import "ucab/registration/ucab-regform-proof.less";
+@import "ucab/registration/ucab-regform-button.less";
+
+
+
+
+
+// "ВОССТАНОВЛЕНИЕ ПАРОЛЯ"   "UREC"
+@import "ucab/recovery/ucab-recovery.less";
+
+@import "ucab/recovery/ucab-recanswer.less";
+
+@import "ucab/recovery/ucab-recform.less";
+@import "ucab/recovery/ucab-recform-field.less";
+@import "ucab/recovery/ucab-recform-button.less";
+/* 
+=======================================================================================================================
+ */
+
+
+/* *****
+ * PAGES
+ * *****
+ */
+// STORE
+@import "pages/store/store-about-section.less";
+@import "pages/store/store-about.less";
+@import "pages/store/store-map-section.less";
+@import "pages/store/store-list.less";
+@import "pages/store/store-item.less";
+@import "pages/store/store-search.less";
+@import "pages/store/store-map-container.less";
+// @import "pages/store/";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+															AFTER-ALL.CSS
+ */
+@import "global/helpers.less";
+/* 
+=======================================================================================================================
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+	SHAME-LIST
+ */
+@import "shame/catalog-item-control.less";
+@import "shame/pcard-main__catalog-item-control.less";
+@import "shame/ya-site-form.less";
+@import "mycrutch.less";

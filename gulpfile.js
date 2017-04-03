@@ -21,169 +21,6 @@ var dev_or_prod = '_2prod'; // префикс для prod-версии
 if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
 else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
 
-gulp.task('make-css-ext', function () {
-	return gulp.src('development/less/_ext.less')
-		.pipe(less())
-		.pipe(cssmin())
-		.pipe(rename('ext.min.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-// main.css
-gulp.task('make-main-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/main.less'])
-		.pipe(concat('main.temp.less'))
-		.pipe(less())
-		.pipe(rename('main.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// index.css
-gulp.task('make-index-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/index.less'])
-		.pipe(concat('index.temp.less'))
-		.pipe(less())
-		.pipe(rename('index.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// pcard.css
-gulp.task('make-pcard-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/pcard.less'])
-		.pipe(concat('pcard.temp.less'))
-		.pipe(less())
-		.pipe(rename('pcard.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// catalog.css
-gulp.task('make-catalog-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/catalog.less'])
-		.pipe(concat('catalog.temp.less'))
-		.pipe(less())
-		.pipe(rename('catalog.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-// registration-card.css
-gulp.task('make-regcard-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/registration-card.less'])
-		.pipe(concat('registration-card.temp.less'))
-		.pipe(less())
-		.pipe(rename('registration-card.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// 404 page
-gulp.task('make-404-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/page-404.less'])
-		.pipe(concat('page-404.temp.less'))
-		.pipe(less())
-		.pipe(rename('page-404.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// user cabinet
-gulp.task('make-ucab-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/ucab.less'])
-		.pipe(concat('ucab.temp.less'))
-		.pipe(less())
-		.pipe(rename('ucab.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-
-
-
-
-// after_all.css
-// классы хэлперы
-gulp.task('make-after-all-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/after_all.less'])
-		.pipe(concat('after_all.temp.less'))
-		.pipe(less())
-		.pipe(rename('after_all.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// костыль для продакшн наложения с новой вёрсткой
-gulp.task('make-mycrutch-css', function () {
-	return gulp.src(['development/less/' + dev_or_prod + '.less', 'development/less/_mix.less', 'development/less/mycrutch.less'])
-		.pipe(concat('mycrutch.temp.less'))
-		.pipe(less())
-		.pipe(rename('mycrutch.css'))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-// make-dev
-gulp.task('make-dev', ['make-css-ext', 'make-main-css', 'make-index-css', 'make-pcard-css', 'make-catalog-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
-	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-
-
-/*
-	2PROD
-*/
-// make-prod
-gulp.task('make-css-prod', ['make-main-css', 'make-index-css', 'make-catalog-css', 'make-pcard-css', 'make-regcard-css', 'make-404-css', 'make-ucab-css', 'make-mycrutch-css', 'make-after-all-css'], function () {
-	return gulp.src(['production/zoloto/css/*.css', '!production/zoloto/css/*.min.css'])
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-
-
-// msalnikov.min.css для ПРОДА
-gulp.task('make-msalnikov-css', function () {
-	return gulp.src(['production/zoloto/css/main.min.css', 'production/zoloto/css/index.min.css', 'production/zoloto/css/catalog.min.css', 'production/zoloto/css/pcard.min.css', 'production/zoloto/css/registration-card.min.css', 'production/zoloto/css/page-404.min.css', 'production/zoloto/css/ucab.min.css', 'production/zoloto/css/after_all.min.css', 'production/zoloto/css/mycrutch.min.css'])
-		.pipe(concat('msalnikov.min.css'))
-		// .pipe(cssmin())
-		// .pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(gulpDestFolder));
-});
-
-
-
-
-
-/**
- * @TODO
- * сдеалть сборку по новой LESS-структуре
- */
-// new ***
-gulp.task('make-msalnikov-list', function () {
-	return gulp.src('development/less/msalnikov-list.less')
-		.pipe(less())
-		.pipe(cssmin())
-		.pipe(rename({
-			suffix: '.min',
-			basename: 'msalnikov',
-		}))
-		.pipe(gulp.dest('production/zoloto/css'));
-});
-
-
-
-
-
-
-
-
 
 
 
@@ -487,20 +324,8 @@ var jQueryTeamPath = 'development/js/jqueryteam/', // 'js/jqueryteam_in/''
 		jQueryTeamPath + 'jquery.maskedinput.min.js',
 		jQueryTeamPath + 'selectivizr-min.js',
 	];
-/*gulp.task('make-jqueryteam', function () {
-	return gulp.src(['development/js/jqueryteam/*.js', '!development/js/jqueryteam/jquery-1.11.0.min.js'])
-		.pipe(order(jQueryTeamOrderList))
-		.pipe(concat('jqueryteam.js'))
-		.pipe(uglifyjs())
-		.pipe(rename('jqueryteam.min.js'))
-		.pipe(gulp.dest('development/js/'));
-});*/
 gulp.task('make-jqueryteam', function () {
 	return gulp.src(jQueryTeamOrderList)
-		/*.pipe(order([
-			'development/js/jqueryteam/jquery-1.11.1.min.js',
-			'development/js/jqueryteam/owl.carousel.js',
-		]))*/
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(concat('jqueryteam.js'))
 		.pipe(uglifyjs())
@@ -519,12 +344,6 @@ gulp.task('make-jqueryteam', function () {
 
 
 
-// CSS NAMESPACE
-gulp.task('namespace', function () {
-	return gulp.src('development/less/**/.NAMESPACE')
-		.pipe(concat('all.NAMESPACE'))
-		.pipe(gulp.dest('about'));
-});
 
 
 
@@ -546,98 +365,35 @@ gulp.task('zip', function () {
 
 
 
-/*
-	SLIM-PROJECT
-	
-	CSS SLIM
-*/
-gulp.task('slim-index-css', function () {
-	return gulp.src(['development/less/_2prod.less', 'development/less/_mix.less', 'development/less/slim.index-page.less'])
-		.pipe(concat('index.temp.less'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @TODO
+ * сдеалть сборку по новой LESS-структуре
+ */
+// new ***
+gulp.task('make-msalnikov-list', function () {
+	return gulp.src('development/less/msalnikov-list.less')
 		.pipe(less())
 		.pipe(cssmin())
-		.pipe(rename('slim.index-page.min.css'))
-		.pipe(gulp.dest('production/zoloto/css/slim'));
+		.pipe(rename({
+			suffix: '.min',
+			basename: 'msalnikov',
+		}))
+		.pipe(gulp.dest('production/zoloto/css'));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-	========================
-	===  LESS2CSS tasks  ===
-	========================
-*/
-gulp.task('z585-css-dev', function () {
-	return gulp.src('development/css/src/z585_all--dev.less')
-		.pipe(less())
-		// .pipe(cssmin())
-		.pipe(rename('z585_all--dev.css'))
-		.pipe(gulp.dest('development/css/'));
-});
-
-gulp.task('z585-css-prod', function () {
-	return gulp.src('development/css/src/z585_all--prod.less')
-		.pipe(less())
-		// .pipe(cssmin())
-		.pipe(rename('z585_all.css'))
-		.pipe(gulp.dest('development/css/'));
-});
-
-// минимизация, углификация, оптимизация
-gulp.task('css-min', function () {
-	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('development/css'));
-});
-
-// комбо с минификацией и на прод и на дев делает общий стилевой файл
-gulp.task('z585-css', ['z585-css-dev', 'z585-css-prod'], function () {
-	return gulp.src(['development/css/*.css', '!development/css/*.min.css'])
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('development/css'));
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 
 // 
 // 
@@ -703,16 +459,9 @@ var z585AllScaffoldingList = [
 
 	// system
 	'development/less/scaffolding/system__helpers.less',
-
-	// after-all
-	// 'development/less/scaffolding/pages__.less',
-	// shame-list
-	// 'development/less/scaffolding/pages__.less',
-	// 'development/less/scaffolding/pages__.less',
-	// 'development/less/scaffolding/pages__.less',
 ];
 
-// scaffolding z585-all-caa import list
+// scaffolding z585-all-css import list
 gulp.task('z585-css:scaff', function () {
 	return gulp.src(z585AllScaffoldingList)
 		.pipe(sourcemaps.init({loadMaps: true}))
@@ -728,4 +477,57 @@ gulp.task('z585-css:build', function () {
 		.pipe(cssmin())
 		.pipe(rename('z585_all.min.css'))
 		.pipe(gulp.dest(gulpDestFolder));
+});
+
+
+
+// msalnikov.min.css
+var msalnikovScaffoldingList = [
+
+	/* ******************************************* */
+	/* одно из двух должно быть закомментировано */
+	'development/less/_2prod.less', // для прода
+	// 'development/less/_2dev.less', // для локальной сборки
+	/* ******************************************* */
+
+	'development/less/scaffolding/mixins.less',
+	'development/less/scaffolding/layout__fonts.less',
+
+	'development/less/scaffolding/layout__grid.less',
+	'development/less/scaffolding/layout__uikit.less',
+	'development/less/scaffolding/layout__header.less',
+	'development/less/scaffolding/layout__footer.less',
+	// 
+	// 
+	// стили страниц
+	'development/less/scaffolding/pages__index.less',
+	'development/less/scaffolding/pages__product-card.less',
+	'development/less/scaffolding/pages__catalog.less',
+	'development/less/scaffolding/pages__page-404.less',
+	'development/less/scaffolding/pages__user-cabinet.less',
+	'development/less/scaffolding/pages__store.less',
+
+	// latest legacy
+	'development/less/scaffolding/legacy__latest.less',
+
+	// system
+	'development/less/scaffolding/system__helpers.less',
+];
+
+// scaffolding msalnikov-list
+gulp.task('msalnikov-css:scaff', function () {
+	return gulp.src(msalnikovScaffoldingList)
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(concat('msalnikov-list.less'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('development/less/'));
+});
+
+// build msalnikov.min.css
+gulp.task('msalnikov-css:build', function () {
+	return gulp.src('development/less/msalnikov-list.less')
+		.pipe(less())
+		.pipe(cssmin())
+		.pipe(rename('msalnikov.min.css'))
+		.pipe(gulp.dest('production/zoloto/css'));
 });
