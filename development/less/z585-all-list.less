@@ -1,4 +1,4 @@
-@import "_mix/@path-global.less";
+@import "mixins/@path-global.less";
 /*
 	******
 	MIXINS
@@ -122,14 +122,19 @@
  */
 
 // filter
-@import "index/filter/main.less";
-@import "index/filter/filter-mini.less";
+@import "pages/index/index-filter.less";
+@import "pages/index/filter-mini.less";
 
 // infoblock
-@import "index/infoblock/index-infoblock.less"; // legacy
-@import "index/infoblock/index-infoblock-photos.less"; // legacy
-@import "index/infoblock/index-infoblock-text.less"; // legacy
-@import "index/infoblock/index-infoblock-owl.less"; // legacy
+@import "pages/index/index-infoblock.less"; // legacy
+@import "pages/index/index-infoblock-photos.less"; // legacy
+@import "pages/index/index-infoblock-text.less"; // legacy
+@import "pages/index/index-infoblock-owl.less"; // legacy
+
+// баннер вмсето слайдера
+@import "pages/index/promo-banner.less";
+@import "pages/index/sl-desc.less";
+@import "pages/index/sl-mob.less";
 /*
 	************
 	PRODUCT-CARD
@@ -189,9 +194,9 @@
 @import "pages/catalog/filter/filter-option.less";
 
 // catalog-item
-@import "pages/catalog/item/catalog-item-pic.less";
-@import "pages/catalog/item/catalog-list.less";
-@import "pages/catalog/item/catalog-item.less";
+// @import "pages/catalog/item/catalog-item-pic.less";
+// @import "pages/catalog/item/catalog-list.less";
+// @import "pages/catalog/item/catalog-item.less";
 
 // pagination
 @import "pages/catalog/pagination/pagination-list.less";
@@ -306,6 +311,13 @@
 @import "pages/store/store-search.less";
 @import "pages/store/store-map-container.less";
 // @import "pages/store/";
+/*
+	*****
+	STOCK
+	*****
+ */
+
+@import "pages/stock/stock-main.less";
 /*
 	*************
 	LEGACY LATEST

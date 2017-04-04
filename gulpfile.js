@@ -1,13 +1,14 @@
-var gulp = require('gulp'),
-	less = require('gulp-less'),
-	concat = require('gulp-concat'),
-	cssmin = require('gulp-cssmin'),
-	rename = require('gulp-rename'),
-	zip = require('gulp-zip');
-	fileinclude = require('gulp-file-include'),
-	order = require('gulp-order'),
-	uglifyjs = require('gulp-uglifyjs');
-var mainBowerFiles = require('gulp-main-bower-files');
+var gulp = require('gulp');
+var less = require('gulp-less');
+var concat = require('gulp-concat');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
+
+var zip = require('gulp-zip');
+var fileinclude = require('gulp-file-include');
+var order = require('gulp-order');
+var uglifyjs = require('gulp-uglifyjs');
+// var mainBowerFiles = require('gulp-main-bower-files');
 var sourcemaps = require('gulp-sourcemaps');
 
 
@@ -15,15 +16,15 @@ var sourcemaps = require('gulp-sourcemaps');
 
 
 
-// var dev_or_prod = '_2dev'; // префикс для dev-версии
-var dev_or_prod = '_2prod'; // префикс для prod-версии
-
-if(dev_or_prod === '_2prod') gulpDestFolder = 'production/zoloto/css';
-else if(dev_or_prod === '_2dev') gulpDestFolder = 'development/css';
 
 
 
-
+/************************
+	SHAME@html-including,
+	не используется,
+	переделать
+	--START--
+*/
 /*
 	HTML INCLUDE 4 
 	"HEADER"
@@ -273,6 +274,12 @@ gulp.task('make-ucab-all-page-full', ['make-ucab-page-full', 'make-ureg-page-ful
 		}))
 		.pipe(gulp.dest('development'));
 });
+/************************
+	SHAME@html-including,
+	не используется,
+	переделать
+	--END--
+*/
 
 
 
@@ -423,14 +430,34 @@ gulp.task('make-msalnikov-list', function () {
  * *************
  */
 
+// 
+// 
+// DEV-OR-PROD@--START
+// 
+// для создания локальной версии
+// должна быть раскомментирована
+// эта строка:
+var dev_or_prod = '_2dev';
+
+// по умолчанию "dev_or_prod" принимает значение для сборки прод
+var dev_or_prod = dev_or_prod || '_2prod';
+
+// переопределние путей
+// TODO@: сделать удобнее эту переключалку
+if(dev_or_prod === '_2prod') cssFolder = 'production/zoloto/css';
+else if(dev_or_prod === '_2dev') cssFolder = 'development/css';
+// DEV-OR-PROD@--END
+// 
+// 
+
+
 
 // z585-all-css
 var z585AllScaffoldingList = [
 
 	/* ******************************************* */
-	/* одно из двух должно быть закомментировано */
-	'development/less/_2prod.less', // для прода
-	// 'development/less/_2dev.less', // для локальной сборки
+	'development/less/' + dev_or_prod + '.less', // локализация(пути к картинкам, шрифтам, ...)
+	// значение формируется здесь: DEV-OR-PROD@    (метка для Ctrl + F поиска)
 	/* ******************************************* */
 
 	'development/less/scaffolding/mixins.less',
@@ -440,19 +467,20 @@ var z585AllScaffoldingList = [
 	// старый css
 	'development/less/scaffolding/legacy__all.less',
 
+	// базовые стили макета страниц
 	'development/less/scaffolding/layout__grid.less',
 	'development/less/scaffolding/layout__uikit.less',
 	'development/less/scaffolding/layout__header.less',
 	'development/less/scaffolding/layout__footer.less',
-	// 
-	// 
-	// стили страниц
+
+	// стили шаблонов страниц (постранично)
 	'development/less/scaffolding/pages__index.less',
 	'development/less/scaffolding/pages__product-card.less',
 	'development/less/scaffolding/pages__catalog.less',
 	'development/less/scaffolding/pages__page-404.less',
 	'development/less/scaffolding/pages__user-cabinet.less',
 	'development/less/scaffolding/pages__store.less',
+	'development/less/scaffolding/pages__stock.less',
 
 	// latest legacy
 	'development/less/scaffolding/legacy__latest.less',
@@ -461,7 +489,8 @@ var z585AllScaffoldingList = [
 	'development/less/scaffolding/system__helpers.less',
 ];
 
-// scaffolding z585-all-css import list
+// scaffolding "склеивание" отдельных импорт-листов в один общий
+// импорт-лист, который будет обрабатывать плагин "gulp-less"
 gulp.task('z585-css:scaff', function () {
 	return gulp.src(z585AllScaffoldingList)
 		.pipe(sourcemaps.init({loadMaps: true}))
@@ -476,11 +505,13 @@ gulp.task('z585-css:build', function () {
 		.pipe(less())
 		.pipe(cssmin())
 		.pipe(rename('z585_all.min.css'))
-		.pipe(gulp.dest(gulpDestFolder));
+		.pipe(gulp.dest(cssFolder));
 });
 
 
 
+// те стили, которые сейчас(04.04.2017) на проде, 
+// на период перехода к z585_all.css
 // msalnikov.min.css
 var msalnikovScaffoldingList = [
 
