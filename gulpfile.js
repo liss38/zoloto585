@@ -437,7 +437,7 @@ gulp.task('make-msalnikov-list', function () {
 // для создания локальной версии
 // должна быть раскомментирована
 // эта строка:
-var dev_or_prod = '_2dev';
+// var dev_or_prod = '_2dev';
 
 // по умолчанию "dev_or_prod" принимает значение для сборки прод
 var dev_or_prod = dev_or_prod || '_2prod';
