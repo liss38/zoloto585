@@ -514,12 +514,7 @@ gulp.task('z585-css:build', function () {
 // на период перехода к z585_all.css
 // msalnikov.min.css
 var msalnikovScaffoldingList = [
-
-	/* ******************************************* */
-	/* одно из двух должно быть закомментировано */
 	'development/less/_2prod.less', // для прода
-	// 'development/less/_2dev.less', // для локальной сборки
-	/* ******************************************* */
 
 	'development/less/scaffolding/mixins.less',
 	'development/less/scaffolding/layout__fonts.less',

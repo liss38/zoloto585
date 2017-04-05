@@ -1,44 +1,74 @@
 .promo-banner {
-	position: relative;
-	height: 400px;
 	width: 100%;
+
+	a {
+		height:  390px;
+		position:  relative;
+		display: block;
+		position: relative;
+		height: 400px;
+	}
+
+
+	&--small {
+
+
+		a {
+			display: none;
+		}
+	}
+
+
+	&--big {
+
+
+		a {
+			display: block;
+		}
+	}
 }
-.promo-banner--small {
-	display: none;
-}
-.promo-banner--big {
-	display: block;
-}
+
 
 @media screen and (max-width: 1024px) {
 /* коэфф. уменьшения для картинки (1920x400)*0.7 = 1344x280 */
 	.promo-banner {
-		height: 280px;
+
+
+		a {
+			height: 280px;
+		}
 	}
 }
 
 @media screen and (max-width: 767px) {
 	/* коэфф. уменьшения для картинки (1920x400)*0.58 = 1344x230 */
 	.promo-banner {
-		height: 230px;
+
+
+		a {
+			height: 230px;
+		}
 	}
 }
 
 @media screen and (max-width: 600px) {
 	.promo-banner {
-		height: 390px;
-	}
-	.promo-banner--big {
-		display: none;
-	}
-	.promo-banner--small {
-		display: block;
-	}
 
-	.sl-mob {
-		height: 390px;
-		position: absolute;
-		left: 50%;
-		margin-left: -299.5px;
+
+		&--big {
+
+			a {
+				display: none;
+			}
+		}
+
+
+		&--small {
+
+			a {
+				display: block;
+				height: 390px;
+			}
+		}
 	}
 }
